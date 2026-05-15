@@ -38,32 +38,36 @@ export default function Home() {
           href="https://wa.me/96878967229"
           target="_blank"
           style={{
+            display: "inline-block",
             background: "#22c55e",
             color: "white",
             padding: "15px 30px",
             fontSize: "18px",
             borderRadius: "8px",
-            textDecoration: "none"
+            textDecoration: "none",
+            margin: "8px"
           }}
         >
           Contact on WhatsApp
-<br />
-<br />
+        </a>
 
-<a
-  href="https://wa.me/c/96878967229"
-  target="_blank"
-  style={{
-    background: "#f59e0b",
-    color: "white",
-    padding: "15px 30px",
-    fontSize: "18px",
-    borderRadius: "8px",
-    textDecoration: "none"
-  }}
->
-  View WhatsApp Catalog
-</a
+        <br />
+
+        <a
+          href="https://wa.me/c/96878967229"
+          target="_blank"
+          style={{
+            display: "inline-block",
+            background: "#f59e0b",
+            color: "white",
+            padding: "15px 30px",
+            fontSize: "18px",
+            borderRadius: "8px",
+            textDecoration: "none",
+            margin: "8px"
+          }}
+        >
+          View WhatsApp Catalog
         </a>
       </section>
 
