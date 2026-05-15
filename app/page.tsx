@@ -47,6 +47,23 @@ export default function Home() {
           }}
         >
           Contact on WhatsApp
+<br />
+<br />
+
+<a
+  href="https://wa.me/c/96878967229"
+  target="_blank"
+  style={{
+    background: "#f59e0b",
+    color: "white",
+    padding: "15px 30px",
+    fontSize: "18px",
+    borderRadius: "8px",
+    textDecoration: "none"
+  }}
+>
+  View WhatsApp Catalog
+</a
         </a>
       </section>
 
