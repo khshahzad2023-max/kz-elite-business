@@ -38,7 +38,7 @@ export default function Home() {
         </div>
 <div>
   <img
-    src="/hero-banner.png"
+    src="/hero-banner.jpg"
     alt="Premium Cars"
     style={{
       width: "100%",
