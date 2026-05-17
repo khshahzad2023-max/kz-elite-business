@@ -98,8 +98,8 @@ export default function Home() {
         alt={`Car ${i + 1}`}
         style={{
           width: "100%",
-          height: "230px",
-          objectFit: "cover"
+          height: "auto",
+          objectFit: "contain"
         }}
       />
 
