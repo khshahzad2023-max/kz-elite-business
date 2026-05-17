@@ -127,6 +127,21 @@ export default function Home() {
           }}
         >
           WhatsApp Inquiry
+<a
+  href="tel:+96878967229"
+  style={{
+    display: "inline-block",
+    background: "#f5b400",
+    color: "black",
+    padding: "12px 20px",
+    borderRadius: "8px",
+    textDecoration: "none",
+    fontWeight: "bold",
+    marginTop: "10px"
+  }}
+>
+  📞 Call Now
+</a>
         </a>
       </div>
     </div>
