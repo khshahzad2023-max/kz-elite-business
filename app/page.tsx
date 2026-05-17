@@ -94,7 +94,7 @@ export default function Home() {
       }}
     >
       <img
-        src={`/car${i + 1}.jpg`}
+        src={`/car${i + 1}.JPG`}
         alt={`Car ${i + 1}`}
         style={{
           width: "100%",
