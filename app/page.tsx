@@ -69,6 +69,23 @@ export default function Home() {
         >
           View WhatsApp Catalog
         </a>
+<a
+  href="/portfolio.html"
+  target="_blank"
+  style={{
+    display: "inline-block",
+    background: "#f5b400",
+    color: "black",
+    padding: "15px 30px",
+    fontSize: "18px",
+    borderRadius: "8px",
+    textDecoration: "none",
+    margin: "8px",
+    fontWeight: "bold"
+  }}
+>
+  View Portfolio
+</a>
       </section>
 
       <section style={{ padding: "50px 30px" }}>
