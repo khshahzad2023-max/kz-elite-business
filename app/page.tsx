@@ -74,7 +74,64 @@ export default function Home() {
         <p style={{ color: "#f5b400", fontWeight: "bold" }}>AVAILABLE CARS</p>
         <h2 style={{ fontSize: "38px" }}>Featured Cars</h2>
         <div style={{ margin: "35px auto", maxWidth: "900px", padding: "45px", border: "1px dashed #5a4008", borderRadius: "18px", color: "#aaa" }}>
-          Car details and pictures will be added here later.
+         <div
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+    gap: "25px",
+    marginTop: "40px"
+  }}
+>
+  {Array.from({ length: 24 }, (_, i) => (
+    <div
+      key={i}
+      style={{
+        background: "#0b0b0b",
+        border: "1px solid #5a4008",
+        borderRadius: "16px",
+        overflow: "hidden",
+        boxShadow: "0 0 20px rgba(255,215,0,0.08)"
+      }}
+    >
+      <img
+        src={`/car${i + 1}.jpg`}
+        alt={`Car ${i + 1}`}
+        style={{
+          width: "100%",
+          height: "230px",
+          objectFit: "cover"
+        }}
+      />
+
+      <div style={{ padding: "18px" }}>
+        <h3 style={{ color: "#f5b400" }}>
+          Premium Car
+        </h3>
+
+        <p style={{ color: "#ccc", lineHeight: "1.7" }}>
+          Full details available on request.
+        </p>
+
+        <a
+          href="https://wa.me/96878967229"
+          target="_blank"
+          style={{
+            display: "inline-block",
+            marginTop: "12px",
+            background: "#16a34a",
+            color: "white",
+            padding: "12px 18px",
+            borderRadius: "8px",
+            textDecoration: "none",
+            fontWeight: "bold"
+          }}
+        >
+          WhatsApp Inquiry
+        </a>
+      </div>
+    </div>
+  ))}
+</div> 
         </div>
       </section>
 
