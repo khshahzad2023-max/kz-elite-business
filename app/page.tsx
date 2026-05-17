@@ -36,11 +36,19 @@ export default function Home() {
             <span>✅ Safe Deal</span>
           </div>
         </div>
-
-        <div style={{ height: "420px", borderRadius: "20px", border: "1px solid #4b3608", background: "linear-gradient(135deg,#111,#000)", display: "flex", alignItems: "center", justifyContent: "center", color: "#f5b400", fontSize: "28px", fontWeight: "bold" }}>
-          Premium Car Image Area
-        </div>
-      </section>
+<div>
+  <img
+    src="/hero-banner.png"
+    alt="Premium Cars"
+    style={{
+      width: "100%",
+      borderRadius: "20px",
+      boxShadow: "0 0 30px rgba(255,215,0,0.25)",
+      objectFit: "cover"
+    }}
+  />
+</div>
+              </section>
 
       <section id="services" style={{ padding: "70px 60px", textAlign: "center" }}>
         <p style={{ color: "#f5b400", fontWeight: "bold" }}>OUR SERVICES</p>
