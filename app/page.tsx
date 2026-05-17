@@ -26,6 +26,14 @@ export default function Home() {
         padding: "80px 30px",
         textAlign: "center"
       }}>
+<img
+  src="/logo.png"
+  alt="KZ Elite Business Logo"
+  style={{
+    width: "220px",
+    marginBottom: "20px"
+  }}
+/>
         <h1 style={{ fontSize: "52px", marginBottom: "20px" }}>
           KZ ELITE BUSINESS
         </h1>
