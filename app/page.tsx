@@ -1,167 +1,81 @@
-"use client";
-
-const cars = [
-  {
-    name: "NISSAN KICKS",
-    year: "2024",
-    price: "4,800 OMR",
-    mileage: "7,000 KMS",
-    location: "Al Amerat",
-  },
-  {
-    name: "Nissan Versa",
-    year: "2020",
-    price: "3,000 OMR",
-    mileage: "112,000 KMS",
-    location: "Al Amerat",
-  },
-];
-
 export default function Home() {
   return (
-    <main style={{ fontFamily: "Arial, sans-serif", background: "#f4f4f4" }}>
-      <section style={{
-        background: "linear-gradient(to right, #020617, #1e3a8a)",
-        color: "white",
-        padding: "80px 30px",
-        textAlign: "center"
-      }}>
-<img
-  src="/logo.png"
-  alt="KZ Elite Business Logo"
-  style={{
-    width: "220px",
-    marginBottom: "20px"
-  }}
-/>
-        <h1 style={{ fontSize: "52px", marginBottom: "20px" }}>
-          KZ ELITE BUSINESS
-        </h1>
-
-        <p style={{ fontSize: "22px", marginBottom: "30px" }}>
-          Quality Cars in Muscat, Oman
-        </p>
-
-        <a
-          href="https://wa.me/96878967229"
-          target="_blank"
-          style={{
-            display: "inline-block",
-            background: "#22c55e",
-            color: "white",
-            padding: "15px 30px",
-            fontSize: "18px",
-            borderRadius: "8px",
-            textDecoration: "none",
-            margin: "8px"
-          }}
-        >
-          Contact on WhatsApp
+    <main style={{ background: "#050505", color: "white", fontFamily: "Arial, sans-serif" }}>
+      <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "15px 50px", background: "#000", borderBottom: "1px solid #2b2208" }}>
+        <img src="/logo.png" style={{ width: "120px" }} />
+        <div style={{ display: "flex", gap: "30px", fontWeight: "bold" }}>
+          <a href="/" style={{ color: "#f5b400", textDecoration: "none" }}>HOME</a>
+          <a href="#services" style={{ color: "white", textDecoration: "none" }}>SERVICES</a>
+          <a href="/portfolio.html" style={{ color: "white", textDecoration: "none" }}>PORTFOLIO</a>
+          <a href="#contact" style={{ color: "white", textDecoration: "none" }}>CONTACT</a>
+        </div>
+        <a href="https://wa.me/96878967229" target="_blank" style={{ background: "#b88712", color: "white", padding: "12px 22px", borderRadius: "8px", textDecoration: "none", fontWeight: "bold" }}>
+          WhatsApp
         </a>
+      </nav>
 
-        <br />
+      <section style={{ padding: "80px 60px", background: "linear-gradient(to right, #000 0%, #080808 55%, #1a1304 100%)", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", alignItems: "center" }}>
+        <div>
+          <img src="/logo.png" style={{ width: "280px", marginBottom: "20px" }} />
+          <h1 style={{ fontSize: "56px", margin: "0", fontWeight: "900" }}>KZ ELITE BUSINESS</h1>
+          <h2 style={{ color: "#f5b400", fontSize: "28px" }}>BUY & SELL CARS IN OMAN</h2>
+          <p style={{ color: "#ddd", fontSize: "20px", maxWidth: "520px", lineHeight: "1.6" }}>
+            Best deals on quality cars. We make buying and selling cars easy, safe and reliable.
+          </p>
 
-        <a
-          href="https://wa.me/c/96878967229"
-          target="_blank"
-          style={{
-            display: "inline-block",
-            background: "#f59e0b",
-            color: "white",
-            padding: "15px 30px",
-            fontSize: "18px",
-            borderRadius: "8px",
-            textDecoration: "none",
-            margin: "8px"
-          }}
-        >
-          View WhatsApp Catalog
-        </a>
-<a
-  href="/portfolio.html"
-  target="_blank"
-  style={{
-    display: "inline-block",
-    background: "#f5b400",
-    color: "black",
-    padding: "15px 30px",
-    fontSize: "18px",
-    borderRadius: "8px",
-    textDecoration: "none",
-    margin: "8px",
-    fontWeight: "bold"
-  }}
->
-  View Portfolio
-</a>
+          <div style={{ display: "flex", gap: "15px", flexWrap: "wrap", marginTop: "30px" }}>
+            <a href="https://wa.me/96878967229" target="_blank" style={{ background: "#16a34a", color: "white", padding: "15px 25px", borderRadius: "8px", textDecoration: "none", fontWeight: "bold" }}>Contact on WhatsApp</a>
+            <a href="https://wa.me/c/96878967229" target="_blank" style={{ border: "1px solid #f5b400", color: "#f5b400", padding: "15px 25px", borderRadius: "8px", textDecoration: "none", fontWeight: "bold" }}>View WhatsApp Catalog</a>
+            <a href="/portfolio.html" target="_blank" style={{ background: "#f5b400", color: "black", padding: "15px 25px", borderRadius: "8px", textDecoration: "none", fontWeight: "bold" }}>View Portfolio</a>
+          </div>
+
+          <div style={{ display: "flex", gap: "25px", flexWrap: "wrap", marginTop: "35px", color: "#f5b400", fontWeight: "bold" }}>
+            <span>🛡 Trusted Service</span>
+            <span>💰 Best Prices</span>
+            <span>⏱ Fast Process</span>
+            <span>✅ Safe Deal</span>
+          </div>
+        </div>
+
+        <div style={{ height: "420px", borderRadius: "20px", border: "1px solid #4b3608", background: "linear-gradient(135deg,#111,#000)", display: "flex", alignItems: "center", justifyContent: "center", color: "#f5b400", fontSize: "28px", fontWeight: "bold" }}>
+          Premium Car Image Area
+        </div>
       </section>
 
-      <section style={{ padding: "50px 30px" }}>
-        <h2 style={{ textAlign: "center", fontSize: "36px" }}>
-          Available Cars
-        </h2>
+      <section id="services" style={{ padding: "70px 60px", textAlign: "center" }}>
+        <p style={{ color: "#f5b400", fontWeight: "bold" }}>OUR SERVICES</p>
+        <h2 style={{ fontSize: "38px" }}>What We Offer</h2>
 
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-          gap: "25px",
-          marginTop: "30px"
-        }}>
-          {cars.map((car) => (
-            <div key={car.name} style={{
-              background: "white",
-              padding: "25px",
-              borderRadius: "12px",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
-            }}>
-              <h3 style={{ fontSize: "26px" }}>{car.name}</h3>
-              <p>Year: {car.year}</p>
-              <p>Mileage: {car.mileage}</p>
-              <p>Location: {car.location}</p>
-              <h2 style={{ color: "#2563eb" }}>{car.price}</h2>
-
-              <a
-                href={`https://wa.me/96878967229?text=Hello, I am interested in ${car.name} ${car.year}`}
-                target="_blank"
-                style={{
-                  display: "inline-block",
-                  background: "#111827",
-                  color: "white",
-                  padding: "12px 20px",
-                  borderRadius: "8px",
-                  textDecoration: "none"
-                }}
-              >
-                Ask About This Car
-              </a>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "25px", marginTop: "35px" }}>
+          {[
+            ["🚗", "BUY CARS", "We buy cars at fair market prices."],
+            ["🤝", "SELL CARS", "We help you sell your car quickly."],
+            ["🏦", "FINANCE OPTIONS", "Finance option available for customers."],
+            ["📢", "15+ PLATFORM ADVERTISING", "We advertise on 15+ platforms for quick sales."],
+          ].map((s) => (
+            <div key={s[1]} style={{ background: "#0b0b0b", border: "1px solid #5a4008", borderRadius: "14px", padding: "30px", textAlign: "left" }}>
+              <div style={{ fontSize: "42px" }}>{s[0]}</div>
+              <h3 style={{ color: "#f5b400" }}>{s[1]}</h3>
+              <p style={{ color: "#ccc", lineHeight: "1.6" }}>{s[2]}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section style={{
-        background: "white",
-        padding: "50px 30px",
-        textAlign: "center"
-      }}>
-        <h2 style={{ fontSize: "36px" }}>Why Choose Us?</h2>
-        <p>✔ Clean and reliable cars</p>
-        <p>✔ Cars available in Muscat, Oman</p>
-        <p>✔ WhatsApp contact available</p>
-        <p>✔ Test drive available</p>
+      <section style={{ padding: "70px 60px", borderTop: "1px solid #2b2208", textAlign: "center" }}>
+        <p style={{ color: "#f5b400", fontWeight: "bold" }}>AVAILABLE CARS</p>
+        <h2 style={{ fontSize: "38px" }}>Featured Cars</h2>
+        <div style={{ margin: "35px auto", maxWidth: "900px", padding: "45px", border: "1px dashed #5a4008", borderRadius: "18px", color: "#aaa" }}>
+          Car details and pictures will be added here later.
+        </div>
       </section>
 
-      <section style={{
-        background: "#020617",
-        color: "white",
-        padding: "50px 30px",
-        textAlign: "center"
-      }}>
-        <h2>Contact KZ ELITE BUSINESS</h2>
-        <p>Phone / WhatsApp: 78967229 / 99248431</p>
-        <p>Email: khshahzad2023@gmail.com</p>
-        <p>Location: Muscat, Oman</p>
-      </section>
+      <footer id="contact" style={{ padding: "45px 60px", borderTop: "1px solid #2b2208", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", textAlign: "center" }}>
+        <div><h2 style={{ color: "#f5b400" }}>500+</h2><p>Cars Sold</p></div>
+        <div><h2 style={{ color: "#f5b400" }}>100%</h2><p>Customer Satisfaction</p></div>
+        <div><h2 style={{ color: "#f5b400" }}>Safe & Secure</h2><p>Our Priority</p></div>
+        <div><h2 style={{ color: "#f5b400" }}>24/7 Support</h2><p>78967229</p></div>
+      </footer>
     </main>
   );
 }
