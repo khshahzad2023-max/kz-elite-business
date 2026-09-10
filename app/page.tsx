@@ -28,7 +28,7 @@ export default function Home(){
             <div className="actions">
               <Link className="btn btn-primary" href="/cars">Browse Cars</Link>
               <Link className="btn btn-secondary" href="/sell-your-car">Sell Your Car</Link>
-              <a className="btn btn-secondary" href="https://wa.me/96878967229">WhatsApp</a>
+              <a className="btn btn-secondary" href="https://api.whatsapp.com/send?phone=96878967229">WhatsApp</a>
             </div>
             <div className="badge-row">
               <span className="badge">Cars First</span>
@@ -96,3 +96,4 @@ export default function Home(){
     </>
   )
 }
+
