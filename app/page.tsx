@@ -1,5 +1,7 @@
 
 import Link from "next/link";
+import SoldCarCard from "./sold-cars/SoldCarCard";
+import { soldCars } from "./sold-cars/soldCars";
 
 const core = [
   {icon:"🚘",title:"Cars for Sale",text:"Browse available vehicles with clear pricing, specifications, mileage, location and finance availability.",href:"/cars"},
@@ -85,6 +87,22 @@ export default function Home(){
         </div>
       </section>
 
+      <section className="section sold-showcase">
+        <div className="container">
+          <div className="section-head">
+            <div><div className="eyebrow">Proven Results</div><h2>Recently sold</h2></div>
+            <p>Vehicles successfully advertised and sold with K&amp;Z ELITE BUSINESS.</p>
+          </div>
+          <div className="sold-grid sold-grid-preview">
+            {soldCars.slice(0, 3).map((car) => <SoldCarCard key={`${car.name}-${car.year}`} car={car} />)}
+          </div>
+          <div className="actions sold-actions">
+            <Link className="btn btn-secondary" href="/sold-cars">View All Sold Cars</Link>
+            <Link className="btn btn-primary" href="/sell-your-car">Sell Your Car With Us</Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section">
         <div className="container">
           <div className="section-head"><div><div className="eyebrow">Other Divisions</div><h2>One name. Many solutions.</h2></div></div>
@@ -96,4 +114,3 @@ export default function Home(){
     </>
   )
 }
-

@@ -9,6 +9,7 @@ export const metadata = {
 
 const nav = [
   ["Cars for Sale","/cars"],
+  ["Sold Cars","/sold-cars"],
   ["Sell Your Car","/sell-your-car"],
   ["Find a Car","/find-a-car"],
   ["Rent a Car","/rent-a-car"],
@@ -52,6 +53,7 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
               <div>
                 <h4>Core Business</h4>
                 <p><Link href="/cars">Cars for Sale</Link><br/>
+                <Link href="/sold-cars">Sold Cars</Link><br/>
                 <Link href="/sell-your-car">Sell Your Car</Link><br/>
                 <Link href="/find-a-car">Find a Car</Link><br/>
                 <Link href="/rent-a-car">Rent a Car</Link><br/>
@@ -75,4 +77,3 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
     </html>
   )
 }
-
