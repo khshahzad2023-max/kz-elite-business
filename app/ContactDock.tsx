@@ -41,6 +41,13 @@ const contacts = [
   {
     icon: Phone,
     label: "Call Us",
+    value: "+968 78967229",
+    href: "tel:+96878967229",
+    tone: "phone",
+  },
+  {
+    icon: Phone,
+    label: "Call Us",
     value: "+968 99248431",
     href: "tel:+96899248431",
     tone: "phone",
