@@ -25,4 +25,12 @@ export const soldCars: SoldCar[] = [
     details: ["1.6L", "Japan Specification", "Wadi Kabir"],
     summary: "A reliable and economical sedan, clean and carefully maintained for immediate use.",
   },
+  {
+    name: "BMW 640i",
+    year: "2013",
+    images: ["/sold-bmw-640i-2013-hd.png"],
+    imageAlt: "Red 2013 BMW 640i sold by K&Z ELITE BUSINESS",
+    details: ["Red", "3.0L TwinPower Turbo", "4-Seater"],
+    summary: "A powerful luxury coupe in excellent condition, delivering a smooth drive for daily use and long journeys.",
+  },
 ];
