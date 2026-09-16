@@ -49,4 +49,12 @@ export const soldCars: SoldCar[] = [
     details: ["Convertible", "USA Import", "Wadi Kabir"],
     summary: "An iconic sports convertible with a premium interior, bold styling and an exciting open-top driving experience.",
   },
+  {
+    name: "Toyota Land Cruiser Prado",
+    year: "2016",
+    images: ["/sold-toyota-prado-2016-hd.jpg"],
+    imageAlt: "White 2016 Toyota Land Cruiser Prado sold by K&Z ELITE BUSINESS",
+    details: ["4.0L V6", "First Option", "225,000 km"],
+    summary: "A first-owner Oman-showroom SUV, well maintained and dependable for family use and long-distance driving.",
+  },
 ];
