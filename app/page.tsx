@@ -94,7 +94,7 @@ export default function Home(){
             <p>Vehicles successfully advertised and sold with K&amp;Z ELITE BUSINESS.</p>
           </div>
           <div className="sold-grid sold-grid-preview">
-            {soldCars.slice(0, 3).map((car) => <SoldCarCard key={`${car.name}-${car.year}`} car={car} />)}
+            {soldCars.slice(-3).reverse().map((car) => <SoldCarCard key={`${car.name}-${car.year}`} car={car} />)}
           </div>
           <div className="actions sold-actions">
             <Link className="btn btn-secondary" href="/sold-cars">View All Sold Cars</Link>
