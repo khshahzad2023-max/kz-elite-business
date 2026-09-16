@@ -95,11 +95,28 @@ h1{font-size:clamp(42px,7vw,76px);line-height:.98;margin:14px 0 20px;max-width:8
 .sold-by strong{color:var(--gold2)}
 .sold-actions{margin-top:26px}
 .sold-page-hero{background:radial-gradient(circle at 82% 18%,rgba(213,165,58,.17),transparent 31%)}
+.contact-dock-section{padding:58px 0;background:radial-gradient(circle at 12% 0%,rgba(213,165,58,.13),transparent 28%),#081321;border-top:1px solid var(--line)}
+.contact-dock-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:22px}
+.contact-dock-head h2{margin:7px 0 0;font-size:clamp(28px,4vw,42px)}
+.contact-location{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px}
+.contact-dock{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:12px;border:1px solid rgba(213,165,58,.24);border-radius:24px;background:rgba(5,13,23,.72);box-shadow:0 24px 60px rgba(0,0,0,.28)}
+.contact-tile{display:flex;align-items:center;gap:13px;min-width:0;padding:15px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));transition:.22s ease}
+.contact-tile:hover{transform:translateY(-3px);border-color:rgba(213,165,58,.5);background:rgba(213,165,58,.07)}
+.contact-icon{width:45px;height:45px;flex:0 0 45px;display:grid;place-items:center;border-radius:14px;color:#07111f;background:linear-gradient(135deg,#b98622,#f0c66a);box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.contact-tile.instagram .contact-icon{color:#fff;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)}
+.contact-tile.whatsapp .contact-icon{color:#fff;background:#20b85a}
+.contact-tile.phone .contact-icon{color:#fff;background:#2374d8}
+.contact-tile.email .contact-icon{color:#fff;background:#bf493c}
+.contact-tile.website .contact-icon{color:#07111f;background:linear-gradient(135deg,#d7e2ee,#8fa7c3)}
+.contact-tile span:last-child{min-width:0}
+.contact-tile small{display:block;margin-bottom:4px;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase}
+.contact-tile strong{display:block;overflow:hidden;color:#f5f7fb;font-size:13px;text-overflow:ellipsis;white-space:nowrap}
 @media(max-width:900px){
   .hero-grid,.feature,.footer-grid{grid-template-columns:1fr}
   .grid,.sold-grid{grid-template-columns:1fr 1fr}
   .sold-grid-preview{grid-template-columns:minmax(0,390px)}
   .navlinks{display:none}
+  .contact-dock{grid-template-columns:1fr 1fr}
 }
 @media(max-width:620px){
   .grid,.form,.stats,.sold-grid,.sold-grid-preview{grid-template-columns:1fr}
@@ -107,4 +124,6 @@ h1{font-size:clamp(42px,7vw,76px);line-height:.98;margin:14px 0 20px;max-width:8
   .hero-grid{padding:48px 0}
   .section{padding:64px 0}
   h1{font-size:42px}
+  .contact-dock-head{align-items:start;flex-direction:column}
+  .contact-dock{grid-template-columns:1fr;padding:9px;border-radius:19px}
 }

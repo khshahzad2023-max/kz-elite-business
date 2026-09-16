@@ -1,6 +1,7 @@
 
 import "./globals.css";
 import Link from "next/link";
+import ContactDock from "./ContactDock";
 
 export const metadata = {
   title: "K&Z ELITE BUSINESS",
@@ -37,6 +38,7 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
           </div>
         </header>
         {children}
+        <ContactDock />
         <footer className="footer">
           <div className="container">
             <div className="footer-grid">
