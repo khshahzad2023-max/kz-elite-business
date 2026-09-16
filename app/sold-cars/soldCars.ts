@@ -12,11 +12,7 @@ export const soldCars: SoldCar[] = [
   {
     name: "Nissan Versa Hatchback",
     year: "2011",
-    images: [
-      "/sold-nissan-versa-2011-front.jpg",
-      "/sold-nissan-versa-2011-side.jpg",
-      "/sold-nissan-versa-2011-rear.jpg",
-    ],
+    images: ["/sold-nissan-versa-2011-side.jpg"],
     imageAlt: "Black 2011 Nissan Versa Hatchback sold by K&Z ELITE BUSINESS",
     details: ["Black", "Japan Made", "226,500 km"],
     summary: "A very good family car in clean condition, with registration valid for one year.",
