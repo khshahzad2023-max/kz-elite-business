@@ -41,4 +41,12 @@ export const soldCars: SoldCar[] = [
     details: ["SR Sport Edition", "Imported", "67,000 km"],
     summary: "A modern sport sedan with premium comfort, confident road presence and dynamic styling.",
   },
+  {
+    name: "Ford Mustang Convertible",
+    year: "2021",
+    images: ["/sold-ford-mustang-convertible-2021-hd.jpg"],
+    imageAlt: "White 2021 Ford Mustang Convertible sold by K&Z ELITE BUSINESS",
+    details: ["Convertible", "USA Import", "Wadi Kabir"],
+    summary: "An iconic sports convertible with a premium interior, bold styling and an exciting open-top driving experience.",
+  },
 ];
