@@ -17,4 +17,12 @@ export const soldCars: SoldCar[] = [
     details: ["Black", "Japan Made", "226,500 km"],
     summary: "A very good family car in clean condition, with registration valid for one year.",
   },
+  {
+    name: "Nissan Tiida Saloon",
+    year: "2009",
+    images: ["/sold-nissan-tiida-2009.jpg"],
+    imageAlt: "White 2009 Nissan Tiida Saloon sold by K&Z ELITE BUSINESS",
+    details: ["1.6L", "Japan Specification", "Wadi Kabir"],
+    summary: "A reliable and economical sedan, clean and carefully maintained for immediate use.",
+  },
 ];
