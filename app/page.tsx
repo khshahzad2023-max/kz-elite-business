@@ -30,7 +30,8 @@ export default function Home(){
             <div className="actions">
               <Link className="btn btn-primary" href="/cars">Browse Cars</Link>
               <Link className="btn btn-secondary" href="/sell-your-car">Sell Your Car</Link>
-              <a className="btn btn-secondary" href="https://api.whatsapp.com/send?phone=96878967229">WhatsApp</a>
+              <a className="btn btn-secondary" href="https://api.whatsapp.com/send?phone=96878967229">WhatsApp 78967229</a>
+              <a className="btn btn-secondary" href="https://api.whatsapp.com/send?phone=96899248431">WhatsApp +968 99248431</a>
             </div>
             <div className="badge-row">
               <span className="badge">Cars First</span>

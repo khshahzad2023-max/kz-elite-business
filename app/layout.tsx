@@ -62,7 +62,8 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
               <div>
                 <h4>Contact</h4>
                 <p>Muscat, Sultanate of Oman<br/>
-                78967229<br/>
+                <a href="tel:+96878967229">78967229</a><br/>
+                <a href="tel:+96899248431">+968 99248431</a><br/>
                 info@kzelitebusiness.com<br/>
                 kzelitebusiness.com</p>
               </div>
