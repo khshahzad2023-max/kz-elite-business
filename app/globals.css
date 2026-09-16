@@ -82,6 +82,8 @@ h1{font-size:clamp(42px,7vw,76px);line-height:.98;margin:14px 0 20px;max-width:8
 .sold-image-wrap{position:relative;aspect-ratio:4/3;overflow:hidden;background:#07111f}
 .sold-image{width:100%;height:100%;object-fit:cover;object-position:center 42%;transition:transform .35s ease}
 .sold-card:hover .sold-image{transform:scale(1.025)}
+.sold-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;padding:3px 3px 0;background:#07111f}
+.sold-gallery img{width:100%;height:118px;object-fit:cover}
 .sold-ribbon{position:absolute;top:18px;right:18px;padding:10px 19px;border-radius:999px;background:linear-gradient(135deg,#b98622,#f0c66a);color:#07111f;font-size:13px;font-weight:900;letter-spacing:1.7px;text-transform:uppercase;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .sold-content{padding:24px}
 .sold-content h3{margin:8px 0 14px;font-size:24px}

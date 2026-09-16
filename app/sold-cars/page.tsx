@@ -25,7 +25,7 @@ export default function SoldCarsPage() {
       <section className="section">
         <div className="container">
           <div className="sold-grid">
-            {soldCars.map((car) => <SoldCarCard key={`${car.name}-${car.year}`} car={car} />)}
+            {soldCars.map((car) => <SoldCarCard key={`${car.name}-${car.year}`} car={car} showGallery />)}
           </div>
         </div>
       </section>
