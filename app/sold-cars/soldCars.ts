@@ -33,4 +33,12 @@ export const soldCars: SoldCar[] = [
     details: ["Red", "3.0L TwinPower Turbo", "4-Seater"],
     summary: "A powerful luxury coupe in excellent condition, delivering a smooth drive for daily use and long journeys.",
   },
+  {
+    name: "Nissan Sentra SR",
+    year: "2020",
+    images: ["/sold-nissan-sentra-sr-2020-hd.jpg"],
+    imageAlt: "Grey 2020 Nissan Sentra SR sold by K&Z ELITE BUSINESS",
+    details: ["SR Sport Edition", "Imported", "67,000 km"],
+    summary: "A modern sport sedan with premium comfort, confident road presence and dynamic styling.",
+  },
 ];
