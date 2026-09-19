@@ -1,25 +1,7 @@
-"use client";
-import { useEffect, useState } from "react";
-
 export default function SiteIntro(){
-  const [show,setShow]=useState(false);
-  const [exit,setExit]=useState(false);
-
-  useEffect(()=>{
-    let seen=false;
-    try{seen=sessionStorage.getItem("kz-site-intro")==="seen"}catch{}
-    if(seen) return;
-    setShow(true);
-    try{sessionStorage.setItem("kz-site-intro","seen")}catch{}
-    const t=setTimeout(()=>setExit(true),2600);
-    const d=setTimeout(()=>setShow(false),3350);
-    return()=>{clearTimeout(t);clearTimeout(d)};
-  },[]);
-
-  if(!show)return null;
-  return <div className={"site-intro "+(exit?"intro-exit":"")}>
+  return <div className="site-intro-css" aria-hidden="true">
     <div className="intro-beam beam-one"/><div className="intro-beam beam-two"/>
-    <div className="intro-mark"><img src="/kz-master-logo.png" alt="K&Z ELITE BUSINESS"/><div className="intro-line"/><strong>K&Z ELITE BUSINESS</strong><span>ONE NAME • MANY SOLUTIONS</span></div>
+    <div className="intro-mark"><img src="/kz-master-logo.png" alt=""/><div className="intro-line"/><strong>K&Z ELITE BUSINESS</strong><span>ONE NAME • MANY SOLUTIONS</span></div>
     <div className="intro-floor"/><div className="intro-shine"/>
   </div>
 }
