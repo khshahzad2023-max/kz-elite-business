@@ -67,7 +67,7 @@ export default function Home(){
       </section>
 
       <section className="section alt">
-        <div className="container feature">
+        <div className="container feature home-service-pair">
           <div className="feature-box">
             <div className="eyebrow">K&Z Automotive</div>
             <h2>Garage & vehicle care services</h2>
