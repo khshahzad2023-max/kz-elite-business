@@ -290,3 +290,11 @@ button.crystal-contact{font:inherit;color:inherit;cursor:pointer}
 .website-choice-title{display:block;width:100%;text-align:center;color:#fff;font-size:9px;font-weight:900;line-height:1;letter-spacing:.8px;white-space:nowrap}
 .website-choice-panel a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;max-width:100%;min-height:39px;padding:10px 4px;border:1px solid rgba(249,228,180,.72);border-radius:11px;background:linear-gradient(135deg,#fff,#f8ecd0);color:#173c5e;font-size:9px;font-weight:900;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;box-shadow:0 7px 18px rgba(0,0,0,.30)}
 @keyframes websiteCrystalSlide{0%,100%{transform:translateX(-18%)}50%{transform:translateX(18%)}}
+
+
+/* Final website C fix: icon/title/button vertically separated and contained */
+.crystal-website.is-open{padding:12px 10px!important;overflow:hidden!important}
+.crystal-website.is-open .website-choice-panel{box-sizing:border-box!important;height:100%!important;width:100%!important;min-width:0!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:9px!important;padding:3px 0!important;overflow:hidden!important}
+.crystal-website.is-open .website-crystal-logo{display:grid!important;place-items:center!important;width:52px!important;height:52px!important;min-width:52px!important;min-height:52px!important;flex:0 0 52px!important;margin:0 auto!important;position:static!important}
+.crystal-website.is-open .website-choice-title{display:block!important;position:static!important;width:100%!important;margin:0!important;text-align:center!important;font-size:9px!important;line-height:1.1!important;letter-spacing:.55px!important;white-space:nowrap!important}
+.crystal-website.is-open .website-choice-panel>a{box-sizing:border-box!important;position:static!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;max-width:100%!important;min-width:0!important;min-height:38px!important;margin:0!important;padding:10px 4px!important;border-radius:11px!important;font-size:8.5px!important;line-height:1!important;letter-spacing:-.15px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;text-align:center!important}
