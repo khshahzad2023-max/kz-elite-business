@@ -2,7 +2,6 @@
 import "./globals.css";
 import Link from "next/link";
 import ContactDock from "./ContactDock";
-import SiteIntro from "./SiteIntro";
 
 export const metadata = {
   title: "K&Z ELITE BUSINESS",
@@ -23,7 +22,6 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
   return (
     <html lang="en">
       <body>
-        <SiteIntro />
         <header className="header">
           <div className="container navbar">
             <Link href="/" className="brand">
