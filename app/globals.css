@@ -304,3 +304,9 @@ button.crystal-contact{font:inherit;color:inherit;cursor:pointer}
 .home .feature{align-items:stretch}
 .home .feature>.feature-box{height:100%;box-sizing:border-box;display:flex;flex-direction:column}
 .home .feature>.feature-box .actions{margin-top:auto;padding-top:24px}
+
+
+/* Explicit equal-height homepage service pair */
+.home-service-pair{align-items:stretch!important}
+.home-service-pair>.feature-box{align-self:stretch!important;display:flex!important;flex-direction:column!important;height:auto!important;min-height:100%!important}
+.home-service-pair>.feature-box>.actions{margin-top:auto!important;padding-top:24px!important}
