@@ -29,7 +29,7 @@ export default function Home(){
             <h1>BUY • SELL • <span className="gold">ADVERTISE CARS</span></h1>
             <p className="lead">K&Z ELITE BUSINESS puts automotive first — buying, selling, sourcing, rental, garage services and vehicle advertising — with additional property and maintenance services under one trusted brand.</p>
             <div className="actions">
-              <Link className="btn btn-primary" href="/cars">Browse Cars</Link>
+              <Link className="btn btn-primary" href="/cars">Available Cars</Link>
               <Link className="btn btn-secondary" href="/sell-your-car">Sell Your Car</Link>
               <a className="btn btn-secondary" href="https://api.whatsapp.com/send?phone=96878967229">WhatsApp +96878967229</a>
               <a className="btn btn-secondary" href="https://api.whatsapp.com/send?phone=96899248431">WhatsApp +968 99248431</a>
