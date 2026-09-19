@@ -8,7 +8,7 @@ export default function Page(){
 return <>
 <section className="page-hero"><div className="container">
 <div className="eyebrow">Property Rentals</div><h1>Rooms & Flats for Rent</h1><p className="lead">Browse and enquire about available rooms, flats and rental properties.</p>
-<div className="actions"><a className="btn btn-primary" href="https://api.whatsapp.com/send?phone=96878967229">WhatsApp 78967229</a><a className="btn btn-secondary" href="https://api.whatsapp.com/send?phone=96899248431">WhatsApp +968 99248431</a><a className="btn btn-secondary" href="mailto:info@kzelitebusiness.com">Email Us</a></div>
+<div className="actions"><a className="btn btn-primary" href="https://api.whatsapp.com/send?phone=96878967229">WhatsApp +968 78967229</a><a className="btn btn-secondary" href="https://api.whatsapp.com/send?phone=96899248431">WhatsApp +968 99248431</a><a className="btn btn-secondary" href="mailto:info@kzelitebusiness.com">Email Us</a></div>
 </div></section>
 <section className="section"><div className="container">
 <div className="grid">{items.map((x)=><article className="card" key={x.title}><h3>{x.title}</h3><p>{x.text}</p></article>)}</div>
@@ -20,7 +20,7 @@ return <>
     <input placeholder="Email (optional)" />
     <input placeholder="Location" />
     <textarea placeholder="Tell us what you need..."></textarea>
-    <a className="btn btn-primary full" href="https://api.whatsapp.com/send?phone=96878967229">WhatsApp 78967229</a>
+    <a className="btn btn-primary full" href="https://api.whatsapp.com/send?phone=96878967229">WhatsApp +968 78967229</a>
     <a className="btn btn-secondary full" href="https://api.whatsapp.com/send?phone=96899248431">WhatsApp +968 99248431</a>
   </form>
 </div>
