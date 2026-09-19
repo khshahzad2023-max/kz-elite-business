@@ -199,3 +199,11 @@ button.crystal-contact{font:inherit;color:inherit;cursor:pointer}
 .call-choice-title-icon{flex-direction:column;gap:5px!important}
 .call-crystal-logo{width:52px;height:52px;flex:0 0 52px;display:grid;place-items:center;border-radius:50%;color:#fff;background:radial-gradient(circle at 35% 28%,rgba(255,255,255,.28),transparent 28%),linear-gradient(145deg,#e34d68,#7d1025);border:2px solid rgba(255,255,255,.96);box-shadow:inset 0 1px 2px rgba(255,255,255,.55),0 0 0 3px rgba(205,39,69,.20),0 0 24px rgba(255,99,126,.68),0 8px 18px rgba(55,0,10,.35)}
 .call-crystal-logo svg{display:block;filter:drop-shadow(0 2px 3px rgba(0,0,0,.28))}
+
+
+/* Align open C/O selectors: icon top, title below, numbers evenly stacked */
+.crystal-call.is-open .call-choice-panel,.crystal-whatsapp.is-open .call-choice-panel{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px;padding:4px 0 2px}
+.crystal-call.is-open .call-choice-title,.crystal-whatsapp.is-open .call-choice-title{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px!important;line-height:1.05}
+.crystal-call.is-open .call-crystal-logo,.crystal-whatsapp.is-open .whatsapp-crystal-logo{margin:0 auto 2px;position:relative;left:auto;right:auto;top:auto}
+.crystal-call.is-open .call-choice-title>span:last-child,.crystal-whatsapp.is-open .call-choice-title>span:last-child{display:block;width:100%;text-align:center;font-size:9px;white-space:nowrap}
+.crystal-call.is-open .call-choice-panel a,.crystal-whatsapp.is-open .call-choice-panel a{margin:0 auto;flex:0 0 auto}
