@@ -17,55 +17,13 @@ function InstagramIcon({ size = 23 }: { size?: number }) {
 }
 
 const contacts = [
-  {
-    icon: InstagramIcon,
-    label: "Instagram",
-    value: "@kz_elite_business",
-    href: "https://www.instagram.com/kz_elite_business/",
-    tone: "instagram",
-  },
-  {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    value: "+96878967229",
-    href: "https://api.whatsapp.com/send?phone=96878967229",
-    tone: "whatsapp",
-  },
-  {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    value: "+968 99248431",
-    href: "https://api.whatsapp.com/send?phone=96899248431",
-    tone: "whatsapp",
-  },
-  {
-    icon: Phone,
-    label: "Call Us",
-    value: "+968 78967229",
-    href: "tel:+96878967229",
-    tone: "phone",
-  },
-  {
-    icon: Phone,
-    label: "Call Us",
-    value: "+968 99248431",
-    href: "tel:+96899248431",
-    tone: "phone",
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: "info@kzelitebusiness.com",
-    href: "mailto:info@kzelitebusiness.com",
-    tone: "email",
-  },
-  {
-    icon: Globe2,
-    label: "Website",
-    value: "kzelitebusiness.com",
-    href: "https://kzelitebusiness.com",
-    tone: "website",
-  },
+  { letter:"C", icon:MessageCircle, label:"WhatsApp", value:"+968 78967229", href:"https://api.whatsapp.com/send?phone=96878967229" },
+  { letter:"O", icon:Phone, label:"Call Us", value:"+968 78967229", href:"tel:+96878967229" },
+  { letter:"N", icon:MessageCircle, label:"WhatsApp", value:"+968 99248431", href:"https://api.whatsapp.com/send?phone=96899248431" },
+  { letter:"N", icon:Phone, label:"Call Us", value:"+968 99248431", href:"tel:+96899248431" },
+  { letter:"E", icon:InstagramIcon, label:"Instagram", value:"@kz_elite_business", href:"https://www.instagram.com/kz_elite_business/" },
+  { letter:"C", icon:Mail, label:"Email", value:"info@kzelitebusiness.com", href:"mailto:info@kzelitebusiness.com" },
+  { letter:"T", icon:Globe2, label:"Website", value:"kzelitebusiness.com", href:"https://kzelitebusiness.com" },
 ];
 
 export default function ContactDock() {
@@ -79,14 +37,18 @@ export default function ContactDock() {
           </div>
           <div className="contact-location"><MapPin size={17} /> Muscat, Sultanate of Oman</div>
         </div>
-        <div className="contact-dock">
-          {contacts.map(({ icon: Icon, label, value, href, tone }) => (
-            <a className={`contact-tile ${tone}`} href={href} key={`${label}-${value}`} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
-              <span className="contact-icon"><Icon size={23} strokeWidth={1.9} /></span>
-              <span><small>{label}</small><strong>{value}</strong></span>
+        <div className="crystal-connect" aria-label="K&Z contact options">
+          {contacts.map(({ letter, icon: Icon, label, value, href }, index) => (
+            <a className="crystal-contact" href={href} key={`${letter}-${label}-${index}`} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
+              <span className="crystal-letter">{letter}</span>
+              <span className="crystal-detail">
+                <span className="crystal-icon"><Icon size={20} strokeWidth={1.8} /></span>
+                <span><small>{label}</small><strong>{value}</strong></span>
+              </span>
             </a>
           ))}
         </div>
+        <div className="crystal-hint">Tap a crystal letter to connect</div>
       </div>
     </section>
   );
