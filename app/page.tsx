@@ -34,8 +34,8 @@ export default function Home(){
               <a className="btn btn-secondary" href="https://api.whatsapp.com/send?phone=96899248431">WhatsApp +968 99248431</a>
             </div>
             <div className="badge-row">
-              <span className="badge">Cars First</span>
-              <span className="badge">Finance Assistance</span>
+              <span className="badge">Multiple Services</span>
+              <span className="badge">Business Promotion</span>
               <span className="badge">Muscat Based</span>
               <span className="badge">15+ Platform Advertising</span>
             </div>
@@ -44,8 +44,8 @@ export default function Home(){
             <img src="/kz-master-logo.png" alt="K&Z ELITE BUSINESS master logo"/>
             <div className="stats">
               <div className="stat"><strong>1 Brand</strong><span>Multiple Services</span></div>
-              <div className="stat"><strong>Cars</strong><span>Main Business</span></div>
-              <div className="stat"><strong>Muscat</strong><span>Oman</span></div>
+              <div className="stat"><strong>Business Network</strong><span>Promote • Connect • Grow</span></div>
+              <div className="stat"><strong>Oman Wide</strong><span>Multiple Business Solutions</span></div>
             </div>
           </div>
         </div>
