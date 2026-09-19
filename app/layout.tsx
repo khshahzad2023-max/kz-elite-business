@@ -53,13 +53,13 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
                 <p>Automotive, rentals, property, maintenance and advertising services across Muscat, Sultanate of Oman.</p>
               </div>
               <div>
-                <h4>Core Business</h4>
-                <p><Link href="/cars">Cars for Sale</Link><br/>
-                <Link href="/sold-cars">Sold Cars</Link><br/>
-                <Link href="/sell-your-car">Sell Your Car</Link><br/>
-                <Link href="/find-a-car">Find a Car</Link><br/>
-                <Link href="/rent-a-car">Rent a Car</Link><br/>
-                <Link href="/automotive-services">Automotive Services</Link></p>
+                <h4>Our Services</h4>
+                <p><Link href="/cars">Buying &amp; Selling Cars</Link><br/>
+                <Link href="/rent-a-car">Car Rental</Link><br/>
+                <Link href="/automotive-services">Automotive Services</Link><br/>
+                <Link href="/building-maintenance">Building Maintenance</Link><br/>
+                <Link href="/properties">Property Services</Link><br/>
+                <Link href="/advertising">Business Advertising</Link></p>
               </div>
               <div>
                 <h4>Contact</h4>
