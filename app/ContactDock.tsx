@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Globe2,
   Mail,
@@ -5,6 +7,7 @@ import {
   MessageCircle,
   Phone,
 } from "lucide-react";
+import { useState } from "react";
 
 function InstagramIcon({ size = 23 }: { size?: number }) {
   return (
@@ -27,6 +30,7 @@ const contacts = [
 ];
 
 export default function ContactDock() {
+  const [callOpen, setCallOpen] = useState(false);
   return (
     <section className="contact-dock-section">
       <div className="container">
@@ -38,7 +42,16 @@ export default function ContactDock() {
           <div className="contact-location"><MapPin size={17} /> Muscat, Sultanate of Oman</div>
         </div>
         <div className="crystal-connect" aria-label="K&Z contact options">
-          {contacts.map(({ letter, icon: Icon, label, value, href }, index) => (
+          <button className={`crystal-contact crystal-call ${callOpen ? "is-open" : ""}`} type="button" onClick={() => setCallOpen((open) => !open)} aria-expanded={callOpen}>
+            {!callOpen ? <span className="crystal-letter">C</span> : (
+              <span className="call-choice-panel">
+                <span className="call-choice-title"><Phone size={18} /> CALL</span>
+                <a href="tel:+96878967229" onClick={(e) => e.stopPropagation()}>+968 78967229</a>
+                <a href="tel:+96899248431" onClick={(e) => e.stopPropagation()}>+968 99248431</a>
+              </span>
+            )}
+          </button>
+          {contacts.slice(1).map(({ letter, icon: Icon, label, value, href }, index) => (
             <a className="crystal-contact" href={href} key={`${letter}-${label}-${index}`} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
               <span className="crystal-letter">{letter}</span>
               <span className="crystal-detail">
