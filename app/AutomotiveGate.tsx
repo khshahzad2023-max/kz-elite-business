@@ -13,7 +13,6 @@ export default function AutomotiveGate(){
       </div>
     </summary>
     <div className="gate-native-inside">
-      <div className="gate-native-car"><span/><i/><i/></div>
       <div className="eyebrow">K&Z AUTOMOTIVE</div>
       <h2>Your automotive world starts here</h2>
       <p>Cars • Selling • Sourcing • Garage • Rental • Advertising</p>
