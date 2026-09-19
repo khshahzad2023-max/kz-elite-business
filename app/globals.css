@@ -271,3 +271,11 @@ button.crystal-contact{font:inherit;color:inherit;cursor:pointer}
 .tiktok-choice-title{color:#fff;font-size:10px;font-weight:900;letter-spacing:1.2px;text-shadow:-1px 0 5px rgba(37,244,238,.45),1px 0 5px rgba(254,44,85,.45)}
 .tiktok-choice-panel a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;max-width:100%;min-height:39px;padding:10px 4px;border:1px solid rgba(225,251,252,.68);border-radius:11px;background:linear-gradient(135deg,#fff,#e9fbfc);color:#10151d;font-size:10px;font-weight:900;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;box-shadow:-3px 0 12px rgba(37,244,238,.16),3px 0 12px rgba(254,44,85,.15),0 7px 18px rgba(0,0,0,.34)}
 @keyframes tiktokCrystalSlide{0%,100%{transform:translateX(-18%)}50%{transform:translateX(18%)}}
+
+
+/* Fix TikTok C open layout: keep all content inside crystal */
+.crystal-tiktok.is-open{padding:12px 9px;overflow:hidden}
+.crystal-tiktok.is-open .tiktok-choice-panel{box-sizing:border-box;height:100%;width:100%;min-width:0;padding:4px 0 2px;gap:8px;overflow:hidden}
+.crystal-tiktok.is-open .tiktok-crystal-logo{margin:0 auto 2px;position:relative;left:auto;right:auto;top:auto}
+.crystal-tiktok.is-open .tiktok-choice-title{display:block;width:100%;text-align:center;font-size:10px;line-height:1;white-space:nowrap}
+.crystal-tiktok.is-open .tiktok-choice-panel a{box-sizing:border-box;width:100%;max-width:100%;margin:0 auto;padding:11px 4px;font-size:clamp(8px,.75vw,10px);letter-spacing:-.15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center}
