@@ -2,6 +2,7 @@ import Link from "next/link";
 
 export default function AutomotiveGate(){
  return <section className="kz-photo-entry">
+   <img className="kz-showroom-photo" src="/kz-showroom.jpg" alt="" aria-hidden="true"/>
    <div className="kz-photo-overlay"/>
    <div className="kz-photo-copy">
      <div className="kz-photo-kicker">K&Z AUTOMOTIVE</div>
