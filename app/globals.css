@@ -404,3 +404,28 @@ button.crystal-contact{font:inherit;color:inherit;cursor:pointer}
 .auto-gate-native .gate-native-inside .gate-links a{box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;min-height:52px!important;padding:12px 14px!important;border:1px solid rgba(226,190,73,.55)!important;border-radius:14px!important;background:linear-gradient(180deg,rgba(20,39,58,.96),rgba(8,20,33,.96))!important;color:#f0cf64!important;text-decoration:none!important;font-weight:900!important;white-space:nowrap!important;box-shadow:inset 0 1px rgba(255,255,255,.05),0 10px 25px rgba(0,0,0,.18)!important}
 .auto-gate-native .gate-native-inside .gate-links a:hover{transform:translateY(-2px)!important;border-color:#e7c653!important;background:linear-gradient(180deg,#172f47,#0b1b2b)!important}
 @media(max-width:700px){.auto-gate-native .gate-native-inside{padding:42px 18px!important}.auto-gate-native .gate-native-inside .gate-links{grid-template-columns:1fr!important;max-width:330px!important;gap:10px!important}.auto-gate-native .gate-native-inside .gate-links a{min-height:46px!important}}
+
+
+/* Unified premium gold contact CTAs across service pages */
+.page-hero .actions a[href*="whatsapp.com"],
+.page-hero .actions a[href^="mailto:"],
+.section .actions a[href*="whatsapp.com"],
+.section .actions a[href^="mailto:"],
+form a.btn[href*="whatsapp.com"],
+form a.btn[href^="mailto:"]{
+  border:1px solid #e3bd4e!important;
+  background:linear-gradient(135deg,#f1d36b 0%,#c79a2b 52%,#a97913 100%)!important;
+  color:#07111c!important;
+  font-weight:900!important;
+  box-shadow:0 8px 24px rgba(199,154,43,.22),inset 0 1px rgba(255,255,255,.35)!important;
+}
+.page-hero .actions a[href*="whatsapp.com"]:hover,
+.page-hero .actions a[href^="mailto:"]:hover,
+.section .actions a[href*="whatsapp.com"]:hover,
+.section .actions a[href^="mailto:"]:hover,
+form a.btn[href*="whatsapp.com"]:hover,
+form a.btn[href^="mailto:"]:hover{
+  transform:translateY(-2px)!important;
+  filter:brightness(1.08)!important;
+  border-color:#f3d66d!important;
+}
