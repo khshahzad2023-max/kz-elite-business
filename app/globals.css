@@ -193,3 +193,9 @@ button.crystal-contact{font:inherit;color:inherit;cursor:pointer}
 /* Make WhatsApp mark unmistakably visible */
 .crystal-whatsapp.is-open .whatsapp-crystal-logo{width:52px;height:52px;flex:0 0 52px;color:#fff;background:radial-gradient(circle at 35% 28%,rgba(255,255,255,.28),transparent 28%),linear-gradient(145deg,#21d879,#08783f);border:2px solid rgba(255,255,255,.96);box-shadow:inset 0 1px 2px rgba(255,255,255,.55),0 0 0 3px rgba(22,199,104,.20),0 0 24px rgba(75,255,159,.72),0 8px 18px rgba(0,50,25,.35)}
 .crystal-whatsapp.is-open .whatsapp-crystal-logo svg{width:32px;height:32px;display:block;filter:drop-shadow(0 2px 3px rgba(0,0,0,.28))}
+
+
+/* C open: crystal phone mark matching WhatsApp treatment */
+.call-choice-title-icon{flex-direction:column;gap:5px!important}
+.call-crystal-logo{width:52px;height:52px;flex:0 0 52px;display:grid;place-items:center;border-radius:50%;color:#fff;background:radial-gradient(circle at 35% 28%,rgba(255,255,255,.28),transparent 28%),linear-gradient(145deg,#e34d68,#7d1025);border:2px solid rgba(255,255,255,.96);box-shadow:inset 0 1px 2px rgba(255,255,255,.55),0 0 0 3px rgba(205,39,69,.20),0 0 24px rgba(255,99,126,.68),0 8px 18px rgba(55,0,10,.35)}
+.call-crystal-logo svg{display:block;filter:drop-shadow(0 2px 3px rgba(0,0,0,.28))}
