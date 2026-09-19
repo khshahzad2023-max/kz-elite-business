@@ -46,7 +46,7 @@ export default function ContactDock() {
           <button className={`crystal-contact crystal-call ${callOpen ? "is-open" : ""}`} type="button" onClick={() => setCallOpen((open) => !open)} aria-expanded={callOpen}>
             {!callOpen ? <span className="crystal-letter">C</span> : (
               <span className="call-choice-panel">
-                <span className="call-choice-title"><Phone size={18} /> CHOOSE A NUMBER</span>
+                <span className="call-choice-title call-choice-title-icon"><span className="call-crystal-logo"><Phone size={28} strokeWidth={2.4} /></span><span>CHOOSE A NUMBER</span></span>
                 <a href="tel:+96878967229" onClick={(e) => e.stopPropagation()}>+968 78967229</a>
                 <a href="tel:+96899248431" onClick={(e) => e.stopPropagation()}>+968 99248431</a>
               </span>
