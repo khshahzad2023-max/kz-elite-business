@@ -353,3 +353,20 @@ button.crystal-contact{font:inherit;color:inherit;cursor:pointer}
 .auto-gate.is-open .gate-panel{pointer-events:none}
 .auto-gate .auto-road{z-index:3}
 @media(max-width:700px){.auto-gate .gate-reveal{padding:44px 16px 95px}.auto-gate .gate-links a{font-size:13px;padding:10px 13px}.auto-gate .gate-trigger strong{max-width:280px}}
+
+
+/* K&Z cinematic site opening */
+.site-intro{position:fixed;inset:0;z-index:99999;background:radial-gradient(circle at 50% 54%,#14283d 0,#07121e 38%,#010409 78%);display:grid;place-items:center;overflow:hidden;animation:introIn .35s ease both}
+.site-intro:before{content:"";position:absolute;inset:-30%;background:conic-gradient(from 210deg at 50% 50%,transparent 0 42%,rgba(210,171,54,.12) 48%,transparent 54%);animation:introSweep 2s ease-out both}
+.intro-mark{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;text-align:center;animation:markRise .9s cubic-bezier(.2,.8,.2,1) both}
+.intro-mark img{width:clamp(108px,13vw,168px);height:auto;filter:drop-shadow(0 0 24px rgba(212,175,55,.22));animation:logoPulse 1.5s ease both}
+.intro-line{height:1px;width:0;background:linear-gradient(90deg,transparent,#e5c65a,transparent);margin:18px 0 14px;animation:lineGrow .75s ease .35s forwards}
+.intro-mark strong{font-size:clamp(22px,3vw,38px);letter-spacing:.16em;color:#f5f6f7;opacity:0;animation:textReveal .6s ease .48s forwards}
+.intro-mark span{font-size:11px;letter-spacing:.28em;color:#c9aa45;margin-top:9px;opacity:0;animation:textReveal .6s ease .68s forwards}
+.intro-beam{position:absolute;top:-30%;height:160%;width:18%;background:linear-gradient(90deg,transparent,rgba(230,198,90,.08),transparent);filter:blur(7px);transform:rotate(18deg)}.beam-one{left:14%;animation:beamMove 1.7s ease both}.beam-two{right:12%;animation:beamMove 1.7s ease .15s both}
+.intro-floor{position:absolute;left:8%;right:8%;bottom:14%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.4),transparent);box-shadow:0 0 35px rgba(212,175,55,.18)}
+.intro-shine{position:absolute;width:260px;height:80px;bottom:8%;background:radial-gradient(ellipse,rgba(212,175,55,.13),transparent 70%);filter:blur(10px)}
+.site-intro.intro-exit{animation:introExit .65s cubic-bezier(.7,0,.2,1) forwards}
+@keyframes markRise{from{opacity:0;transform:translateY(22px) scale(.96)}to{opacity:1;transform:none}}@keyframes logoPulse{0%{transform:scale(.88);opacity:0}55%{transform:scale(1.04);opacity:1}100%{transform:scale(1)}}@keyframes lineGrow{to{width:min(390px,72vw)}}@keyframes textReveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes introSweep{from{transform:rotate(-8deg);opacity:0}to{transform:rotate(7deg);opacity:1}}@keyframes beamMove{from{transform:translateX(-130%) rotate(18deg);opacity:0}45%{opacity:1}to{transform:translateX(150%) rotate(18deg);opacity:0}}@keyframes introExit{0%{opacity:1;clip-path:inset(0 0 0 0)}100%{opacity:0;clip-path:inset(0 0 100% 0);visibility:hidden}}
+@media(max-width:600px){.intro-mark strong{font-size:20px;letter-spacing:.1em}.intro-mark span{font-size:9px;letter-spacing:.2em}}
+@media(prefers-reduced-motion:reduce){.site-intro,.site-intro *{animation-duration:.01ms!important;animation-delay:0ms!important}}
