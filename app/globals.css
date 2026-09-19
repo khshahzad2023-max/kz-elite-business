@@ -449,3 +449,23 @@ form a.btn[href^="mailto:"]:hover{
 .auto-world-trust{display:grid;grid-template-columns:repeat(4,1fr);padding:22px clamp(20px,5vw,80px);border-top:1px solid rgba(215,175,73,.25);background:#050708;color:#d8b65a;text-align:center;font-size:10px;font-weight:800;letter-spacing:.12em}
 @media(max-width:850px){.auto-world-top{min-height:76px;padding:12px 18px}.auto-world-brand img{width:52px;height:52px}.auto-world-brand small,.auto-world-location{display:none}.auto-world-stage{min-height:390px;padding-top:40px}.auto-world-copy{top:38px}.auto-world-copy p{padding:0 20px;font-size:13px}.auto-world-car{margin-top:135px;height:190px;width:95vw}.auto-world-zones{grid-template-columns:1fr 1fr;padding:0 16px 20px}.auto-world-zone{min-height:150px}.auto-world-trust{grid-template-columns:1fr 1fr;gap:18px}.car-wheel{width:58px;height:58px}}
 @media(max-width:520px){.auto-world-zones{grid-template-columns:1fr}.auto-world-stage{min-height:350px}.auto-world-car{transform:scale(.9)}}
+
+
+/* Corporate automotive entrance — replaces blue gate visual */
+.kz-auto-entrance{position:relative;min-height:520px;overflow:hidden;display:grid;place-items:center;text-align:center;border:1px solid rgba(209,170,72,.35);background:
+linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.28) 35%,rgba(0,0,0,.28) 65%,rgba(0,0,0,.78)),
+radial-gradient(ellipse at 50% 38%,#34383a 0,#171a1c 31%,#080a0c 68%,#030405 100%);box-shadow:0 28px 70px rgba(0,0,0,.35)}
+.kz-auto-entrance:before,.kz-auto-entrance:after{content:"";position:absolute;top:0;bottom:0;width:1px;background:linear-gradient(transparent,#cda847 18%,#cda847 82%,transparent);opacity:.55}
+.kz-auto-entrance:before{left:12%}.kz-auto-entrance:after{right:12%}
+.kz-auto-entrance-shade{position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 28%,rgba(220,181,82,.08) 28.2% 28.6%,transparent 28.8% 70%,rgba(220,181,82,.06) 70.2% 70.5%,transparent 70.8%);pointer-events:none}
+.kz-auto-entrance-content{position:relative;z-index:2;max-width:850px;padding:60px 24px}
+.kz-auto-kicker{font-size:11px;font-weight:800;letter-spacing:.28em;color:#d9b65b;margin-bottom:22px}
+.kz-auto-entrance h2{margin:0;color:#f5f3ed;font-family:Georgia,serif;font-size:clamp(42px,6vw,78px);font-weight:500;line-height:.98;letter-spacing:.015em;text-shadow:0 10px 35px #000}
+.kz-auto-entrance h2 span{color:#d9b65b}
+.kz-auto-entrance p{margin:22px 0 30px;color:#c8c9c9;font-size:14px;letter-spacing:.13em}
+.kz-auto-enter{display:inline-flex;align-items:center;gap:30px;padding:15px 18px 15px 26px;border:1px solid #d9b65b;background:rgba(7,9,10,.84);color:#f1d273;text-decoration:none;font-size:12px;font-weight:900;letter-spacing:.18em;transition:.25s ease;box-shadow:0 12px 35px rgba(0,0,0,.3)}
+.kz-auto-enter b{display:grid;place-items:center;width:34px;height:34px;background:#d9b65b;color:#090b0c;font-size:18px}
+.kz-auto-enter:hover{transform:translateY(-3px);background:#111519;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.kz-auto-entrance small{display:block;margin-top:16px;color:#85898c;letter-spacing:.12em}
+.kz-auto-floor{position:absolute;left:0;right:0;bottom:-110px;height:250px;background:linear-gradient(180deg,rgba(218,179,79,.09),transparent 55%),repeating-linear-gradient(90deg,transparent 0 12%,rgba(255,255,255,.035) 12.1% 12.2%);transform:perspective(420px) rotateX(63deg);transform-origin:bottom}
+@media(max-width:700px){.kz-auto-entrance{min-height:440px}.kz-auto-entrance:before{left:5%}.kz-auto-entrance:after{right:5%}.kz-auto-entrance h2{font-size:clamp(38px,12vw,58px)}.kz-auto-entrance p{font-size:11px;line-height:1.8}.kz-auto-enter{gap:18px}}
