@@ -9,18 +9,20 @@ export default function AutomotiveGate(){
  const enter=()=>{
    if(opening) return;
    setOpening(true);
-   window.setTimeout(()=>router.push("/automotive"),1050);
+   window.setTimeout(()=>router.push("/automotive"),1100);
  };
- return <section className={"kz-entry-gate"+(opening?" is-opening":"")}>
-   <div className="kz-entry-frame">
-     <div className="kz-entry-sign"><b>K&Z</b><span>AUTOMOTIVE</span><small>ONE NAME • MANY SOLUTIONS</small></div>
-     <div className="kz-entry-inside" aria-hidden="true"><img src="/kz-showroom.jpg" alt=""/></div>
-     <div className="kz-door kz-door-left"><i/><em/></div>
-     <div className="kz-door kz-door-right"><i/><em/></div>
-     <button className="kz-entry-button" onClick={enter} disabled={opening}>
-       <span>{opening?"WELCOME TO K&Z":"ENTER SHOWROOM"}</span><b>→</b>
-     </button>
-     <div className="kz-entry-caption">PREMIUM CARS&nbsp;&nbsp;•&nbsp;&nbsp;TRUSTED DEALS&nbsp;&nbsp;•&nbsp;&nbsp;AUTOMOTIVE SERVICES</div>
+ return <section className={"kz-facade"+(opening?" is-opening":"")}>
+   <div className="kz-facade-sign">
+     <b>K&Z</b><span>AUTOMOTIVE</span><small>PREMIUM CARS • TRUSTED PEOPLE</small>
    </div>
+   <div className="kz-facade-view">
+     <img src="/kz-showroom.jpg?v=4" alt="K&Z Automotive showroom"/>
+   </div>
+   <div className="kz-glass-door kz-glass-left" aria-hidden="true"><i/><span/></div>
+   <div className="kz-glass-door kz-glass-right" aria-hidden="true"><i/><span/></div>
+   <button className="kz-facade-enter" onClick={enter} disabled={opening}>
+     {opening?"WELCOME TO K&Z":"ENTER SHOWROOM"} <b>→</b>
+   </button>
+   <div className="kz-facade-foot">QUALITY CARS <i/> TRUSTED DEALS <i/> AUTOMOTIVE SERVICES</div>
  </section>
 }
