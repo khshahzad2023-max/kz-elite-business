@@ -310,3 +310,10 @@ button.crystal-contact{font:inherit;color:inherit;cursor:pointer}
 .home-service-pair{align-items:stretch!important}
 .home-service-pair>.feature-box{align-self:stretch!important;display:flex!important;flex-direction:column!important;height:auto!important;min-height:100%!important}
 .home-service-pair>.feature-box>.actions{margin-top:auto!important;padding-top:24px!important}
+
+
+/* Hard equal-size rule for the two homepage service cards */
+.home-service-pair{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:stretch!important}
+.home-service-pair .home-service-box{box-sizing:border-box!important;width:100%!important;height:100%!important;min-height:590px!important;display:flex!important;flex-direction:column!important}
+.home-service-pair .home-service-box .actions{margin-top:auto!important;padding-top:24px!important}
+@media(max-width:900px){.home-service-pair{grid-template-columns:1fr!important}.home-service-pair .home-service-box{min-height:0!important;height:auto!important}}
