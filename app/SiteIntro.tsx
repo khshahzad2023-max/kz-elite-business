@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 export default function SiteIntro(){
   const [show,setShow]=useState(true);
   const [exit,setExit]=useState(false);
-  useEffect(()=>{const t=setTimeout(()=>setExit(true),1800);const d=setTimeout(()=>setShow(false),2450);return()=>{clearTimeout(t);clearTimeout(d)}},[]);
+  useEffect(()=>{const t=setTimeout(()=>setExit(true),2600);const d=setTimeout(()=>setShow(false),3350);return()=>{clearTimeout(t);clearTimeout(d)}},[]);
   if(!show)return null;
   return <div className={"site-intro "+(exit?"intro-exit":"")}>
     <div className="intro-beam beam-one"/><div className="intro-beam beam-two"/>
