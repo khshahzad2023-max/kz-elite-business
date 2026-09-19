@@ -32,6 +32,7 @@ const contacts = [
 export default function ContactDock() {
   const [callOpen, setCallOpen] = useState(false);
   const [whatsappOpen, setWhatsappOpen] = useState(false);
+  const [instagramOpen, setInstagramOpen] = useState(false);
   return (
     <section className="contact-dock-section">
       <div className="container">
@@ -65,7 +66,16 @@ export default function ContactDock() {
               </span>
             )}
           </button>
-          {contacts.slice(2).map(({ letter, icon: Icon, label, value, href }, index) => (
+          <button className={`crystal-contact crystal-instagram ${instagramOpen ? "is-open" : ""}`} type="button" onClick={() => setInstagramOpen((open) => !open)} aria-expanded={instagramOpen}>
+            {!instagramOpen ? <span className="crystal-letter">N</span> : (
+              <span className="instagram-choice-panel">
+                <span className="instagram-crystal-logo"><InstagramIcon size={30} /></span>
+                <span className="instagram-choice-title">INSTAGRAM</span>
+                <a href="https://www.instagram.com/kz_elite_business/" target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>@kz_elite_business</a>
+              </span>
+            )}
+          </button>
+          {contacts.slice(3).map(({ letter, icon: Icon, label, value, href }, index) => (
             <a className="crystal-contact" href={href} key={`${letter}-${label}-${index}`} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
               <span className="crystal-letter">{letter}</span>
               <span className="crystal-detail">
