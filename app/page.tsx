@@ -1,6 +1,7 @@
 
 import Link from "next/link";
 import SoldCarCard from "./sold-cars/SoldCarCard";
+import AutomotiveGate from "./AutomotiveGate";
 import { soldCars } from "./sold-cars/soldCars";
 
 const core = [
@@ -50,6 +51,8 @@ export default function Home(){
           </div>
         </div>
       </section>
+
+      <section className="section automotive-gate-section"><div className="container"><AutomotiveGate /></div></section>
 
       <section className="section">
         <div className="container">
