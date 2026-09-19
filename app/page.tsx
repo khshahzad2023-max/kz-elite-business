@@ -68,7 +68,7 @@ export default function Home(){
 
       <section className="section alt">
         <div className="container feature home-service-pair">
-          <div className="feature-box">
+          <div className="feature-box home-service-box">
             <div className="eyebrow">K&Z Automotive</div>
             <h2>Garage & vehicle care services</h2>
             <div className="list">
@@ -77,7 +77,7 @@ export default function Home(){
             </div>
             <div className="actions"><Link className="btn btn-primary" href="/automotive-services">View Automotive Services</Link></div>
           </div>
-          <div className="feature-box">
+          <div className="feature-box home-service-box">
             <div className="eyebrow">Beyond Automotive</div>
             <h2>More from K&Z ELITE BUSINESS</h2>
             <div className="list">
