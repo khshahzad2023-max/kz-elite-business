@@ -31,6 +31,7 @@ const contacts = [
 
 export default function ContactDock() {
   const [callOpen, setCallOpen] = useState(false);
+  const [whatsappOpen, setWhatsappOpen] = useState(false);
   return (
     <section className="contact-dock-section">
       <div className="container">
@@ -51,7 +52,16 @@ export default function ContactDock() {
               </span>
             )}
           </button>
-          {contacts.slice(1).map(({ letter, icon: Icon, label, value, href }, index) => (
+          <button className={`crystal-contact crystal-whatsapp ${whatsappOpen ? "is-open" : ""}`} type="button" onClick={() => setWhatsappOpen((open) => !open)} aria-expanded={whatsappOpen}>
+            {!whatsappOpen ? <span className="crystal-letter">O</span> : (
+              <span className="call-choice-panel whatsapp-choice-panel">
+                <span className="call-choice-title"><MessageCircle size={18} /> CHOOSE A NUMBER</span>
+                <a href="https://api.whatsapp.com/send?phone=96878967229" target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>+968 78967229</a>
+                <a href="https://api.whatsapp.com/send?phone=96899248431" target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>+968 99248431</a>
+              </span>
+            )}
+          </button>
+          {contacts.slice(2).map(({ letter, icon: Icon, label, value, href }, index) => (
             <a className="crystal-contact" href={href} key={`${letter}-${label}-${index}`} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
               <span className="crystal-letter">{letter}</span>
               <span className="crystal-detail">
