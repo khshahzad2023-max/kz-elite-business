@@ -250,3 +250,12 @@ button.crystal-contact{font:inherit;color:inherit;cursor:pointer}
 .facebook-choice-panel a{box-sizing:border-box;display:block;width:100%;max-width:100%;padding:12px 4px;border:1px solid rgba(220,238,255,.7);border-radius:11px;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(219,238,255,.95));color:#124f9d;font-size:9px;font-weight:900;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;box-shadow:inset 0 1px 0 #fff,0 7px 18px rgba(0,27,65,.30)}
 .facebook-choice-panel a:hover{background:#fff;box-shadow:0 0 18px rgba(177,217,255,.52),0 8px 20px rgba(0,27,65,.34)}
 @keyframes facebookCrystalSlide{0%,100%{transform:translateX(-18%)}50%{transform:translateX(18%)}}
+
+
+/* Refine Facebook E open state to match C/O premium layout */
+.crystal-facebook.is-open{padding:12px 9px;overflow:hidden;background:radial-gradient(circle at 50% 5%,rgba(126,190,255,.28),transparent 34%),linear-gradient(155deg,rgba(7,46,105,.98),rgba(24,119,242,.82) 52%,rgba(5,35,83,.98))}
+.crystal-facebook.is-open .facebook-choice-panel{height:100%;width:100%;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px;padding:4px 0 2px;overflow:hidden}
+.crystal-facebook.is-open .facebook-crystal-logo{width:54px;height:54px;flex:0 0 54px;margin:0 auto 2px;color:#fff;background:radial-gradient(circle at 34% 27%,rgba(255,255,255,.34),transparent 29%),linear-gradient(145deg,#3695ff,#0751b4);border:2px solid #fff;box-shadow:inset 0 1px 2px rgba(255,255,255,.62),0 0 0 3px rgba(24,119,242,.25),0 0 28px rgba(91,177,255,.78),0 8px 18px rgba(0,24,62,.38)}
+.crystal-facebook.is-open .facebook-crystal-logo svg{width:33px;height:33px;display:block;filter:drop-shadow(0 2px 3px rgba(0,0,0,.28))}
+.crystal-facebook.is-open .facebook-choice-title{display:block;width:100%;text-align:center;color:#fff;font-size:10px;font-weight:900;line-height:1;letter-spacing:1.2px;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.crystal-facebook.is-open .facebook-choice-panel a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;max-width:100%;min-height:39px;margin:0 auto;padding:10px 5px;border:1px solid rgba(225,241,255,.82);border-radius:11px;background:linear-gradient(135deg,#fff,#dceeff);color:#0b4f9f;font-size:9px;font-weight:900;line-height:1.05;letter-spacing:.1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;box-shadow:inset 0 1px 0 #fff,0 7px 18px rgba(0,27,65,.34)}
