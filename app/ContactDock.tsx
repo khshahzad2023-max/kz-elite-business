@@ -27,7 +27,7 @@ const contacts = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "78967229",
+    value: "+96878967229",
     href: "https://api.whatsapp.com/send?phone=96878967229",
     tone: "whatsapp",
   },
