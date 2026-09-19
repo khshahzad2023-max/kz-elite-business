@@ -34,6 +34,7 @@ export default function ContactDock() {
   const [whatsappOpen, setWhatsappOpen] = useState(false);
   const [emailOpen, setEmailOpen] = useState(false);
   const [instagramOpen, setInstagramOpen] = useState(false);
+  const [facebookOpen, setFacebookOpen] = useState(false);
   return (
     <section className="contact-dock-section">
       <div className="container">
@@ -85,7 +86,18 @@ export default function ContactDock() {
               </span>
             )}
           </button>
-          {contacts.slice(4).map(({ letter, icon: Icon, label, value, href }, index) => (
+          <button className={`crystal-contact crystal-facebook ${facebookOpen ? "is-open" : ""}`} type="button" onClick={() => setFacebookOpen((open) => !open)} aria-expanded={facebookOpen}>
+            {!facebookOpen ? <span className="crystal-letter">E</span> : (
+              <span className="facebook-choice-panel">
+                <span className="facebook-crystal-logo" aria-label="Facebook">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" width="30" height="30"><path fill="currentColor" d="M13.5 22v-8h2.8l.4-3.2h-3.2V8.7c0-.9.3-1.6 1.6-1.6h1.7V4.2c-.3 0-1.3-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.4v2.4H7.3V14h2.8v8h3.4Z"/></svg>
+                </span>
+                <span className="facebook-choice-title">FACEBOOK</span>
+                <a href="https://www.facebook.com/share/1H4otouqhj/" target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>K&amp;Z ELITE BUSINESS</a>
+              </span>
+            )}
+          </button>
+          {contacts.slice(5).map(({ letter, icon: Icon, label, value, href }, index) => (
             <a className="crystal-contact" href={href} key={`${letter}-${label}-${index}`} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
               <span className="crystal-letter">{letter}</span>
               <span className="crystal-detail">
