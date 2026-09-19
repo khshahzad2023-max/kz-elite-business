@@ -55,7 +55,7 @@ export default function ContactDock() {
           <button className={`crystal-contact crystal-whatsapp ${whatsappOpen ? "is-open" : ""}`} type="button" onClick={() => setWhatsappOpen((open) => !open)} aria-expanded={whatsappOpen}>
             {!whatsappOpen ? <span className="crystal-letter">O</span> : (
               <span className="call-choice-panel whatsapp-choice-panel">
-                <span className="call-choice-title"><MessageCircle size={18} /> CHOOSE A NUMBER</span>
+                <span className="call-choice-title whatsapp-choice-title"><span className="whatsapp-crystal-logo"><MessageCircle size={23} strokeWidth={2.2} /></span><span>CHOOSE A NUMBER</span></span>
                 <a href="https://api.whatsapp.com/send?phone=96878967229" target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>+968 78967229</a>
                 <a href="https://api.whatsapp.com/send?phone=96899248431" target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>+968 99248431</a>
               </span>
