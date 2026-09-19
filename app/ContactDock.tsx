@@ -35,6 +35,7 @@ export default function ContactDock() {
   const [emailOpen, setEmailOpen] = useState(false);
   const [instagramOpen, setInstagramOpen] = useState(false);
   const [facebookOpen, setFacebookOpen] = useState(false);
+  const [tiktokOpen, setTiktokOpen] = useState(false);
   return (
     <section className="contact-dock-section">
       <div className="container">
@@ -97,7 +98,18 @@ export default function ContactDock() {
               </span>
             )}
           </button>
-          {contacts.slice(5).map(({ letter, icon: Icon, label, value, href }, index) => (
+          <button className={`crystal-contact crystal-tiktok ${tiktokOpen ? "is-open" : ""}`} type="button" onClick={() => setTiktokOpen((open) => !open)} aria-expanded={tiktokOpen}>
+            {!tiktokOpen ? <span className="crystal-letter">C</span> : (
+              <span className="tiktok-choice-panel">
+                <span className="tiktok-crystal-logo" aria-label="TikTok">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" width="30" height="30"><path fill="currentColor" d="M15.7 3c.4 2.2 1.7 3.6 3.8 3.8v3.1c-1.4 0-2.7-.4-3.8-1.2v5.7a6.1 6.1 0 1 1-5.2-6V11a3 3 0 1 0 2 2.8V3h3.2Z"/></svg>
+                </span>
+                <span className="tiktok-choice-title">TIKTOK</span>
+                <a href="https://www.tiktok.com/@kz_elite_business" target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>@kz_elite_business</a>
+              </span>
+            )}
+          </button>
+          {contacts.slice(6).map(({ letter, icon: Icon, label, value, href }, index) => (
             <a className="crystal-contact" href={href} key={`${letter}-${label}-${index}`} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
               <span className="crystal-letter">{letter}</span>
               <span className="crystal-detail">
