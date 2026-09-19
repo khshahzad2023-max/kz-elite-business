@@ -298,3 +298,9 @@ button.crystal-contact{font:inherit;color:inherit;cursor:pointer}
 .crystal-website.is-open .website-crystal-logo{display:grid!important;place-items:center!important;width:52px!important;height:52px!important;min-width:52px!important;min-height:52px!important;flex:0 0 52px!important;margin:0 auto!important;position:static!important}
 .crystal-website.is-open .website-choice-title{display:block!important;position:static!important;width:100%!important;margin:0!important;text-align:center!important;font-size:9px!important;line-height:1.1!important;letter-spacing:.55px!important;white-space:nowrap!important}
 .crystal-website.is-open .website-choice-panel>a{box-sizing:border-box!important;position:static!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;max-width:100%!important;min-width:0!important;min-height:38px!important;margin:0!important;padding:10px 4px!important;border-radius:11px!important;font-size:8.5px!important;line-height:1!important;letter-spacing:-.15px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;text-align:center!important}
+
+
+/* Homepage paired service boxes: equal height now, ready for future list items */
+.home .feature{align-items:stretch}
+.home .feature>.feature-box{height:100%;box-sizing:border-box;display:flex;flex-direction:column}
+.home .feature>.feature-box .actions{margin-top:auto;padding-top:24px}
