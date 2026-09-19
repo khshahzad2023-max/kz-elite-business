@@ -32,6 +32,7 @@ const contacts = [
 export default function ContactDock() {
   const [callOpen, setCallOpen] = useState(false);
   const [whatsappOpen, setWhatsappOpen] = useState(false);
+  const [emailOpen, setEmailOpen] = useState(false);
   const [instagramOpen, setInstagramOpen] = useState(false);
   return (
     <section className="contact-dock-section">
@@ -66,6 +67,15 @@ export default function ContactDock() {
               </span>
             )}
           </button>
+          <button className={`crystal-contact crystal-email ${emailOpen ? "is-open" : ""}`} type="button" onClick={() => setEmailOpen((open) => !open)} aria-expanded={emailOpen}>
+            {!emailOpen ? <span className="crystal-letter">N</span> : (
+              <span className="email-choice-panel">
+                <span className="email-crystal-logo"><Mail size={29} strokeWidth={2.2} /></span>
+                <span className="email-choice-title">EMAIL</span>
+                <a href="mailto:info@kzelitebusiness.com" onClick={(e) => e.stopPropagation()}>info@kzelitebusiness.com</a>
+              </span>
+            )}
+          </button>
           <button className={`crystal-contact crystal-instagram ${instagramOpen ? "is-open" : ""}`} type="button" onClick={() => setInstagramOpen((open) => !open)} aria-expanded={instagramOpen}>
             {!instagramOpen ? <span className="crystal-letter">N</span> : (
               <span className="instagram-choice-panel">
@@ -75,7 +85,7 @@ export default function ContactDock() {
               </span>
             )}
           </button>
-          {contacts.slice(3).map(({ letter, icon: Icon, label, value, href }, index) => (
+          {contacts.slice(4).map(({ letter, icon: Icon, label, value, href }, index) => (
             <a className="crystal-contact" href={href} key={`${letter}-${label}-${index}`} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
               <span className="crystal-letter">{letter}</span>
               <span className="crystal-detail">
