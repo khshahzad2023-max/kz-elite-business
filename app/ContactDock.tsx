@@ -55,7 +55,11 @@ export default function ContactDock() {
           <button className={`crystal-contact crystal-whatsapp ${whatsappOpen ? "is-open" : ""}`} type="button" onClick={() => setWhatsappOpen((open) => !open)} aria-expanded={whatsappOpen}>
             {!whatsappOpen ? <span className="crystal-letter">O</span> : (
               <span className="call-choice-panel whatsapp-choice-panel">
-                <span className="call-choice-title whatsapp-choice-title"><span className="whatsapp-crystal-logo"><MessageCircle size={23} strokeWidth={2.2} /></span><span>CHOOSE A NUMBER</span></span>
+                <span className="call-choice-title whatsapp-choice-title"><span className="whatsapp-crystal-logo" aria-label="WhatsApp">
+                  <svg aria-hidden="true" viewBox="0 0 32 32" width="25" height="25">
+                    <path fill="currentColor" d="M16 4.2A11.7 11.7 0 0 0 5.9 21.8L4.3 27.7l6-1.6A11.7 11.7 0 1 0 16 4.2Zm0 21.3c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.5.9.9-3.4-.2-.4A9.5 9.5 0 1 1 16 25.5Zm5.2-7.1c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-1.7-.8-2.9-1.5-4-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.6c.2.2 2.4 3.7 5.9 5.2 2.2 1 3.1 1 4.2.8.7-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/>
+                  </svg>
+                </span><span>CHOOSE A NUMBER</span></span>
                 <a href="https://api.whatsapp.com/send?phone=96878967229" target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>+968 78967229</a>
                 <a href="https://api.whatsapp.com/send?phone=96899248431" target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>+968 99248431</a>
               </span>
