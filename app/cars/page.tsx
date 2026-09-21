@@ -16,7 +16,7 @@ const cars = [
   href: "/cars/Hyundai-Veloster-2016",
 },  
 {
-    name: "Haval Drago 2024",
+    name: "Haval Dargo 2024",
     images: [
       "/cars/haval-drago-2024/1.jpg",
       "/cars/haval-drago-2024/2.jpg",
@@ -127,7 +127,8 @@ const cars = [
 },
 {
   name: "Toyota RAV4 2019",
-  details: "2019 • AWD • GCC Oman Showroom • 213,206 KM",
+  details: "2019 • AWD • GCC Oman Showroom",
+  mileage: "213,206 KM",
   location: "Azaiba, Muscat",
 
   images: [
