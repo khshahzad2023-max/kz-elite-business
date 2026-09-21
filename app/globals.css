@@ -1185,3 +1185,49 @@ background-size:53px 31px,71px 39px,89px 47px;opacity:.65}
    transform:none!important;
  }
 }
+
+
+/* Mobile hero final composition — compact editorial layout */
+@media(max-width:760px){
+ .kz-home-v3 .kz-brand-opening.kz-intro-v4{
+   min-height:560px!important;
+   height:560px!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-muscat-bg{
+   background-position:58% center!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-split{
+   min-height:560px!important;
+   height:560px!important;
+   padding:42px 0 54px!important;
+   display:flex!important;
+   justify-content:center!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-copy{
+   transform:translateY(-22px)!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-copy>a{
+   margin-top:22px!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-mark{
+   position:absolute!important;
+   right:-18px!important;
+   top:52%!important;
+   bottom:auto!important;
+   width:auto!important;
+   height:auto!important;
+   opacity:.18!important;
+   z-index:2!important;
+   transform:translateY(-5%)!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-mark img{
+   width:190px!important;
+   max-height:none!important;
+   opacity:1!important;
+   filter:saturate(.72) brightness(.72) drop-shadow(0 16px 28px rgba(0,0,0,.42))!important;
+ }
+ .kz-home-v3 .kz-opening-location{
+   bottom:16px!important;
+   opacity:.82;
+ }
+}
