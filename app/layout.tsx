@@ -51,7 +51,7 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
                     <span>ONE NAME • MANY SOLUTIONS</span>
                   </div>
                 </div>
-                <p>Automotive, rentals, property, maintenance and advertising services across Muscat, Sultanate of Oman.</p>
+                <p>A multi-service business bringing specialized solutions together under one trusted name in Muscat, Sultanate of Oman.</p>
               </div>
               <div>
                 <h4>Our Services</h4>
