@@ -15,7 +15,6 @@ export default function Home(){
 
    <div className="kz-brand-lockup kz-brand-split">
     <div className="kz-brand-copy">
-     <span className="kz-brand-overline">MUSCAT • SULTANATE OF OMAN</span>
      <h1>K&amp;Z<br/><em>ELITE BUSINESS</em></h1>
      <p>ONE NAME • MANY SOLUTIONS</p>
      <a href="#who-we-are">DISCOVER OUR STORY <span>↓</span></a>
