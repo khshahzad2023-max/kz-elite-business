@@ -20,10 +20,9 @@ const cars = [
 
 export default function AutomotiveWorld(){
   const [intro,setIntro]=useState(true);
-  const [glcFrame,setGlcFrame]=useState(0);
-  const [dragX,setDragX]=useState<number|null>(null);
-  const glcFrames=Array.from({length:9},(_,i)=>`/cars/Mercedes-Benz-GLC300-2019/${i+1}.jpg`);
-  const moveGlc=(x:number)=>{if(dragX===null)return;const delta=x-dragX;if(Math.abs(delta)>34){setGlcFrame(v=>(v+(delta<0?1:8))%9);setDragX(x)}};
+  const [reveal,setReveal]=useState(8);
+  const [revealing,setRevealing]=useState(false);
+  const revealAt=(clientX:number,target:HTMLElement)=>{const r=target.getBoundingClientRect();setReveal(Math.max(0,Math.min(100,((clientX-r.left)/r.width)*100)))};
   useEffect(()=>{const t=window.setTimeout(()=>setIntro(false),1450);return()=>window.clearTimeout(t)},[]);
   return <main className="kz-showroom-world">
     {intro && <div className="kz-logo-intro">
@@ -46,13 +45,16 @@ export default function AutomotiveWorld(){
         <p>Explore our vehicles, automotive services and complete K&Z car experience.</p>
         <div><a href="#showroom-floor">EXPLORE CARS →</a><Link href="/sell-your-car">SELL YOUR CAR</Link></div>
       </div>
-      <div className="kz-hero-car kz-hero-360"
-        onMouseDown={e=>setDragX(e.clientX)} onMouseMove={e=>moveGlc(e.clientX)} onMouseUp={()=>setDragX(null)} onMouseLeave={()=>setDragX(null)}
-        onTouchStart={e=>setDragX(e.touches[0].clientX)} onTouchMove={e=>moveGlc(e.touches[0].clientX)} onTouchEnd={()=>setDragX(null)}>
-        <div className="kz-hero-car-halo"/>
-        <img src={glcFrames[glcFrame]} alt={"Mercedes-Benz GLC 300 angle "+(glcFrame+1)} draggable={false}/>
-        <div className={"kz-car-cover "+(glcFrame>5?"kz-cover-off":"")}><i/><b>K&Z</b></div>
-        <div className="kz-rotate-hint">↔ DRAG TO ROTATE & REVEAL</div>
+      <div className="kz-hero-car kz-drag-reveal"
+        onPointerDown={e=>{setRevealing(true);e.currentTarget.setPointerCapture(e.pointerId);revealAt(e.clientX,e.currentTarget)}}
+        onPointerMove={e=>{if(revealing)revealAt(e.clientX,e.currentTarget)}}
+        onPointerUp={e=>{setRevealing(false);e.currentTarget.releasePointerCapture(e.pointerId)}}>
+        <img className="kz-reveal-base" src="/cars/Mercedes-Benz-GLC300-2019/1.jpg" alt="Mercedes-Benz GLC 300 2019" draggable={false}/>
+        <div className="kz-reveal-cover" style={{clipPath:`inset(0 ${reveal}% 0 0)`}}>
+          <div className="kz-cover-fabric"><b>K&Z</b></div>
+        </div>
+        <div className="kz-reveal-line" style={{left:`${reveal}%`}}><i>↔</i></div>
+        <div className="kz-rotate-hint">DRAG TO REVEAL</div>
         <Link href="/cars/Mercedes-Benz-GLC300-2019" className="kz-hero-car-label"><small>FEATURED VEHICLE</small><b>MERCEDES-BENZ GLC 300</b><span>2019 • VIEW CAR →</span></Link>
       </div>
       <div className="kz-cinematic-scroll">SCROLL TO EXPLORE ↓</div>
