@@ -20,9 +20,6 @@ const cars = [
 
 export default function AutomotiveWorld(){
   const [intro,setIntro]=useState(true);
-  const [reveal,setReveal]=useState(8);
-  const [revealing,setRevealing]=useState(false);
-  const revealAt=(clientX:number,target:HTMLElement)=>{const r=target.getBoundingClientRect();setReveal(Math.max(0,Math.min(100,((clientX-r.left)/r.width)*100)))};
   useEffect(()=>{const t=window.setTimeout(()=>setIntro(false),1450);return()=>window.clearTimeout(t)},[]);
   return <main className="kz-showroom-world">
     {intro && <div className="kz-logo-intro">
@@ -31,35 +28,6 @@ export default function AutomotiveWorld(){
       <div className="kz-intro-name">K&Z AUTOMOTIVE</div>
       <small>ONE NAME • MANY SOLUTIONS</small>
     </div>}
-
-    <section className="kz-cinematic-hero">
-      <div className="kz-cinematic-grid" aria-hidden="true"/>
-      <div className="kz-cinematic-glow" aria-hidden="true"/>
-      <div className="kz-cinematic-top">
-        <Link href="/" className="kz-cinematic-brand"><img src="/kz-master-logo.png" alt="K&Z"/><span><b>K&Z AUTOMOTIVE</b><small>ONE NAME • MANY SOLUTIONS</small></span></Link>
-        <span>PREMIUM DIGITAL SHOWROOM • MUSCAT</span>
-      </div>
-      <div className="kz-cinematic-copy">
-        <span>WELCOME TO K&Z AUTOMOTIVE</span>
-        <h1>DRIVE INTO<br/><em>THE EXPERIENCE.</em></h1>
-        <p>Explore our vehicles, automotive services and complete K&Z car experience.</p>
-        <div><a href="#showroom-floor">EXPLORE CARS →</a><Link href="/sell-your-car">SELL YOUR CAR</Link></div>
-      </div>
-      <div className="kz-hero-car kz-drag-reveal"
-        onPointerDown={e=>{setRevealing(true);e.currentTarget.setPointerCapture(e.pointerId);revealAt(e.clientX,e.currentTarget)}}
-        onPointerMove={e=>{if(revealing)revealAt(e.clientX,e.currentTarget)}}
-        onPointerUp={e=>{setRevealing(false);e.currentTarget.releasePointerCapture(e.pointerId)}}>
-        <img className="kz-reveal-base" src="/cars/Mercedes-Benz-GLC300-2019/1.jpg" alt="Mercedes-Benz GLC 300 2019" draggable={false}/>
-        <div className="kz-lift-cover" style={{"--reveal":reveal} as React.CSSProperties}>
-          <div className="kz-cloth-main"><span/><b>K&Z</b></div>
-          <div className="kz-cloth-tail"/>
-        </div>
-        <div className="kz-reveal-grab" style={{left:`${Math.max(7,Math.min(93,reveal))}%`}}><i>↔</i></div>
-        <div className="kz-rotate-hint">DRAG TO REVEAL</div>
-        <Link href="/cars/Mercedes-Benz-GLC300-2019" className="kz-hero-car-label"><small>FEATURED VEHICLE</small><b>MERCEDES-BENZ GLC 300</b><span>2019 • VIEW CAR →</span></Link>
-      </div>
-      <div className="kz-cinematic-scroll">SCROLL TO EXPLORE ↓</div>
-    </section>
 
     <section className="kz-lobby">
       <div className="kz-lobby-overlay"/>
