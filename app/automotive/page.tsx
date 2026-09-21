@@ -70,9 +70,9 @@ export default function AutomotiveWorld(){
       </div>
     </section>
 
-    <section id="service-center" className="kz-service-premium">
+    <section id="service-center" className="kz-service-premium kz-service-v2">
       <div className="kz-service-hero">
-        <div><span>AUTOMOTIVE SERVICE CENTER</span><h2>Complete Car Care<br/>Under One Roof</h2><p>Professional. Reliable. Affordable.</p></div>
+        <div><span>AUTOMOTIVE SERVICE CENTER</span><h2>Complete Car Care<br/><em>Under One Roof</em></h2><p>Professional. Reliable. Affordable.</p></div>
         <div className="kz-service-trust"><b>⚙ Skilled Technicians</b><b>♢ Quality Service</b><b>◷ On-Time Delivery</b><b>♧ Customer Satisfaction</b></div>
       </div>
       <div className="kz-service-mosaic">
