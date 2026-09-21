@@ -41,23 +41,48 @@ export default function AutomotiveWorld(){
         <p>Explore K&Z vehicles in a premium digital showroom. View real photos, vehicle details and contact us directly.</p>
         <div><a href="#showroom-floor" className="kz-lobby-btn">EXPLORE VEHICLES ↓</a><Link href="/find-a-car" className="kz-lobby-link">FIND A CAR →</Link></div>
       </div>
-      <div className="kz-lobby-strip"><a href="#showroom-floor">AVAILABLE CARS</a><i/><a href="#sold-showroom">SOLD CARS</a><i/><a href="#services">SERVICES</a><i/><Link href="/find-a-car">FIND A CAR</Link><i/><Link href="/sell-your-car">SELL YOUR CAR</Link></div>
+      <div className="kz-lobby-strip"><a href="#showroom-floor">AVAILABLE CARS</a><i/><a href="#sold-showroom">SOLD CARS</a><i/><a href="#service-center">SERVICES</a><i/><Link href="/find-a-car">FIND A CAR</Link><i/><Link href="/sell-your-car">SELL YOUR CAR</Link></div>
     </section>
 
-    <section id="services" className="kz-service-departments">
-      <div className="kz-service-head"><span>COMPLETE AUTOMOTIVE CARE</span><h2>Enter a K&Z Service Department</h2><p>From buying your car to keeping it at its best — K&Z has you covered.</p></div>
-      <div className="kz-service-grid">
+    <section id="automotive-hub" className="kz-auto-hub">
+      <div className="kz-auto-hub-head"><span>K&Z AUTOMOTIVE</span><h2>Where do you want to go?</h2><p>Choose a destination and enter the K&Z automotive experience.</p></div>
+      <div className="kz-auto-destinations">
+        <a href="#showroom-floor" className="kz-auto-destination kz-dest-available">
+          <img src="/cars/haval-drago-2024/1.jpg" alt="Available K&Z vehicles"/>
+          <div className="kz-dest-shade"/><div className="kz-dest-count">11 <small>AVAILABLE</small></div>
+          <div className="kz-dest-copy"><span>01 • THE SHOWROOM</span><h3>Available<br/>Cars</h3><p>Explore real vehicles currently available through K&Z.</p><b>ENTER SHOWROOM →</b></div>
+        </a>
+        <a href="#sold-showroom" className="kz-auto-destination kz-dest-sold">
+          <img src={soldCars[0]?.images[0]} alt="Vehicles sold by K&Z"/>
+          <div className="kz-dest-shade"/><div className="kz-dest-count">{soldCars.length} <small>SOLD</small></div>
+          <div className="kz-dest-copy"><span>02 • K&Z DELIVERY HISTORY</span><h3>Sold<br/>Cars</h3><p>See vehicles successfully sold through K&Z ELITE BUSINESS.</p><b>VIEW SOLD CARS →</b></div>
+        </a>
+        <a href="#service-center" className="kz-auto-destination kz-dest-services">
+          <img src="/kz-showroom.jpg?v=20260919-new" alt="K&Z automotive services"/>
+          <div className="kz-dest-shade"/><div className="kz-dest-count">07 <small>DEPARTMENTS</small></div>
+          <div className="kz-dest-copy"><span>03 • COMPLETE CAR CARE</span><h3>Automotive<br/>Services</h3><p>Garage, tyres, batteries, tinting, detailing, wash, bodywork and more.</p><b>ENTER SERVICE CENTER →</b></div>
+        </a>
+        <Link href="/find-a-car" className="kz-auto-destination kz-dest-find">
+          <img src="/cars/Mercedes-Benz-GLC300-2019/1.jpg" alt="Find a car with K&Z"/>
+          <div className="kz-dest-shade"/><div className="kz-dest-mark">K&Z</div>
+          <div className="kz-dest-copy"><span>04 • PERSONAL CAR SOURCING</span><h3>Find<br/>a Car</h3><p>Tell us your budget and preferred vehicle. K&Z will help you search.</p><b>START YOUR SEARCH →</b></div>
+        </Link>
+      </div>
+    </section>
+
+    <section id="service-center" className="kz-service-center">
+      <div className="kz-service-center-head"><div><span>K&Z AUTOMOTIVE SERVICE CENTER</span><h2>Seven departments.<br/>One name.</h2></div><p>Choose the work your vehicle needs and enter the dedicated department.</p></div>
+      <div className="kz-service-track">
         {[
-          ["01","GARAGE & MAINTENANCE","Mechanical, electrical, AC and general vehicle care.","/automotive/garage","⚙"],
-          ["02","TYRES & BATTERIES","Tyres, batteries, fitting and replacement support.","/automotive/tyres-batteries","◉"],
-          ["03","ACCESSORIES & DECORATION","Interior and exterior accessories and car decoration.","/automotive/accessories","✦"],
-          ["04","WINDOW TINTING","Professional automotive tinting and appearance upgrades.","/automotive/tinting","◐"],
-          ["05","POLISHING & DETAILING","Exterior polishing, interior detailing and finish restoration.","/automotive/detailing","◆"],
-          ["06","CAR WASH","Professional vehicle cleaning and wash services.","/automotive/car-wash","≈"],
-          ["07","DENTING & PAINTING","Body repair, dent correction and automotive painting.","/automotive/denting-painting","▰"],
-        ].map(s=><Link href={s[3]} className="kz-service-bay" key={s[0]}>
-          <div className="kz-service-number">{s[0]}</div><div className="kz-service-icon">{s[4]}</div>
-          <h3>{s[1]}</h3><p>{s[2]}</p><b>ENTER DEPARTMENT →</b>
+          ["01","GARAGE","Mechanical • Electrical • AC","/automotive/garage","⚙"],
+          ["02","TYRES + BATTERIES","Fitment • Replacement","/automotive/tyres-batteries","◉"],
+          ["03","ACCESSORIES","Decoration • Upgrades","/automotive/accessories","✦"],
+          ["04","TINTING","Privacy • Appearance","/automotive/tinting","◐"],
+          ["05","DETAILING","Polish • Interior • Finish","/automotive/detailing","◆"],
+          ["06","CAR WASH","Exterior • Interior","/automotive/car-wash","≈"],
+          ["07","BODY + PAINT","Denting • Painting","/automotive/denting-painting","▰"],
+        ].map(s=><Link href={s[3]} className="kz-service-door" key={s[0]}>
+          <span>{s[0]}</span><i>{s[4]}</i><div><small>SERVICE BAY</small><h3>{s[1]}</h3><p>{s[2]}</p><b>ENTER →</b></div>
         </Link>)}
       </div>
     </section>
