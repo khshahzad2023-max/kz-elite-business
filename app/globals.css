@@ -1106,3 +1106,82 @@ background-size:53px 31px,71px 39px,89px 47px;opacity:.65}
    letter-spacing:.2em;
  }
 }
+
+
+/* Mobile hero hard reset — overrides legacy absolute-logo rules */
+@media(max-width:760px){
+ .kz-home-v3 .kz-brand-opening.kz-intro-v4{
+   min-height:640px!important;
+   height:auto!important;
+   display:flex!important;
+   align-items:center!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-split{
+   position:relative!important;
+   width:calc(100% - 40px)!important;
+   min-height:640px!important;
+   margin:0 auto!important;
+   padding:58px 0 74px!important;
+   display:grid!important;
+   grid-template-columns:1fr!important;
+   align-content:center!important;
+   gap:18px!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-copy{
+   position:relative!important;
+   z-index:4!important;
+   width:100%!important;
+   padding:0!important;
+   transform:none!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-copy h1{
+   margin:0 0 14px!important;
+   font-size:clamp(50px,14vw,64px)!important;
+   line-height:.88!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-copy h1 em{
+   margin-top:10px!important;
+   font-size:.52em!important;
+   white-space:nowrap!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-copy>p{
+   margin:0!important;
+   font-size:8px!important;
+   letter-spacing:.25em!important;
+   white-space:nowrap!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-copy>a{
+   margin-top:24px!important;
+   width:max-content!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-mark{
+   position:relative!important;
+   right:auto!important;
+   left:auto!important;
+   bottom:auto!important;
+   top:auto!important;
+   width:100%!important;
+   height:120px!important;
+   margin:0!important;
+   display:flex!important;
+   justify-content:flex-end!important;
+   align-items:center!important;
+   opacity:1!important;
+   transform:none!important;
+   overflow:visible!important;
+   pointer-events:none!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-mark img{
+   width:138px!important;
+   height:auto!important;
+   max-height:120px!important;
+   opacity:.78!important;
+   filter:saturate(.8) brightness(.82) drop-shadow(0 12px 22px rgba(0,0,0,.45))!important;
+ }
+ .kz-home-v3 .kz-opening-location{
+   left:20px!important;
+   right:auto!important;
+   bottom:18px!important;
+   transform:none!important;
+ }
+}
