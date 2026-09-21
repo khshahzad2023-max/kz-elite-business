@@ -51,13 +51,14 @@ export default function Home(){
 
   <section className="kz-trust-v3">
    <div className="container">
-    <div className="kz-trust-v3-title"><small>WHY K&amp;Z</small><h2>Built around direct service.</h2></div>
+    <div className="kz-trust-v3-title"><small>WHY K&amp;Z</small><h2>One Business. Multiple Solutions.</h2></div>
     <div className="kz-trust-v3-grid">
-     <div><span>01</span><b>LOCAL</b><p>Based in Muscat, Sultanate of Oman.</p></div>
-     <div><span>02</span><b>DIRECT</b><p>Speak directly with K&amp;Z for enquiries and coordination.</p></div>
-     <div><span>03</span><b>CONNECTED</b><p>Multiple departments under one business identity.</p></div>
-     <div><span>04</span><b>ACCESSIBLE</b><p>Call or WhatsApp through two direct contact numbers.</p></div>
+     <div><span>01</span><b>DIVERSE EXPERTISE</b><p>Automotive, building maintenance, property services and business promotion across dedicated divisions.</p></div>
+     <div><span>02</span><b>ONE BUSINESS NETWORK</b><p>Different services connected through one K&amp;Z business identity.</p></div>
+     <div><span>03</span><b>PROFESSIONAL COORDINATION</b><p>One point of contact for enquiries, service coordination and business requirements.</p></div>
+     <div><span>04</span><b>BUILT FOR GROWTH</b><p>A developing business platform designed to expand into new services and opportunities.</p></div>
     </div>
+    <div className="kz-trust-v3-signoff"><b>K&amp;Z ELITE BUSINESS</b><span>Different expertise. One vision. One name.</span></div>
    </div>
   </section>
 
