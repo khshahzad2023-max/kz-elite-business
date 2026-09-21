@@ -1075,3 +1075,34 @@ html,body{max-width:100%;overflow-x:hidden}
    margin-bottom:38px!important;
  }
 }
+
+
+/* Services ecosystem — premium depth and connection polish */
+@media(min-width:761px){
+ .kz-ecosystem-core{
+   transform:scale(1.08);
+   filter:drop-shadow(0 18px 34px rgba(0,0,0,.42));
+ }
+ .kz-ecosystem-core img{
+   filter:brightness(1.08) saturate(.94);
+ }
+ .kz-ecosystem-line,
+ .kz-ecosystem-lines span{
+   opacity:.72!important;
+   filter:brightness(1.18);
+ }
+ .kz-ecosystem-card{
+   border-color:rgba(190,210,222,.24)!important;
+   background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018))!important;
+   box-shadow:0 18px 42px rgba(0,0,0,.18);
+   transition:transform .24s ease,border-color .24s ease,background .24s ease,box-shadow .24s ease;
+ }
+ .kz-ecosystem-card:hover{
+   transform:translateY(-5px);
+   border-color:rgba(241,213,138,.42)!important;
+   background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025))!important;
+   box-shadow:0 24px 52px rgba(0,0,0,.28);
+ }
+ .kz-ecosystem-card h3{line-height:1.04}
+ .kz-ecosystem-card a{letter-spacing:.14em}
+}
