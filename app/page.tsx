@@ -13,14 +13,23 @@ export default function Home(){
   <section className="kz-brand-opening kz-intro-v4">
    <div className="kz-muscat-bg" aria-hidden="true"/>
 
-   <div className="kz-brand-lockup">
-    <img src="/kz-master-logo.png" alt="K&Z ELITE BUSINESS"/>
-    <h1>K&amp;Z ELITE BUSINESS</h1>
-    <p>ONE NAME • MANY SOLUTIONS</p>
-    <div className="kz-who"><span>WHO WE ARE</span><strong>Your local connection for cars, automotive care, rentals, building maintenance, property services and business advertising in Oman.</strong></div>
-    <a href="#automotive-entry">EXPLORE <span>↓</span></a>
+   <div className="kz-brand-lockup kz-brand-split">
+    <div className="kz-brand-copy">
+     <span className="kz-brand-overline">MUSCAT • SULTANATE OF OMAN</span>
+     <h1>K&amp;Z<br/><em>ELITE BUSINESS</em></h1>
+     <p>ONE NAME • MANY SOLUTIONS</p>
+     <a href="#who-we-are">DISCOVER OUR STORY <span>↓</span></a>
+    </div>
+    <div className="kz-brand-mark"><img src="/kz-master-logo.png" alt="K&Z ELITE BUSINESS"/></div>
    </div>
    <div className="kz-opening-location">MUSCAT • SULTANATE OF OMAN</div>
+  </section>
+
+  <section id="who-we-are" className="kz-who-section">
+   <div className="container kz-who-layout">
+    <div className="kz-who-title"><small>WHO WE ARE</small><h2>Built from one<br/>shared vision.</h2></div>
+    <div className="kz-who-story"><p>K&amp;Z ELITE BUSINESS was born from the vision of two partners, two areas of expertise, and one shared passion: creating reliable services that make life and business easier.</p><span>ONE NAME • MANY SOLUTIONS</span></div>
+   </div>
   </section>
 
   <section id="automotive-entry" className="section kz-home-auto">
