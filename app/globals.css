@@ -720,3 +720,22 @@ radial-gradient(ellipse at 50% 38%,#34383a 0,#171a1c 31%,#080a0c 68%,#030405 100
  .kz-service-v2 .kz-mosaic-card,.kz-service-v2 .kz-mosaic-garage{grid-column:1!important;min-height:330px!important}
  .kz-service-v2 .kz-mosaic-garage .kz-mosaic-copy h3{font-size:40px!important}
 }
+
+
+/* Uniform automotive service typography */
+.kz-service-v2 .kz-mosaic-copy h3,
+.kz-service-v2 .kz-mosaic-garage .kz-mosaic-copy h3{
+  font-family:var(--font-sans),Arial,sans-serif!important;
+  font-weight:800!important;
+  font-style:normal!important;
+  text-transform:uppercase!important;
+  letter-spacing:-.025em!important;
+}
+.kz-service-v2 .kz-mosaic-copy h3{
+  font-size:clamp(20px,1.65vw,28px)!important;
+  line-height:1.02!important;
+}
+.kz-service-v2 .kz-mosaic-garage .kz-mosaic-copy h3{
+  font-size:clamp(36px,3.55vw,56px)!important;
+  line-height:.96!important;
+}
