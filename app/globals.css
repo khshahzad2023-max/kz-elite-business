@@ -1343,3 +1343,42 @@ background-size:53px 31px,71px 39px,89px 47px;opacity:.65}
    bottom:14px!important;
  }
 }
+
+
+/* Portrait-phone hero: primary customer view */
+@media(max-width:760px) and (orientation:portrait){
+ .kz-home-v3 .kz-brand-opening.kz-intro-v4{
+   height:58svh!important;
+   min-height:390px!important;
+   max-height:500px!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-split{
+   height:58svh!important;
+   min-height:390px!important;
+   max-height:500px!important;
+   width:calc(100% - 40px)!important;
+   padding:18px 0 42px!important;
+   justify-content:center!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-copy h1{
+   font-size:clamp(44px,12.5vw,54px)!important;
+   margin-bottom:12px!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-copy h1 em{
+   font-size:clamp(25px,7.1vw,30px)!important;
+   margin-top:9px!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-copy>p{
+   font-size:7.5px!important;
+   letter-spacing:.21em!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-copy>a{
+   margin-top:22px!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-muscat-bg{
+   background-position:61% center!important;
+ }
+ .kz-home-v3 .kz-opening-location{
+   bottom:12px!important;
+ }
+}
