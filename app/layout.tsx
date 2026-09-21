@@ -15,7 +15,7 @@ const nav = [
   ["Sell Your Car","/sell-your-car"],
   ["Find a Car","/find-a-car"],
   ["Rent a Car","/rent-a-car"],
-  ["Automotive","/automotive-services"],
+  ["Automotive","/automotive"],
   ["More Services","/services"],
 ];
 
