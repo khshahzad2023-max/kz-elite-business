@@ -23,9 +23,9 @@ export default function Home(){
       <section className="hero">
         <div className="container hero-grid">
           <div>
-            <div className="eyebrow">Muscat • Sultanate of Oman</div>
-            <h1>BUY • SELL • <span className="gold">ADVERTISE CARS</span></h1>
-            <p className="lead">K&Z ELITE BUSINESS puts automotive first — buying, selling, sourcing, rental, garage services and vehicle advertising — with additional property and maintenance services under one trusted brand.</p>
+            <div className="eyebrow">K&amp;Z ELITE BUSINESS • MUSCAT</div>
+            <h1>YOUR CAR.<br/><span className="gold">OUR BUSINESS.</span></h1>
+            <p className="lead">Cars are where we started. Today K&amp;Z connects automotive, maintenance, property and promotion through one local team.</p>
             <div className="actions">
               <Link className="btn btn-primary" href="/cars">Available Cars</Link>
               <Link className="btn btn-secondary" href="/sell-your-car">Sell Your Car</Link>
@@ -58,9 +58,9 @@ export default function Home(){
             <div><div className="eyebrow">Automotive First</div><h2>Everything for your car journey</h2></div>
             <p>From buying your next car to selling your current one, finding rentals, garage services and advertising — K&Z keeps the automotive side at the center of the business.</p>
           </div>
-          <div className="grid">
-            {core.map(x => <article className="card" key={x.title}>
-              <div className="icon">{x.icon}</div><h3>{x.title}</h3><p>{x.text}</p>
+          <div className="grid home-editorial-grid">
+            {core.map((x,i) => <article className={`card home-editorial-card home-editorial-card-${i+1}`} key={x.title}>
+              <div className="home-card-no">0{i+1}</div><h3>{x.title}</h3><p>{x.text}</p>
               <Link className="card-link" href={x.href}>Explore →</Link>
             </article>)}
           </div>
