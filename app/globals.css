@@ -531,3 +531,13 @@ radial-gradient(ellipse at 50% 38%,#34383a 0,#171a1c 31%,#080a0c 68%,#030405 100
 .kz-facade-foot{position:absolute;z-index:11;left:28px;right:28px;bottom:0;height:50px;display:flex;align-items:center;justify-content:center;gap:20px;background:rgba(4,15,27,.88);border-top:1px solid rgba(220,179,73,.28);color:#b8c2ca;font-size:9px;font-weight:800;letter-spacing:.16em}.kz-facade-foot i{width:4px;height:4px;border-radius:50%;background:#d8ae4d}
 .kz-facade.is-opening .kz-glass-left{transform:translateX(-102%)}.kz-facade.is-opening .kz-glass-right{transform:translateX(102%)}.kz-facade.is-opening .kz-facade-enter{opacity:0;pointer-events:none}
 @media(max-width:850px){.kz-facade{min-height:570px;border-radius:16px}.kz-facade-sign{height:125px}.kz-facade-sign b{font-size:40px}.kz-facade-sign span{font-size:14px}.kz-facade-view{top:125px}.kz-glass-door{top:142px;width:39%;bottom:66px}.kz-glass-left{left:10%}.kz-glass-right{right:10%}.kz-facade-enter{min-width:250px;bottom:70px}.kz-facade-foot{gap:8px;font-size:7px;padding:0 8px}}
+
+
+/* 2026-09-21 showroom hero cleanup: artwork fills facade; no duplicate top sign */
+.kz-facade-view{top:0!important}
+.kz-facade-view img{object-fit:cover!important;object-position:center center!important;transform:none!important}
+.kz-glass-door{top:18px!important}
+@media(max-width:850px){
+  .kz-facade-view{top:0!important}
+  .kz-glass-door{top:16px!important}
+}
