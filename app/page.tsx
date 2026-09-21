@@ -27,7 +27,7 @@ export default function Home(){
   <section id="who-we-are" className="kz-who-section">
    <div className="container kz-who-layout">
     <div className="kz-who-title"><small>WHO WE ARE</small><h2>Built from one<br/>shared vision.</h2></div>
-    <div className="kz-who-story"><p>K&amp;Z ELITE BUSINESS was born from the vision of two partners, two areas of expertise, and one shared passion: creating reliable services that make life and business easier.</p><span>ONE NAME • MANY SOLUTIONS</span></div>
+    <div className="kz-who-story"><p>K&amp;Z ELITE BUSINESS was born from the vision of two partners, two areas of expertise, and one shared passion: creating reliable services that make life and business easier.</p><p>From automotive solutions and property services to building maintenance and business promotion, K&amp;Z brings multiple services together under one trusted name — with a focus on direct communication, reliable coordination, and practical solutions.</p><span>ONE NAME • MANY SOLUTIONS</span></div>
    </div>
   </section>
 
