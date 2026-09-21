@@ -1106,3 +1106,65 @@ html,body{max-width:100%;overflow-x:hidden}
  .kz-ecosystem-card h3{line-height:1.04}
  .kz-ecosystem-card a{letter-spacing:.14em}
 }
+
+
+/* WHY K&Z — dark corporate treatment + clean transition/signoff */
+.kz-trust-v3{
+ background:
+  radial-gradient(circle at 72% 18%,rgba(34,78,104,.18),transparent 34%),
+  linear-gradient(180deg,#071019 0%,#09131c 48%,#071018 100%)!important;
+ color:#edf3f6!important;
+ border-top:1px solid rgba(180,200,212,.12);
+ border-bottom:1px solid rgba(180,200,212,.10);
+}
+.kz-trust-v3-title small{color:#8fa4b1!important}
+.kz-trust-v3-title h2{color:#f4f7f8!important}
+.kz-trust-v3-grid{
+ border-top:1px solid rgba(180,200,212,.18)!important;
+ border-bottom:1px solid rgba(180,200,212,.14)!important;
+}
+.kz-trust-v3-grid>div{
+ border-color:rgba(180,200,212,.14)!important;
+}
+.kz-trust-v3-grid span{color:#b59b5a!important}
+.kz-trust-v3-grid b{color:#f0f4f6!important}
+.kz-trust-v3-grid p{color:#9eacb5!important}
+.kz-trust-v3-signoff{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:32px;
+ padding:26px 0 0;
+ color:#dce5ea;
+ border-top:0;
+}
+.kz-trust-v3-signoff b{
+ color:#f1d58a;
+ font-size:13px;
+ letter-spacing:.12em;
+ white-space:nowrap;
+}
+.kz-trust-v3-signoff span{
+ color:#aebbc3;
+ font-size:14px;
+ letter-spacing:.035em;
+ text-align:right;
+}
+@media(min-width:761px){
+ .kz-services-ecosystem,
+ .kz-services-section{padding-bottom:48px!important}
+ .kz-trust-v3{padding:82px 0 70px!important}
+ .kz-trust-v3-title{margin-bottom:50px!important}
+}
+@media(max-width:760px){
+ .kz-trust-v3{padding:58px 0 52px!important}
+ .kz-trust-v3-title h2{color:#f4f7f8!important}
+ .kz-trust-v3-grid>div{border-color:rgba(180,200,212,.14)!important}
+ .kz-trust-v3-signoff{
+   flex-direction:column;
+   align-items:flex-start;
+   gap:8px;
+   padding-top:24px;
+ }
+ .kz-trust-v3-signoff span{text-align:left;font-size:13px}
+}
