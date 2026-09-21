@@ -50,10 +50,11 @@ export default function AutomotiveWorld(){
         onPointerMove={e=>{if(revealing)revealAt(e.clientX,e.currentTarget)}}
         onPointerUp={e=>{setRevealing(false);e.currentTarget.releasePointerCapture(e.pointerId)}}>
         <img className="kz-reveal-base" src="/cars/Mercedes-Benz-GLC300-2019/1.jpg" alt="Mercedes-Benz GLC 300 2019" draggable={false}/>
-        <div className="kz-reveal-cover" style={{clipPath:`inset(0 ${reveal}% 0 0)`}}>
-          <div className="kz-cover-fabric"><b>K&Z</b></div>
+        <div className="kz-lift-cover" style={{"--reveal":reveal} as React.CSSProperties}>
+          <div className="kz-cloth-main"><span/><b>K&Z</b></div>
+          <div className="kz-cloth-tail"/>
         </div>
-        <div className="kz-reveal-line" style={{left:`${reveal}%`}}><i>↔</i></div>
+        <div className="kz-reveal-grab" style={{left:`${Math.max(7,Math.min(93,reveal))}%`}}><i>↔</i></div>
         <div className="kz-rotate-hint">DRAG TO REVEAL</div>
         <Link href="/cars/Mercedes-Benz-GLC300-2019" className="kz-hero-car-label"><small>FEATURED VEHICLE</small><b>MERCEDES-BENZ GLC 300</b><span>2019 • VIEW CAR →</span></Link>
       </div>
