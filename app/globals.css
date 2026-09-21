@@ -806,3 +806,16 @@ radial-gradient(ellipse at 50% 38%,#34383a 0,#171a1c 31%,#080a0c 68%,#030405 100
 .kz-hero-car-label{display:flex!important;text-decoration:none!important}
 .kz-cinematic-scroll{left:50%!important;transform:translateX(-50%)!important;bottom:18px!important;padding:7px 13px!important;background:rgba(2,7,12,.72)!important;border:1px solid rgba(202,164,84,.25)!important;color:#c6a65f!important;white-space:nowrap!important}
 @media(max-width:850px){.kz-car-cover{inset:10% 3% 10%}.kz-rotate-hint{bottom:12px}.kz-cinematic-scroll{display:block!important;bottom:8px!important;font-size:8px!important}}
+
+
+/* Fixed-scene drag-to-reveal interaction */
+.kz-drag-reveal{cursor:ew-resize;touch-action:none;user-select:none}
+.kz-drag-reveal .kz-reveal-base{position:absolute;inset:0;width:100%;height:100%;object-fit:contain!important;object-position:center!important;background:radial-gradient(circle at 55% 58%,#1b2530 0,#080d13 52%,#030609 100%);filter:contrast(1.05) brightness(.9)!important;pointer-events:none}
+.kz-reveal-cover{position:absolute;z-index:3;inset:0;pointer-events:none;transition:clip-path .05s linear}
+.kz-cover-fabric{position:absolute;inset:8% 4% 9%;border-radius:46% 45% 17% 18%/30% 31% 14% 15%;background:linear-gradient(115deg,#080b10 0%,#414852 19%,#11161d 38%,#626a73 56%,#171c23 75%,#05080c 100%);box-shadow:inset 0 0 45px rgba(255,255,255,.08),0 24px 30px rgba(0,0,0,.48);filter:drop-shadow(0 12px 18px rgba(0,0,0,.55));overflow:hidden}
+.kz-cover-fabric:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(105deg,transparent 0 8%,rgba(255,255,255,.1) 9%,transparent 13%),radial-gradient(ellipse at 55% 25%,rgba(255,255,255,.16),transparent 32%)}
+.kz-cover-fabric b{position:absolute;z-index:2;left:50%;top:45%;transform:translate(-50%,-50%);font-family:Georgia,serif;font-size:42px;letter-spacing:6px;color:#cba75b;text-shadow:0 3px 14px #000}
+.kz-reveal-line{position:absolute;z-index:8;top:0;bottom:0;width:2px;background:linear-gradient(transparent,#d5ad58 18%,#fff0bd 50%,#d5ad58 82%,transparent);transform:translateX(-1px);pointer-events:none;box-shadow:0 0 16px rgba(216,176,91,.5)}
+.kz-reveal-line i{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#0a1018;border:1px solid #d5ad58;color:#e8c979;font-style:normal;box-shadow:0 5px 25px #000}
+.kz-drag-reveal .kz-hero-car-label{pointer-events:auto}
+@media(max-width:850px){.kz-cover-fabric{inset:12% 3% 11%}.kz-cover-fabric b{font-size:28px}.kz-reveal-line i{width:34px;height:34px}}
