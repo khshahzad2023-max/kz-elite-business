@@ -613,3 +613,10 @@ radial-gradient(ellipse at 50% 38%,#34383a 0,#171a1c 31%,#080a0c 68%,#030405 100
 .kz-dept-contact{text-align:center;padding:85px 20px;background:radial-gradient(circle at 50% 0,rgba(214,171,63,.12),transparent 38%),#03070c;border-top:1px solid rgba(220,181,79,.2)}.kz-dept-contact h2{margin:10px 0;font-family:Georgia,serif;font-size:clamp(36px,5vw,56px);font-weight:500}.kz-dept-contact p{color:#8f9ba7}.kz-dept-contact div{display:flex;justify-content:center;gap:12px;margin-top:26px;flex-wrap:wrap}
 @media(max-width:1000px){.kz-service-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.kz-service-departments{padding:65px 16px}.kz-service-grid,.kz-dept-list{grid-template-columns:1fr}.kz-service-bay{min-height:230px}.kz-dept-hero{min-height:570px;padding-left:16px;padding-right:16px}.kz-dept-hero-inner{margin-top:80px}.kz-dept-services{padding:65px 16px}.kz-dept-back span{display:none}}
+
+
+/* Automotive hub section navigation + sold showroom */
+.kz-lobby-strip a{color:#b9c3cc;font-size:9px;font-weight:900;letter-spacing:.16em;transition:.2s}.kz-lobby-strip a:hover{color:#e3bf62}
+.kz-sold-floor{background:radial-gradient(circle at 50% 0,rgba(116,76,30,.16),transparent 28%),#06090d;border-top:1px solid rgba(220,181,79,.18)}
+.kz-sold-bay{filter:saturate(.88)}.kz-sold-bay .kz-display-info small{color:#cfae60}.kz-sold-stamp{position:absolute;z-index:3;left:16px;top:16px;padding:7px 11px;background:rgba(8,10,12,.84);border:1px solid #d9b354;color:#e5c66c;font-size:9px;letter-spacing:.2em}
+@media(max-width:620px){.kz-lobby-strip{overflow-x:auto;justify-content:flex-start;padding-left:16px;padding-right:16px}.kz-lobby-strip a{white-space:nowrap}}
