@@ -1024,3 +1024,40 @@ html,body{max-width:100%;overflow-x:hidden}
  .kz-who-section{padding-bottom:46px!important}
  .kz-home-auto{padding-top:46px!important}
 }
+
+
+/* Automotive homepage gateway — premium desktop framing */
+@media(min-width:761px){
+ .kz-home-auto{
+   padding-top:54px!important;
+   padding-bottom:84px!important;
+ }
+ .kz-home-auto .kz-home-section-label{
+   margin-bottom:24px;
+   font-size:12px;
+   font-weight:800;
+   letter-spacing:.22em;
+   color:#d7e0e6;
+ }
+ .kz-home-auto .kz-home-section-label span{
+   margin-right:12px;
+   color:#f1d58a;
+ }
+ .kz-home-auto .automotive-gate,
+ .kz-home-auto .kz-automotive-gate{
+   max-width:1180px;
+   margin-inline:auto;
+ }
+ .kz-home-auto img{
+   display:block;
+   max-height:620px;
+   object-fit:cover;
+ }
+ .kz-home-auto a{
+   transition:transform .22s ease,filter .22s ease;
+ }
+ .kz-home-auto a:hover{
+   transform:translateY(-2px);
+   filter:brightness(1.06);
+ }
+}
