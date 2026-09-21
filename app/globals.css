@@ -944,3 +944,19 @@ background-size:53px 31px,71px 39px,89px 47px;opacity:.65}
 .kz-brand-copy{display:flex;flex-direction:column;align-items:flex-start}.kz-brand-overline{font-size:8px;font-weight:800;letter-spacing:.3em;color:#a9bac6}.kz-intro-v4 .kz-brand-copy h1{margin:18px 0 14px;font-family:Arial,sans-serif;font-size:clamp(58px,7vw,102px);line-height:.78;letter-spacing:-.06em;font-weight:900;text-shadow:0 8px 35px rgba(0,0,0,.35)}.kz-intro-v4 .kz-brand-copy h1 em{font-style:normal;font-weight:300;font-size:.66em;letter-spacing:-.035em;color:#d7e0e6}.kz-intro-v4 .kz-brand-copy>p{font-size:10px;letter-spacing:.36em;color:#eef3f5}.kz-intro-v4 .kz-brand-copy>a{margin-top:35px}.kz-brand-mark{display:flex;justify-content:center;align-items:center}.kz-intro-v4 .kz-brand-mark img{width:clamp(245px,28vw,410px);max-height:none;filter:drop-shadow(0 30px 50px rgba(0,0,0,.55))}
 .kz-who-section{padding:110px 0;background:#e1e7ea;color:#071018}.kz-who-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:100px;align-items:start}.kz-who-title small{font-size:8px;font-weight:900;letter-spacing:.3em;color:#647682}.kz-who-title h2{margin:17px 0 0;font-family:Georgia,serif;font-size:clamp(45px,5vw,72px);line-height:.94;font-weight:400;letter-spacing:-.045em}.kz-who-story{padding-top:26px;border-top:1px solid #9cabb4}.kz-who-story p{margin:0;max-width:680px;font-family:Georgia,serif;font-size:clamp(24px,2.5vw,36px);line-height:1.35;color:#18242c}.kz-who-story span{display:block;margin-top:38px;font-size:8px;font-weight:900;letter-spacing:.3em;color:#647681}
 @media(max-width:760px){.kz-intro-v4 .kz-brand-split{grid-template-columns:1fr;text-align:left;gap:28px;padding:70px 0 85px}.kz-intro-v4 .kz-brand-copy h1{font-size:clamp(52px,16vw,78px)}.kz-brand-mark{position:absolute;right:-25px;bottom:70px;opacity:.28}.kz-intro-v4 .kz-brand-mark img{width:230px}.kz-who-section{padding:75px 0}.kz-who-layout{grid-template-columns:1fr;gap:40px}.kz-who-story p{font-size:25px}}
+
+
+/* Hero visibility refinement */
+.kz-intro-v4 .kz-muscat-bg{
+ background:
+ linear-gradient(90deg,rgba(1,6,11,.58) 0%,rgba(1,6,11,.38) 47%,rgba(1,6,11,.28) 100%),
+ linear-gradient(180deg,rgba(1,6,11,.30) 0%,rgba(2,7,12,.42) 55%,rgba(2,7,12,.70) 100%),
+ url('/mutrah-evening-hero.png') center center/cover no-repeat;
+ filter:saturate(.82) brightness(.63) contrast(1.06);
+}
+.kz-intro-v4 .kz-brand-copy h1{color:#fff;text-shadow:0 5px 22px rgba(0,0,0,.78),0 0 1px #fff}
+.kz-intro-v4 .kz-brand-copy h1 em{color:#dfeaf1;text-shadow:0 4px 20px rgba(0,0,0,.75)}
+.kz-intro-v4 .kz-brand-copy>p{color:#f1d58a;text-shadow:0 3px 14px rgba(0,0,0,.85);font-weight:900}
+.kz-intro-v4 .kz-brand-copy>a{color:#fff;border-bottom:1px solid rgba(241,213,138,.72);padding-bottom:8px;text-shadow:0 3px 12px rgba(0,0,0,.8)}
+.kz-brand-mark{overflow:visible}
+.kz-intro-v4 .kz-brand-mark img{border-radius:22%;clip-path:inset(0 round 22%);filter:drop-shadow(0 28px 50px rgba(0,0,0,.6))}
