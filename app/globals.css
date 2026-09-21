@@ -996,3 +996,20 @@ background-size:53px 31px,71px 39px,89px 47px;opacity:.65}
  object-fit:contain;
  filter:drop-shadow(0 26px 46px rgba(0,0,0,.62));
 }
+
+
+/* Hero polish — balanced mark, tighter story cue, readable location */
+.kz-intro-v4 .kz-brand-split{grid-template-columns:1.16fr .84fr;gap:48px}
+.kz-intro-v4 .kz-brand-copy h1{margin-bottom:10px}
+.kz-intro-v4 .kz-brand-copy>p{margin:4px 0 0;letter-spacing:.31em}
+.kz-intro-v4 .kz-brand-copy>a{margin-top:24px;display:inline-flex;align-items:center;gap:12px;padding-bottom:7px}
+.kz-intro-v4 .kz-brand-copy>a span{display:inline-block;margin:0;font-size:14px}
+.kz-intro-v4 .kz-brand-mark{justify-content:center;transform:translateX(-10px)}
+.kz-intro-v4 .kz-brand-mark img{width:clamp(220px,23vw,330px);filter:saturate(.88) brightness(.92) drop-shadow(0 24px 42px rgba(0,0,0,.58))}
+.kz-opening-location{bottom:24px;color:#b4c0c8;font-size:9px;font-weight:700;letter-spacing:.24em;text-shadow:0 2px 10px rgba(0,0,0,.8)}
+@media(max-width:760px){
+ .kz-intro-v4 .kz-brand-split{grid-template-columns:1fr;gap:24px}
+ .kz-intro-v4 .kz-brand-mark{transform:none}
+ .kz-intro-v4 .kz-brand-mark img{width:210px}
+ .kz-opening-location{font-size:7px}
+}
