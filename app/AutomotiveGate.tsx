@@ -12,9 +12,6 @@ export default function AutomotiveGate(){
    window.setTimeout(()=>router.push("/automotive"),1100);
  };
  return <section className={"kz-facade"+(opening?" is-opening":"")}>
-   <div className="kz-facade-sign">
-     <b>K&Z</b><span>AUTOMOTIVE</span><small>PREMIUM CARS • TRUSTED PEOPLE</small>
-   </div>
    <div className="kz-facade-view">
      <img src="/kz-showroom.jpg?v=20260919-new" alt="K&Z Automotive showroom"/>
    </div>
