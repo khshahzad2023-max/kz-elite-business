@@ -29,6 +29,27 @@ export default function AutomotiveWorld(){
       <small>ONE NAME • MANY SOLUTIONS</small>
     </div>}
 
+    <section className="kz-cinematic-hero">
+      <div className="kz-cinematic-grid" aria-hidden="true"/>
+      <div className="kz-cinematic-glow" aria-hidden="true"/>
+      <div className="kz-cinematic-top">
+        <Link href="/" className="kz-cinematic-brand"><img src="/kz-master-logo.png" alt="K&Z"/><span><b>K&Z AUTOMOTIVE</b><small>ONE NAME • MANY SOLUTIONS</small></span></Link>
+        <span>PREMIUM DIGITAL SHOWROOM • MUSCAT</span>
+      </div>
+      <div className="kz-cinematic-copy">
+        <span>WELCOME TO K&Z AUTOMOTIVE</span>
+        <h1>DRIVE INTO<br/><em>THE EXPERIENCE.</em></h1>
+        <p>Explore our vehicles, automotive services and complete K&Z car experience.</p>
+        <div><a href="#showroom-floor">EXPLORE CARS →</a><Link href="/sell-your-car">SELL YOUR CAR</Link></div>
+      </div>
+      <Link href="/cars/Mercedes-Benz-GLC300-2019" className="kz-hero-car">
+        <div className="kz-hero-car-halo"/>
+        <img src="/cars/Mercedes-Benz-GLC300-2019/1.jpg" alt="Mercedes-Benz GLC 300 2019"/>
+        <div className="kz-hero-car-label"><small>FEATURED VEHICLE</small><b>MERCEDES-BENZ GLC 300</b><span>2019 • VIEW CAR →</span></div>
+      </Link>
+      <div className="kz-cinematic-scroll">SCROLL TO EXPLORE ↓</div>
+    </section>
+
     <section className="kz-lobby">
       <div className="kz-lobby-overlay"/>
       <div className="kz-lobby-top">
