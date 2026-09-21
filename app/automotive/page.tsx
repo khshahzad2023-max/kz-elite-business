@@ -89,7 +89,7 @@ export default function AutomotiveWorld(){
           <div className="kz-mosaic-copy"><small>◆ &nbsp; SERVICE DEPARTMENT</small><h3>{s[0]}</h3><p>{s[1]}</p><b>ENTER DEPARTMENT →</b></div>
         </Link>)}
       </div>
-      <div className="kz-service-values"><span>◇ <b>Quality Work</b><small>You Can Trust</small></span><span>◉ <b>Affordable</b><small>Service Packages</small></span><span>♢ <b>Professional Tools</b><small>Quality Service</small></span><span>◷ <b>Fast & Reliable</b><small>Turnaround</small></span><a href="https://wa.me/96878967229?text=Hello%20K%26Z%2C%20I%20want%20to%20book%20an%20automotive%20service.">BOOK A SERVICE →</a></div>
+      <div className="kz-service-values"><span>◇ <b>Quality Work</b><small>You Can Trust</small></span><span>◉ <b>Affordable</b><small>Service Packages</small></span><span>♢ <b>Professional Tools</b><small>Quality Service</small></span><span>◷ <b>Fast & Reliable</b><small>Turnaround</small></span><a href="https://wa.me/96878967229?text=Hello%20K%26Z%2C%20I%20want%20to%20book%20an%20automotive%20service." target="_blank" rel="noopener noreferrer">BOOK A SERVICE →</a></div>
     </section>
 
     <section id="showroom-floor" className="kz-floor">
