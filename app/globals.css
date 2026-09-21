@@ -1315,3 +1315,31 @@ background-size:53px 31px,71px 39px,89px 47px;opacity:.65}
    opacity:.9!important;
  }
 }
+
+
+/* Mobile hero viewport-height correction */
+@media(max-width:760px){
+ .kz-home-v3 .kz-brand-opening.kz-intro-v4{
+   height:62svh!important;
+   min-height:430px!important;
+   max-height:540px!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-split{
+   height:62svh!important;
+   min-height:430px!important;
+   max-height:540px!important;
+   padding:24px 0 44px!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-copy{
+   transform:none!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-copy h1{
+   font-size:clamp(46px,13vw,56px)!important;
+ }
+ .kz-home-v3 .kz-intro-v4 .kz-brand-copy h1 em{
+   font-size:clamp(27px,7.6vw,32px)!important;
+ }
+ .kz-home-v3 .kz-opening-location{
+   bottom:14px!important;
+ }
+}
