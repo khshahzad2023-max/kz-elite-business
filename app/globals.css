@@ -926,3 +926,14 @@ radial-gradient(ellipse at 63% 74%,rgba(236,170,91,.15) 0 1px,transparent 2px);
 background-size:53px 31px,71px 39px,89px 47px;opacity:.65}
 .kz-intro-v4 .kz-brand-lockup{padding-top:70px}
 .kz-intro-menu{display:none!important}
+
+
+/* Live Mutrah evening hero asset */
+.kz-intro-v4 .kz-muscat-bg{
+ background:
+ linear-gradient(180deg,rgba(2,7,12,.18) 0%,rgba(2,8,13,.30) 52%,rgba(3,9,14,.68) 100%),
+ linear-gradient(90deg,rgba(2,8,14,.20),rgba(2,8,14,.05)),
+ url('/mutrah-evening-hero.png') center center/cover no-repeat;
+ filter:saturate(.92) brightness(.78) contrast(1.04);
+}
+.kz-intro-v4 .kz-muscat-bg:before{display:none}
