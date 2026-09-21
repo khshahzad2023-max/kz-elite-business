@@ -1,8 +1,6 @@
 
 import Link from "next/link";
-import SoldCarCard from "./sold-cars/SoldCarCard";
 import AutomotiveGate from "./AutomotiveGate";
-import { soldCars } from "./sold-cars/soldCars";
 
 const core = [
   {icon:"🚘",title:"Cars for Sale",text:"Browse available vehicles with clear pricing, specifications, mileage, location and finance availability.",href:"/cars"},
@@ -91,19 +89,26 @@ export default function Home(){
         </div>
       </section>
 
-      <section className="section sold-showcase">
+      <section className="section kz-trust-section">
         <div className="container">
-          <div className="section-head">
-            <div><div className="eyebrow">Proven Results</div><h2>Recently sold</h2></div>
-            <p>Vehicles successfully advertised and sold with K&amp;Z ELITE BUSINESS.</p>
+          <div className="kz-trust-head">
+            <div className="eyebrow">The K&amp;Z Ecosystem</div>
+            <h2>One trusted name.<br/><span>Many solutions.</span></h2>
+            <p>Automotive, property, maintenance and promotion — connected through one Muscat-based business network.</p>
           </div>
-          <div className="sold-grid sold-grid-preview">
-            {soldCars.slice(-3).reverse().map((car) => <SoldCarCard key={`${car.name}-${car.year}`} car={car} />)}
+          <div className="kz-trust-orbit">
+            <div className="kz-trust-lines" aria-hidden="true"><i/><i/><i/><i/></div>
+            <div className="kz-trust-core">
+              <img src="/kz-master-logo.png" alt="K&Z ELITE BUSINESS"/>
+              <strong>K&amp;Z ELITE BUSINESS</strong>
+              <span>ONE NAME • MANY SOLUTIONS</span>
+            </div>
+            <Link href="/automotive" className="kz-trust-float kz-trust-auto"><small>01</small><b>Automotive</b><span>Buy • Sell • Source • Finance<br/>Garage &amp; Car Care</span></Link>
+            <Link href="/building-maintenance" className="kz-trust-float kz-trust-maint"><small>02</small><b>Building Maintenance</b><span>Electrical • Plumbing • AC<br/>Painting &amp; General Care</span></Link>
+            <Link href="/properties" className="kz-trust-float kz-trust-property"><small>03</small><b>Property</b><span>Rooms • Flats<br/>Rental Listings</span></Link>
+            <Link href="/advertising" className="kz-trust-float kz-trust-promo"><small>04</small><b>Business Promotion</b><span>Cars • Properties • Businesses<br/>Online Advertising</span></Link>
           </div>
-          <div className="actions sold-actions">
-            <Link className="btn btn-secondary" href="/sold-cars">View All Sold Cars</Link>
-            <Link className="btn btn-primary" href="/sell-your-car">Sell Your Car With Us</Link>
-          </div>
+          <div className="kz-trust-strip"><span>DIRECT CONTACT</span><i/> <span>LOCAL SUPPORT</span><i/> <span>MULTIPLE SERVICES</span><i/> <span>ONE BRAND</span></div>
         </div>
       </section>
 
