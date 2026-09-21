@@ -42,6 +42,7 @@ export default function AutomotiveWorld(){
         <div><a href="#showroom-floor" className="kz-lobby-btn">EXPLORE VEHICLES ↓</a><Link href="/find-a-car" className="kz-lobby-link">FIND A CAR →</Link></div>
       </div>
       <div className="kz-lobby-strip"><a href="#showroom-floor">AVAILABLE CARS</a><i/><a href="#sold-showroom">SOLD CARS</a><i/><a href="#service-center">SERVICES</a><i/><Link href="/find-a-car">FIND A CAR</Link><i/><Link href="/sell-your-car">SELL YOUR CAR</Link></div>
+      <a href="#automotive-hub" className="kz-explore-cue" aria-label="Explore more"><span className="kz-explore-desktop">SCROLL TO EXPLORE</span><span className="kz-explore-mobile">SWIPE TO EXPLORE</span><i>↓</i></a>
     </section>
 
     <section id="automotive-hub" className="kz-auto-hub">
