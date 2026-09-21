@@ -978,3 +978,11 @@ background-size:53px 31px,71px 39px,89px 47px;opacity:.65}
  .kz-intro-v4 .kz-brand-copy h1{font-size:clamp(48px,15vw,72px)}
  .kz-intro-v4 .kz-brand-mark img{width:220px}
 }
+
+
+/* Keep hero heading fully visible */
+.kz-intro-v4 .kz-brand-copy{padding-left:clamp(12px,2.2vw,32px)}
+.kz-intro-v4 .kz-brand-copy h1{max-width:620px;font-size:clamp(48px,5.5vw,82px);line-height:.84;letter-spacing:-.045em}
+.kz-intro-v4 .kz-brand-copy h1 em{display:block;margin-top:8px;font-size:.62em;line-height:1;letter-spacing:-.02em}
+.kz-intro-v4 .kz-brand-copy>p{margin-top:8px;line-height:1.5}
+@media(max-width:760px){.kz-intro-v4 .kz-brand-copy{padding-left:0}.kz-intro-v4 .kz-brand-copy h1{font-size:clamp(46px,14vw,68px);max-width:100%}}
