@@ -986,3 +986,34 @@ html,body{max-width:100%;overflow-x:hidden}
  }
  .kz-home-auto{padding-top:54px!important}
 }
+
+
+/* Who We Are — desktop two-column editorial composition */
+@media(min-width:761px){
+ .kz-who-section{padding:92px 0 86px}
+ .kz-who-layout{
+   display:grid;
+   grid-template-columns:minmax(280px,.72fr) minmax(520px,1.28fr);
+   gap:clamp(70px,8vw,130px);
+   align-items:start;
+ }
+ .kz-who-title{max-width:360px}
+ .kz-who-title small{display:block;margin-bottom:24px}
+ .kz-who-title h2{margin:0;font-size:clamp(42px,4vw,62px);line-height:.98}
+ .kz-who-story{
+   max-width:760px;
+   padding-top:34px;
+ }
+ .kz-who-story>p:first-child{
+   max-width:740px;
+   font-size:clamp(20px,1.65vw,26px);
+   line-height:1.48;
+ }
+ .kz-who-story p+p{
+   max-width:690px;
+   margin-top:24px;
+   font-size:clamp(16px,1.15vw,19px);
+   line-height:1.6;
+ }
+ .kz-who-story span{margin-top:30px}
+}
