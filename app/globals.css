@@ -1013,3 +1013,26 @@ background-size:53px 31px,71px 39px,89px 47px;opacity:.65}
  .kz-intro-v4 .kz-brand-mark img{width:210px}
  .kz-opening-location{font-size:7px}
 }
+
+
+/* Hero final alignment refinement */
+@media(min-width:761px){
+ .kz-intro-v4 .kz-brand-copy{transform:translate(18px,-18px)}
+ .kz-intro-v4 .kz-brand-mark{transform:translate(-28px,-6px)}
+ .kz-intro-v4 .kz-brand-mark img{width:clamp(205px,21.5vw,295px);filter:saturate(.84) brightness(.88) drop-shadow(0 22px 38px rgba(0,0,0,.56))}
+}
+.kz-intro-v4 .kz-brand-copy>a{
+ width:auto;
+ border-bottom:0;
+ position:relative;
+ padding:0 0 10px;
+}
+.kz-intro-v4 .kz-brand-copy>a:after{
+ content:"";
+ position:absolute;
+ left:0;
+ bottom:0;
+ width:54px;
+ height:1px;
+ background:rgba(241,213,138,.78);
+}
