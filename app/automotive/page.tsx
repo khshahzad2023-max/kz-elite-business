@@ -70,23 +70,26 @@ export default function AutomotiveWorld(){
       </div>
     </section>
 
-    <section id="service-center" className="kz-photo-services">
-      <div className="kz-photo-services-head"><div><span>K&Z AUTOMOTIVE SERVICE CENTER</span><h2>Complete car care.<br/><em>Seven departments.</em></h2></div><p>Choose a service to open its dedicated department.</p></div>
-      <div className="kz-photo-services-grid">
+    <section id="service-center" className="kz-service-premium">
+      <div className="kz-service-hero">
+        <div><span>AUTOMOTIVE SERVICE CENTER</span><h2>Complete Car Care<br/>Under One Roof</h2><p>Professional. Reliable. Affordable.</p></div>
+        <div className="kz-service-trust"><b>⚙ Skilled Technicians</b><b>♢ Quality Service</b><b>◷ On-Time Delivery</b><b>♧ Customer Satisfaction</b></div>
+      </div>
+      <div className="kz-service-mosaic">
         {[
-          ["01","GARAGE & MAINTENANCE","Mechanical • Electrical • AC","/automotive/garage","https://nerex.com.tr/src/img/5654_2.webp"],
-          ["02","TYRES & BATTERIES","Fitment • Replacement","/automotive/tyres-batteries","https://assets-global.website-files.com/636b9e5acb95e27c7b09e335/63d83127dd030a4ee0662236_01-thumbnail-04.jpg"],
-          ["03","ACCESSORIES","Decoration • Installation","/automotive/accessories","https://www.citysearch.ae/uf/albums/48677/carhabibi-dubai_61856294.jpg"],
-          ["04","WINDOW TINTING","Professional tint installation","/automotive/tinting","https://www.tnttinting.com/sites/default/files/styles/image_1000x100p/public/images/articles/How%20do%20I%20choose%20the%20best%20car%20window%20tinting%20near%20me.png?itok=l_DQrX2m"],
-          ["05","POLISHING & DETAILING","Polish • Interior • Finish","/automotive/detailing","https://atomicautoworks.com/cdn/shop/articles/auto-detailing-service-polishing-of-the-car-side-2023-11-27-04-54-32-utc.jpg?v=1731356952"],
-          ["06","CAR WASH","Exterior • Interior","/automotive/car-wash","https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=80"],
-          ["07","DENTING & PAINTING","Body repair • Paint","/automotive/denting-painting","https://apex541.com/wp-content/uploads/2025/07/professional-worker-man-is-painting-a-car-by-using-WLJH9BK.jpg"],
-        ].map((s,i)=><Link href={s[3]} className={"kz-photo-service "+(i===0?"kz-photo-service-main":"")} key={s[0]}>
-          <img src={s[4]} alt={s[1]+" service"}/><div className="kz-photo-service-shade"/>
-          <span className="kz-photo-service-no">{s[0]}</span>
-          <div className="kz-photo-service-copy"><small>SERVICE DEPARTMENT</small><h3>{s[1]}</h3><p>{s[2]}</p><b>ENTER DEPARTMENT →</b></div>
+          ["GARAGE & MAINTENANCE","Mechanical, Electrical, AC and Complete Vehicle Care.","/automotive/garage","https://nerex.com.tr/src/img/5654_2.webp","garage"],
+          ["TYRES & BATTERIES","Tyres, Batteries, Fitting and Replacement.","/automotive/tyres-batteries","https://assets-global.website-files.com/636b9e5acb95e27c7b09e335/63d83127dd030a4ee0662236_01-thumbnail-04.jpg","tyres"],
+          ["ACCESSORIES & DECORATION","Interior & Exterior Accessories.","/automotive/accessories","https://www.citysearch.ae/uf/albums/48677/carhabibi-dubai_61856294.jpg","accessories"],
+          ["WINDOW TINTING","Professional Tinting & Appearance Upgrades.","/automotive/tinting","https://www.tnttinting.com/sites/default/files/styles/image_1000x100p/public/images/articles/How%20do%20I%20choose%20the%20best%20car%20window%20tinting%20near%20me.png?itok=l_DQrX2m","tint"],
+          ["POLISHING & DETAILING","Exterior Polish, Interior Detailing and Finish Restoration.","/automotive/detailing","https://atomicautoworks.com/cdn/shop/articles/auto-detailing-service-polishing-of-the-car-side-2023-11-27-04-54-32-utc.jpg?v=1731356952","detail"],
+          ["CAR WASH","Professional Cleaning and Washing Services.","/automotive/car-wash","https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=80","wash"],
+          ["DENTING & PAINTING","Body Repair, Dent Correction and Automotive Painting.","/automotive/denting-painting","https://apex541.com/wp-content/uploads/2025/07/professional-worker-man-is-painting-a-car-by-using-WLJH9BK.jpg","paint"],
+        ].map((s,i)=><Link href={s[2]} className={"kz-mosaic-card kz-mosaic-"+s[4]} key={s[0]}>
+          <img src={s[3]} alt={s[0]}/><div className="kz-mosaic-shade"/>
+          <div className="kz-mosaic-copy"><small>◆ &nbsp; SERVICE DEPARTMENT</small><h3>{s[0]}</h3><p>{s[1]}</p><b>ENTER DEPARTMENT →</b></div>
         </Link>)}
       </div>
+      <div className="kz-service-values"><span>◇ <b>Quality Work</b><small>You Can Trust</small></span><span>◉ <b>Affordable</b><small>Service Packages</small></span><span>♢ <b>Professional Tools</b><small>Quality Service</small></span><span>◷ <b>Fast & Reliable</b><small>Turnaround</small></span><a href="https://wa.me/96878967229?text=Hello%20K%26Z%2C%20I%20want%20to%20book%20an%20automotive%20service.">BOOK A SERVICE →</a></div>
     </section>
 
     <section id="showroom-floor" className="kz-floor">
