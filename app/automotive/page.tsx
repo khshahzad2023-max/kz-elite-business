@@ -77,13 +77,13 @@ export default function AutomotiveWorld(){
       </div>
       <div className="kz-service-mosaic">
         {[
-          ["GARAGE & MAINTENANCE","Mechanical, Electrical, AC and Complete Vehicle Care.","/automotive/garage","https://nerex.com.tr/src/img/5654_2.webp","garage"],
-          ["TYRES & BATTERIES","Tyres, Batteries, Fitting and Replacement.","/automotive/tyres-batteries","https://assets-global.website-files.com/636b9e5acb95e27c7b09e335/63d83127dd030a4ee0662236_01-thumbnail-04.jpg","tyres"],
-          ["ACCESSORIES & DECORATION","Interior & Exterior Accessories.","/automotive/accessories","https://www.citysearch.ae/uf/albums/48677/carhabibi-dubai_61856294.jpg","accessories"],
-          ["WINDOW TINTING","Professional Tinting & Appearance Upgrades.","/automotive/tinting","https://www.tnttinting.com/sites/default/files/styles/image_1000x100p/public/images/articles/How%20do%20I%20choose%20the%20best%20car%20window%20tinting%20near%20me.png?itok=l_DQrX2m","tint"],
-          ["POLISHING & DETAILING","Exterior Polish, Interior Detailing and Finish Restoration.","/automotive/detailing","https://atomicautoworks.com/cdn/shop/articles/auto-detailing-service-polishing-of-the-car-side-2023-11-27-04-54-32-utc.jpg?v=1731356952","detail"],
-          ["CAR WASH","Professional Cleaning and Washing Services.","/automotive/car-wash","https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=80","wash"],
-          ["DENTING & PAINTING","Body Repair, Dent Correction and Automotive Painting.","/automotive/denting-painting","https://apex541.com/wp-content/uploads/2025/07/professional-worker-man-is-painting-a-car-by-using-WLJH9BK.jpg","paint"],
+          ["GARAGE & MAINTENANCE","Mechanical, Electrical, AC and Complete Vehicle Care.","/automotive/garage","/automotive-services/garage.jpg","garage"],
+          ["TYRES & BATTERIES","Tyres, Batteries, Fitting and Replacement.","/automotive/tyres-batteries","/automotive-services/tyres-batteries.jpg","tyres"],
+          ["ACCESSORIES & DECORATION","Interior & Exterior Accessories.","/automotive/accessories","/automotive-services/accessories.jpg","accessories"],
+          ["WINDOW TINTING","Professional Tinting & Appearance Upgrades.","/automotive/tinting","/automotive-services/window-tinting.jpg","tint"],
+          ["POLISHING & DETAILING","Exterior Polish, Interior Detailing and Finish Restoration.","/automotive/detailing","/automotive-services/detailing.jpg","detail"],
+          ["CAR WASH","Professional Cleaning and Washing Services.","/automotive/car-wash","/automotive-services/car-wash.jpg","wash"],
+          ["DENTING & PAINTING","Body Repair, Dent Correction and Automotive Painting.","/automotive/denting-painting","/automotive-services/denting-painting.jpg","paint"],
         ].map((s,i)=><Link href={s[2]} className={"kz-mosaic-card kz-mosaic-"+s[4]} key={s[0]}>
           <img src={s[3]} alt={s[0]}/><div className="kz-service-privacy-mask" aria-hidden="true"/><div className="kz-mosaic-shade"/>
           <div className="kz-mosaic-copy"><small>◆ &nbsp; SERVICE DEPARTMENT</small><h3>{s[0]}</h3><p>{s[1]}</p><b>ENTER DEPARTMENT →</b></div>
