@@ -70,26 +70,22 @@ export default function AutomotiveWorld(){
       </div>
     </section>
 
-    <section id="service-center" className="kz-workshop-complex">
-      <div className="kz-workshop-head"><div><span>K&Z AUTOMOTIVE SERVICE CENTER</span><h2>Seven departments.<br/><em>One name.</em></h2></div><p>Everything your car needs, connected through one automotive service center.</p></div>
-      <div className="kz-workshop-map">
-        <Link href="/automotive/garage" className="kz-workshop-feature">
-          <div className="kz-workshop-visual"><div className="kz-workshop-car">K&Z</div><div className="kz-workshop-lights"/><div className="kz-workshop-floor"/></div>
-          <div className="kz-workshop-copy"><span>MAIN WORKSHOP • BAY 01</span><h3>Garage &<br/>Maintenance</h3><p>Mechanical • Electrical • AC • General Maintenance</p><b>OPEN WORKSHOP →</b></div>
-        </Link>
-        <div className="kz-workshop-side">
-          {[
-            ["02","TYRES & BATTERIES","Fitment • Replacement","/automotive/tyres-batteries","◉"],
-            ["03","ACCESSORIES","Decoration • Upgrades","/automotive/accessories","✦"],
-            ["04","WINDOW TINTING","Privacy • Appearance","/automotive/tinting","◐"],
-            ["05","DETAILING","Polish • Interior • Finish","/automotive/detailing","◆"],
-            ["06","CAR WASH","Exterior • Interior","/automotive/car-wash","≈"],
-            ["07","BODY & PAINT","Denting • Painting","/automotive/denting-painting","▰"],
-          ].map(s=><Link href={s[3]} className="kz-workshop-tile" key={s[0]}>
-            <div className="kz-workshop-tile-top"><span>{s[0]}</span><i>{s[4]}</i></div>
-            <div><small>SERVICE DEPARTMENT</small><h3>{s[1]}</h3><p>{s[2]}</p><b>ENTER →</b></div>
-          </Link>)}
-        </div>
+    <section id="service-center" className="kz-photo-services">
+      <div className="kz-photo-services-head"><div><span>K&Z AUTOMOTIVE SERVICE CENTER</span><h2>Complete car care.<br/><em>Seven departments.</em></h2></div><p>Choose a service to open its dedicated department.</p></div>
+      <div className="kz-photo-services-grid">
+        {[
+          ["01","GARAGE & MAINTENANCE","Mechanical • Electrical • AC","/automotive/garage","https://nerex.com.tr/src/img/5654_2.webp"],
+          ["02","TYRES & BATTERIES","Fitment • Replacement","/automotive/tyres-batteries","https://assets-global.website-files.com/636b9e5acb95e27c7b09e335/63d83127dd030a4ee0662236_01-thumbnail-04.jpg"],
+          ["03","ACCESSORIES","Decoration • Installation","/automotive/accessories","https://www.citysearch.ae/uf/albums/48677/carhabibi-dubai_61856294.jpg"],
+          ["04","WINDOW TINTING","Professional tint installation","/automotive/tinting","https://www.tnttinting.com/sites/default/files/styles/image_1000x100p/public/images/articles/How%20do%20I%20choose%20the%20best%20car%20window%20tinting%20near%20me.png?itok=l_DQrX2m"],
+          ["05","POLISHING & DETAILING","Polish • Interior • Finish","/automotive/detailing","https://atomicautoworks.com/cdn/shop/articles/auto-detailing-service-polishing-of-the-car-side-2023-11-27-04-54-32-utc.jpg?v=1731356952"],
+          ["06","CAR WASH","Exterior • Interior","/automotive/car-wash","https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=80"],
+          ["07","DENTING & PAINTING","Body repair • Paint","/automotive/denting-painting","https://apex541.com/wp-content/uploads/2025/07/professional-worker-man-is-painting-a-car-by-using-WLJH9BK.jpg"],
+        ].map((s,i)=><Link href={s[3]} className={"kz-photo-service "+(i===0?"kz-photo-service-main":"")} key={s[0]}>
+          <img src={s[4]} alt={s[1]+" service"}/><div className="kz-photo-service-shade"/>
+          <span className="kz-photo-service-no">{s[0]}</span>
+          <div className="kz-photo-service-copy"><small>SERVICE DEPARTMENT</small><h3>{s[1]}</h3><p>{s[2]}</p><b>ENTER DEPARTMENT →</b></div>
+        </Link>)}
       </div>
     </section>
 
