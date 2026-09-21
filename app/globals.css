@@ -1242,3 +1242,64 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(prefers-reduced-motion:reduce){
  .kz-eco-service,.kz-eco-service>b,.kz-trust-v3-grid>div{transition:none}
 }
+
+
+/* Mobile homepage compression — showroom, CONNECT and footer */
+@media(max-width:620px){
+ .kz-home-auto{padding-bottom:28px!important}
+ .kz-home-auto .kz-facade{
+   min-height:490px!important;
+   width:92%;
+   margin-inline:auto;
+   border-radius:15px;
+ }
+ .kz-home-auto .kz-facade:before,
+ .kz-home-auto .kz-facade:after{width:20px}
+ .kz-home-auto .kz-facade-view{left:20px;right:20px}
+ .kz-home-auto .kz-facade-enter{
+   bottom:58px;
+   min-width:220px;
+   padding:13px 22px;
+   gap:18px;
+   font-size:10px;
+ }
+ .kz-home-auto .kz-facade-foot{
+   left:20px;right:20px;height:43px;
+   gap:6px;padding:0 6px;
+   font-size:6px;letter-spacing:.12em;
+ }
+ .crystal-connect{
+   grid-template-columns:repeat(4,minmax(0,1fr))!important;
+   gap:7px!important;
+   padding:9px!important;
+   border-radius:18px!important;
+ }
+ .crystal-contact{
+   height:108px!important;
+   padding:7px 4px!important;
+   border-radius:15px!important;
+ }
+ .crystal-letter{
+   font-size:38px!important;
+   transform:none!important;
+ }
+ .crystal-detail{
+   left:4px!important;right:4px!important;bottom:5px!important;
+   padding:5px 3px!important;
+   gap:3px!important;
+   border-radius:9px!important;
+   opacity:0!important;
+   transform:translateY(8px)!important;
+ }
+ .crystal-contact:focus-visible .crystal-detail,
+ .crystal-contact:active .crystal-detail{
+   opacity:1!important;
+   transform:translateY(0)!important;
+ }
+ .crystal-icon{width:22px!important;height:22px!important;flex-basis:22px!important;border-radius:6px!important}
+ .footer{padding:34px 0 20px!important}
+ .footer-grid{gap:26px!important}
+ .footer p,.footer a{line-height:1.65!important}
+ .footer h4{margin-bottom:9px!important}
+ .footer-bottom{margin-top:22px!important;padding-top:16px!important;gap:12px!important}
+}
