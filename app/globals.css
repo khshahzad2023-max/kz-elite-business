@@ -1168,3 +1168,77 @@ html,body{max-width:100%;overflow-x:hidden}
  }
  .kz-trust-v3-signoff span{text-align:left;font-size:13px}
 }
+
+
+/* Homepage final art-direction polish — 2026-09-22 */
+.kz-home-v3{
+ --kz-gold:#f1d58a;
+ --kz-muted:#9eacb5;
+ --kz-line:rgba(180,200,212,.14);
+}
+.kz-home-v3 .kz-who-section,
+.kz-home-v3 .kz-home-auto,
+.kz-home-v3 .kz-services-ecosystem,
+.kz-home-v3 .kz-trust-v3{position:relative}
+.kz-home-v3 .kz-who-section:after,
+.kz-home-v3 .kz-home-auto:after{
+ content:"";position:absolute;left:50%;bottom:0;width:min(1180px,calc(100% - 48px));
+ height:1px;transform:translateX(-50%);
+ background:linear-gradient(90deg,transparent,var(--kz-line) 18%,var(--kz-line) 82%,transparent);
+}
+.kz-eco-head h2,.kz-trust-v3-title h2,.kz-who-title h2{
+ text-wrap:balance;
+}
+.kz-eco-head p{font-size:14px;letter-spacing:.02em}
+.kz-eco-service{
+ border:1px solid rgba(192,210,221,.12);
+ border-top-color:rgba(192,210,221,.34);
+ border-radius:2px;
+}
+.kz-eco-service h3{line-height:1.06;letter-spacing:-.02em}
+.kz-eco-service>b{opacity:.78;transition:opacity .22s ease,letter-spacing .22s ease}
+.kz-eco-service:hover>b{opacity:1;letter-spacing:.17em}
+.kz-eco-core{
+ width:232px;height:232px;
+ border-color:rgba(181,201,214,.28);
+ box-shadow:0 32px 80px rgba(0,0,0,.44),0 0 90px rgba(58,103,134,.14);
+}
+.kz-eco-core img{width:90px;height:90px;filter:brightness(1.03) saturate(.92)}
+.kz-eco-lines i{opacity:.82}
+.kz-trust-v3-grid>div{transition:background .25s ease}
+.kz-trust-v3-grid>div:hover{background:rgba(255,255,255,.025)}
+.kz-trust-v3-grid b{line-height:1.25}
+.kz-trust-v3-grid p{max-width:230px}
+@media(min-width:761px){
+ .kz-services-ecosystem{padding-top:76px!important;padding-bottom:68px!important}
+ .kz-eco-stage{margin-top:48px}
+ .kz-eco-service{width:285px;padding:24px 25px}
+ .kz-eco-s1{left:1%;top:9%}.kz-eco-s2{right:1%;top:9%}
+ .kz-eco-s3{left:4%;bottom:7%}.kz-eco-s4{right:4%;bottom:7%}
+ .kz-trust-v3{padding-top:76px!important}
+ .kz-trust-v3-title{margin-bottom:0!important}
+ .kz-trust-v3-title h2{margin-bottom:48px}
+ .kz-trust-v3-grid>div{padding:27px 24px;min-height:218px}
+ .kz-trust-v3-grid b{margin-top:44px}
+}
+@media(max-width:760px){
+ .kz-services-ecosystem{padding:62px 0 58px}
+ .kz-eco-head{padding:0 8px}
+ .kz-eco-head h2{font-size:clamp(38px,11vw,50px);line-height:.98}
+ .kz-eco-head p{font-size:13px}
+ .kz-eco-stage{gap:12px;margin-top:34px}
+ .kz-eco-core{width:172px;height:172px;margin-bottom:12px}
+ .kz-eco-core img{width:68px;height:68px}
+ .kz-eco-service{padding:20px 21px}
+ .kz-eco-service h3{font-size:23px}
+ .kz-trust-v3-title h2{font-size:clamp(38px,11vw,50px);line-height:1}
+ .kz-trust-v3-grid{grid-template-columns:1fr}
+ .kz-trust-v3-grid>div{min-height:0;padding:23px 4px 25px;border-right:0!important;border-top:1px solid rgba(180,200,212,.14)}
+ .kz-trust-v3-grid>div:first-child{border-top:0}
+ .kz-trust-v3-grid b{margin:20px 0 8px;font-size:15px}
+ .kz-trust-v3-grid p{max-width:340px;font-size:12px}
+ .kz-trust-v3-signoff{margin-top:2px}
+}
+@media(prefers-reduced-motion:reduce){
+ .kz-eco-service,.kz-eco-service>b,.kz-trust-v3-grid>div{transition:none}
+}
