@@ -594,3 +594,11 @@ radial-gradient(ellipse at 50% 38%,#34383a 0,#171a1c 31%,#080a0c 68%,#030405 100
 @media(max-width:850px){
   .kz-glass-door{top:18%!important;bottom:13%!important;left:30%!important;right:30%!important}
 }
+
+
+/* Final showroom entrance correction: use photographed doors, no artificial frame */
+.kz-glass-door{display:none!important}
+.kz-real-door-seam{position:absolute;z-index:3;top:39%;bottom:15%;left:50%;width:1px;transform:translateX(-50%);background:linear-gradient(transparent,rgba(255,224,144,.42) 18%,rgba(255,224,144,.42) 82%,transparent);opacity:.42;pointer-events:none;transition:opacity .25s ease}
+.kz-facade.is-opening .kz-real-door-seam{opacity:0}
+.kz-facade.is-opening .kz-facade-view img{transform:scale(1.055)!important;filter:brightness(1.12)}
+.kz-facade-view img{transition:transform 1.05s cubic-bezier(.2,.7,.2,1),filter .8s ease!important}
