@@ -62,8 +62,5 @@ export default function Home(){
    </div>
   </section>
 
-  <section className="kz-home-end">
-   <div className="container"><img src="/kz-master-logo.png" alt="K&Z"/><div><h2>K&amp;Z ELITE BUSINESS</h2><p>ONE NAME • MANY SOLUTIONS</p></div><Link href="/contact">CONNECT WITH K&amp;Z →</Link></div>
-  </section>
  </main>
 }
