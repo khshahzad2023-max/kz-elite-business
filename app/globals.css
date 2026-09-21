@@ -656,3 +656,21 @@ radial-gradient(ellipse at 50% 38%,#34383a 0,#171a1c 31%,#080a0c 68%,#030405 100
 @media(min-width:1000px){.kz-mosaic-card img{object-position:center}.kz-mosaic-garage img{object-position:40% center}.kz-mosaic-tint img,.kz-mosaic-detail img{object-position:center 60%}}
 @media(max-width:900px){.kz-service-hero{grid-template-columns:1fr}.kz-service-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:repeat(4,300px)}.kz-mosaic-card,.kz-mosaic-garage,.kz-mosaic-tyres,.kz-mosaic-accessories,.kz-mosaic-tint,.kz-mosaic-detail,.kz-mosaic-wash,.kz-mosaic-paint{grid-column:auto;grid-row:auto;display:block}.kz-service-values{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.kz-service-premium{padding-inline:10px}.kz-service-hero{padding:40px 10px 22px}.kz-service-trust{grid-template-columns:1fr 1fr}.kz-service-mosaic{grid-template-columns:1fr;grid-template-rows:none}.kz-mosaic-card{min-height:330px}.kz-service-values{grid-template-columns:1fr 1fr;padding:18px 10px}.kz-service-values a{grid-column:1/-1}}
+
+/* unmistakable service center v2 */
+.kz-service-v2{padding-top:22px!important;background:#020508!important}
+.kz-service-v2 .kz-service-hero{min-height:330px!important;padding:55px 48px 35px!important;border:1px solid rgba(223,184,79,.22)!important;background:linear-gradient(110deg,#03070b 0%,#07121b 58%,#101b22 100%)!important}
+.kz-service-v2 .kz-service-hero h2{font-size:clamp(52px,7vw,92px)!important;letter-spacing:-.035em!important}
+.kz-service-v2 .kz-service-hero h2 em{color:#dfb84f!important;font-style:normal!important}
+.kz-service-v2 .kz-service-mosaic{margin-top:10px!important;grid-template-columns:1.25fr 1fr 1fr!important;grid-template-rows:360px 300px 300px!important}
+.kz-service-v2 .kz-mosaic-garage{grid-column:1!important;grid-row:1/3!important}
+.kz-service-v2 .kz-mosaic-tyres{grid-column:2!important;grid-row:1!important}
+.kz-service-v2 .kz-mosaic-accessories{grid-column:3!important;grid-row:1!important}
+.kz-service-v2 .kz-mosaic-tint{grid-column:2!important;grid-row:2!important}
+.kz-service-v2 .kz-mosaic-detail{grid-column:3!important;grid-row:2!important}
+.kz-service-v2 .kz-mosaic-wash{grid-column:1/2!important;grid-row:3!important}
+.kz-service-v2 .kz-mosaic-paint{display:block!important;grid-column:2/4!important;grid-row:3!important}
+.kz-service-v2 .kz-mosaic-card{border-color:rgba(223,184,79,.26)!important}
+.kz-service-v2 .kz-mosaic-copy h3{font-size:22px!important}.kz-service-v2 .kz-mosaic-garage .kz-mosaic-copy h3{font-size:clamp(42px,5vw,68px)!important}
+@media(max-width:900px){.kz-service-v2 .kz-service-mosaic{grid-template-columns:1fr 1fr!important;grid-template-rows:none!important}.kz-service-v2 .kz-mosaic-card{grid-column:auto!important;grid-row:auto!important;min-height:320px!important}.kz-service-v2 .kz-mosaic-garage{grid-column:1/-1!important}}
+@media(max-width:600px){.kz-service-v2 .kz-service-hero{padding:38px 18px!important}.kz-service-v2 .kz-service-mosaic{grid-template-columns:1fr!important}.kz-service-v2 .kz-mosaic-card{grid-column:1!important;min-height:330px!important}}
