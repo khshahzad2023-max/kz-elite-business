@@ -19,7 +19,7 @@ export default function Home(){
      <p>ONE NAME • MANY SOLUTIONS</p>
      <a href="#who-we-are">DISCOVER OUR STORY <span>↓</span></a>
     </div>
-    <div className="kz-brand-mark"><img src="/kz-master-logo.png" alt="K&Z ELITE BUSINESS"/></div>
+    <div className="kz-brand-mark"><img src="/kz-hero-logo.png" alt="K&Z ELITE BUSINESS"/></div>
    </div>
    <div className="kz-opening-location">MUSCAT • SULTANATE OF OMAN</div>
   </section>
