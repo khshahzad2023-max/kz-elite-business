@@ -739,3 +739,21 @@ radial-gradient(ellipse at 50% 38%,#34383a 0,#171a1c 31%,#080a0c 68%,#030405 100
   font-size:clamp(36px,3.55vw,56px)!important;
   line-height:.96!important;
 }
+
+
+/* Premium serif titles across all automotive service bays */
+.kz-service-v2 .kz-mosaic-copy h3,
+.kz-service-v2 .kz-mosaic-garage .kz-mosaic-copy h3{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-weight:700!important;
+  font-style:normal!important;
+  letter-spacing:-.035em!important;
+}
+.kz-service-v2 .kz-mosaic-copy h3{
+  font-size:clamp(24px,2vw,34px)!important;
+  line-height:.98!important;
+}
+.kz-service-v2 .kz-mosaic-garage .kz-mosaic-copy h3{
+  font-size:clamp(38px,3.65vw,58px)!important;
+  line-height:.94!important;
+}
