@@ -1061,3 +1061,17 @@ html,body{max-width:100%;overflow-x:hidden}
    filter:brightness(1.06);
  }
 }
+
+
+/* Tighten Automotive -> Our Services desktop transition */
+@media(min-width:761px){
+ .kz-home-auto{padding-bottom:38px!important}
+ .kz-services-ecosystem,
+ .kz-services-section{
+   padding-top:52px!important;
+ }
+ .kz-services-ecosystem .kz-section-head,
+ .kz-services-section .kz-section-head{
+   margin-bottom:38px!important;
+ }
+}
