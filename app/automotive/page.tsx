@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { soldCars } from "../sold-cars/soldCars";
 
 const cars = [
   {name:"Hyundai Veloster 2016", image:"/cars/Hyundai-Veloster-2016/1.jpg", meta:"81,000 KM • GCC • Wadi Kabir", href:"/cars/Hyundai-Veloster-2016"},
@@ -40,18 +41,10 @@ export default function AutomotiveWorld(){
         <p>Explore K&Z vehicles in a premium digital showroom. View real photos, vehicle details and contact us directly.</p>
         <div><a href="#showroom-floor" className="kz-lobby-btn">EXPLORE VEHICLES ↓</a><Link href="/find-a-car" className="kz-lobby-link">FIND A CAR →</Link></div>
       </div>
-      <div className="kz-lobby-strip"><span>BUY</span><i/> <span>SELL</span><i/> <span>TRADE</span><i/> <span>FINANCE</span><i/> <span>SERVICE</span></div>
+      <div className="kz-lobby-strip"><a href="#showroom-floor">AVAILABLE CARS</a><i/><a href="#sold-showroom">SOLD CARS</a><i/><a href="#services">SERVICES</a><i/><Link href="/find-a-car">FIND A CAR</Link><i/><Link href="/sell-your-car">SELL YOUR CAR</Link></div>
     </section>
 
-    <section id="showroom-floor" className="kz-floor">
-      <div className="kz-floor-head"><div><span>THE SHOWROOM FLOOR</span><h2>Available Vehicles</h2></div><p>Real vehicles. Real photos. Direct K&Z support.</p></div>
-      <div className="kz-floor-grid">{cars.map((car,i)=><article className="kz-display-bay" key={car.name}>
-        <Link href={car.href} className="kz-display-photo"><img src={car.image} alt={car.name}/><span>{String(i+1).padStart(2,"0")}</span></Link>
-        <div className="kz-display-info"><small>AVAILABLE NOW</small><h3>{car.name}</h3><p>{car.meta}</p><div><Link href={car.href}>VIEW CAR →</Link><a href={"https://api.whatsapp.com/send?phone=96878967229&text="+encodeURIComponent("Hello K&Z Elite Business, I am interested in the "+car.name+". Please send me more details.")} target="_blank" rel="noopener noreferrer">WHATSAPP</a></div></div>
-      </article>)}</div>
-    </section>
-
-    <section className="kz-service-departments">
+    <section id="services" className="kz-service-departments">
       <div className="kz-service-head"><span>COMPLETE AUTOMOTIVE CARE</span><h2>Enter a K&Z Service Department</h2><p>From buying your car to keeping it at its best — K&Z has you covered.</p></div>
       <div className="kz-service-grid">
         {[
@@ -67,6 +60,22 @@ export default function AutomotiveWorld(){
           <h3>{s[1]}</h3><p>{s[2]}</p><b>ENTER DEPARTMENT →</b>
         </Link>)}
       </div>
+    </section>
+
+    <section id="showroom-floor" className="kz-floor">
+      <div className="kz-floor-head"><div><span>THE SHOWROOM FLOOR</span><h2>Available Vehicles</h2></div><p>Real vehicles. Real photos. Direct K&Z support.</p></div>
+      <div className="kz-floor-grid">{cars.map((car,i)=><article className="kz-display-bay" key={car.name}>
+        <Link href={car.href} className="kz-display-photo"><img src={car.image} alt={car.name}/><span>{String(i+1).padStart(2,"0")}</span></Link>
+        <div className="kz-display-info"><small>AVAILABLE NOW</small><h3>{car.name}</h3><p>{car.meta}</p><div><Link href={car.href}>VIEW CAR →</Link><a href={"https://api.whatsapp.com/send?phone=96878967229&text="+encodeURIComponent("Hello K&Z Elite Business, I am interested in the "+car.name+". Please send me more details.")} target="_blank" rel="noopener noreferrer">WHATSAPP</a></div></div>
+      </article>)}</div>
+    </section>
+
+    <section id="sold-showroom" className="kz-floor kz-sold-floor">
+      <div className="kz-floor-head"><div><span>K&Z DELIVERY HISTORY</span><h2>Sold Vehicles</h2></div><p>Vehicles successfully sold through K&Z ELITE BUSINESS.</p></div>
+      <div className="kz-floor-grid">{soldCars.map((car,i)=><article className="kz-display-bay kz-sold-bay" key={car.name+car.year}>
+        <div className="kz-display-photo"><img src={car.images[0]} alt={car.imageAlt}/><span>{String(i+1).padStart(2,"0")}</span><b className="kz-sold-stamp">SOLD</b></div>
+        <div className="kz-display-info"><small>SUCCESSFULLY SOLD</small><h3>{car.name} {car.year}</h3><p>{car.details.join(" • ")}</p><div><Link href="/sold-cars">VIEW SOLD CARS →</Link></div></div>
+      </article>)}</div>
     </section>
 
     <section className="kz-showroom-cta"><span>CAN'T FIND THE CAR YOU WANT?</span><h2>Tell K&Z what you're looking for.</h2><p>Send us your preferred make, model and budget. We can help source suitable options.</p><div><Link href="/find-a-car">FIND A CAR</Link><a href="https://api.whatsapp.com/send?phone=96878967229" target="_blank" rel="noopener noreferrer">WHATSAPP K&Z</a></div></section>
