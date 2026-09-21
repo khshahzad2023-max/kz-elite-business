@@ -10,13 +10,12 @@ export const metadata = {
 };
 
 const nav = [
-  ["Cars for Sale","/cars"],
-  ["Sold Cars","/sold-cars"],
-  ["Sell Your Car","/sell-your-car"],
-  ["Find a Car","/find-a-car"],
+  ["Buy & Sell Cars","/cars"],
   ["Rent a Car","/rent-a-car"],
-  ["Automotive","/automotive"],
-  ["More Services","/services"],
+  ["Automotive Services","/automotive"],
+  ["Building Maintenance","/building-maintenance"],
+  ["Property Services","/properties"],
+  ["Business Advertising","/advertising"],
 ];
 
 export default function RootLayout({children}:{children:React.ReactNode}) {
@@ -35,7 +34,7 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
             </Link>
             <nav className="navlinks">
               {nav.map(([label,href]) => <Link key={href} href={href}>{label}</Link>)}
-              <Link className="nav-cta" href="/contact">Contact</Link>
+              <Link className="nav-cta" href="/contact">CONTACT</Link>
             </nav>
           </div>
         </header>
