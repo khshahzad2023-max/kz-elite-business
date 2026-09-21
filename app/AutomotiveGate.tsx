@@ -15,8 +15,7 @@ export default function AutomotiveGate(){
    <div className="kz-facade-view">
      <img src="/kz-showroom.jpg?v=20260919-new" alt="K&Z Automotive showroom"/>
    </div>
-   <div className="kz-glass-door kz-glass-left" aria-hidden="true"><i/><span/></div>
-   <div className="kz-glass-door kz-glass-right" aria-hidden="true"><i/><span/></div>
+   <div className="kz-real-door-seam" aria-hidden="true"/>
    <button className="kz-facade-enter" onClick={enter} disabled={opening}>
      {opening?"WELCOME TO K&Z":"ENTER SHOWROOM"} <b>→</b>
    </button>
