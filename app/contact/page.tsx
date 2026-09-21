@@ -20,7 +20,6 @@ return <>
     <a className="btn btn-secondary full" href="https://api.whatsapp.com/send?phone=96899248431&text=Hello%20K%26Z%20ELITE%20BUSINESS%2C%20I%20am%20interested%20in%20your%20K%26Z%20ELITE%20BUSINESS%20services.%20Please%20send%20me%20more%20details.">WhatsApp +968 99248431</a>
   </form>
 </div>
-<div className="notice" style={{marginTop:"22px"}}>Phone / WhatsApp: 78967229 • +968 99248431 • Email: info@kzelitebusiness.com • Muscat, Sultanate of Oman</div>
 </div></section>
 </>
 }
