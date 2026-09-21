@@ -757,3 +757,30 @@ radial-gradient(ellipse at 50% 38%,#34383a 0,#171a1c 31%,#080a0c 68%,#030405 100
   font-size:clamp(38px,3.65vw,58px)!important;
   line-height:.94!important;
 }
+
+
+/* Keep K&Z branding visible in Garage + Denting/Painting service photos */
+.kz-service-v2 .kz-mosaic-garage>img{
+  object-position:58% center!important;
+}
+.kz-service-v2 .kz-mosaic-paint>img{
+  object-position:72% center!important;
+}
+.kz-service-v2 .kz-mosaic-garage .kz-mosaic-copy{
+  left:26px!important;
+  right:42%!important;
+  max-width:56%!important;
+}
+.kz-service-v2 .kz-mosaic-paint .kz-mosaic-copy{
+  left:26px!important;
+  right:auto!important;
+  max-width:46%!important;
+}
+@media(max-width:900px){
+  .kz-service-v2 .kz-mosaic-garage .kz-mosaic-copy,
+  .kz-service-v2 .kz-mosaic-paint .kz-mosaic-copy{
+    left:22px!important;
+    right:22px!important;
+    max-width:calc(100% - 44px)!important;
+  }
+}
