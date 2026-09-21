@@ -51,6 +51,24 @@ export default function AutomotiveWorld(){
       </article>)}</div>
     </section>
 
+    <section className="kz-service-departments">
+      <div className="kz-service-head"><span>COMPLETE AUTOMOTIVE CARE</span><h2>Enter a K&Z Service Department</h2><p>From buying your car to keeping it at its best — K&Z has you covered.</p></div>
+      <div className="kz-service-grid">
+        {[
+          ["01","GARAGE & MAINTENANCE","Mechanical, electrical, AC and general vehicle care.","/automotive/garage","⚙"],
+          ["02","TYRES & BATTERIES","Tyres, batteries, fitting and replacement support.","/automotive/tyres-batteries","◉"],
+          ["03","ACCESSORIES & DECORATION","Interior and exterior accessories and car decoration.","/automotive/accessories","✦"],
+          ["04","WINDOW TINTING","Professional automotive tinting and appearance upgrades.","/automotive/tinting","◐"],
+          ["05","POLISHING & DETAILING","Exterior polishing, interior detailing and finish restoration.","/automotive/detailing","◆"],
+          ["06","CAR WASH","Professional vehicle cleaning and wash services.","/automotive/car-wash","≈"],
+          ["07","DENTING & PAINTING","Body repair, dent correction and automotive painting.","/automotive/denting-painting","▰"],
+        ].map(s=><Link href={s[3]} className="kz-service-bay" key={s[0]}>
+          <div className="kz-service-number">{s[0]}</div><div className="kz-service-icon">{s[4]}</div>
+          <h3>{s[1]}</h3><p>{s[2]}</p><b>ENTER DEPARTMENT →</b>
+        </Link>)}
+      </div>
+    </section>
+
     <section className="kz-showroom-cta"><span>CAN'T FIND THE CAR YOU WANT?</span><h2>Tell K&Z what you're looking for.</h2><p>Send us your preferred make, model and budget. We can help source suitable options.</p><div><Link href="/find-a-car">FIND A CAR</Link><a href="https://api.whatsapp.com/send?phone=96878967229" target="_blank" rel="noopener noreferrer">WHATSAPP K&Z</a></div></section>
   </main>
 }
