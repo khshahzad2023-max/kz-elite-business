@@ -910,3 +910,19 @@ html,body{max-width:100%;overflow-x:hidden}
 .kz-intro-menu a{color:#d6dde2;text-decoration:none;font-size:8px;font-weight:800;letter-spacing:.11em;white-space:nowrap;transition:color .2s}.kz-intro-menu a:hover{color:#fff}
 .kz-intro-v4 .kz-brand-lockup{padding-top:110px}.kz-intro-v4 .kz-brand-lockup img{width:clamp(155px,17vw,230px)}.kz-intro-v4 .kz-brand-lockup h1{margin-top:18px}.kz-who{max-width:700px;margin:28px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);display:grid;grid-template-columns:110px 1fr;gap:22px;text-align:left}.kz-who span{color:#82929d;font-size:7px;font-weight:900;letter-spacing:.25em}.kz-who strong{color:#c9d2d8;font-size:12px;font-weight:400;line-height:1.65}
 @media(max-width:850px){.kz-intro-v4{padding-top:0}.kz-intro-menu{top:15px;justify-content:flex-start;overflow-x:auto;padding:0 0 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.kz-intro-menu::-webkit-scrollbar{display:none}.kz-intro-menu a{flex:0 0 auto;font-size:7px}.kz-intro-v4 .kz-brand-lockup{padding-top:120px}.kz-who{grid-template-columns:1fr;gap:8px;text-align:center;max-width:520px}.kz-who strong{font-size:11px}}
+
+
+/* Fix first-screen duplication and remove car-showroom hero imagery */
+.kz-intro-v4{padding-top:0}
+.kz-intro-v4 .kz-muscat-bg{background:
+linear-gradient(180deg,rgba(2,9,17,.14),rgba(2,9,17,.36) 52%,rgba(3,10,16,.76) 100%),
+radial-gradient(circle at 72% 62%,rgba(255,174,80,.12),transparent 24%),
+linear-gradient(135deg,#102b43 0%,#0a2135 38%,#081927 64%,#06121d 100%);
+filter:none}
+.kz-intro-v4 .kz-muscat-bg:before{content:"";position:absolute;inset:0;background:
+radial-gradient(ellipse at 72% 70%,rgba(238,168,83,.2) 0 1px,transparent 2px),
+radial-gradient(ellipse at 79% 65%,rgba(245,190,105,.18) 0 1px,transparent 2px),
+radial-gradient(ellipse at 63% 74%,rgba(236,170,91,.15) 0 1px,transparent 2px);
+background-size:53px 31px,71px 39px,89px 47px;opacity:.65}
+.kz-intro-v4 .kz-brand-lockup{padding-top:70px}
+.kz-intro-menu{display:none!important}
