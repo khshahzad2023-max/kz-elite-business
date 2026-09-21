@@ -950,3 +950,39 @@ html,body{max-width:100%;overflow-x:hidden}
  .kz-home-v3 .kz-intro-v4 .kz-brand-mark{display:none}
  .kz-home-v3 .kz-opening-location{left:20px;bottom:12px;transform:none;font-size:7px;letter-spacing:.18em}
 }
+
+
+/* Who We Are — editorial story polish */
+.kz-who-story p + p{
+ margin-top:22px;
+ font-size:.88em;
+ line-height:1.55;
+ color:#aeb9c1;
+ max-width:690px;
+}
+.kz-who-story span{
+ display:inline-block;
+ margin-top:26px;
+ color:#f1d58a;
+ font-weight:800;
+ letter-spacing:.12em;
+}
+@media(max-width:760px){
+ .kz-who-section{padding-bottom:54px!important}
+ .kz-who-layout{gap:28px!important}
+ .kz-who-story p{margin:0}
+ .kz-who-story p + p{
+   margin-top:20px;
+   font-size:17px;
+   line-height:1.48;
+   color:#aeb9c1;
+ }
+ .kz-who-story span{
+   margin-top:24px;
+   font-size:13px;
+   line-height:1.4;
+   letter-spacing:.1em;
+   color:#f1d58a;
+ }
+ .kz-home-auto{padding-top:54px!important}
+}
