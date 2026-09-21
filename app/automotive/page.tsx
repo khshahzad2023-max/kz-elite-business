@@ -85,7 +85,7 @@ export default function AutomotiveWorld(){
           ["CAR WASH","Professional Cleaning and Washing Services.","/automotive/car-wash","https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=80","wash"],
           ["DENTING & PAINTING","Body Repair, Dent Correction and Automotive Painting.","/automotive/denting-painting","https://apex541.com/wp-content/uploads/2025/07/professional-worker-man-is-painting-a-car-by-using-WLJH9BK.jpg","paint"],
         ].map((s,i)=><Link href={s[2]} className={"kz-mosaic-card kz-mosaic-"+s[4]} key={s[0]}>
-          <img src={s[3]} alt={s[0]}/><div className="kz-mosaic-shade"/>
+          <img src={s[3]} alt={s[0]}/><div className="kz-service-privacy-mask" aria-hidden="true"/><div className="kz-mosaic-shade"/>
           <div className="kz-mosaic-copy"><small>◆ &nbsp; SERVICE DEPARTMENT</small><h3>{s[0]}</h3><p>{s[1]}</p><b>ENTER DEPARTMENT →</b></div>
         </Link>)}
       </div>
