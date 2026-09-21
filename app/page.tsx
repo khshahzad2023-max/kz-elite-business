@@ -12,15 +12,7 @@ export default function Home(){
  return <main className="kz-home-v3">
   <section className="kz-brand-opening kz-intro-v4">
    <div className="kz-muscat-bg" aria-hidden="true"/>
-   <nav className="kz-intro-menu" aria-label="K&Z departments">
-    <Link href="/cars">BUY &amp; SELL CARS</Link>
-    <Link href="/rent-a-car">RENT A CAR</Link>
-    <Link href="/automotive">AUTOMOTIVE SERVICES</Link>
-    <Link href="/building-maintenance">BUILDING MAINTENANCE</Link>
-    <Link href="/properties">PROPERTY SERVICES</Link>
-    <Link href="/advertising">BUSINESS ADVERTISING</Link>
-    <Link href="/contact">CONTACT</Link>
-   </nav>
+
    <div className="kz-brand-lockup">
     <img src="/kz-master-logo.png" alt="K&Z ELITE BUSINESS"/>
     <h1>K&amp;Z ELITE BUSINESS</h1>
