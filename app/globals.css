@@ -1017,3 +1017,10 @@ html,body{max-width:100%;overflow-x:hidden}
  }
  .kz-who-story span{margin-top:30px}
 }
+
+
+/* Tighten desktop transition from story to Automotive */
+@media(min-width:761px){
+ .kz-who-section{padding-bottom:46px!important}
+ .kz-home-auto{padding-top:46px!important}
+}
