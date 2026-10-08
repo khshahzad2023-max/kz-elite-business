@@ -1,6 +1,7 @@
 
 import "./globals.css";
 import Link from "next/link";
+import Script from "next/script";
 import ContactDock from "./ContactDock";
 import SiteIntro from "./SiteIntro";
 
@@ -22,6 +23,13 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
   return (
     <html lang="en">
       <body>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-VGTEMG48H9" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag("js", new Date());
+          gtag("config", "G-VGTEMG48H9");
+        `}</Script>
         <SiteIntro />
         <header className="header">
           <div className="container navbar">
