@@ -7,8 +7,11 @@ import ContactAnalytics from "./ContactAnalytics";
 import SiteIntro from "./SiteIntro";
 
 export const metadata = {
-  title: "K&Z ELITE BUSINESS",
-  description: "Cars, automotive services, rentals, maintenance, property and advertising services in Muscat, Oman.",
+  metadataBase: new URL("https://www.kzelitebusiness.com"),
+  title: "K&Z ELITE BUSINESS | Cars & Services in Muscat, Oman",
+  description: "K&Z ELITE BUSINESS in Muscat, Oman: used cars for sale, car rental enquiries, automotive services, building maintenance, property and business advertising.",
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
 };
 
 const nav = [
