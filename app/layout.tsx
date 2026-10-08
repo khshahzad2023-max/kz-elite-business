@@ -3,6 +3,7 @@ import "./globals.css";
 import Link from "next/link";
 import Script from "next/script";
 import ContactDock from "./ContactDock";
+import ContactAnalytics from "./ContactAnalytics";
 import SiteIntro from "./SiteIntro";
 
 export const metadata = {
@@ -30,6 +31,7 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
           gtag("js", new Date());
           gtag("config", "G-VGTEMG48H9");
         `}</Script>
+        <ContactAnalytics />
         <SiteIntro />
         <header className="header">
           <div className="container navbar">
@@ -48,6 +50,14 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
         </header>
         {children}
         <ContactDock />
+        <section aria-label="Google customer reviews" style={{ padding: "28px 20px 48px", textAlign: "center", background: "#07182b", color: "#f4f5f8" }}>
+          <div style={{ maxWidth: 720, margin: "0 auto" }}>
+            <p style={{ color: "#d6aa52", fontSize: 12, letterSpacing: "0.18em", fontWeight: 700, marginBottom: 10 }}>CUSTOMER FEEDBACK</p>
+            <h2 style={{ fontSize: "clamp(24px, 4vw, 36px)", marginBottom: 10 }}>Your Experience Matters</h2>
+            <p style={{ lineHeight: 1.65, color: "#c8d3df", marginBottom: 22 }}>Purchased or sold a car with K&amp;Z? Share your genuine experience on Google.</p>
+            <a href="https://g.page/r/CX2yk5KX5Yu2EBM/review" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", border: "1px solid #d6aa52", borderRadius: 9, padding: "13px 24px", color: "#07182b", background: "#d6aa52", fontWeight: 700, textDecoration: "none" }}>★ Write a Google Review ↗</a>
+          </div>
+        </section>
         <footer className="footer">
           <div className="container">
             <div className="footer-grid">
