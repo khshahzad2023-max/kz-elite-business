@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 type Car = {
- id?: string; title: string; year: number; price: number | null; mileage: string;
+ id?: string; title: string; year: number; price: number | null; owner_demand?:number|null; kz_target?:number|null; final_sold_price?:number|null; owner_final_payment?:number|null; deal_expenses?:number|null; mileage: string;
  specs: string; location: string; description: string; status: "draft"|"available"|"sold"; images: string[];
 };
-const blank: Car = { title: "", year: new Date().getFullYear(), price: null, mileage: "", specs: "", location: "Muscat, Oman", description: "", status: "draft", images: [] };
+const blank: Car = { title: "", year: new Date().getFullYear(), price: null, owner_demand:null,kz_target:null,final_sold_price:null,owner_final_payment:null,deal_expenses:null, mileage: "", specs: "", location: "Muscat, Oman", description: "", status: "draft", images: [] };
 
 export default function AdminCars() {
  const [ready,setReady]=useState(false);
@@ -135,6 +135,20 @@ export default function AdminCars() {
        <label style={labelStyle}>Location<input style={inputStyle} value={car.location} onChange={e=>setCar({...car,location:e.target.value})}/></label>
        <label style={labelStyle}>Status<select style={inputStyle} value={car.status} onChange={e=>setCar({...car,status:e.target.value as Car["status"]})}><option value="draft">Draft (private)</option><option value="available">Publish — For Sale</option><option value="sold">Sold</option></select></label>
       </div>
+      <section style={{border:"1px solid #806b46",background:"#12253a",padding:16,borderRadius:12,display:"grid",gap:12}}>
+       <h3 style={{margin:0,color:"#f0c87c"}}>PRIVATE K&Z PRICING — Admin Only</h3>
+       <p style={{margin:0,fontSize:13,color:"#bed0df"}}>Only Price (OMR) above is shown to customers. These amounts never appear in public listings.</p>
+       <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(185px,1fr))",gap:12}}>
+        {([
+         ["owner_demand","Owner Demand"],["kz_target","K&Z Target"],["final_sold_price","Final Sold Price"],["owner_final_payment","Owner Final Payment"],["deal_expenses","Deal Expenses"]
+        ] as const).map(([key,label])=><label key={key} style={labelStyle}>{label} (OMR)<input style={inputStyle} type="number" min="0" step="0.001" value={car[key]??""} onChange={e=>setCar(previous=>({...previous,[key]:e.target.value===""?null:Number(e.target.value)}))}/></label>)}
+       </div>
+       <div style={{display:"flex",gap:18,flexWrap:"wrap"}}>
+        <strong>Expected margin: {car.price!=null&&car.owner_demand!=null?(car.price-car.owner_demand).toFixed(3)+" OMR":"—"}</strong>
+        <strong>Actual gross margin: {car.final_sold_price!=null&&car.owner_final_payment!=null?(car.final_sold_price-car.owner_final_payment).toFixed(3)+" OMR":"—"}</strong>
+        <strong>Actual net margin: {car.final_sold_price!=null&&car.owner_final_payment!=null?(car.final_sold_price-car.owner_final_payment-(car.deal_expenses??0)).toFixed(3)+" OMR":"—"}</strong>
+       </div>
+      </section>
       <label style={labelStyle}>Verified specifications<textarea style={inputStyle} rows={3} value={car.specs} onChange={e=>setCar({...car,specs:e.target.value})} placeholder="GCC, engine, transmission, features..."/></label>
       <label style={labelStyle}>Description<textarea style={inputStyle} rows={4} value={car.description} onChange={e=>setCar({...car,description:e.target.value})}/></label>
       <div style={{display:"grid",gap:9}}>
