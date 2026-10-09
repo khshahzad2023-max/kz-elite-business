@@ -1312,3 +1312,29 @@ html,body{max-width:100%;overflow-x:hidden}
 .kz-mobile-menu-links a{display:block;color:#f1f3f7;padding:11px;text-decoration:none;border-radius:7px}
 .kz-mobile-menu-links a:focus-visible,.kz-mobile-menu-links a:hover{background:#1b3b5e}
 @media(max-width:900px){.kz-mobile-menu{display:block}}
+
+/* K&Z Homepage readability refinement — preserve approved visual identity */
+.kz-home-v3 .kz-brand-copy>p{font-size:clamp(12px,1.05vw,15px)!important;letter-spacing:.20em!important}
+.kz-home-v3 .kz-brand-copy>a{font-size:clamp(12px,1vw,15px)!important;letter-spacing:.14em!important}
+.kz-home-v3 .kz-who-title small,.kz-home-v3 .kz-eco-head small,.kz-home-v3 .kz-trust-v3-title small{font-size:12px!important;letter-spacing:.19em!important;color:#d4dee8!important}
+.kz-home-v3 .kz-who-story p+p{font-size:clamp(17px,1.24vw,20px)!important;line-height:1.68!important;color:#d2dce7!important}
+.kz-home-v3 .kz-eco-head p{font-size:17px!important;line-height:1.6!important;color:#d3deea!important}
+.kz-home-v3 .kz-eco-service small{font-size:12px!important;color:#d9e4f0!important}
+.kz-home-v3 .kz-eco-service p{font-size:15px!important;line-height:1.58!important;color:#d2dfec!important}
+.kz-home-v3 .kz-eco-service>b{font-size:12px!important;letter-spacing:.1em!important;color:#f0d18c!important}
+.kz-home-v3 .kz-eco-core span{font-size:10px!important;letter-spacing:.1em!important;color:#d8e1ea!important}
+.kz-home-v3 .kz-trust-v3-grid>div>span{font-size:12px!important;color:#dfc17c!important}
+.kz-home-v3 .kz-trust-v3-grid b{font-size:clamp(16px,1.18vw,19px)!important;line-height:1.35!important}
+.kz-home-v3 .kz-trust-v3-grid p{font-size:clamp(15px,1.07vw,17px)!important;line-height:1.6!important;color:#d4e0eb!important}
+.kz-home-v3 .kz-trust-v3-signoff span{font-size:14px!important;color:#d0dbe6!important}
+.contact-dock-head small,.contact-dock-head p{font-size:14px;line-height:1.55}
+.crystal-connect ~ p,.crystal-connect + p{font-size:13px!important;color:#dce5ef!important}
+.footer p,.footer a{font-size:15px!important;line-height:1.75!important;color:#d0dce9!important}
+.footer h4{font-size:17px!important}
+.footer-bottom{font-size:13px!important;color:#b8c6d6!important}
+@media(max-width:760px){
+ .kz-home-v3 .kz-who-story p+p{font-size:17px!important}
+ .kz-home-v3 .kz-eco-service p,.kz-home-v3 .kz-trust-v3-grid p{font-size:15px!important}
+ .kz-home-v3 .kz-eco-service{min-height:165px}
+ .footer p,.footer a{font-size:15px!important}
+}
