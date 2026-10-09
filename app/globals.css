@@ -1303,3 +1303,12 @@ html,body{max-width:100%;overflow-x:hidden}
  .footer h4{margin-bottom:9px!important}
  .footer-bottom{margin-top:22px!important;padding-top:16px!important;gap:12px!important}
 }
+
+/* K&Z accessible mobile navigation */
+.kz-mobile-menu{display:none;position:relative;z-index:200}
+.kz-mobile-menu summary{list-style:none;cursor:pointer;border:1px solid #6b7d96;border-radius:9px;color:#f3d28e;padding:10px 15px;font-weight:700}
+.kz-mobile-menu summary::-webkit-details-marker{display:none}
+.kz-mobile-menu-links{position:absolute;top:100%;right:0;min-width:230px;max-width:90vw;background:#0b1c30;border:1px solid #55667c;border-radius:12px;padding:10px;box-shadow:0 18px 40px #0009;display:grid;gap:3px}
+.kz-mobile-menu-links a{display:block;color:#f1f3f7;padding:11px;text-decoration:none;border-radius:7px}
+.kz-mobile-menu-links a:focus-visible,.kz-mobile-menu-links a:hover{background:#1b3b5e}
+@media(max-width:900px){.kz-mobile-menu{display:block}}
