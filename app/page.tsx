@@ -17,7 +17,7 @@ export default function Home(){
     <div className="kz-brand-copy">
      <h1>K&amp;Z<br/><em>ELITE BUSINESS</em></h1>
      <p>ONE NAME • MANY SOLUTIONS</p>
-     <a href="#who-we-are">DISCOVER OUR STORY <span>↓</span></a>
+     <div className="kz-home-hero-actions"><a href="#who-we-are">DISCOVER OUR STORY <span>↓</span></a><Link href="/cars" className="kz-home-hero-secondary">EXPLORE CARS ↗</Link><a href="#our-services" className="kz-home-hero-secondary">OUR SERVICES ↓</a></div>
     </div>
     <div className="kz-brand-mark"><img src="/kz-hero-logo-transparent.png" alt="K&Z ELITE BUSINESS"/></div>
    </div>
@@ -38,9 +38,9 @@ export default function Home(){
    </div>
   </section>
 
-  <section className="kz-services-ecosystem">
+  <section id="our-services" className="kz-services-ecosystem">
    <div className="container">
-    <header className="kz-eco-head"><small>OUR SERVICES</small><h2>Connected by one name.</h2><p>Different departments. One K&amp;Z team.</p></header>
+    <header className="kz-eco-head"><small>OUR SERVICES</small><h2>Connected by one name.</h2><p>Automotive, maintenance, property and promotion — connected under one trusted name.</p></header>
     <div className="kz-eco-stage">
      <div className="kz-eco-lines" aria-hidden="true"><i/><i/><i/><i/></div>
      <div className="kz-eco-core"><img src="/kz-master-logo.png" alt=""/><b>K&amp;Z</b><span>ONE NAME • MANY SOLUTIONS</span></div>
