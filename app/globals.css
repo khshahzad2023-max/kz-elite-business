@@ -1338,3 +1338,29 @@ html,body{max-width:100%;overflow-x:hidden}
  .kz-home-v3 .kz-eco-service{min-height:165px}
  .footer p,.footer a{font-size:15px!important}
 }
+
+/* Homepage finishing pass — preserve approved navy/gold visuals */
+.kz-home-hero-actions{display:flex;gap:17px;align-items:center;flex-wrap:wrap;margin-top:24px}
+.kz-home-v3 .kz-brand-copy .kz-home-hero-actions>a{display:inline-flex;align-items:center;gap:8px;justify-content:center;padding:11px 13px;border:1px solid rgba(238,208,141,.5);border-radius:8px;color:#f9f0dc;font-size:12px!important;font-weight:800;letter-spacing:.1em!important;line-height:1.3;text-decoration:none;background:rgba(5,17,32,.40);transition:background .18s,border-color .18s}
+.kz-home-v3 .kz-brand-copy .kz-home-hero-actions>a:hover,.kz-home-v3 .kz-brand-copy .kz-home-hero-actions>a:focus-visible{background:#1e3650;border-color:#f1d58a}
+.kz-home-v3 .kz-brand-copy .kz-home-hero-actions>a:first-child{border-color:transparent;border-bottom:1px solid #e6c67e;border-radius:0;background:transparent}
+.kz-home-v3 .kz-who-layout{column-gap:clamp(35px,5vw,90px)}
+.kz-home-v3 .kz-who-title{max-width:440px}
+.kz-home-v3 .kz-who-story>p:first-child{line-height:1.55}
+.kz-home-v3 .kz-services-ecosystem{padding-block:82px}
+.kz-home-v3 .kz-eco-stage{margin-top:20px}
+.kz-home-v3 .kz-eco-service{min-height:165px}
+.kz-home-v3 .kz-eco-service h3{line-height:1.12}
+.kz-home-v3 .kz-trust-v3-grid>div{padding-bottom:26px}
+.kz-home-auto .kz-facade-enter{font-size:clamp(12px,1vw,15px)!important;letter-spacing:.12em!important;border:2px solid #e9c77a!important;box-shadow:0 12px 30px #0006,0 0 0 3px #d9b96722}
+.kz-home-auto .kz-facade-enter:focus-visible{outline:3px solid white;outline-offset:3px}
+.contact-dock-head .eyebrow{font-size:13px!important}
+.crystal-hint{font-size:13px!important;color:#d7e4f4!important;letter-spacing:.09em!important}
+.email-choice-panel a,.instagram-choice-panel a,.facebook-choice-panel a,.website-choice-panel a,.tiktok-choice-panel a{font-size:clamp(10px,.9vw,13px)!important;overflow-wrap:anywhere;white-space:normal!important;line-height:1.35;text-align:center}
+.crystal-contact{min-width:0}
+.kz-footer-social{display:flex;gap:10px 24px;flex-wrap:wrap;margin-top:22px;padding-top:17px;border-top:1px solid rgba(255,255,255,.1)}
+.kz-footer-social a{font-size:15px;color:#e5cb8c;font-weight:700;text-decoration:none}
+.kz-footer-social a:hover,.footer a:hover{color:#f0ca7a;text-decoration:underline}
+.footer-grid p{max-width:460px}
+@media(max-width:900px){.kz-home-v3 .kz-services-ecosystem{padding-block:62px}.kz-home-v3 .kz-who-layout{column-gap:28px}}
+@media(max-width:620px){.kz-home-hero-actions{gap:9px}.kz-home-v3 .kz-brand-copy .kz-home-hero-actions>a{font-size:11px!important;padding:10px}.kz-home-v3 .kz-eco-service{min-height:150px}.kz-footer-social{gap:12px 18px}.kz-footer-social a{font-size:14px}}
