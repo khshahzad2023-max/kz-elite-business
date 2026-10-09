@@ -26,6 +26,7 @@ export default function AdminCars() {
   if(session.authenticated) {
    const res=await fetch("/api/admin/cars");
    if(res.ok) setCars(await res.json());
+   else { const detail=await res.json().catch(()=>({}));setMessage("Inventory load failed (HTTP "+res.status+"): "+(detail.message||detail.error||detail.code||"Database request failed")); }
   }
  }
  useEffect(()=>{void load()},[]);
@@ -57,7 +58,7 @@ export default function AdminCars() {
     }
    }
    const response=await fetch("/api/admin/cars",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...car,images})});
-   const payload=await response.json();if(!response.ok)throw Error(payload.error||"Save failed");
+   const payload=await response.json().catch(()=>({}));if(!response.ok)throw Error("Save failed (HTTP "+response.status+"): "+(payload.message||payload.error||payload.code||"Database request failed"));
    setCar({...blank});setPhotos([]);setMessage("Saved successfully. Status: "+car.status);
    await load();
   }catch(error){setMessage(error instanceof Error?error.message:"Something went wrong")}
