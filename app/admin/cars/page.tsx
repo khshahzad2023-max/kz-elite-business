@@ -17,6 +17,8 @@ export default function AdminCars() {
  const [cars,setCars]=useState<Car[]>([]);
  const [car,setCar]=useState<Car>({...blank});
  const [photos,setPhotos]=useState<File[]>([]);
+ const [dragging,setDragging]=useState(false);
+ const [photoError,setPhotoError]=useState("");
  const [busy,setBusy]=useState(false);
  const [message,setMessage]=useState("");
 
@@ -30,6 +32,26 @@ export default function AdminCars() {
   }
  }
  useEffect(()=>{void load()},[]);
+ function addPhotos(incoming: File[]) {
+  if (!incoming.length) return;
+  const allowed = ["image/jpeg","image/png","image/webp"];
+  const invalid = incoming.find(file=>!allowed.includes(file.type) || file.size>3*1024*1024);
+  if (invalid) {setPhotoError(invalid.name+": use JPEG, PNG or WebP below 3 MB.");return;}
+  if (photos.length+incoming.length>15 || car.images.length+photos.length+incoming.length>20) {
+   setPhotoError("Limit: 15 new photos and 20 total per car.");return;
+  }
+  setPhotos(previous=>[...previous,...incoming]);setPhotoError("");
+ }
+ useEffect(()=>{
+  if(!ready) return;
+  const paste=(event: ClipboardEvent)=>{
+   if(event.target instanceof HTMLElement && (event.target.closest("input,textarea,[contenteditable=true]"))) return;
+   const files=Array.from(event.clipboardData?.items||[]).filter(item=>item.kind==="file"&&item.type.startsWith("image/")).map(item=>item.getAsFile()).filter((file):file is File=>Boolean(file));
+   if(files.length) {event.preventDefault();addPhotos(files.map((file,i)=>new File([file],file.name||"pasted-"+Date.now()+"-"+i+".png",{type:file.type||"image/png"})));}
+  };
+  window.addEventListener("paste",paste);
+  return ()=>window.removeEventListener("paste",paste);
+ },[ready,photos,car.images.length]);
  async function login(e: React.FormEvent) {
   e.preventDefault();setBusy(true);setMessage("");
   try {
@@ -97,8 +119,30 @@ export default function AdminCars() {
       </div>
       <label style={labelStyle}>Verified specifications<textarea style={inputStyle} rows={3} value={car.specs} onChange={e=>setCar({...car,specs:e.target.value})} placeholder="GCC, engine, transmission, features..."/></label>
       <label style={labelStyle}>Description<textarea style={inputStyle} rows={4} value={car.description} onChange={e=>setCar({...car,description:e.target.value})}/></label>
-      <label style={labelStyle}>Add up to 15 photos (JPEG/PNG/WebP, max 3 MB each)<input style={inputStyle} type="file" accept="image/jpeg,image/png,image/webp" multiple onChange={e=>setPhotos(Array.from(e.target.files||[]))}/></label>
-      {photos.length>0&&<p>{photos.length} new photos selected</p>}
+      <div style={{display:"grid",gap:9}}>
+       <strong style={{fontSize:14}}>Car photos (JPEG/PNG/WebP, max 3 MB each)</strong>
+       <div
+        onDragOver={e=>{e.preventDefault();setDragging(true)}}
+        onDragLeave={e=>{e.preventDefault();setDragging(false)}}
+        onDrop={e=>{e.preventDefault();setDragging(false);addPhotos(Array.from(e.dataTransfer.files));}}
+        onPaste={e=>{if(e.clipboardData?.files?.length){e.preventDefault();e.stopPropagation();addPhotos(Array.from(e.clipboardData.files));}}}
+        tabIndex={0}
+        role="group"
+        aria-label="Drop images here or focus this area and paste a copied image"
+        style={{border:dragging?"2px dashed #f0c66d":"2px dashed #6c819f",borderRadius:12,padding:"24px 16px",background:dragging?"#24435d":"#13243a",textAlign:"center",outlineOffset:3}}>
+         <p style={{margin:"0 0 8px",fontWeight:700}}>Drag & Drop photos here</p>
+         <p style={{margin:"0 0 16px",color:"#c4d2e4",fontSize:13}}>Or copy an image from WhatsApp Web, click this box and press Ctrl + V</p>
+         <input aria-label="Choose car photos from your device" type="file" accept="image/jpeg,image/png,image/webp" multiple onChange={e=>{addPhotos(Array.from(e.target.files||[]));e.target.value="";}} style={{maxWidth:"100%"}}/>
+       </div>
+       {photoError&&<p role="alert" style={{color:"#ffb9a9",margin:0}}>{photoError}</p>}
+       {photos.length>0&&<div style={{display:"grid",gap:6}}>
+        <p style={{margin:0}}>{photos.length} new photo(s) ready — click Save Car to upload.</p>
+        {photos.map((file,i)=><div key={i} style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,fontSize:13,background:"#192b43",padding:"6px 10px",borderRadius:7}}>
+         <span style={{overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{file.name}</span>
+         <button type="button" onClick={()=>setPhotos(previous=>previous.filter((_,j)=>j!==i))} style={{background:"#633044",color:"white",border:0,padding:"6px 9px",borderRadius:6}}>Remove</button>
+        </div>)}
+       </div>}
+      </div>
       {car.images.length>0&&<div style={{display:"flex",gap:9,flexWrap:"wrap"}}>{car.images.map((src,i)=><div key={src} style={{position:"relative"}}><img src={src} alt={"Photo "+(i+1)} style={{width:110,height:90,objectFit:"cover",borderRadius:8}}/><button type="button" onClick={()=>setCar({...car,images:car.images.filter((_,j)=>i!==j)})} style={{display:"block",color:"#fff",background:"#6c2632",border:0,borderRadius:6}}>Remove</button></div>)}</div>}
       <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
        <button disabled={busy} type="submit" style={{background:"#d6aa52",color:"#091321",padding:"13px 22px",border:0,borderRadius:10,fontWeight:700}}>{busy?"Saving...":"Save Car"}</button>
