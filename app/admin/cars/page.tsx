@@ -33,6 +33,11 @@ export default function AdminCars() {
  }
  useEffect(()=>{void load()},[]);
  useEffect(()=>{if(!ready)return;const interval=window.setInterval(()=>{void fetch("/api/admin/session",{cache:"no-store"})},20*60*1000);return()=>window.clearInterval(interval)},[ready]);
+ function movePhoto(index:number,direction:number,kind:"new"|"saved") {
+  const next=index+direction;
+  if(kind==="new")setPhotos(current=>{if(next<0||next>=current.length)return current;const items=[...current];[items[index],items[next]]=[items[next],items[index]];return items;});
+  else setCar(current=>{if(next<0||next>=current.images.length)return current;const images=[...current.images];[images[index],images[next]]=[images[next],images[index]];return {...current,images};});
+ }
  function addPhotos(incoming: File[]) {
   if (!incoming.length) return;
   const allowed = ["image/jpeg","image/png","image/webp"];
@@ -168,14 +173,14 @@ export default function AdminCars() {
        </div>
        {photoError&&<p role="alert" style={{color:"#ffb9a9",margin:0}}>{photoError}</p>}
        {photos.length>0&&<div style={{display:"grid",gap:6}}>
-        <p style={{margin:0}}>{photos.length} new photo(s) ready — click Save Car to upload.</p>
+        <p style={{margin:0}}>{photos.length} new photo(s) ready. Use ← → to change order before Save Car.</p>
         {photos.map((file,i)=><div key={i} style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,fontSize:13,background:"#192b43",padding:"6px 10px",borderRadius:7}}>
-         <PhotoThumb file={file} number={car.images.length+i+1}/>
+         <PhotoThumb file={file} number={car.images.length+i+1}/><div style={{display:"flex",gap:4}}><button type="button" disabled={i===0} onClick={()=>movePhoto(i,-1,"new")}>←</button><button type="button" disabled={i===photos.length-1} onClick={()=>movePhoto(i,1,"new")}>→</button></div>
          <button type="button" onClick={()=>setPhotos(previous=>previous.filter((_,j)=>j!==i))} style={{background:"#633044",color:"white",border:0,padding:"6px 9px",borderRadius:6}}>Remove</button>
         </div>)}
        </div>}
       </div>
-      {car.images.length>0&&<div style={{display:"flex",gap:9,flexWrap:"wrap"}}>{car.images.map((src,i)=><div key={src} style={{position:"relative"}}><b>#{i+1}</b><img src={src} alt={"Photo "+(i+1)} style={{width:110,height:90,objectFit:"cover",borderRadius:8}}/><button type="button" onClick={()=>setCar({...car,images:car.images.filter((_,j)=>i!==j)})} style={{display:"block",color:"#fff",background:"#6c2632",border:0,borderRadius:6}}>Remove #{i+1}</button><small>Photo {i+1}</small></div>)}</div>}
+      {car.images.length>0&&<><p style={{fontSize:13,color:"#d6e0ed"}}>Saved photos: Photo #1 is the main cover. Use arrows to reorder, then Save Car.</p><div style={{display:"flex",gap:9,flexWrap:"wrap"}}>{car.images.map((src,i)=><div key={src} style={{position:"relative"}}><b>#{i+1}</b><img src={src} alt={"Photo "+(i+1)} style={{width:110,height:90,objectFit:"cover",borderRadius:8}}/><div style={{display:"flex",gap:4}}><button type="button" disabled={i===0} onClick={()=>movePhoto(i,-1,"saved")}>←</button><button type="button" disabled={i===car.images.length-1} onClick={()=>movePhoto(i,1,"saved")}>→</button></div><button type="button" onClick={()=>setCar({...car,images:car.images.filter((_,j)=>i!==j)})} style={{display:"block",color:"#fff",background:"#6c2632",border:0,borderRadius:6}}>Remove #{i+1}</button><small>Photo {i+1}</small></div>)}</div></>}
       <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
        <button disabled={busy} type="submit" style={{background:"#d6aa52",color:"#091321",padding:"13px 22px",border:0,borderRadius:10,fontWeight:700}}>{busy?"Saving...":"Save Car"}</button>
        <button type="button" onClick={()=>{setCar({...blank});setPhotos([])}} style={{background:"#22344b",color:"#fff",padding:"13px 22px",border:0,borderRadius:10}}>Clear Form</button>
