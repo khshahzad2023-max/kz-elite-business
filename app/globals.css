@@ -1364,3 +1364,27 @@ html,body{max-width:100%;overflow-x:hidden}
 .footer-grid p{max-width:460px}
 @media(max-width:900px){.kz-home-v3 .kz-services-ecosystem{padding-block:62px}.kz-home-v3 .kz-who-layout{column-gap:28px}}
 @media(max-width:620px){.kz-home-hero-actions{gap:9px}.kz-home-v3 .kz-brand-copy .kz-home-hero-actions>a{font-size:11px!important;padding:10px}.kz-home-v3 .kz-eco-service{min-height:150px}.kz-footer-social{gap:12px 18px}.kz-footer-social a{font-size:14px}}
+
+/* K&Z balanced crystal-blue heading accent — restrained neon */
+:root{--kz-crystal:#9dddfb;--kz-crystal-edge:#68cfff}
+.navlinks a:not(.nav-cta){transition:color .2s ease,text-shadow .2s ease;position:relative}
+.navlinks a:not(.nav-cta):hover,.navlinks a:not(.nav-cta):focus-visible{color:#e9f9ff;text-shadow:0 0 7px rgba(89,202,255,.55),0 0 18px rgba(45,143,230,.2)}
+.navlinks a:not(.nav-cta):focus-visible{outline:2px solid var(--kz-crystal);outline-offset:5px}
+.kz-mobile-menu-links a:hover,.kz-mobile-menu-links a:focus-visible{color:#ebfbff;text-shadow:0 0 9px rgba(104,207,255,.45)}
+.kz-home-v3 .kz-eco-head h2,
+.kz-home-v3 .kz-trust-v3-title h2,
+.contact-dock-head h2,
+.kz-home-v3 .kz-who-title h2{
+ text-shadow:0 0 16px rgba(100,195,255,.16),0 2px 15px rgba(0,0,0,.23);
+}
+.kz-home-v3 .kz-eco-head h2::after,
+.kz-home-v3 .kz-trust-v3-title h2::after,
+.contact-dock-head h2::after{
+ content:"";display:block;height:2px;width:clamp(60px,8vw,105px);
+ margin:16px auto 0;background:linear-gradient(90deg,transparent,#a7e6ff,transparent);
+ box-shadow:0 0 11px rgba(81,187,255,.45);border-radius:3px;
+}
+.kz-home-v3 .kz-trust-v3-title h2::after,.contact-dock-head h2::after{margin-left:0}
+.kz-home-v3 .kz-eco-service h3{transition:text-shadow .24s ease,color .24s ease}
+.kz-home-v3 .kz-eco-service:hover h3,.kz-home-v3 .kz-eco-service:focus-visible h3{color:#f3fcff;text-shadow:0 0 13px rgba(103,201,251,.42)}
+@media(prefers-reduced-motion:reduce){.navlinks a:not(.nav-cta),.kz-home-v3 .kz-eco-service h3{transition:none}}
