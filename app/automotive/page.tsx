@@ -4,22 +4,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { soldCars } from "../sold-cars/soldCars";
 
-const cars = [
-  {name:"Hyundai Veloster 2016", image:"/cars/Hyundai-Veloster-2016/1.jpg", meta:"81,000 KM • GCC • Wadi Kabir", href:"/cars/Hyundai-Veloster-2016"},
-  {name:"Haval Dargo 2024", image:"/cars/haval-drago-2024/1.jpg", meta:"Below 40,000 KM • 4WD • Qurum", href:"/cars/haval-drago-2024"},
-  {name:"GAC GS3 2021", image:"/cars/Gac-GS3-2021/1.jpg", meta:"120,248 KM • GCC • Azaiba", href:"/cars/Gac-GS3-2021"},
-  {name:"Ford Explorer 2016", image:"/cars/Ford-Explorer-2016/1.jpg", meta:"3.5L V6 • 4WD • Mahbela", href:"/cars/Ford-Explorer-2016"},
-  {name:"Honda Civic 2007", image:"/cars/Honda-Civic-2007/1.jpg", meta:"GCC • Full Option • Wadi Kabir", href:"/cars/Honda-Civic-2007"},
-  {name:"Hyundai Santa Fe 2015", image:"/cars/Hyundai-Santa-Fe-2015/1.jpg", meta:"2.4L • 4WD • 7 Seater", href:"/cars/Hyundai-Santa-Fe-2015"},
-  {name:"Mercedes-Benz GLC 300 2019", image:"/cars/Mercedes-Benz-GLC300-2019/1.jpg", meta:"US Specs • Premium • Ghoubra", href:"/cars/Mercedes-Benz-GLC300-2019"},
-  {name:"Mitsubishi Eclipse Cross 2018", image:"/cars/Mitsubishi-Eclipse-Cross-ES-2018/1.jpg", meta:"1.5L • Automatic • Muscat", href:"/cars/Mitsubishi-Eclipse-Cross-ES-2018"},
-  {name:"Nissan Rogue SV 2018", image:"/cars/Nissan-Rogue-SV-2018/1.jpg", meta:"118,000 Miles • SV • Ruwi", href:"/cars/Nissan-Rogue-SV-2018"},
-  {name:"Nissan Versa SV 2020", image:"/cars/Nissan-Versa-SV-2020/1.jpg", meta:"85,000 KM • Automatic • Al Hail", href:"/cars/Nissan-Versa-SV-2020"},
-  {name:"Toyota RAV4 2019", image:"/cars/Toyota-RAV4-2019/1.jpg", meta:"213,206 KM • AWD • Azaiba", href:"/cars/Toyota-RAV4-2019"},
-];
+type ShowCar={name:string;image:string;meta:string;href:string};
 
 export default function AutomotiveWorld(){
   const [intro,setIntro]=useState(true);
+  const [cars,setCars]=useState<ShowCar[]>([]);
+  useEffect(()=>{fetch("/api/cars").then(r=>r.ok?r.json():[]).then((items:Array<{id:string;title:string;images:string[];mileage:string;location:string;status:string}>)=>setCars(items.filter(x=>x.status==="available").map(x=>({name:x.title,image:x.images[0]||"/kz-master-logo.png",meta:[x.mileage,x.location].filter(Boolean).join(" • "),href:"/cars/listing/"+x.id})))).catch(()=>{})},[]);
   useEffect(()=>{const t=window.setTimeout(()=>setIntro(false),1450);return()=>window.clearTimeout(t)},[]);
   return <main className="kz-showroom-world">
     {intro && <div className="kz-logo-intro">
@@ -33,7 +23,7 @@ export default function AutomotiveWorld(){
       <div className="kz-lobby-overlay"/>
       <div className="kz-lobby-top">
         <Link href="/" className="kz-lobby-brand"><img src="/kz-master-logo.png" alt="K&Z"/><span><b>K&Z AUTOMOTIVE</b><small>PREMIUM CARS • TRUSTED PEOPLE</small></span></Link>
-        <span>11 VEHICLES AVAILABLE • MUSCAT, OMAN</span>
+        <span>{cars.length} VEHICLES AVAILABLE • MUSCAT, OMAN</span>
       </div>
       <div className="kz-lobby-copy">
         <span>WELCOME TO THE SHOWROOM</span>
@@ -50,7 +40,7 @@ export default function AutomotiveWorld(){
       <div className="kz-auto-destinations">
         <a href="#showroom-floor" className="kz-auto-destination kz-dest-available">
           <img src="/cars/haval-drago-2024/1.jpg" alt="Available K&Z vehicles"/>
-          <div className="kz-dest-shade"/><div className="kz-dest-count">11 <small>AVAILABLE</small></div>
+          <div className="kz-dest-shade"/><div className="kz-dest-count">{cars.length} <small>AVAILABLE</small></div>
           <div className="kz-dest-copy"><span>01 • THE SHOWROOM</span><h3>Available<br/>Cars</h3><p>Explore real vehicles currently available through K&Z.</p><b>ENTER SHOWROOM →</b></div>
         </a>
         <a href="#sold-showroom" className="kz-auto-destination kz-dest-sold">
