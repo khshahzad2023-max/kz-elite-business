@@ -20,7 +20,16 @@ export async function POST(req: Request) {
       !Array.isArray(images) || images.length > 20 || images.some((v: unknown) => typeof v !== "string" || !(v as string).startsWith(process.env.SUPABASE_URL! + "/storage/v1/object/public/kz-car-photos/")))
     return errorResponse("Check title, year, price, status and photos");
   if (status === "available" && (price === null || images.length === 0)) return errorResponse("To publish a car, add its asking price and at least one approved photo. Save as Draft until ready.",400);
+  const privateNames = ["owner_demand","kz_target","final_sold_price","owner_final_payment","deal_expenses"];
+  const privateFields:Record<string,number|null>={};
+  for(const name of privateNames){
+    const raw=data[name];
+    const value=raw===""||raw===null||raw===undefined?null:Number(raw);
+    if(value!==null&&(!Number.isFinite(value)||value<0||value>100000000)) return errorResponse("Invalid private pricing amount: "+name,400);
+    privateFields[name]=value;
+  }
   const record = {
+    ...privateFields,
     title, year, price, status, images,
     mileage: String(data.mileage || "").slice(0, 100),
     specs: String(data.specs || "").slice(0, 1500),
