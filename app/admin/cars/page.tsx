@@ -65,6 +65,20 @@ export default function AdminCars() {
   } finally {setBusy(false);}
 
  }
+ async function deleteCar(item: Car) {
+  if (!item.id || busy) return;
+  if (!window.confirm("Permanently delete "+item.title+" ("+item.year+") from inventory and the public website? This cannot be undone.")) return;
+  setBusy(true);setMessage("");
+  try {
+   const res=await fetch("/api/admin/cars",{method:"DELETE",headers:{"Content-Type":"application/json"},body:JSON.stringify({id:item.id})});
+   const payload=await res.json().catch(()=>({}));
+   if(!res.ok) throw Error(payload.error || "Delete failed (HTTP "+res.status+")");
+   if(car.id===item.id){setCar({...blank});setPhotos([]);}
+   setCars(previous=>previous.filter(other=>other.id!==item.id));
+   setMessage("Deleted "+item.title+" from inventory.");
+  }catch(error){setMessage(error instanceof Error?error.message:"Delete failed");}
+  finally{setBusy(false);}
+ }
  async function save(e: React.FormEvent) {
   e.preventDefault();setBusy(true);setMessage("");
   try {
@@ -152,7 +166,7 @@ export default function AdminCars() {
      <h2 style={{marginTop:35}}>Inventory ({cars.length})</h2>
      <div style={{display:"grid",gap:11}}>{cars.map(item=><div key={item.id} style={{display:"flex",justifyContent:"space-between",gap:12,alignItems:"center",border:"1px solid #33465e",borderRadius:12,padding:12,flexWrap:"wrap"}}>
        <div><strong>{item.title}</strong><p style={{color:"#aebbd0",margin:"5px 0"}}>{item.price===null?"Price on request":item.price+" OMR"} • {item.status} • {item.images.length} photos</p></div>
-       <button type="button" onClick={()=>{setCar(item);setPhotos([]);window.scrollTo({top:0,behavior:"smooth"})}} style={{padding:"10px 18px",background:"#193650",color:"white",border:"1px solid #6b7f95",borderRadius:8}}>Edit</button>
+       <div style={{display:"flex",gap:8,flexWrap:"wrap"}}><button type="button" disabled={busy} onClick={()=>{setCar(item);setPhotos([]);window.scrollTo({top:0,behavior:"smooth"})}} style={{padding:"10px 18px",background:"#193650",color:"white",border:"1px solid #6b7f95",borderRadius:8}}>Edit</button><button type="button" disabled={busy} onClick={()=>void deleteCar(item)} style={{padding:"10px 18px",background:"#662b37",color:"white",border:"1px solid #ba6672",borderRadius:8,cursor:"pointer"}}>Delete</button></div>
       </div>)}</div>
     </>}
    {ready&&message&&<p role="status" style={{padding:12,color:"#ffe1a4"}}>{message}</p>}
