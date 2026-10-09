@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import DashboardCars from "../DashboardCars";
 
 const cars = [
 {
@@ -396,6 +397,7 @@ function CarCard({ car }: { car: (typeof cars)[number] }) {
 export default function CarsPage() {
   return (
     <main>
+      <DashboardCars />
       <section className="page-hero">
         <div className="container">
           <div className="eyebrow">AVAILABLE VEHICLES</div>
