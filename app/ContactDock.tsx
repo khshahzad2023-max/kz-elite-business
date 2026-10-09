@@ -121,7 +121,7 @@ export default function ContactDock() {
           </button>
 
 </div>
-        <div className="crystal-hint">Tap a crystal letter to connect</div>
+        <div className="crystal-hint">{callOpen||whatsappOpen||emailOpen||instagramOpen||facebookOpen||tiktokOpen||websiteOpen ? "Choose a contact option above to connect with K&Z" : "Tap a crystal letter to reveal contact options"}</div>
       </div>
     </section>
   );
