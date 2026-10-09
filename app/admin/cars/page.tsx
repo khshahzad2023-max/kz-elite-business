@@ -152,7 +152,7 @@ export default function AdminCars() {
        {photos.length>0&&<div style={{display:"grid",gap:6}}>
         <p style={{margin:0}}>{photos.length} new photo(s) ready — click Save Car to upload.</p>
         {photos.map((file,i)=><div key={i} style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,fontSize:13,background:"#192b43",padding:"6px 10px",borderRadius:7}}>
-         <span style={{overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{file.name}</span>
+         <PhotoThumb file={file} number={car.images.length+i+1}/>
          <button type="button" onClick={()=>setPhotos(previous=>previous.filter((_,j)=>j!==i))} style={{background:"#633044",color:"white",border:0,padding:"6px 9px",borderRadius:6}}>Remove</button>
         </div>)}
        </div>}
@@ -172,4 +172,10 @@ export default function AdminCars() {
    {ready&&message&&<p role="status" style={{padding:12,color:"#ffe1a4"}}>{message}</p>}
   </div>
  </main>;
+}
+
+function PhotoThumb({file,number}:{file:File;number:number}){
+ const [url,setUrl]=useState("");
+ useEffect(()=>{const x=URL.createObjectURL(file);setUrl(x);return ()=>URL.revokeObjectURL(x)},[file]);
+ return <div style={{display:"grid",gap:4}}><b>#{number}</b>{url&&<img src={url} alt={"Selected photo "+number} style={{width:130,height:100,objectFit:"contain"}}/>}<small>Photo {number}: {file.name}</small></div>;
 }
