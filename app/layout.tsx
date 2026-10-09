@@ -79,7 +79,7 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
                 <h4>Our Services</h4>
                 <p><Link href="/cars">Buying &amp; Selling Cars</Link><br/>
                 <Link href="/rent-a-car">Car Rental</Link><br/>
-                <Link href="/automotive-services">Automotive Services</Link><br/>
+                <Link href="/automotive">Automotive Services</Link><br/>
                 <Link href="/building-maintenance">Building Maintenance</Link><br/>
                 <Link href="/properties">Property Services</Link><br/>
                 <Link href="/advertising">Business Advertising</Link></p>
@@ -89,10 +89,11 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
                 <p>Muscat, Sultanate of Oman<br/>
                 <a href="tel:+96878967229">+968 78967229</a><br/>
                 <a href="tel:+96899248431">+968 99248431</a><br/>
-                info@kzelitebusiness.com<br/>
-                kzelitebusiness.com</p>
+                <a href="mailto:info@kzelitebusiness.com">info@kzelitebusiness.com</a><br/>
+                <a href="https://www.kzelitebusiness.com">kzelitebusiness.com</a></p>
               </div>
             </div>
+            <div className="kz-footer-social"><a href="https://www.instagram.com/kz_elite_business/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/share/1H4otouqhj/" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href="https://www.tiktok.com/@kz_elite_business" target="_blank" rel="noopener noreferrer">TikTok ↗</a><a href="https://api.whatsapp.com/send?phone=96878967229" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div>
             <div className="footer-bottom">
               <span>© 2026 K&Z ELITE BUSINESS. All rights reserved.</span>
               <span>KHURRAM & ZAINAB ELITE BUSINESS LLC</span>
