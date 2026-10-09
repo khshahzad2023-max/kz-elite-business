@@ -49,6 +49,7 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
               {nav.map(([label,href]) => <Link key={href} href={href}>{label}</Link>)}
               <Link className="nav-cta" href="/contact">CONTACT</Link>
             </nav>
+            <details className="kz-mobile-menu"><summary aria-label="Open navigation menu">☰ Menu</summary><div className="kz-mobile-menu-links">{nav.map(([label,href])=><Link key={href} href={href}>{label}</Link>)}<Link href="/contact">Contact</Link></div></details>
           </div>
         </header>
         {children}
