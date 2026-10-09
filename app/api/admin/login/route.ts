@@ -15,7 +15,16 @@ export async function POST(request: Request) {
     body: JSON.stringify({ email, password }),
     cache: "no-store",
   });
-  if (!result.ok) return errorResponse("Invalid login", 401);
+  if (!result.ok) {
+    const payload = await result.json().catch(() => ({}));
+    const errorCode = String(payload.error_code || payload.code || "");
+    if (errorCode === "email_not_confirmed") return errorResponse("Email is not confirmed in Supabase Authentication.", 403);
+    if (result.status === 400 && (errorCode === "invalid_credentials" || payload.error === "invalid_grant"))
+      return errorResponse("Supabase rejected the email/password. Check the Supabase Auth user password.", 401);
+    if (result.status === 401 || result.status === 403)
+      return errorResponse("Supabase API key or authentication configuration needs checking.", 502);
+    return errorResponse("Supabase login request failed (HTTP " + result.status + "). Check Auth settings and Vercel variables.", 502);
+  }
   const data = await result.json();
   const response = NextResponse.json({ ok: true });
   response.cookies.set("kz_admin_session", data.access_token, {
