@@ -32,3 +32,20 @@ export async function POST(req: Request) {
   const res = await supabase(path, { method: id ? "PATCH" : "POST", headers: { Prefer: "return=representation" }, body: JSON.stringify(record) }, true);
   return NextResponse.json(await res.json().catch(() => ({ error: "Database error" })), { status: res.status });
 }
+
+export async function DELETE(req: Request) {
+  if (!(await requireAdmin())) return errorResponse("Unauthorized", 401);
+  const data = await req.json().catch(() => ({}));
+  const id = String(data.id || "");
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id))
+    return errorResponse("Invalid car ID", 400);
+
+  const res = await supabase("/rest/v1/kz_cars?id=eq." + id, {
+    method: "DELETE", headers: { Prefer: "return=representation" }
+  }, true);
+  const result = await res.json().catch(() => null);
+  if (!res.ok) return NextResponse.json({ error: result?.message || result?.error || "Could not delete car" }, { status: res.status });
+  if (!Array.isArray(result) || result.length === 0) return errorResponse("Car not found", 404);
+
+  return NextResponse.json({ ok: true, deleted: id });
+}
