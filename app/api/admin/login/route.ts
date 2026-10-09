@@ -32,5 +32,6 @@ export async function POST(request: Request) {
     sameSite: "strict", path: "/", maxAge: Math.min(data.expires_in || 3600, 3600),
   });
   if(data.refresh_token) response.cookies.set("kz_admin_refresh",data.refresh_token,{httpOnly:true,secure:process.env.NODE_ENV==="production",sameSite:"strict",path:"/",maxAge:8*60*60});
+  if(data.refresh_token) response.cookies.set("kz_admin_refresh", data.refresh_token, {httpOnly:true,secure:process.env.NODE_ENV==="production",sameSite:"strict",path:"/",maxAge:28800});
   return response;
 }
