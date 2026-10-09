@@ -19,6 +19,7 @@ export async function POST(req: Request) {
       !["draft","available","sold"].includes(status) ||
       !Array.isArray(images) || images.length > 20 || images.some((v: unknown) => typeof v !== "string" || !(v as string).startsWith(process.env.SUPABASE_URL! + "/storage/v1/object/public/kz-car-photos/")))
     return errorResponse("Check title, year, price, status and photos");
+  if (status === "available" && (price === null || images.length === 0)) return errorResponse("To publish a car, add its asking price and at least one approved photo. Save as Draft until ready.",400);
   const record = {
     title, year, price, status, images,
     mileage: String(data.mileage || "").slice(0, 100),
