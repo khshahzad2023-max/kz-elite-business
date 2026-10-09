@@ -32,6 +32,7 @@ export default function AdminCars() {
   }
  }
  useEffect(()=>{void load()},[]);
+ useEffect(()=>{if(!ready)return;const interval=window.setInterval(()=>{void fetch("/api/admin/session",{cache:"no-store"})},20*60*1000);return()=>window.clearInterval(interval)},[ready]);
  function addPhotos(incoming: File[]) {
   if (!incoming.length) return;
   const allowed = ["image/jpeg","image/png","image/webp"];
@@ -82,10 +83,13 @@ export default function AdminCars() {
  async function save(e: React.FormEvent) {
   e.preventDefault();setBusy(true);setMessage("");
   try {
+   const session=await fetch("/api/admin/session",{cache:"no-store"}).then(r=>r.json());
+   if(!session.authenticated)throw Error("Session expired. Sign in again; your unsaved details remain on this page.");
    let images=[...car.images];
    if(photos.length){
     if(photos.length>15 || images.length+photos.length>20)throw Error("Maximum 15 new photos or 20 total per car.");
-    for(const photo of photos){
+    for(const [index,photo] of photos.entries()){
+     setMessage("Uploading photo "+(index+1)+" of "+photos.length+"...");
      if(photo.size > 3*1024*1024)throw Error(photo.name+": please reduce file size below 3 MB.");
      const data=new FormData();data.append("photos",photo);
      const response=await fetch("/api/admin/upload",{method:"POST",body:data});
@@ -157,7 +161,7 @@ export default function AdminCars() {
         </div>)}
        </div>}
       </div>
-      {car.images.length>0&&<div style={{display:"flex",gap:9,flexWrap:"wrap"}}>{car.images.map((src,i)=><div key={src} style={{position:"relative"}}><img src={src} alt={"Photo "+(i+1)} style={{width:110,height:90,objectFit:"cover",borderRadius:8}}/><button type="button" onClick={()=>setCar({...car,images:car.images.filter((_,j)=>i!==j)})} style={{display:"block",color:"#fff",background:"#6c2632",border:0,borderRadius:6}}>Remove</button></div>)}</div>}
+      {car.images.length>0&&<div style={{display:"flex",gap:9,flexWrap:"wrap"}}>{car.images.map((src,i)=><div key={src} style={{position:"relative"}}><b>#{i+1}</b><img src={src} alt={"Photo "+(i+1)} style={{width:110,height:90,objectFit:"cover",borderRadius:8}}/><button type="button" onClick={()=>setCar({...car,images:car.images.filter((_,j)=>i!==j)})} style={{display:"block",color:"#fff",background:"#6c2632",border:0,borderRadius:6}}>Remove #{i+1}</button><small>Photo {i+1}</small></div>)}</div>}
       <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
        <button disabled={busy} type="submit" style={{background:"#d6aa52",color:"#091321",padding:"13px 22px",border:0,borderRadius:10,fontWeight:700}}>{busy?"Saving...":"Save Car"}</button>
        <button type="button" onClick={()=>{setCar({...blank});setPhotos([])}} style={{background:"#22344b",color:"#fff",padding:"13px 22px",border:0,borderRadius:10}}>Clear Form</button>
