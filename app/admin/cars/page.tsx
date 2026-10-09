@@ -41,10 +41,14 @@ export default function AdminCars() {
   try {
    let images=[...car.images];
    if(photos.length){
-    const data=new FormData();photos.forEach(f=>data.append("photos",f));
-    const response=await fetch("/api/admin/upload",{method:"POST",body:data});
-    const payload=await response.json();if(!response.ok)throw Error(payload.error||"Upload failed");
-    images=[...images,...payload.images];
+    if(photos.length>15 || images.length+photos.length>20)throw Error("Maximum 15 new photos or 20 total per car.");
+    for(const photo of photos){
+     if(photo.size > 3*1024*1024)throw Error(photo.name+": please reduce file size below 3 MB.");
+     const data=new FormData();data.append("photos",photo);
+     const response=await fetch("/api/admin/upload",{method:"POST",body:data});
+     const payload=await response.json();if(!response.ok)throw Error(payload.error||"Upload failed");
+     images.push(...payload.images);
+    }
    }
    const response=await fetch("/api/admin/cars",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...car,images})});
    const payload=await response.json();if(!response.ok)throw Error(payload.error||"Save failed");
@@ -85,7 +89,7 @@ export default function AdminCars() {
       </div>
       <label style={labelStyle}>Verified specifications<textarea style={inputStyle} rows={3} value={car.specs} onChange={e=>setCar({...car,specs:e.target.value})} placeholder="GCC, engine, transmission, features..."/></label>
       <label style={labelStyle}>Description<textarea style={inputStyle} rows={4} value={car.description} onChange={e=>setCar({...car,description:e.target.value})}/></label>
-      <label style={labelStyle}>Add up to 15 photos (JPEG/PNG/WebP, max 8 MB each)<input style={inputStyle} type="file" accept="image/jpeg,image/png,image/webp" multiple onChange={e=>setPhotos(Array.from(e.target.files||[]))}/></label>
+      <label style={labelStyle}>Add up to 15 photos (JPEG/PNG/WebP, max 3 MB each)<input style={inputStyle} type="file" accept="image/jpeg,image/png,image/webp" multiple onChange={e=>setPhotos(Array.from(e.target.files||[]))}/></label>
       {photos.length>0&&<p>{photos.length} new photos selected</p>}
       {car.images.length>0&&<div style={{display:"flex",gap:9,flexWrap:"wrap"}}>{car.images.map((src,i)=><div key={src} style={{position:"relative"}}><img src={src} alt={"Photo "+(i+1)} style={{width:110,height:90,objectFit:"cover",borderRadius:8}}/><button type="button" onClick={()=>setCar({...car,images:car.images.filter((_,j)=>i!==j)})} style={{display:"block",color:"#fff",background:"#6c2632",border:0,borderRadius:6}}>Remove</button></div>)}</div>}
       <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
