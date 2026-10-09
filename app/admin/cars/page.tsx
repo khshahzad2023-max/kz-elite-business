@@ -31,10 +31,16 @@ export default function AdminCars() {
  useEffect(()=>{void load()},[]);
  async function login(e: React.FormEvent) {
   e.preventDefault();setBusy(true);setMessage("");
-  const res=await fetch("/api/admin/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,password})});
-  setPassword("");setBusy(false);
-  if(!res.ok){setMessage((await res.json()).error || "Login failed");return;}
-  await load();
+  try {
+   const res=await fetch("/api/admin/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,password})});
+   const payload=await res.json().catch(()=>({}));
+   if(!res.ok){setMessage(payload.error || "Login failed (HTTP "+res.status+")");return;}
+   setPassword("");
+   await load();
+  } catch {
+   setMessage("Could not connect to the login server. Refresh the page and try again.");
+  } finally {setBusy(false);}
+
  }
  async function save(e: React.FormEvent) {
   e.preventDefault();setBusy(true);setMessage("");
@@ -73,7 +79,8 @@ export default function AdminCars() {
      <h2>Owner Login</h2>
      <label style={labelStyle}>Admin email<input style={inputStyle} type="email" value={email} onChange={e=>setEmail(e.target.value)} required autoComplete="username"/></label>
      <label style={labelStyle}>Password<input style={inputStyle} type="password" value={password} onChange={e=>setPassword(e.target.value)} required autoComplete="current-password"/></label>
-     <button type="submit" disabled={busy} style={{...inputStyle,background:"#d6aa52",color:"#07111f",fontWeight:700,cursor:"pointer"}}>Sign in</button>
+     <button type="submit" disabled={busy} style={{...inputStyle,background:"#d6aa52",color:"#07111f",fontWeight:700,cursor:"pointer"}}>{busy?"Signing in...":"Sign in"}</button>
+     {message&&<p role="alert" style={{margin:0,padding:12,background:"#45212d",color:"#ffe1a4",border:"1px solid #b66e76",borderRadius:8}}>{message}</p>}
     </form> :
     <>
      <button style={{border:"1px solid #687991",background:"transparent",color:"white",borderRadius:8,padding:10,cursor:"pointer"}} onClick={async()=>{await fetch("/api/admin/logout",{method:"POST"});setReady(false)}}>Sign out</button>
@@ -103,7 +110,7 @@ export default function AdminCars() {
        <button type="button" onClick={()=>{setCar(item);setPhotos([]);window.scrollTo({top:0,behavior:"smooth"})}} style={{padding:"10px 18px",background:"#193650",color:"white",border:"1px solid #6b7f95",borderRadius:8}}>Edit</button>
       </div>)}</div>
     </>}
-   {message&&<p role="status" style={{padding:12,color:"#ffe1a4"}}>{message}</p>}
+   {ready&&message&&<p role="status" style={{padding:12,color:"#ffe1a4"}}>{message}</p>}
   </div>
  </main>;
 }
