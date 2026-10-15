@@ -1388,3 +1388,55 @@ html,body{max-width:100%;overflow-x:hidden}
 .kz-home-v3 .kz-eco-service h3{transition:text-shadow .24s ease,color .24s ease}
 .kz-home-v3 .kz-eco-service:hover h3,.kz-home-v3 .kz-eco-service:focus-visible h3{color:#f3fcff;text-shadow:0 0 13px rgba(103,201,251,.42)}
 @media(prefers-reduced-motion:reduce){.navlinks a:not(.nav-cta),.kz-home-v3 .kz-eco-service h3{transition:none}}
+
+
+/* Mobile-only homepage services refinement (desktop untouched) */
+@media (max-width: 760px) {
+  .kz-home-v3 .kz-services-ecosystem {
+    padding-top: 42px !important;
+    padding-bottom: 46px !important;
+  }
+  .kz-home-v3 .kz-eco-head {
+    padding-inline: 4px;
+  }
+  .kz-home-v3 .kz-eco-head h2 {
+    font-size: clamp(32px, 8.2vw, 40px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -.035em;
+    margin-bottom: 18px;
+  }
+  .kz-home-v3 .kz-eco-head p {
+    font-size: clamp(15px, 3.9vw, 17px) !important;
+    line-height: 1.5 !important;
+    max-width: 34ch;
+    margin-inline: auto;
+  }
+  .kz-home-v3 .kz-eco-stage {
+    margin-top: 22px !important;
+    gap: 12px;
+  }
+  .kz-home-v3 .kz-eco-core {
+    width: 186px;
+    height: 186px;
+    margin-bottom: 8px;
+    padding: 18px;
+    text-align: center;
+  }
+  .kz-home-v3 .kz-eco-core img {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+  }
+  .kz-home-v3 .kz-eco-core span {
+    font-size: 9px !important;
+    letter-spacing: .045em !important;
+    line-height: 1.35;
+    max-width: 150px;
+    text-align: center;
+    overflow-wrap: normal;
+  }
+  .kz-home-v3 .kz-eco-service {
+    min-height: 0 !important;
+    padding: 20px 21px;
+  }
+}
