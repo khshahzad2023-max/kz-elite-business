@@ -1589,3 +1589,93 @@ body{
 @media(prefers-reduced-motion:reduce){
  .navlinks a{transition:none}
 }
+
+
+/* Reference-led finishing: airy Muscat daylight, crystal glass, steel geometry */
+.kz-home-v3 .kz-brand-opening{
+ background:#dce9f5!important;
+ isolation:isolate;
+}
+.kz-home-v3 .kz-muscat-bg{
+ opacity:1!important;
+ background-image:linear-gradient(90deg,rgba(241,247,253,.91) 0%,rgba(238,245,252,.76) 38%,rgba(221,235,247,.18) 75%),url('/mutrah-evening-hero.png')!important;
+ background-position:center!important;
+ background-size:cover!important;
+ filter:brightness(1.16) saturate(.84);
+}
+.kz-home-v3 .kz-brand-copy h1{
+ color:#19334d!important;
+ text-shadow:0 3px 28px rgba(255,255,255,.68)!important;
+}
+.kz-home-v3 .kz-brand-copy h1 em{color:#6686a5!important}
+.kz-home-v3 .kz-brand-copy p,
+.kz-home-v3 .kz-opening-location{color:#2f526f!important;text-shadow:0 1px 10px #fff}
+.kz-home-v3 .kz-home-hero-actions a{
+ background:rgba(255,255,255,.82)!important;
+ color:#193b58!important;
+ border:1px solid rgba(128,159,186,.5)!important;
+ box-shadow:0 12px 28px rgba(36,74,107,.13)!important;
+ backdrop-filter:blur(18px);
+ border-radius:13px!important;
+}
+.kz-home-v3 .kz-home-hero-actions a:hover{background:#e5f1fa!important}
+.kz-home-v3 .kz-brand-mark img{filter:drop-shadow(0 16px 35px rgba(20,45,68,.22))}
+.kz-home-v3 .kz-facade{
+ border:1px solid #aabed1!important;
+ border-radius:26px!important;
+ box-shadow:0 24px 60px rgba(44,73,99,.19)!important;
+}
+.kz-home-v3 .kz-facade-enter{
+ background:linear-gradient(125deg,#143651,#496f8d)!important;
+ color:#fff!important;
+ border:1px solid #86a8c0!important;
+ box-shadow:0 12px 35px rgba(7,32,53,.3)!important;
+ border-radius:12px!important;
+}
+.kz-home-v3 .kz-facade-foot{
+ background:rgba(235,244,252,.86)!important;
+ color:#173750!important;
+ backdrop-filter:blur(14px);
+}
+.kz-home-v3 .kz-eco-stage{isolation:isolate}
+.kz-home-v3 .kz-eco-lines i{border-color:#9fb4c6!important}
+.kz-home-v3 .kz-eco-service{border-radius:20px!important}
+.kz-home-v3 .kz-trust-v3-grid>div{border-radius:15px}
+.kz-review-invite{
+ padding:50px 20px 58px;
+ text-align:center;
+ background:linear-gradient(125deg,#e4eef7,#f8fafd 55%,#d7e6f2);
+ color:#19334d;
+ border-top:1px solid #c1d2e1;
+}
+.kz-review-invite>div{max-width:720px;margin:0 auto}
+.kz-review-eyebrow{
+ color:#537b9c;font-size:12px;letter-spacing:.18em;
+ font-weight:800;margin-bottom:10px;
+}
+.kz-review-invite h2{font-size:clamp(24px,4vw,36px);margin-bottom:10px;color:#19334d}
+.kz-review-copy{line-height:1.65;color:#526d84;margin-bottom:22px}
+.kz-review-button{
+ display:inline-block;border:1px solid #8faec7;
+ border-radius:12px;padding:13px 24px;color:#fff;
+ background:linear-gradient(125deg,#143651,#456b89);
+ font-weight:700;text-decoration:none;
+ box-shadow:0 12px 30px rgba(40,78,111,.16);
+}
+.header .brand img,.footer .brand img{
+ object-fit:contain!important;
+ background:transparent!important;
+ border:0!important;
+ box-shadow:none!important;
+}
+.footer{background:linear-gradient(155deg,#d9e9f5,#f4f8fc 55%,#dcebf6)!important}
+.footer .container{position:relative}
+.footer-grid>div{border-color:rgba(105,141,171,.2)}
+@media(max-width:767px){
+ .kz-home-v3 .kz-muscat-bg{
+  background-position:58% center!important;
+  background-image:linear-gradient(90deg,rgba(241,247,253,.94),rgba(235,244,252,.55)),url('/mutrah-evening-hero.png')!important;
+ }
+ .kz-home-v3 .kz-brand-copy h1{font-size:clamp(36px,9vw,66px)}
+ .kz-review-invite{padding:42px 18px}
+}
