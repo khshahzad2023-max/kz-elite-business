@@ -1440,3 +1440,152 @@ html,body{max-width:100%;overflow-x:hidden}
     padding: 20px 21px;
   }
 }
+
+
+/* K&Z ELITE | PEARL x STEEL — full visual treatment, preview only.
+   Deliberately NO changes to image URLs, image filters, geometry,
+   section ordering, automotive facade, or motion keyframes. */
+:root{
+ --bg:#f8f9fb;--bg2:#edf1f5;--card:#ffffff;
+ --line:rgba(85,107,130,.20);--text:#303f50;
+ --muted:#5b6b7c;--silver:#d7dce2;
+}
+body{
+ background:linear-gradient(160deg,#f8f9fb 0%,#e9eef3 48%,#f7f9fb 100%);
+ color:#303f50;
+}
+.header{
+ background:rgba(248,249,251,.96);
+ border-bottom:1px solid rgba(96,117,138,.24);
+ box-shadow:0 10px 34px rgba(31,49,68,.09);
+ backdrop-filter:blur(18px);
+}
+.brand-text strong{color:#303f50}
+.brand-text span{color:#647b91}
+.navlinks a{color:#394d62;font-weight:700;letter-spacing:.02em;transition:color .2s ease}
+.navlinks a:hover{color:#567fa1}
+.nav-cta{
+ background:linear-gradient(135deg,#334b63,#607b95);
+ color:#fff!important;border:1px solid #607b95;
+ box-shadow:0 8px 22px rgba(48,63,80,.17);
+}
+.kz-mobile-menu summary{
+ background:#edf1f5!important;color:#303f50!important;
+ border-color:#b8c4cf!important;
+}
+.kz-mobile-menu-links{
+ background:#f8f9fb!important;color:#303f50!important;
+ border:1px solid #d7dce2!important;
+ box-shadow:0 20px 40px rgba(35,55,75,.17);
+}
+.kz-mobile-menu-links a{color:#303f50!important}
+.kz-home-v3{
+ --kz-pearl:#f8f9fb;--kz-steel:#8996a3;
+ --kz-graphite:#303f50;--kz-silver:#d7dce2;
+ --kz-ink:#334b63;
+}
+.kz-home-v3 .kz-who-section{
+ background:linear-gradient(135deg,#f8f9fb,#e7edf3)!important;
+ color:#303f50!important;
+}
+.kz-home-v3 .kz-home-auto{
+ background:linear-gradient(160deg,#dce4ec 0%,#f5f7fa 55%,#e4eaf0 100%)!important;
+ color:#303f50!important;
+}
+.kz-home-v3 .kz-services-ecosystem{
+ background:radial-gradient(ellipse at 50% 35%,#e0e8ef,#f8f9fb 70%)!important;
+ color:#303f50!important;
+}
+.kz-home-v3 .kz-trust-v3{
+ background:linear-gradient(150deg,#e4eaf0,#f8f9fb 50%,#dce5ed)!important;
+ color:#303f50!important;
+}
+.kz-home-v3 .kz-who-title h2,
+.kz-home-v3 .kz-eco-head h2,
+.kz-home-v3 .kz-trust-v3-title h2,
+.kz-home-v3 .kz-trust-v3-grid b,
+.kz-home-v3 .kz-eco-service h3{color:#303f50!important;text-shadow:none!important}
+.kz-home-v3 .kz-who-story p,
+.kz-home-v3 .kz-eco-head p,
+.kz-home-v3 .kz-trust-v3-grid p,
+.kz-home-v3 .kz-eco-service p{color:#566879!important}
+.kz-home-v3 .kz-who-title small,
+.kz-home-v3 .kz-eco-head small,
+.kz-home-v3 .kz-trust-v3-title small,
+.kz-home-v3 .kz-home-section-label{color:#607d96!important}
+.kz-home-v3 .kz-eco-service{
+ background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(226,233,240,.96))!important;
+ border:1px solid #c5d0db!important;
+ box-shadow:0 14px 35px rgba(44,65,85,.12),inset 0 1px rgba(255,255,255,.95)!important;
+ backdrop-filter:blur(14px);
+}
+.kz-home-v3 .kz-eco-service:hover,
+.kz-home-v3 .kz-eco-service:focus-visible{
+ background:linear-gradient(145deg,#fff,#dce7f0)!important;
+ border-color:#7e99b2!important;
+ box-shadow:0 20px 45px rgba(44,65,85,.19)!important;
+}
+.kz-home-v3 .kz-eco-service small,
+.kz-home-v3 .kz-eco-service b{color:#607d96!important}
+.kz-home-v3 .kz-eco-core{
+ background:radial-gradient(circle at 35% 20%,#f8f9fb,#cbd6e1)!important;
+ border-color:#aabccc!important;
+ box-shadow:0 15px 40px rgba(44,65,85,.17)!important;
+ color:#303f50!important;
+}
+.kz-home-v3 .kz-eco-core span{color:#52687d!important}
+.kz-home-v3 .kz-trust-v3-grid{
+ border-top-color:#b7c5d1!important;
+ border-bottom-color:#b7c5d1!important;
+}
+.kz-home-v3 .kz-trust-v3-grid>div{
+ background:linear-gradient(160deg,rgba(255,255,255,.86),rgba(229,236,243,.82))!important;
+ border-color:#c0ccd7!important;
+ box-shadow:inset 0 1px rgba(255,255,255,.9);
+}
+.kz-home-v3 .kz-trust-v3-grid span{color:#67829a!important}
+.kz-home-v3 .kz-trust-v3-signoff{color:#303f50!important}
+.kz-home-v3 .kz-trust-v3-signoff span{color:#617587!important}
+.kz-home-v3 .kz-who-story span{color:#607d96!important}
+.kz-home-v3 .kz-who-section:after,
+.kz-home-v3 .kz-home-auto:after{
+ background:linear-gradient(90deg,transparent,#aab9c8 18%,#aab9c8 82%,transparent)!important;
+}
+.section.alt{background:#e9eef3}
+.card,.feature-box,.hero-card{
+ background:linear-gradient(145deg,#fff,#e8eef4);
+ border:1px solid #cbd5df;
+ color:#303f50;
+ box-shadow:0 15px 35px rgba(41,63,84,.10);
+}
+.card p,.section-head p,.lead{color:#596e80}
+.card-link{color:#446b8b}
+.btn-primary{background:linear-gradient(135deg,#344d65,#819bb1);color:#fff}
+.btn-secondary{background:#edf2f6;border-color:#c5d0db;color:#303f50}
+.contact-dock-section{
+ background:linear-gradient(155deg,#e7edf3,#f8f9fb)!important;
+ color:#303f50;
+}
+.contact-dock{
+ background:rgba(255,255,255,.84)!important;
+ border-color:#c6d2dd!important;
+ box-shadow:0 22px 50px rgba(41,63,84,.12)!important;
+}
+.contact-tile{
+ background:linear-gradient(145deg,#fff,#e6edf4)!important;
+ border-color:#d1dce5!important;
+}
+.contact-tile strong{color:#303f50!important}
+.contact-tile small{color:#647b91!important}
+.footer{
+ background:linear-gradient(145deg,#e0e7ee,#f5f7fa)!important;
+ border-top:1px solid #c2cfda!important;
+ color:#303f50!important;
+}
+.footer h4{color:#334f68!important}
+.footer p,.footer a,.footer-bottom{color:#526a80!important}
+.footer-bottom{border-color:#c3d0dc!important}
+.footer .brand-text strong{color:#303f50}
+@media(prefers-reduced-motion:reduce){
+ .navlinks a{transition:none}
+}
