@@ -1440,3 +1440,50 @@ html,body{max-width:100%;overflow-x:hidden}
     padding: 20px 21px;
   }
 }
+
+
+/* K&Z approved pearl-white / steel-grey preview.
+   Palette-only overrides: preserve Muttrah hero artwork, showroom gate,
+   positioning, animations, logos and all component markup. */
+.kz-home-v3{
+  --kz-pearl:#f8f9fb;
+  --kz-steel:#8996a3;
+  --kz-graphite:#303f50;
+  --kz-soft-line:#d7dce2;
+}
+.kz-home-v3 .kz-who-section,
+.kz-home-v3 .kz-services-ecosystem,
+.kz-home-v3 .kz-trust-v3,
+.kz-home-v3 .kz-home-auto{
+  background-color:var(--kz-pearl);
+  color:var(--kz-graphite);
+}
+.kz-home-v3 .kz-who-title h2,
+.kz-home-v3 .kz-eco-head h2,
+.kz-home-v3 .kz-trust-v3-title h2,
+.kz-home-v3 .kz-trust-v3-grid b{
+  color:var(--kz-graphite);
+}
+.kz-home-v3 .kz-who-story p,
+.kz-home-v3 .kz-eco-head p,
+.kz-home-v3 .kz-trust-v3-grid p{
+  color:#566574;
+}
+.kz-home-v3 .kz-eco-service,
+.kz-home-v3 .kz-trust-v3-grid > div{
+  background-color:#fff;
+  border-color:var(--kz-soft-line);
+  color:var(--kz-graphite);
+}
+.kz-home-v3 .kz-eco-service h3,
+.kz-home-v3 .kz-eco-service p,
+.kz-home-v3 .kz-eco-service small,
+.kz-home-v3 .kz-eco-service b{
+  color:var(--kz-graphite);
+}
+.kz-home-v3 .kz-who-title small,
+.kz-home-v3 .kz-eco-head small,
+.kz-home-v3 .kz-trust-v3-title small,
+.kz-home-v3 .kz-home-section-label{
+  color:#60768c;
+}
