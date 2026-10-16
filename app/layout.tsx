@@ -39,7 +39,7 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
         <header className="header">
           <div className="container navbar">
             <Link href="/" className="brand">
-              <img src="/kz-master-logo.png" alt="K&Z ELITE BUSINESS" />
+              <img src="/kz-hero-logo-transparent.png" alt="K&Z ELITE BUSINESS" />
               <div className="brand-text">
                 <strong>K&Z ELITE BUSINESS</strong>
                 <span>ONE NAME • MANY SOLUTIONS</span>
@@ -54,12 +54,12 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
         </header>
         {children}
         <ContactDock />
-        <section aria-label="Google customer reviews" style={{ padding: "28px 20px 48px", textAlign: "center", background: "#07182b", color: "#f4f5f8" }}>
+        <section aria-label="Google customer reviews" className="kz-review-invite">
           <div style={{ maxWidth: 720, margin: "0 auto" }}>
-            <p style={{ color: "#d6aa52", fontSize: 12, letterSpacing: "0.18em", fontWeight: 700, marginBottom: 10 }}>CUSTOMER FEEDBACK</p>
+            <p className="kz-review-eyebrow">CUSTOMER FEEDBACK</p>
             <h2 style={{ fontSize: "clamp(24px, 4vw, 36px)", marginBottom: 10 }}>Your Experience Matters</h2>
-            <p style={{ lineHeight: 1.65, color: "#c8d3df", marginBottom: 22 }}>Purchased or sold a car with K&amp;Z? Share your genuine experience on Google.</p>
-            <a href="https://g.page/r/CX2yk5KX5Yu2EBM/review" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", border: "1px solid #d6aa52", borderRadius: 9, padding: "13px 24px", color: "#07182b", background: "#d6aa52", fontWeight: 700, textDecoration: "none" }}>★ Write a Google Review ↗</a>
+            <p className="kz-review-copy">Purchased or sold a car with K&amp;Z? Share your genuine experience on Google.</p>
+            <a href="https://g.page/r/CX2yk5KX5Yu2EBM/review" target="_blank" rel="noopener noreferrer" className="kz-review-button">★ Write a Google Review ↗</a>
           </div>
         </section>
         <footer className="footer">
@@ -67,7 +67,7 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
             <div className="footer-grid">
               <div>
                 <div className="brand">
-                  <img src="/kz-master-logo.png" alt="K&Z ELITE BUSINESS" />
+                  <img src="/kz-hero-logo-transparent.png" alt="K&Z ELITE BUSINESS" />
                   <div className="brand-text">
                     <strong>K&Z ELITE BUSINESS</strong>
                     <span>ONE NAME • MANY SOLUTIONS</span>
