@@ -1679,3 +1679,35 @@ body{
  .kz-home-v3 .kz-brand-copy h1{font-size:clamp(36px,9vw,66px)}
  .kz-review-invite{padding:42px 18px}
 }
+
+
+/* K&Z home inventory — connected to existing /api/cars, no invented vehicles */
+.kz-inventory-home{padding:clamp(56px,7vw,100px) 0;background:linear-gradient(140deg,#f7fafd,#e4edf5 62%,#f7fafd);color:#203b53}
+.kz-inventory-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.kz-inventory-heading small{color:#62839f;font-weight:800;letter-spacing:.18em}
+.kz-inventory-heading h2{font-size:clamp(30px,4vw,52px);margin:12px 0;color:#203b53}
+.kz-inventory-heading p{color:#60788d}
+.kz-inventory-all{color:#315d7c;font-weight:800;text-decoration:none}
+.kz-inventory-tools{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:30px 0}
+.kz-inventory-tabs{display:flex;gap:6px;background:#e0eaf2;padding:6px;border-radius:14px}
+.kz-inventory-tabs button{padding:11px 17px;border:0;border-radius:10px;background:transparent;color:#3e5d76;font-weight:700;cursor:pointer}
+.kz-inventory-tabs button[aria-pressed=true]{background:#fff;box-shadow:0 4px 12px #7891a033;color:#183b57}
+.kz-inventory-search input{width:min(360px,80vw);padding:14px 16px;border-radius:12px;border:1px solid #bfcedb;background:#fff;color:#233e55;font:inherit}
+.kz-inventory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.kz-inventory-card{overflow:hidden;border-radius:20px;background:#fff;border:1px solid #cbd8e3;box-shadow:0 16px 40px #4b69821a}
+.kz-inventory-photo{position:relative;height:220px;background:#dce6ee}
+.kz-inventory-photo img{width:100%;height:100%;object-fit:cover}
+.kz-inventory-placeholder{height:100%;display:grid;place-items:center;color:#658099;font-weight:800;letter-spacing:.1em}
+.kz-inventory-status{position:absolute;top:14px;left:14px;background:#244962;color:#fff;border-radius:8px;padding:7px 11px;font-size:11px;font-weight:800;letter-spacing:.1em}
+.kz-inventory-details{padding:22px}
+.kz-inventory-details h3{font-size:20px;margin:0 0 8px;color:#233d54}
+.kz-inventory-details p{color:#657e92;margin:0 0 12px}
+.kz-inventory-specs{min-height:38px}
+.kz-inventory-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #e2eaf0;padding-top:16px}
+.kz-inventory-bottom strong{color:#244962}
+.kz-inventory-bottom a{background:#284f6d;color:#fff;text-decoration:none;border-radius:9px;padding:10px 13px;font-size:12px;font-weight:800}
+.kz-inventory-empty{padding:38px;background:#fff;border:1px solid #d0dde7;border-radius:18px;color:#47657c}
+.kz-inventory-empty h3{color:#244962}
+.kz-inventory-empty a{color:#285b80;font-weight:700}
+@media(max-width:950px){.kz-inventory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.kz-inventory-grid{grid-template-columns:1fr}.kz-inventory-search,.kz-inventory-search input{width:100%}.kz-inventory-photo{height:235px}.kz-inventory-heading{align-items:start}}
