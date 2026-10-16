@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AutomotiveGate from "./AutomotiveGate";
+import HomeInventory from "./HomeInventory";
 
 const services=[
  {n:"01",title:"Automotive",text:"Cars • Garage • Car Care",href:"/automotive"},
@@ -23,6 +24,8 @@ export default function Home(){
    </div>
    <div className="kz-opening-location">MUSCAT • SULTANATE OF OMAN</div>
   </section>
+
+  <HomeInventory/>
 
   <section id="who-we-are" className="kz-who-section">
    <div className="container kz-who-layout">
