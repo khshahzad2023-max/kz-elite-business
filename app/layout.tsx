@@ -2,6 +2,7 @@
 import "./globals.css";
 import "./corporate.css";
 import "./studio.css";
+import "./concept.css";
 import Link from "next/link";
 import Script from "next/script";
 import ContactDock from "./ContactDock";
