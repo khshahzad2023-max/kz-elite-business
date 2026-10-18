@@ -1443,3 +1443,7 @@ html,body{max-width:100%;overflow-x:hidden}
 
 /* Opening reveal: use the cropped hero mark at a legible scale; leave other animations intact. */
 .site-intro-css .intro-mark img{width:clamp(210px,25vw,320px);max-width:78vw;height:auto;object-fit:contain}
+
+/* Homepage hero slogan: refined, legible champagne gold. */
+.kz-home-v3 .kz-brand-opening.kz-intro-v4 .kz-brand-copy>p{color:#E8C66A!important;font-size:clamp(13px,1.2vw,16px)!important;font-weight:700!important;letter-spacing:.16em!important;line-height:1.6;text-shadow:0 2px 12px rgba(0,0,0,.75),0 0 16px rgba(232,198,106,.15)}
+@media(max-width:720px){.kz-home-v3 .kz-brand-opening.kz-intro-v4 .kz-brand-copy>p{font-size:clamp(11px,2.6vw,13px)!important;letter-spacing:.10em!important;white-space:normal}}
