@@ -9,6 +9,7 @@ export default function HomeInventory(){
  const [loading,setLoading]=useState(true);
  useEffect(()=>{let active=true;fetch("/api/cars").then(r=>r.ok?r.json():[]).then(data=>{if(active)setCars(Array.isArray(data)?data:[])}).catch(()=>{}).finally(()=>{if(active)setLoading(false)});return()=>{active=false}},[]);
  const shown=useMemo(()=>cars.filter(c=>c.status===filter&&(!query||[c.title,c.specs,c.location].some(v=>(v||"").toLowerCase().includes(query.toLowerCase())))).slice(0,6),[cars,filter,query]);
+ if(!loading&&!cars.some(c=>c.status==="available"))return null;
  return <section id="featured-inventory" className="kz-inventory-home">
   <div className="container">
    <div className="kz-inventory-heading"><div><small>K&Z AUTOMOTIVE</small><h2>Find your next drive.</h2><p>Browse our latest listings, directly from the K&Z inventory.</p></div><Link href="/cars" className="kz-inventory-all">VIEW ALL CARS ↗</Link></div>
