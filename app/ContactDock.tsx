@@ -48,7 +48,7 @@ export default function ContactDock() {
           <div className="contact-location"><MapPin size={17} /> Muscat, Sultanate of Oman</div>
         </div>
         <div className="crystal-connect" aria-label="K&Z contact options">
-          <button className={`crystal-contact crystal-call ${callOpen ? "is-open" : ""}`} type="button" onClick={() => setCallOpen((open) => !open)} aria-expanded={callOpen}>
+          <button className={`crystal-contact crystal-call ${callOpen ? "is-open" : ""}`} type="button" onMouseEnter={() => setCallOpen(true)} onFocus={() => setCallOpen(true)} onClick={() => setCallOpen((open) => !open)} aria-expanded={callOpen}>
             {!callOpen ? <span className="crystal-letter">C</span> : (
               <span className="call-choice-panel">
                 <span className="call-choice-title call-choice-title-icon"><span className="call-crystal-logo"><Phone size={28} strokeWidth={2.4} /></span><span>CHOOSE A NUMBER</span></span>
@@ -57,7 +57,7 @@ export default function ContactDock() {
               </span>
             )}
           </button>
-          <button className={`crystal-contact crystal-whatsapp ${whatsappOpen ? "is-open" : ""}`} type="button" onClick={() => setWhatsappOpen((open) => !open)} aria-expanded={whatsappOpen}>
+          <button className={`crystal-contact crystal-whatsapp ${whatsappOpen ? "is-open" : ""}`} type="button" onMouseEnter={() => setWhatsappOpen(true)} onFocus={() => setWhatsappOpen(true)} onClick={() => setWhatsappOpen((open) => !open)} aria-expanded={whatsappOpen}>
             {!whatsappOpen ? <span className="crystal-letter">O</span> : (
               <span className="call-choice-panel whatsapp-choice-panel">
                 <span className="call-choice-title whatsapp-choice-title"><span className="whatsapp-crystal-logo" aria-label="WhatsApp">
@@ -70,7 +70,7 @@ export default function ContactDock() {
               </span>
             )}
           </button>
-          <button className={`crystal-contact crystal-email ${emailOpen ? "is-open" : ""}`} type="button" onClick={() => setEmailOpen((open) => !open)} aria-expanded={emailOpen}>
+          <button className={`crystal-contact crystal-email ${emailOpen ? "is-open" : ""}`} type="button" onMouseEnter={() => setEmailOpen(true)} onFocus={() => setEmailOpen(true)} onClick={() => setEmailOpen((open) => !open)} aria-expanded={emailOpen}>
             {!emailOpen ? <span className="crystal-letter">N</span> : (
               <span className="email-choice-panel">
                 <span className="email-crystal-logo"><Mail size={29} strokeWidth={2.2} /></span>
@@ -79,7 +79,7 @@ export default function ContactDock() {
               </span>
             )}
           </button>
-          <button className={`crystal-contact crystal-instagram ${instagramOpen ? "is-open" : ""}`} type="button" onClick={() => setInstagramOpen((open) => !open)} aria-expanded={instagramOpen}>
+          <button className={`crystal-contact crystal-instagram ${instagramOpen ? "is-open" : ""}`} type="button" onMouseEnter={() => setInstagramOpen(true)} onFocus={() => setInstagramOpen(true)} onClick={() => setInstagramOpen((open) => !open)} aria-expanded={instagramOpen}>
             {!instagramOpen ? <span className="crystal-letter">N</span> : (
               <span className="instagram-choice-panel">
                 <span className="instagram-crystal-logo"><InstagramIcon size={30} /></span>
@@ -88,7 +88,7 @@ export default function ContactDock() {
               </span>
             )}
           </button>
-          <button className={`crystal-contact crystal-facebook ${facebookOpen ? "is-open" : ""}`} type="button" onClick={() => setFacebookOpen((open) => !open)} aria-expanded={facebookOpen}>
+          <button className={`crystal-contact crystal-facebook ${facebookOpen ? "is-open" : ""}`} type="button" onMouseEnter={() => setFacebookOpen(true)} onFocus={() => setFacebookOpen(true)} onClick={() => setFacebookOpen((open) => !open)} aria-expanded={facebookOpen}>
             {!facebookOpen ? <span className="crystal-letter">E</span> : (
               <span className="facebook-choice-panel">
                 <span className="facebook-crystal-logo" aria-label="Facebook">
@@ -99,7 +99,7 @@ export default function ContactDock() {
               </span>
             )}
           </button>
-          <button className={`crystal-contact crystal-website ${websiteOpen ? "is-open" : ""}`} type="button" onClick={() => setWebsiteOpen((open) => !open)} aria-expanded={websiteOpen}>
+          <button className={`crystal-contact crystal-website ${websiteOpen ? "is-open" : ""}`} type="button" onMouseEnter={() => setWebsiteOpen(true)} onFocus={() => setWebsiteOpen(true)} onClick={() => setWebsiteOpen((open) => !open)} aria-expanded={websiteOpen}>
             {!websiteOpen ? <span className="crystal-letter">C</span> : (
               <span className="website-choice-panel">
                 <span className="website-crystal-logo"><Globe2 size={30} strokeWidth={2.1} /></span>
@@ -108,7 +108,7 @@ export default function ContactDock() {
               </span>
             )}
           </button>
-          <button className={`crystal-contact crystal-tiktok ${tiktokOpen ? "is-open" : ""}`} type="button" onClick={() => setTiktokOpen((open) => !open)} aria-expanded={tiktokOpen}>
+          <button className={`crystal-contact crystal-tiktok ${tiktokOpen ? "is-open" : ""}`} type="button" onMouseEnter={() => setTiktokOpen(true)} onFocus={() => setTiktokOpen(true)} onClick={() => setTiktokOpen((open) => !open)} aria-expanded={tiktokOpen}>
             {!tiktokOpen ? <span className="crystal-letter">T</span> : (
               <span className="tiktok-choice-panel">
                 <span className="tiktok-crystal-logo" aria-label="TikTok">
@@ -121,7 +121,7 @@ export default function ContactDock() {
           </button>
 
 </div>
-        <div className="crystal-hint">{callOpen||whatsappOpen||emailOpen||instagramOpen||facebookOpen||tiktokOpen||websiteOpen ? "Choose a contact option above to connect with K&Z" : "Tap a crystal letter to reveal contact options"}</div>
+        <div className="crystal-hint">{callOpen||whatsappOpen||emailOpen||instagramOpen||facebookOpen||tiktokOpen||websiteOpen ? "Choose a contact option above to connect with K&Z" : "Hover or tap a crystal letter to reveal contact options"}</div>
       </div>
     </section>
   );
