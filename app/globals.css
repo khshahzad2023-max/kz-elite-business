@@ -1447,3 +1447,7 @@ html,body{max-width:100%;overflow-x:hidden}
 /* Homepage hero slogan: refined, legible champagne gold. */
 .kz-home-v3 .kz-brand-opening.kz-intro-v4 .kz-brand-copy>p{color:#E8C66A!important;font-size:clamp(13px,1.2vw,16px)!important;font-weight:700!important;letter-spacing:.16em!important;line-height:1.6;text-shadow:0 2px 12px rgba(0,0,0,.75),0 0 16px rgba(232,198,106,.15)}
 @media(max-width:720px){.kz-home-v3 .kz-brand-opening.kz-intro-v4 .kz-brand-copy>p{font-size:clamp(11px,2.6vw,13px)!important;letter-spacing:.10em!important;white-space:normal}}
+
+/* Stronger gold contrast for the homepage hero tagline only. */
+.kz-home-v3 .kz-brand-opening.kz-intro-v4 .kz-brand-copy>p{color:#FFDA75!important;font-weight:800!important;font-size:clamp(14px,1.35vw,18px)!important;letter-spacing:.14em!important;text-shadow:0 2px 8px rgba(0,0,0,.9),0 0 18px rgba(255,207,93,.32)}
+@media(max-width:720px){.kz-home-v3 .kz-brand-opening.kz-intro-v4 .kz-brand-copy>p{font-size:clamp(12px,3vw,15px)!important;letter-spacing:.10em!important}}
