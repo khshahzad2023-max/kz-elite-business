@@ -1,0 +1,59 @@
+
+/* K&Z Studio: an editorial identity, not a template */
+.kz-home-v3{background:#fff}
+.kzc{--studio:#153348;--mist:#eaf1f3;--copper:#b28c57}
+.kzc-hero{min-height:760px;background:#eaf0f1}
+.kzc-hero-photo{background-position:center 44%;filter:saturate(.84)}
+.kzc-hero-wash{background:linear-gradient(90deg,#eef3f4fa 0%,#eaf1f4f5 35%,#e5eef1b0 58%,#152f4c22 100%)}
+.kzc-hero-inner{min-height:710px;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:60px}
+.kzc h1{font-size:clamp(62px,7.7vw,118px);letter-spacing:-.085em;line-height:.96}
+.kzc h1 em{color:#4a788e}
+.kzc-hero-copy>p{max-width:530px;font-size:18px}
+.kzc-hero-side{align-self:stretch;justify-content:center}
+.kzs-brand-art{width:min(440px,100%);aspect-ratio:4/4.6;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:25px;background:linear-gradient(145deg,#ffffffde,#e0edf2c9);border:1px solid #fff;box-shadow:0 35px 70px #0b2e4b24,inset 0 1px 0 #fff;backdrop-filter:blur(14px)}
+.kzs-brand-art-top{width:100%;display:flex;justify-content:space-between;gap:12px;font-size:9px;font-weight:800;letter-spacing:.12em;color:#416477;border-bottom:1px solid #aec2cc;padding-bottom:15px}
+.kzs-brand-art-top span{color:#728c9a}
+.kzc-hero-side .kzs-brand-art img{width:min(240px,73%);height:auto;max-height:240px;object-fit:contain;filter:none}
+.kzs-brand-art-bottom{display:flex;flex-direction:column;align-self:stretch;border-top:1px solid #b5c7d0;padding-top:16px;color:#193d52}
+.kzs-brand-art-bottom strong{font-size:clamp(25px,2.7vw,39px);line-height:1.04;letter-spacing:-.06em}
+.kzs-brand-art-bottom strong:last-child{font-weight:400;color:#53788c}
+.kzs-index{background:#18384c;color:#d9e6ed;padding:23px 0}
+.kzs-index>.kzc-wrap{display:flex;align-items:center;justify-content:space-between;gap:28px}
+.kzs-index span{font-size:10px;letter-spacing:.15em;font-weight:800;color:#b2c8d4}
+.kzs-index .kzc-wrap>div{display:flex;gap:clamp(12px,2vw,34px);flex-wrap:wrap}
+.kzs-index a{font-size:10px;letter-spacing:.08em;font-weight:800;color:#e2edf3!important}
+.kzs-index a:hover{color:#fff!important;text-decoration:underline}
+.kzc-intro{padding:135px 0}
+.kzc-intro h2{font-size:clamp(50px,6vw,86px)}
+.kzs-statement{padding:100px 0;background:#e9f0f3;color:#183b51}
+.kzs-statement .kzc-wrap{display:grid;grid-template-columns:1fr 2fr;gap:9%;align-items:start}
+.kzs-statement p{font-size:clamp(33px,4.2vw,60px);letter-spacing:-.055em;line-height:1.18;font-weight:650}
+.kzs-statement em{font-style:normal;color:#5d8499;font-weight:400}
+.kzs-statement .kzc-wrap>span{grid-column:2;font-size:10px;font-weight:800;letter-spacing:.13em;color:#698898}
+.kzc-divisions{background:#fff}
+.kzc-divisions-grid{gap:0;border-top:1px solid #d4e1e7;border-left:1px solid #d4e1e7}
+.kzc-division{border:0;border-right:1px solid #d4e1e7;border-bottom:1px solid #d4e1e7;min-height:410px;padding:28px;background:#f7fafb}
+.kzc-division:nth-child(2),.kzc-division:nth-child(4){background:#ecf3f6}
+.kzc-division:hover{background:#e0edf3;box-shadow:none}
+.kzc-division h3{font-size:clamp(27px,2.3vw,36px)}
+.kzc-auto{background:#15354a}
+.kzc-auto-visual{background:linear-gradient(135deg,#476d82,#19374d 65%);border-color:#6e96a8}
+.kzc-process{background:#f7f9fa}
+.kzc-cta{background:#dcebf1}
+@media(max-width:780px){
+.kzc-hero{min-height:0}.kzc-hero-inner{min-height:0;gap:22px;padding-top:35px}
+.kzc-hero-side{width:100%;align-items:stretch}
+.kzs-brand-art{width:100%;aspect-ratio:auto;min-height:150px;padding:16px;display:grid;grid-template-columns:1fr 90px;grid-template-rows:auto 1fr;gap:10px}
+.kzs-brand-art-top{grid-column:1/-1}
+.kzc-hero-side .kzs-brand-art img{grid-column:2;grid-row:2;width:80px;max-height:80px}
+.kzs-brand-art-bottom{grid-column:1;grid-row:2;border:0;padding:0;align-self:center}
+.kzs-brand-art-bottom strong{font-size:clamp(22px,6vw,33px)}
+.kzc h1{font-size:clamp(51px,12vw,85px)}
+.kzs-index>.kzc-wrap{align-items:start;flex-direction:column;gap:14px}
+.kzs-index .kzc-wrap>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 20px}
+.kzc-intro{padding:72px 0}
+.kzs-statement{padding:65px 0}.kzs-statement .kzc-wrap{display:block}.kzs-statement p{margin:25px 0;font-size:clamp(32px,8vw,52px)}
+.kzc-divisions-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.kzc-division{min-height:310px;padding:18px}
+}
+@media(max-width:500px){.kzc-divisions-grid{grid-template-columns:1fr}.kzc-division{min-height:240px}.kzs-index a{font-size:9px}}
