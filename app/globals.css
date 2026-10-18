@@ -1796,3 +1796,63 @@ body{
 .footer .brand-text strong{white-space:nowrap!important}
 @media(max-width:1100px){.kz-home-v3 .kz-home-hero-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important}.kz-home-v3 .kz-home-hero-actions>a:last-child{grid-column:1/-1!important}}
 @media(max-width:640px){.kz-home-v3 .kz-home-hero-actions{grid-template-columns:1fr!important}.kz-home-v3 .kz-home-hero-actions>a:last-child{grid-column:auto!important}.kz-home-v3 .kz-trust-v3-grid>div{min-height:0!important}.kz-home-v3 .kz-eco-service{min-height:155px!important}}
+
+
+/* Responsive structural corrections — verified selectors, no new visual assets */
+html,body{max-width:100%;overflow-x:clip}
+.kz-home-v3,.contact-dock-section,.footer{max-width:100%;overflow-x:clip}
+.kz-home-v3 .kz-brand-opening{min-height:600px!important}
+.kz-home-v3 .kz-brand-lockup.kz-brand-split{width:min(1180px,calc(100% - 48px))!important;margin-inline:auto!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(240px,.72fr)!important;gap:30px!important;align-items:center!important}
+.kz-home-v3 .kz-brand-copy{text-align:left!important;width:100%!important;max-width:none!important}
+.kz-home-v3 .kz-brand-mark{min-width:0!important}
+.kz-home-v3 .kz-brand-mark img{display:block!important;max-width:100%!important;height:auto!important;object-fit:contain!important}
+.kz-home-v3 .kz-home-hero-actions{grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%!important}
+.kz-home-v3 .kz-brand-copy .kz-home-hero-actions>a{font-size:clamp(9px,.8vw,12px)!important;white-space:normal!important;text-align:center!important}
+.kz-home-v3 .kz-eco-service{background:linear-gradient(155deg,#f8fcff,#e6f0f8)!important;color:#173b55!important}
+.kz-home-v3 .kz-eco-service h3,.kz-home-v3 .kz-eco-service p,.kz-home-v3 .kz-eco-service small{color:#173b55!important;opacity:1!important}
+.kz-home-v3 .kz-eco-core{background:radial-gradient(circle at 35% 20%,#fff,#d9e8f3)!important}
+.kz-home-v3 .kz-eco-core b,.kz-home-v3 .kz-eco-core span{color:#183c57!important}
+.kz-home-v3 .kz-trust-v3-grid p{color:#314b60!important;opacity:1!important}
+.contact-dock-section .crystal-contact a{font-size:clamp(10px,.85vw,13px)!important;overflow-wrap:anywhere!important}
+.footer .footer-grid{display:grid!important;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr))!important;gap:28px!important}
+.footer .footer-grid>div{min-width:0!important}
+.footer .footer-grid p,.footer .footer-grid a{overflow-wrap:anywhere!important;line-height:1.85!important}
+@media(max-width:1150px){
+.header .navlinks{display:none!important}
+.header .kz-mobile-menu{display:block!important}
+.kz-home-v3 .kz-brand-lockup.kz-brand-split{grid-template-columns:minmax(0,1fr) minmax(200px,.6fr)!important}
+.kz-home-v3 .kz-home-hero-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.kz-home-v3 .kz-home-hero-actions>a:last-child{grid-column:1/-1!important}
+.footer .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:760px){
+.header .navbar{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;padding-block:10px!important}
+.header .brand{min-width:0!important;flex:1!important;gap:8px!important}
+.header .brand img{width:53px!important;height:53px!important;flex-shrink:0!important}
+.header .brand-text{min-width:0!important}
+.header .brand-text strong{font-size:clamp(11px,3vw,15px)!important;white-space:nowrap!important}
+.header .brand-text span{font-size:clamp(7px,1.8vw,10px)!important;white-space:nowrap!important}
+.header .kz-mobile-menu{flex-shrink:0!important}
+.kz-home-v3 .kz-brand-opening{min-height:690px!important}
+.kz-home-v3 .kz-brand-lockup.kz-brand-split{display:flex!important;flex-direction:column-reverse!important;justify-content:center!important;align-items:center!important;gap:12px!important;width:calc(100% - 34px)!important;padding:35px 0 55px!important}
+.kz-home-v3 .kz-brand-mark{width:min(210px,54vw)!important;margin-inline:auto!important}
+.kz-home-v3 .kz-brand-mark img{width:100%!important;height:auto!important}
+.kz-home-v3 .kz-brand-copy{text-align:center!important;max-width:100%!important}
+.kz-home-v3 .kz-brand-copy h1{font-size:clamp(38px,10vw,64px)!important;line-height:1.05!important}
+.kz-home-v3 .kz-brand-copy p{font-size:clamp(10px,2.4vw,14px)!important;letter-spacing:.08em!important}
+.kz-home-v3 .kz-home-hero-actions{grid-template-columns:1fr!important;width:min(420px,100%)!important;margin:20px auto 0!important;gap:9px!important}
+.kz-home-v3 .kz-home-hero-actions>a:last-child{grid-column:auto!important}
+.kz-home-v3 .kz-brand-copy .kz-home-hero-actions>a{min-height:48px!important;font-size:12px!important}
+.kz-home-v3 .kz-opening-location{font-size:11px!important;letter-spacing:.07em!important;text-align:center!important}
+.kz-home-v3 .kz-who-layout{display:flex!important;flex-direction:column!important;gap:24px!important}
+.kz-home-v3 .kz-who-story p,.kz-home-v3 .kz-who-story p+p{font-size:16px!important;line-height:1.7!important}
+.kz-home-v3 .kz-eco-stage{height:auto!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+.kz-home-v3 .kz-eco-core{position:relative!important;left:auto!important;top:auto!important;transform:none!important;grid-column:1/-1!important;grid-row:1!important;margin:0 auto 14px!important;width:180px!important;height:180px!important}
+.kz-home-v3 .kz-eco-service{position:relative!important;inset:auto!important;width:100%!important;min-height:190px!important;padding:17px!important}
+.kz-home-v3 .kz-eco-lines{display:none!important}
+.kz-home-v3 .kz-trust-v3-grid{grid-template-columns:1fr!important;gap:12px!important}
+.kz-home-v3 .kz-trust-v3-grid>div{min-height:0!important;padding:22px!important}
+.footer .footer-grid{grid-template-columns:1fr!important;gap:16px!important}
+.footer .footer-grid>div{padding-bottom:12px!important}
+}
+@media(max-width:430px){.kz-home-v3 .kz-eco-stage{grid-template-columns:1fr!important}.kz-home-v3 .kz-eco-core{grid-column:1!important}.kz-home-v3 .kz-eco-service{min-height:145px!important}}
