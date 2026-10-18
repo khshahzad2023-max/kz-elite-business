@@ -16,7 +16,7 @@ export default function AutomotiveGate(){
  };
  return <section className="kz-approved-gate" aria-label="K&Z Elite Business virtual showroom entrance">
   <div className="kz-approved-stage">
-   {videoAvailable?<video ref={videoRef} src="/kz-approved-gate.mp4" preload="auto" playsInline muted
+   {videoAvailable?<video ref={videoRef} src="/kz-approved-gate-clean.mp4" preload="auto" playsInline muted
      onEnded={()=>router.push("/automotive")} onError={()=>setVideoAvailable(false)}
      aria-label="K&Z approved sliding showroom gate animation"/>:
      <img src="/kz-showroom.jpg" alt="K&Z showroom"/>}
