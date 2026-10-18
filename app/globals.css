@@ -1440,3 +1440,6 @@ html,body{max-width:100%;overflow-x:hidden}
     padding: 20px 21px;
   }
 }
+
+/* Opening reveal: use the cropped hero mark at a legible scale; leave other animations intact. */
+.site-intro-css .intro-mark img{width:clamp(210px,25vw,320px);max-width:78vw;height:auto;object-fit:contain}
