@@ -15,14 +15,16 @@ export default function Home(){
    <div className="kzc-wrap kzc-hero-inner">
     <div className="kzc-hero-copy">
      <div className="kzc-overline"><span className="kzc-dot"/> MUSCAT, SULTANATE OF OMAN</div>
-     <h1 id="kzc-title">Business, built<br/>around <em>you.</em></h1>
-     <p>Automotive, property, maintenance and business solutions. Different expertise, connected through one name.</p>
+     <h1 id="kzc-title">Beyond cars.<br/><em>Beyond ordinary.</em></h1>
+     <p>A Muscat-based business connecting people with vehicles, places, practical services and new opportunities.</p>
      <div className="kzc-hero-actions"><Link className="kzc-btn kzc-btn-dark" href="#divisions">Explore our services <span aria-hidden="true">↗</span></Link><Link className="kzc-btn kzc-btn-outline" href="/cars">Browse vehicles <span aria-hidden="true">→</span></Link></div>
     </div>
-    <div className="kzc-hero-side"><img src="/kz-master-logo.png" alt="K&Z ELITE BUSINESS original brand logo"/><span>ONE NAME. MANY SOLUTIONS.</span></div>
+    <div className="kzc-hero-side"><div className="kzs-brand-art"><div className="kzs-brand-art-top">THE K&Z NETWORK <span>EST. MUSCAT</span></div><img src="/kz-master-logo.png" alt="K&Z ELITE BUSINESS original brand logo"/><div className="kzs-brand-art-bottom"><strong>ONE NAME.</strong><strong>MANY SOLUTIONS.</strong></div></div></div>
    </div>
    <div className="kzc-hero-bottom kzc-wrap"><span>INDEPENDENT BUSINESS NETWORK</span><span>01 / 04 — EXPLORE BELOW ↓</span></div>
   </section>
+
+  <section className="kzs-index"><div className="kzc-wrap"><span>DISCOVER K&Z</span><div><a href="#about">01 — OUR STORY</a><a href="#divisions">02 — WHAT WE DO</a><a href="#automotive">03 — AUTOMOTIVE</a><a href="#connect">04 — GET IN TOUCH</a></div></div></section>
 
   <section className="kzc-intro kzc-section" id="about">
    <div className="kzc-wrap kzc-intro-grid">
@@ -30,6 +32,8 @@ export default function Home(){
     <div className="kzc-intro-copy"><p>K&amp;Z ELITE BUSINESS brings together automotive, building maintenance, property and business promotion services in Muscat.</p><p>Built on a shared vision, we focus on straightforward communication, practical coordination and helping customers find the right solution — without unnecessary complexity.</p><Link className="kzc-text-link" href="/contact">Get to know K&amp;Z <span>↗</span></Link></div>
    </div>
   </section>
+
+  <section className="kzs-statement"><div className="kzc-wrap"><div className="kzc-kicker">OUR POINT OF VIEW</div><p>Good business starts with <em>clarity.</em> The right connections make everything else possible.</p><span>K&Z ELITE BUSINESS / MUSCAT</span></div></section>
 
   <section className="kzc-divisions kzc-section" id="divisions">
    <div className="kzc-wrap">
@@ -58,6 +62,6 @@ export default function Home(){
    </div></div>
   </section>
 
-  <section className="kzc-cta"><div className="kzc-wrap kzc-cta-grid"><div><div className="kzc-kicker">LET'S CONNECT</div><h2>Have something<br/>in mind?</h2><p>Start with a conversation. We will help you find the right direction.</p></div><div className="kzc-cta-actions"><a className="kzc-btn kzc-btn-white" href="https://api.whatsapp.com/send?phone=96878967229" target="_blank" rel="noopener noreferrer">Message us on WhatsApp <span>↗</span></a><Link className="kzc-btn kzc-btn-border" href="/contact">Other contact options <span>→</span></Link></div></div></section>
+  <section className="kzc-cta" id="connect"><div className="kzc-wrap kzc-cta-grid"><div><div className="kzc-kicker">LET'S CONNECT</div><h2>Have something<br/>in mind?</h2><p>Start with a conversation. We will help you find the right direction.</p></div><div className="kzc-cta-actions"><a className="kzc-btn kzc-btn-white" href="https://api.whatsapp.com/send?phone=96878967229" target="_blank" rel="noopener noreferrer">Message us on WhatsApp <span>↗</span></a><Link className="kzc-btn kzc-btn-border" href="/contact">Other contact options <span>→</span></Link></div></div></section>
  </main>
 }
