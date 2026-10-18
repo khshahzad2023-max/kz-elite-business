@@ -1856,3 +1856,37 @@ html,body{max-width:100%;overflow-x:clip}
 .footer .footer-grid>div{padding-bottom:12px!important}
 }
 @media(max-width:430px){.kz-home-v3 .kz-eco-stage{grid-template-columns:1fr!important}.kz-home-v3 .kz-eco-core{grid-column:1!important}.kz-home-v3 .kz-eco-service{min-height:145px!important}}
+
+
+/* K&Z showroom daylight architectural restyle — retains existing actual artwork and route */
+.kz-home-v3 .kz-facade{position:relative!important;min-height:560px!important;border:8px solid #e0ebf3!important;border-radius:28px!important;background:#e8f1f7!important;box-shadow:0 26px 55px #214b6d2e,inset 0 2px #fff!important}
+.kz-home-v3 .kz-facade:before,.kz-home-v3 .kz-facade:after{width:13px!important;background:linear-gradient(90deg,#9bb9cd,#fff,#c2d8e6)!important;box-shadow:0 0 16px #fff8!important}
+.kz-home-v3 .kz-facade-view{inset:0 13px 48px!important;background:#eaf2f7!important}
+.kz-home-v3 .kz-facade-view img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;filter:brightness(1.33) saturate(.64) contrast(.86)!important}
+.kz-home-v3 .kz-facade-view:after{background:linear-gradient(90deg,#d9eaf32e,transparent 35%,#d8e8f226),linear-gradient(0deg,#dbe9f22b,transparent 42%)!important}
+.kz-home-v3 .kz-facade-foot{left:13px!important;right:13px!important;bottom:0!important;height:48px!important;background:linear-gradient(90deg,#e7f1f8,#d3e4ef)!important;border-top:1px solid #a6c4d9!important;color:#163e5b!important;font-size:clamp(9px,1.1vw,14px)!important;font-weight:900!important;letter-spacing:.08em!important}
+.kz-home-v3 .kz-facade-foot i{background:#4d7897!important}
+.kz-home-v3 .kz-facade-enter{bottom:78px!important;min-height:58px!important;min-width:260px!important;border:2px solid #fff!important;border-radius:20px!important;color:#153b56!important;background:linear-gradient(140deg,#f5fcffed,#a8d5eeea)!important;backdrop-filter:blur(20px) saturate(160%)!important;box-shadow:inset 0 2px #fff,0 12px 28px #214f6b65!important}
+.kz-home-v3 .kz-facade-enter:hover{background:linear-gradient(140deg,#fff,#b4e3f8)!important;transform:translateX(-50%) translateY(-4px)!important}
+.kz-home-v3 .kz-facade.is-opening .kz-facade-view{animation:kzShowroomEnter 1.05s ease both}
+@keyframes kzShowroomEnter{to{transform:scale(1.07);opacity:.65}}
+/* Seven-letter crystal cards: real buttons, links outside buttons */
+.kz-contact-grid{display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;gap:10px!important;padding:18px!important}
+.kz-contact-grid .kz-contact-tile{position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;min-width:0!important;height:190px!important;padding:8px!important;overflow:hidden!important;border-radius:22px!important}
+.kz-contact-trigger{position:absolute;inset:0;z-index:1;border:0;background:transparent;color:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+.kz-contact-grid .crystal-letter{display:block!important;opacity:1!important;transform:none!important;font-size:clamp(37px,4vw,64px)!important;font-weight:900!important;transition:opacity .2s,transform .2s!important}
+.kz-contact-grid .is-open .crystal-letter{opacity:0!important;transform:translateY(-12px)!important}
+.kz-contact-reveal{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-width:0;width:100%;height:100%;pointer-events:none;text-align:center;color:#fff}
+.kz-contact-reveal strong{font-size:clamp(9px,.8vw,12px);letter-spacing:.06em}
+.kz-contact-links{display:flex;flex-direction:column;gap:6px;width:100%;min-width:0}
+.kz-contact-links a{pointer-events:auto;display:block;max-width:100%;padding:7px 3px;border-radius:9px;background:#ffffffe0;color:#173c58!important;font-size:clamp(9px,.72vw,12px)!important;font-weight:800;overflow-wrap:anywhere;word-break:break-word;text-decoration:none}
+.kz-contact-links a:hover{background:#fff}
+.kz-contact-grid .kz-contact-tile:nth-child(1){background:linear-gradient(145deg,#68253a,#d95573)!important}
+.kz-contact-grid .kz-contact-tile:nth-child(2){background:linear-gradient(145deg,#075b4c,#1ba77c)!important}
+.kz-contact-grid .kz-contact-tile:nth-child(3){background:linear-gradient(145deg,#07568b,#29a7e1)!important}
+.kz-contact-grid .kz-contact-tile:nth-child(4){background:linear-gradient(145deg,#59366f,#d75ab0)!important}
+.kz-contact-grid .kz-contact-tile:nth-child(5){background:linear-gradient(145deg,#14539d,#27a4e6)!important}
+.kz-contact-grid .kz-contact-tile:nth-child(6){background:linear-gradient(145deg,#2b374c,#7297b6)!important}
+.kz-contact-grid .kz-contact-tile:nth-child(7){background:linear-gradient(145deg,#171927,#605b74)!important}
+@media(max-width:1000px){.kz-contact-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}.kz-contact-grid .kz-contact-tile{height:155px!important}}
+@media(max-width:560px){.kz-contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;padding:10px!important}.kz-contact-grid .kz-contact-tile{height:155px!important}.kz-contact-grid .crystal-letter{font-size:48px!important}.kz-contact-reveal strong{font-size:10px}.kz-contact-links a{font-size:11px!important}.kz-home-v3 .kz-facade{min-height:360px!important;border-width:4px!important}.kz-home-v3 .kz-facade-enter{min-width:200px!important;min-height:48px!important;bottom:65px!important}.kz-home-v3 .kz-facade-foot{font-size:8px!important;letter-spacing:0!important;gap:6px!important;height:45px!important}}
