@@ -36,7 +36,7 @@ export default function Home(){
 
   <section id="automotive-entry" className="section kz-home-auto">
    <div className="container">
-    <div className="kz-home-section-label"><span>01</span> AUTOMOTIVE</div>
+    <div className="kz-home-section-label">AUTOMOTIVE</div>
     <AutomotiveGate/>
    </div>
   </section>
@@ -46,7 +46,7 @@ export default function Home(){
     <header className="kz-eco-head"><small>OUR SERVICES</small><h2>Connected by one name.</h2><p>Automotive, maintenance, property and promotion — connected under one trusted name.</p></header>
     <div className="kz-eco-stage">
      <div className="kz-eco-lines" aria-hidden="true"><i/><i/><i/><i/></div>
-     <div className="kz-eco-core"><img src="/kz-master-logo.png" alt=""/><b>K&amp;Z</b><span>ONE NAME • MANY SOLUTIONS</span></div>
+     <div className="kz-eco-core"><img src="/kz-master-logo.png" alt="K&Z ELITE BUSINESS"/><b>K&amp;Z</b><span>ONE NAME • MANY SOLUTIONS</span></div>
      {services.map((s,i)=><Link href={s.href} className={"kz-eco-service kz-eco-s"+(i+1)} key={s.title}><small>{s.n}</small><h3>{s.title}</h3><p>{s.text}</p><b>EXPLORE ↗</b></Link>)}
     </div>
    </div>
