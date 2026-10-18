@@ -1772,3 +1772,27 @@ body{
 @media(max-width:1250px){.header .navlinks{display:none!important}.header .kz-mobile-menu{display:block!important}}
 @media(max-width:767px){.header .navbar{min-height:80px!important}.header .brand img{width:62px!important;height:62px!important}.header .brand-text strong{font-size:14px!important}.header .brand-text span{font-size:9px!important}.kz-home-v3 .kz-home-hero-actions a{min-width:100%!important}.kz-home-v3 .kz-muscat-bg{background-image:linear-gradient(90deg,#d5e5f0bd,#d9e9f27a),url('/mutrah-evening-hero.png')!important}}
 @media(prefers-reduced-motion:reduce){.kz-home-v3 .kz-home-hero-actions a{transition:none!important}}
+
+/* Visual QA fixes from actual HP laptop screenshots */
+.kz-home-v3 .kz-brand-copy{min-width:0!important}
+.kz-home-v3 .kz-home-hero-actions{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;width:min(710px,100%)!important;gap:10px!important}
+.kz-home-v3 .kz-brand-copy .kz-home-hero-actions>a{min-width:0!important;width:100%!important;min-height:55px!important;padding:10px 9px!important;white-space:nowrap!important;font-size:clamp(9px,.83vw,12px)!important;letter-spacing:.02em!important;line-height:1.2!important}
+.kz-home-v3 .kz-who-story p,.kz-home-v3 .kz-who-story p+p{color:#283f52!important;opacity:1!important;visibility:visible!important;text-shadow:none!important;font-size:clamp(15px,1.16vw,18px)!important;line-height:1.65!important}
+.kz-home-v3 .kz-who-story p+p{margin-top:20px!important}
+.kz-home-v3 .kz-eco-stage{max-width:1120px!important}
+.kz-home-v3 .kz-eco-service{min-height:185px!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important}
+.kz-home-v3 .kz-eco-service>b{margin-top:auto!important}
+.kz-home-v3 .kz-eco-core img{max-width:80%!important;max-height:70%!important;width:110px!important;height:110px!important;object-fit:contain!important}
+.kz-home-v3 .kz-trust-v3-grid{gap:12px!important;border:0!important}
+.kz-home-v3 .kz-trust-v3-grid>div{padding:25px 22px!important;min-height:225px!important}
+.kz-home-v3 .kz-trust-v3-grid span{color:#214f72!important;font-size:22px!important;opacity:1!important;text-shadow:none!important}
+.kz-home-v3 .kz-trust-v3-grid b{margin-top:25px!important}
+.kz-home-v3 .kz-trust-v3-signoff b{color:#173d59!important;opacity:1!important}
+.crystal-connect{align-items:stretch!important}
+.crystal-contact .call-choice-panel a,.crystal-contact .email-choice-panel a,.crystal-contact .instagram-choice-panel a,.crystal-contact .facebook-choice-panel a,.crystal-contact .website-choice-panel a,.crystal-contact .tiktok-choice-panel a{overflow-wrap:anywhere!important;word-break:break-word!important;font-size:clamp(9px,.76vw,12px)!important;line-height:1.3!important}
+.kz-review-button{white-space:normal!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:52px!important;line-height:1.3!important;padding:14px 24px!important}
+.footer .footer-grid{gap:35px!important}
+.footer .brand{display:flex!important;align-items:center!important;gap:12px!important}
+.footer .brand-text strong{white-space:nowrap!important}
+@media(max-width:1100px){.kz-home-v3 .kz-home-hero-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important}.kz-home-v3 .kz-home-hero-actions>a:last-child{grid-column:1/-1!important}}
+@media(max-width:640px){.kz-home-v3 .kz-home-hero-actions{grid-template-columns:1fr!important}.kz-home-v3 .kz-home-hero-actions>a:last-child{grid-column:auto!important}.kz-home-v3 .kz-trust-v3-grid>div{min-height:0!important}.kz-home-v3 .kz-eco-service{min-height:155px!important}}
