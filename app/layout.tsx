@@ -85,6 +85,10 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
                 <Link href="/advertising">Business Advertising</Link></p>
               </div>
               <div>
+                <h4>Quick Links</h4>
+                <p><Link href="/">Home</Link><br/><Link href="/cars">Available &amp; Sold Cars</Link><br/><Link href="/#who-we-are">About K&amp;Z</Link><br/><Link href="/contact">Contact Us</Link></p>
+              </div>
+              <div>
                 <h4>Contact</h4>
                 <p>Muscat, Sultanate of Oman<br/>
                 <a href="tel:+96878967229">+968 78967229</a><br/>
