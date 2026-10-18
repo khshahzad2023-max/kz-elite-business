@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
-import { Globe2, Mail, MapPin, MessageCircle, Phone, Instagram, Facebook } from "lucide-react";
+import { Globe2, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 const entries=[
  {letter:"C",label:"CALL",icon:Phone,kind:"call"},
  {letter:"O",label:"WHATSAPP",icon:MessageCircle,kind:"whatsapp"},
  {letter:"N",label:"EMAIL",icon:Mail,kind:"email"},
- {letter:"N",label:"INSTAGRAM",icon:Instagram,kind:"instagram"},
- {letter:"E",label:"FACEBOOK",icon:Facebook,kind:"facebook"},
+ {letter:"N",label:"INSTAGRAM",icon:Globe2,kind:"instagram"},
+ {letter:"E",label:"FACEBOOK",icon:Globe2,kind:"facebook"},
  {letter:"C",label:"WEBSITE",icon:Globe2,kind:"website"},
  {letter:"T",label:"TIKTOK",icon:Globe2,kind:"tiktok"},
 ] as const;
