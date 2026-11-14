@@ -8,19 +8,17 @@ import SiteIntro from "./SiteIntro";
 
 export const metadata = {
   metadataBase: new URL("https://www.kzelitebusiness.com"),
-  title: "K&Z ELITE BUSINESS | Cars & Services in Muscat, Oman",
-  description: "K&Z ELITE BUSINESS in Muscat, Oman: used cars for sale, car rental enquiries, automotive services, building maintenance, property and business advertising.",
+  title: "K&Z ELITE BUSINESS | Cars for Sale in Muscat, Oman",
+  description: "K&Z ELITE BUSINESS in Muscat, Oman. Browse available cars, sell your car, and enquire about vehicle finance.",
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
 };
 
 const nav = [
-  ["Buy & Sell Cars","/cars"],
-  ["Rent a Car","/rent-a-car"],
-  ["Automotive Services","/automotive"],
-  ["Building Maintenance","/building-maintenance"],
-  ["Property Services","/properties"],
-  ["Business Advertising","/advertising"],
+  ["Home","/"],
+  ["Buy Cars","/cars"],
+  ["Sell Your Car","/sell-your-car"],
+  ["Contact","/contact"],
 ];
 
 export default function RootLayout({children}:{children:React.ReactNode}) {
@@ -73,16 +71,13 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
                     <span>ONE NAME • MANY SOLUTIONS</span>
                   </div>
                 </div>
-                <p>A multi-service business bringing specialized solutions together under one trusted name in Muscat, Sultanate of Oman.</p>
+                <p>Your car buying and selling destination in Muscat, Sultanate of Oman.</p>
               </div>
               <div>
-                <h4>Our Services</h4>
-                <p><Link href="/cars">Buying &amp; Selling Cars</Link><br/>
-                <Link href="/rent-a-car">Car Rental</Link><br/>
-                <Link href="/automotive">Automotive Services</Link><br/>
-                <Link href="/building-maintenance">Building Maintenance</Link><br/>
-                <Link href="/properties">Property Services</Link><br/>
-                <Link href="/advertising">Business Advertising</Link></p>
+                <h4>Explore Cars</h4>
+                <p><Link href="/cars">Available Cars</Link><br/>
+                <Link href="/sell-your-car">Sell Your Car</Link><br/>
+                <a href="https://api.whatsapp.com/send?phone=96878967229&text=Hello%20K%26Z%2C%20I%20would%20like%20to%20ask%20about%20car%20finance.">Car Finance Enquiry</a></p>
               </div>
               <div>
                 <h4>Contact</h4>
