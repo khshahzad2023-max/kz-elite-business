@@ -1,3 +1,4 @@
+import CarShowcaseSlider from "./CarShowcaseSlider";
 import Link from "next/link";
 
 export default function Home(){
@@ -21,7 +22,7 @@ export default function Home(){
     <div className="kz-showcase-heading"><div className="kz-showcase-eyebrow"><span>01</span><i/> EXPLORE OUR CARS <i/></div><h2>Your Drive. <em>Your Choice.</em></h2><p>Buy, Sell or Rent — All in One Place at K&amp;Z.</p></div>
     <div className="kz-showcase-stage">
      <div className="kz-showcase-halo" aria-hidden="true"/>
-     <div className="kz-showcase-car" role="img" aria-label="K&Z automotive showroom"/>
+     <CarShowcaseSlider/>
      <div className="kz-showcase-platform" aria-hidden="true"/>
      <div className="kz-showcase-options">
       <Link href="/cars" className="kz-showcase-card kz-showcase-buy"><span className="kz-showcase-symbol" aria-hidden="true">◇</span><h3>BUY CARS</h3><p>Explore our available cars with vehicle details and clear pricing.</p><span className="kz-showcase-action">EXPLORE CARS <b>›</b></span></Link>
