@@ -1,5 +1,4 @@
 import Link from "next/link";
-import AutomotiveGate from "./AutomotiveGate";
 
 export default function Home(){
  return <main className="kz-home-v3">
@@ -17,15 +16,20 @@ export default function Home(){
    <div className="kz-opening-location">MUSCAT • SULTANATE OF OMAN</div>
   </section>
 
-  <section id="automotive-entry" className="section kz-home-auto">
-   <div className="container">
-    <div className="kz-home-section-label"><span>01</span> EXPLORE OUR CARS</div>
-    <div className="section-head"><div><h2>Find your next car.</h2><p>Browse available vehicles, ask about selling your car, or explore rental options.</p></div></div>
-    <div className="grid">
-     <article className="card"><h3>Buy Cars</h3><p>Explore our available cars and vehicle details.</p><Link className="card-link" href="/cars">VIEW CARS ↗</Link></article>
-     <article className="card"><h3>Sell Your Car</h3><p>Contact K&amp;Z to discuss selling your vehicle.</p><Link className="card-link" href="/sell-your-car">SELL YOUR CAR ↗</Link></article>
-     <article className="card"><h3>Rent a Car</h3><p>Get in touch for car rental enquiries.</p><Link className="card-link" href="/rent-a-car">RENTAL ENQUIRY ↗</Link></article>
+  <section id="automotive-entry" className="kz-showcase">
+   <div className="container kz-showcase-inner">
+    <div className="kz-showcase-heading"><div className="kz-showcase-eyebrow"><span>01</span><i/> EXPLORE OUR CARS <i/></div><h2>Your Drive. <em>Your Choice.</em></h2><p>Buy, Sell or Rent — All in One Place at K&amp;Z.</p></div>
+    <div className="kz-showcase-stage">
+     <div className="kz-showcase-halo" aria-hidden="true"/>
+     <div className="kz-showcase-car" role="img" aria-label="K&Z automotive showroom"/>
+     <div className="kz-showcase-platform" aria-hidden="true"/>
+     <div className="kz-showcase-options">
+      <Link href="/cars" className="kz-showcase-card kz-showcase-buy"><span className="kz-showcase-symbol" aria-hidden="true">◇</span><h3>BUY CARS</h3><p>Explore our available cars with vehicle details and clear pricing.</p><span className="kz-showcase-action">EXPLORE CARS <b>›</b></span></Link>
+      <Link href="/sell-your-car" className="kz-showcase-card kz-showcase-sell"><span className="kz-showcase-symbol" aria-hidden="true">✧</span><h3>SELL YOUR CAR</h3><p>Get in touch with K&amp;Z for a simple, straightforward selling enquiry.</p><span className="kz-showcase-action">SELL YOUR CAR <b>›</b></span></Link>
+      <Link href="/rent-a-car" className="kz-showcase-card kz-showcase-rent"><span className="kz-showcase-symbol" aria-hidden="true">⌁</span><h3>RENT A CAR</h3><p>Explore convenient rental options to suit your needs.</p><span className="kz-showcase-action">EXPLORE RENTALS <b>›</b></span></Link>
+     </div>
     </div>
+    <div className="kz-showcase-benefits"><span>✦ &nbsp; Quality Cars</span><span>◇ &nbsp; Trusted Deals</span><span>✓ &nbsp; Transparent Process</span><span>✧ &nbsp; Dedicated Support</span></div>
    </div>
   </section>
 
