@@ -18,8 +18,6 @@ const nav = [
   ["Buy & Sell Cars","/cars"],
   ["Rent a Car","/rent-a-car"],
   ["Automotive Services","/automotive"],
-  ["Building Maintenance","/building-maintenance"],
-  ["Property Services","/properties"],
   ["Business Advertising","/advertising"],
 ];
 
