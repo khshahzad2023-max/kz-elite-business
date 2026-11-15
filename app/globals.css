@@ -1461,3 +1461,7 @@ html,body{max-width:100%;overflow-x:hidden}
 @media (max-width:900px){
  .kz-mobile-menu-links a{font-size:15px;font-weight:700}
 }
+
+/* Slightly larger top-left header logo; other branding unchanged. */
+.header .navbar > .brand img{width:68px;height:68px;flex:0 0 68px;object-fit:cover}
+@media(max-width:900px){.header .navbar > .brand img{width:54px;height:54px;flex:0 0 54px}}
