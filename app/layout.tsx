@@ -15,10 +15,11 @@ export const metadata = {
 };
 
 const nav = [
-  ["Buy & Sell Cars","/cars"],
+  ["Buy Cars","/cars"],
+  ["Sell Your Car","/sell-your-car"],
   ["Rent a Car","/rent-a-car"],
   ["Automotive Services","/automotive"],
-  ["Business Advertising","/advertising"],
+  ["Finance Assistance","/finance-assistance"],
 ];
 
 export default function RootLayout({children}:{children:React.ReactNode}) {
