@@ -1463,5 +1463,5 @@ html,body{max-width:100%;overflow-x:hidden}
 }
 
 /* Slightly larger top-left header logo; other branding unchanged. */
-.header .navbar > .brand img{width:68px;height:68px;flex:0 0 68px;object-fit:cover}
+.header .navbar > .brand img{width:80px;height:80px;flex:0 0 80px;object-fit:cover}
 @media(max-width:900px){.header .navbar > .brand img{width:54px;height:54px;flex:0 0 54px}}
