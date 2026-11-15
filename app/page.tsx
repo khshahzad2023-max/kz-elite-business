@@ -20,14 +20,13 @@ export default function Home(){
   <section id="automotive-entry" className="kz-showcase">
    <div className="container kz-showcase-inner">
     <div className="kz-showcase-heading"><div className="kz-showcase-eyebrow"><span>01</span><i/> EXPLORE OUR CARS <i/></div><h2>Your Drive. <em>Your Choice.</em></h2><p>Buy, Sell or Rent — All in One Place at K&amp;Z.</p></div>
-    <div className="kz-showcase-stage kz-showcase-stage-compact">
-     <div className="kz-showcase-door-backdrop" aria-hidden="true"/>
+    <div className="kz-showcase-stage kz-showcase-stage-crown">
+     <div className="kz-showcase-photo-backdrop" aria-label="K&Z cars rotating in the background"><CarShowcaseSlider/></div>
      <div className="kz-showcase-options">
       <Link href="/cars" className="kz-showcase-card kz-showcase-buy"><span className="kz-showcase-symbol" aria-hidden="true">◇</span><h3>BUY CARS</h3><p>Explore our available cars with vehicle details and clear pricing.</p><span className="kz-showcase-action">EXPLORE CARS <b>›</b></span></Link>
       <Link href="/sell-your-car" className="kz-showcase-card kz-showcase-sell"><span className="kz-showcase-symbol" aria-hidden="true">✧</span><h3>SELL YOUR CAR</h3><p>Get in touch with K&amp;Z for a simple, straightforward selling enquiry.</p><span className="kz-showcase-action">SELL YOUR CAR <b>›</b></span></Link>
       <Link href="/rent-a-car" className="kz-showcase-card kz-showcase-rent"><span className="kz-showcase-symbol" aria-hidden="true">⌁</span><h3>RENT A CAR</h3><p>Explore convenient rental options to suit your needs.</p><span className="kz-showcase-action">EXPLORE RENTALS <b>›</b></span></Link>
      </div>
-     <div className="kz-showcase-vehicle-peek" aria-label="Rotating previews of K&Z vehicles"><CarShowcaseSlider/></div>
     </div>
     <div className="kz-showcase-benefits"><span>✦ &nbsp; Quality Cars</span><span>◇ &nbsp; Trusted Deals</span><span>✓ &nbsp; Transparent Process</span><span>✧ &nbsp; Dedicated Support</span></div>
    </div>
