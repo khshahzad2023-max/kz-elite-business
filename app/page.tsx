@@ -1,13 +1,6 @@
 import Link from "next/link";
 import AutomotiveGate from "./AutomotiveGate";
 
-const services=[
- {n:"01",title:"Automotive",text:"Cars • Garage • Car Care",href:"/automotive"},
- {n:"02",title:"Building Maintenance",text:"Electrical • Plumbing • AC • General Care",href:"/building-maintenance"},
- {n:"03",title:"Property",text:"Rooms • Flats • Property Listings",href:"/properties"},
- {n:"04",title:"Business Promotion",text:"Cars • Properties • Business Advertising",href:"/advertising"},
-];
-
 export default function Home(){
  return <main className="kz-home-v3">
   <section className="kz-brand-opening kz-intro-v4">
@@ -24,41 +17,52 @@ export default function Home(){
    <div className="kz-opening-location">MUSCAT • SULTANATE OF OMAN</div>
   </section>
 
+  <section id="automotive-entry" className="section kz-home-auto">
+   <div className="container">
+    <div className="kz-home-section-label"><span>01</span> EXPLORE OUR CARS</div>
+    <div className="section-head"><div><h2>Find your next car.</h2><p>Browse available vehicles, ask about selling your car, or explore rental options.</p></div></div>
+    <div className="grid">
+     <article className="card"><h3>Buy Cars</h3><p>Explore our available cars and vehicle details.</p><Link className="card-link" href="/cars">VIEW CARS ↗</Link></article>
+     <article className="card"><h3>Sell Your Car</h3><p>Contact K&amp;Z to discuss selling your vehicle.</p><Link className="card-link" href="/sell-your-car">SELL YOUR CAR ↗</Link></article>
+     <article className="card"><h3>Rent a Car</h3><p>Get in touch for car rental enquiries.</p><Link className="card-link" href="/rent-a-car">RENTAL ENQUIRY ↗</Link></article>
+    </div>
+   </div>
+  </section>
+
+  <section id="our-services" className="section alt">
+   <div className="container">
+    <div className="eyebrow">K&amp;Z AUTOMOTIVE SERVICES</div>
+    <h2 style={{fontSize:"clamp(30px,4vw,50px)",maxWidth:850}}>We Pick Up Your Car, Get the Work Done &amp; Deliver It Back!</h2>
+    <p className="lead">No need to visit different garages or service centers. Just contact K&amp;Z! We pick up your car, arrange the required work, and deliver it back to you.</p>
+    <p className="lead">Car washing, cleaning, tyres, batteries, mechanical repairs, polishing, tinting, decoration and more — all made easy for you.</p>
+    <div className="grid" style={{marginTop:28}}>
+     <div className="card"><h3>01 — Pickup</h3><p>Contact us to arrange collection of your vehicle.</p></div>
+     <div className="card"><h3>02 — Service</h3><p>We arrange the requested work and keep you informed.</p></div>
+     <div className="card"><h3>03 — Delivery</h3><p>We arrange to return your vehicle after the work is completed.</p></div>
+    </div>
+    <div className="actions"><a className="btn btn-primary" href="https://api.whatsapp.com/send?phone=96878967229&text=Hello%20K%26Z%2C%20I%20would%20like%20to%20book%20car%20pickup%20and%20automotive%20service.">BOOK A SERVICE ↗</a><Link className="btn btn-secondary" href="/automotive">VIEW AUTOMOTIVE SERVICES ↗</Link></div>
+    <p style={{color:"var(--muted)",fontSize:13,marginTop:18}}>Pickup, delivery and service charges apply. Prices and arrangements are confirmed before work begins.</p>
+   </div>
+  </section>
+
+  <section className="section">
+   <div className="container">
+    <div className="eyebrow">CAR FINANCE ASSISTANCE</div>
+    <h2>Need help with car finance?</h2>
+    <p className="lead">We can help you enquire about vehicle finance through independent third-party providers. K&amp;Z does not directly provide loans; approval and terms are decided by the finance provider.</p>
+    <Link href="/finance-assistance" className="btn btn-secondary">LEARN MORE ↗</Link>
+   </div>
+  </section>
+
   <section id="who-we-are" className="kz-who-section">
    <div className="container kz-who-layout">
     <div className="kz-who-title"><small>WHO WE ARE</small><h2>Built from one<br/>shared vision.</h2></div>
-    <div className="kz-who-story"><p>K&amp;Z ELITE BUSINESS was born from the vision of two partners, two areas of expertise, and one shared passion: creating reliable services that make life and business easier.</p><p>From automotive solutions and property services to building maintenance and business promotion, K&amp;Z brings multiple services together under one trusted name — with a focus on direct communication, reliable coordination, and practical solutions.</p><span>ONE NAME • MANY SOLUTIONS</span></div>
-   </div>
-  </section>
-
-  <section id="automotive-entry" className="section kz-home-auto">
-   <div className="container">
-    <div className="kz-home-section-label"><span>01</span> AUTOMOTIVE</div>
-    <AutomotiveGate/>
-   </div>
-  </section>
-
-  <section id="our-services" className="kz-services-ecosystem">
-   <div className="container">
-    <header className="kz-eco-head"><small>OUR SERVICES</small><h2>Connected by one name.</h2><p>Automotive, maintenance, property and promotion — connected under one trusted name.</p></header>
-    <div className="kz-eco-stage">
-     <div className="kz-eco-lines" aria-hidden="true"><i/><i/><i/><i/></div>
-     <div className="kz-eco-core"><img src="/kz-master-logo.png" alt=""/><b>K&amp;Z</b><span>ONE NAME • MANY SOLUTIONS</span></div>
-     {services.map((s,i)=><Link href={s.href} className={"kz-eco-service kz-eco-s"+(i+1)} key={s.title}><small>{s.n}</small><h3>{s.title}</h3><p>{s.text}</p><b>EXPLORE ↗</b></Link>)}
+    <div className="kz-who-story">
+     <p>K&amp;Z ELITE BUSINESS was founded on the shared vision of two partners, united by a passion for automobiles, quality service, and lasting customer relationships.</p>
+     <p>Based in Muscat, Sultanate of Oman, we help customers buy, sell and rent cars, and arrange automotive services through one trusted point of contact.</p>
+     <p>We also make car care easier by arranging vehicle pickup, the requested work, and return delivery.</p>
+     <span>ONE NAME • MANY SOLUTIONS</span>
     </div>
-   </div>
-  </section>
-
-  <section className="kz-trust-v3">
-   <div className="container">
-    <div className="kz-trust-v3-title"><small>WHY K&amp;Z</small><h2>One Business. Multiple Solutions.</h2></div>
-    <div className="kz-trust-v3-grid">
-     <div><span>01</span><b>DIVERSE EXPERTISE</b><p>Automotive, building maintenance, property services and business promotion across dedicated divisions.</p></div>
-     <div><span>02</span><b>ONE BUSINESS NETWORK</b><p>Different services connected through one K&amp;Z business identity.</p></div>
-     <div><span>03</span><b>PROFESSIONAL COORDINATION</b><p>One point of contact for enquiries, service coordination and business requirements.</p></div>
-     <div><span>04</span><b>BUILT FOR GROWTH</b><p>A developing business platform designed to expand into new services and opportunities.</p></div>
-    </div>
-    <div className="kz-trust-v3-signoff"><b>K&amp;Z ELITE BUSINESS</b><span>Different expertise. One vision. One name.</span></div>
    </div>
   </section>
 
