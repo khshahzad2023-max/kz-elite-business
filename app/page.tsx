@@ -39,7 +39,7 @@ export default function Home(){
       <div className="kz-auto-eyebrow"><span className="kz-auto-eyebrow-line"/>K&amp;Z AUTOMOTIVE SERVICES</div>
       <h2>We Pick Up Your Car.<br/><em>We Take Care of the Rest.</em></h2>
       <p className="kz-auto-lead">You tell us what your car needs. We arrange the pickup, get the work done and deliver your car back to you.</p>
-      <p className="kz-auto-services-text">Washing • Interior Cleaning • Tyres • Batteries • Mechanical Work • Polishing • Tinting • Decoration &amp; More</p>
+      <p className="kz-auto-services-text">Mechanical Work • Car Electrical Work • Denting &amp; Painting • Tyres &amp; Batteries • Car Washing • Polishing &amp; Detailing • Interior Cleaning • Car Accessories &amp; Decoration</p>
      </div>
      <div className="kz-auto-visual" aria-hidden="true">
       <div className="kz-auto-photo"/>
