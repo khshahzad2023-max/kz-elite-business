@@ -910,10 +910,10 @@ html,body{max-width:100%;overflow-x:hidden}
 .kz-intro-v4{padding-top:0}
 .kz-intro-v4 .kz-muscat-bg{
  background:
- linear-gradient(90deg,rgba(1,6,11,.58) 0%,rgba(1,6,11,.38) 47%,rgba(1,6,11,.28) 100%),
- linear-gradient(180deg,rgba(1,6,11,.30) 0%,rgba(2,7,12,.42) 55%,rgba(2,7,12,.70) 100%),
+ linear-gradient(90deg,rgba(1,6,11,.52) 0%,rgba(1,6,11,.33) 47%,rgba(1,6,11,.24) 100%),
+ linear-gradient(180deg,rgba(1,6,11,.26) 0%,rgba(2,7,12,.37) 55%,rgba(2,7,12,.68) 100%),
  url('/mutrah-evening-hero.png') center/cover no-repeat;
- filter:saturate(.82) brightness(.63) contrast(1.06);
+ filter:saturate(.85) brightness(.76) contrast(1.05);
 }
 .kz-intro-v4 .kz-muscat-bg:before{display:none}
 .kz-intro-v4 .kz-brand-split{
@@ -936,10 +936,10 @@ html,body{max-width:100%;overflow-x:hidden}
  .kz-home-v3 .kz-brand-opening.kz-intro-v4{height:56svh;min-height:390px;max-height:480px;display:block;overflow:hidden}
  .kz-home-v3 .kz-intro-v4 .kz-muscat-bg{
   background:
-  linear-gradient(90deg,rgba(1,6,11,.66),rgba(1,6,11,.30)),
-  linear-gradient(180deg,rgba(1,6,11,.16),rgba(2,7,12,.68)),
+  linear-gradient(90deg,rgba(1,6,11,.60),rgba(1,6,11,.26)),
+  linear-gradient(180deg,rgba(1,6,11,.14),rgba(2,7,12,.64)),
   url('/mutrah-evening-hero.png') 61% center/cover no-repeat;
-  filter:saturate(.82) brightness(.68) contrast(1.06);transform:none;opacity:1;
+  filter:saturate(.85) brightness(.79) contrast(1.05);transform:none;opacity:1;
  }
  .kz-home-v3 .kz-intro-v4 .kz-brand-split{width:calc(100% - 40px);height:100%;margin:0 auto;padding:22px 0 42px;display:flex;align-items:flex-start;justify-content:center}
  .kz-home-v3 .kz-intro-v4 .kz-brand-copy{width:100%;padding:0}
