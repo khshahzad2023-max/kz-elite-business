@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
 type Car = {
-  id: string; title: string; year: number; price: number | null; status: string;
+  id: string; title: string; year: number; price: number | null; status: string; finance_available?: boolean;
   images: string[]; specs: string; location: string; mileage: string;
 };
 
@@ -90,6 +90,7 @@ export default function DashboardCars() {
             <h3>{car.title}</h3>
             {car.specs && <p>{car.specs.length > 135 ? car.specs.slice(0,135)+"…" : car.specs}</p>}
             <p>{[car.mileage,car.location].filter(Boolean).join(" • ")}</p>
+            {car.finance_available && <div className="kz-car-finance-badge">Finance Option Available</div>}
             <strong className="kz-inventory-price">{car.price === null ? "Price on request" : Number(car.price).toLocaleString("en-OM") + " OMR"}</strong>
             <div><Link href={"/cars/listing/"+car.id}>View Details ↗</Link></div>
           </div>
