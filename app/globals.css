@@ -1467,7 +1467,7 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(max-width:900px){.header .navbar > .brand img{width:54px;height:54px;flex:0 0 54px}}
 
 /* K&Z cinematic navy automotive showroom: homepage Explore Our Cars only */
-.kz-home-v3 .kz-showcase{position:relative;overflow:hidden;padding:50px 0 42px;background:radial-gradient(ellipse at 50% 45%,#173c63 0%,#091e36 52%,#061426 100%);color:#fff;isolation:isolate}
+.kz-home-v3 .kz-showcase{position:relative;overflow:hidden;padding:50px 0 22px;background:radial-gradient(ellipse at 50% 45%,#173c63 0%,#091e36 52%,#061426 100%);color:#fff;isolation:isolate}
 .kz-showcase:before,.kz-showcase:after{content:"";position:absolute;top:-140px;width:33vw;height:340px;border:2px solid rgba(229,181,90,.34);border-radius:50%;filter:drop-shadow(0 0 16px rgba(222,172,76,.23));pointer-events:none}
 .kz-showcase:before{left:-20vw;transform:rotate(-30deg)}.kz-showcase:after{right:-20vw;transform:rotate(30deg)}
 .kz-showcase-inner{position:relative;z-index:1}
@@ -1492,10 +1492,10 @@ html,body{max-width:100%;overflow-x:hidden}
 .kz-showcase-card p{font-size:clamp(13px,1.1vw,16px);color:#d8e2ee;line-height:1.55;max-width:270px;min-height:70px;margin:0 0 18px}
 .kz-showcase-action{display:inline-flex;gap:12px;align-items:center;justify-content:center;border:1px solid #e6b75e;border-radius:100px;padding:11px 18px;font-size:12px;font-weight:800;letter-spacing:.02em;color:#fff;box-shadow:0 0 12px #dfa64d55}
 .kz-showcase-action b{font-size:23px;line-height:10px;color:#f1c675}
-.kz-showcase-benefits{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #a7c2da35;padding-top:24px;gap:12px;text-align:center}
+.kz-showcase-benefits{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #a7c2da35;padding-top:16px;gap:12px;text-align:center}
 .kz-showcase-benefits span{font-size:clamp(12px,1.2vw,17px);font-weight:700;color:#e9edf4}
 .kz-showcase-benefits span:not(:last-child){border-right:1px solid #c2a56d70}
-@media(max-width:800px){.kz-home-v3 .kz-showcase{padding:42px 0 34px}.kz-showcase-eyebrow i{width:36px}.kz-showcase-stage{min-height:0;padding-bottom:45px}.kz-showcase-options{grid-template-columns:1fr;max-width:540px;padding-top:10px}.kz-showcase-card,.kz-showcase-buy,.kz-showcase-rent{min-height:0;margin:0;transform:none;padding:23px 20px}.kz-showcase-card p{min-height:0}.kz-showcase-symbol{margin-bottom:10px}.kz-showcase-car{left:10%;width:80%;height:55%;bottom:0;opacity:.25}.kz-showcase-platform{left:8%;width:84%;bottom:0}.kz-showcase-benefits{grid-template-columns:repeat(2,1fr);gap:18px 6px}.kz-showcase-benefits span:nth-child(2){border-right:0}}
+@media(max-width:800px){.kz-home-v3 .kz-showcase{padding:42px 0 22px}.kz-showcase-eyebrow i{width:36px}.kz-showcase-stage{min-height:0;padding-bottom:45px}.kz-showcase-options{grid-template-columns:1fr;max-width:540px;padding-top:10px}.kz-showcase-card,.kz-showcase-buy,.kz-showcase-rent{min-height:0;margin:0;transform:none;padding:23px 20px}.kz-showcase-card p{min-height:0}.kz-showcase-symbol{margin-bottom:10px}.kz-showcase-car{left:10%;width:80%;height:55%;bottom:0;opacity:.25}.kz-showcase-platform{left:8%;width:84%;bottom:0}.kz-showcase-benefits{grid-template-columns:repeat(2,1fr);gap:18px 6px}.kz-showcase-benefits span:nth-child(2){border-right:0}}
 @media(prefers-reduced-motion:reduce){.kz-showcase-card{transition:none}}
 
 /* K&Z original vehicle slideshow: active after all 10 uploaded photos are present */
