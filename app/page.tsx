@@ -53,7 +53,7 @@ export default function Home(){
     </div>
     <div className="kz-auto-footer">
      <div className="kz-auto-actions"><a className="kz-auto-primary" href="https://api.whatsapp.com/send?phone=96878967229&text=Hello%20K%26Z%2C%20I%20would%20like%20to%20book%20car%20pickup%20and%20automotive%20service.">BOOK A SERVICE <span>↗</span></a><Link className="kz-auto-secondary" href="/automotive">VIEW AUTOMOTIVE SERVICES <span>↗</span></Link></div>
-     <p className="kz-auto-disclaimer">Pickup, delivery and service charges apply. Prices and arrangements are confirmed before work begins.</p>
+     <div className="kz-auto-disclaimer" role="note"><span className="kz-auto-notice-icon" aria-hidden="true">ⓘ</span><div><strong>SERVICE CHARGES APPLY</strong><p>Pickup, delivery and arranged services are chargeable. We confirm the prices with you before work begins.</p></div></div>
     </div>
    </div>
   </section>
