@@ -1700,5 +1700,5 @@ html,body{max-width:100%;overflow-x:hidden}
 
 
 /* Bring the Automotive Services eyebrow closer to the preceding cars section. */
-.kz-home-v3 #our-services.section{padding-top:54px}
-@media(max-width:800px){.kz-home-v3 #our-services.section{padding-top:44px}}
+.kz-home-v3 #our-services.section{padding-top:36px}
+@media(max-width:800px){.kz-home-v3 #our-services.section{padding-top:30px}}
