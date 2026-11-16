@@ -11,6 +11,8 @@ function isApprovedCarPhoto(value: unknown): boolean {
   if (typeof value !== "string") return false;
   const storageRoot = process.env.SUPABASE_URL + "/storage/v1/object/public/kz-car-photos/";
   if (value.startsWith(storageRoot) && value.startsWith("https://")) return true;
+  // Approved first-party static listing photos, committed with original source assets.
+  if (/^\/cars\/mercedes-c300-2021\/[0-9]{2}_[a-z_]+\.webp$/.test(value)) return true;
   try {
     const url = new URL(value);
     return url.protocol === "https:" &&
