@@ -243,7 +243,7 @@ export default function AdminCars() {
           </div>
         </div>
       </section>
-      <div className="kz-dashboard-section-heading"><span>05 / PHOTO GALLERY</span><h2>Upload Clean Car Photos</h2><p>OFFICIAL K&Z SEQUENCE: 1. Straight front (main cover) → 2. Front right angle → 3. Front left angle → 4. Side angles → 5. Rear right → 6. Rear left → 7. Straight rear → 8. Dashboard → 9. Interior / seats → 10. Mileage close-up. Upload only polished, natural-looking photos with the original K&Z master number plate. No flyers or banners. Do not publish a car if photos or number plate need correction.</p></div>
+      <div className="kz-dashboard-section-heading"><span>05 / PHOTO GALLERY</span><h2>Upload Clean Car Photos</h2><p>OFFICIAL K&Z SEQUENCE: 1. Front three-quarter angle (MAIN COVER on inventory/dashboard) → 2. Straight front → 3. Opposite front angle → 4. Side angles → 5. Rear right → 6. Rear left → 7. Straight rear → 8. Dashboard → 9. Interior / seats → 10. Mileage close-up. Always verify the front-angle cover before publishing. Upload only polished, natural-looking photos with the original K&Z master number plate. No flyers or banners. Do not publish a car if photos or number plate need correction.</p></div>
       <div style={{display:"grid",gap:9}}>
        <strong style={{fontSize:14}}>Car photos (JPEG/PNG/WebP, max 3 MB each)</strong>
        <div
