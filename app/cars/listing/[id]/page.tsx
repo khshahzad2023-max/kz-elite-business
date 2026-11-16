@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { configured, supabase } from "../../../../lib/kz-db";
 import { notFound } from "next/navigation";
@@ -24,7 +25,7 @@ export default async function Listing({params}:{params:Promise<{id:string}>}){
   {car.finance_available && <div className="kz-car-finance-badge" style={{marginBottom:12}}>Finance Option Available on This Car</div>}
   <p style={{color:"#e5bd65",fontWeight:700,fontSize:21}}>{car.status==="sold"?"SOLD":car.price===null?"Price on request":car.price.toLocaleString()+" OMR"}</p>
   <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(240px,1fr))",gap:12}}>
-    {car.images.map((src,i)=><img key={src} src={src} alt={car.title+" image "+(i+1)} style={{width:"100%",height:255,objectFit:"cover",borderRadius:12}}/>)}
+    {car.images.map((src,i)=><Image key={src} src={src} alt={car.title+" image "+(i+1)} width={900} height={600} sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 340px" quality={85} loading={i===0?"eager":"lazy"} fetchPriority={i===0?"high":"auto"} decoding="async" style={{width:"100%",height:255,objectFit:"cover",borderRadius:12}}/>)}
   </div>
   <section style={{marginTop:25,lineHeight:1.8}}>
    <h2>Vehicle Specifications</h2>

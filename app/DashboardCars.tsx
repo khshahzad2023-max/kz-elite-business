@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 type Car = {
   id: string; title: string; year: number; price: number | null; status: string; finance_available?: boolean;
@@ -85,7 +86,7 @@ export default function DashboardCars() {
       {filtered.length===0 ? <div className="kz-inventory-message"><h3>No matching cars found</h3><p>Try a wider search or different filters.</p></div> :
       <div className="kz-inventory-grid">
         {filtered.map(car=><article className="kz-inventory-card" key={car.id}>
-          {car.images?.[0] ? <img src={car.images[0]} alt={car.title} loading="lazy" /> : <div className="kz-inventory-message">Photo coming soon</div>}
+          {car.images?.[0] ? <Image src={car.images[0]} alt={car.title} width={720} height={450} sizes="(max-width: 640px) 100vw, (max-width: 1020px) 50vw, 33vw" quality={75} loading="lazy" decoding="async" style={{width:"100%",height:"auto",aspectRatio:"16 / 10",objectFit:"cover"}} /> : <div className="kz-inventory-message">Photo coming soon</div>}
           <div className="kz-inventory-content">
             <h3 className="kz-card-model-title">{car.make?.trim() && car.model?.trim() ? car.make.trim() + " " + car.model.trim() : car.title}</h3>
             <dl className="kz-car-card-facts">
