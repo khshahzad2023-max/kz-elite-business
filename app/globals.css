@@ -1999,3 +1999,16 @@ html,body{max-width:100%;overflow-x:hidden}
 .kz-fin-guide-cta p{color:#cfdded;max-width:710px;line-height:1.65;margin:0}
 @media(max-width:800px){.kz-fin-guide-hero{padding:47px 0}.kz-fin-guide-hero-grid{grid-template-columns:1fr}.kz-fin-guide-emblem{min-height:200px;max-width:510px}.kz-fin-guide-section{padding:45px 0}.kz-fin-guide-cards,.kz-fin-guide-process{grid-template-columns:1fr}.kz-fin-guide-docs{grid-template-columns:1fr}}
 @media(max-width:450px){.kz-fin-guide h1{font-size:clamp(33px,9vw,45px)}.kz-fin-guide-actions{flex-direction:column}.kz-fin-guide-actions a,.kz-fin-guide-cta .kz-fin-guide-primary{width:100%}.kz-fin-guide-emblem{min-height:180px}}
+
+/* Final Who We Are copy polish; preserve existing two-column composition. */
+.kz-home-v3 #who-we-are .kz-who-story>p:first-child{
+ color:#f5f8fc;font-weight:520;line-height:1.53;
+}
+.kz-home-v3 #who-we-are .kz-who-story>p+p{
+ color:#c8d5df;line-height:1.67;letter-spacing:.004em;
+}
+.kz-home-v3 #who-we-are .kz-who-story>p+p+p{margin-top:20px}
+@media(max-width:760px){
+ .kz-home-v3 #who-we-are .kz-who-story>p:first-child{line-height:1.55}
+ .kz-home-v3 #who-we-are .kz-who-story>p+p{line-height:1.63}
+}
