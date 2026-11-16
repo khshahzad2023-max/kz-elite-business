@@ -8,8 +8,9 @@ type Car = {
  id?: string; title: string; year: number; price: number | null; owner_demand?:number|null; kz_target?:number|null; final_sold_price?:number|null; owner_final_payment?:number|null; deal_expenses?:number|null; mileage: string;
  specs: string; location: string; description: string; status: "draft"|"available"|"sold"; finance_available: boolean; images: string[];
  make:string;model:string;variant:string;engine:string;transmission:string;origin_specs:string;body_type:string;exterior_color:string;features:string;registration_validity:string;
+ cover_zoom:number;cover_x:number;cover_y:number;
 };
-const blank: Car = { title: "", year: new Date().getFullYear(), price: null, owner_demand:null,kz_target:null,final_sold_price:null,owner_final_payment:null,deal_expenses:null, mileage: "", specs: "", location: "Muscat, Oman", description: "", status: "draft", finance_available: false, images: [], make:"",model:"",variant:"",engine:"",transmission:"",origin_specs:"",body_type:"",exterior_color:"",features:"",registration_validity:"" };
+const blank: Car = { title: "", year: new Date().getFullYear(), price: null, owner_demand:null,kz_target:null,final_sold_price:null,owner_final_payment:null,deal_expenses:null, mileage: "", specs: "", location: "Muscat, Oman", description: "", status: "draft", finance_available: false, images: [], make:"",model:"",variant:"",engine:"",transmission:"",origin_specs:"",body_type:"",exterior_color:"",features:"",registration_validity:"", cover_zoom:100,cover_x:50,cover_y:50 };
 
 export default function AdminCars() {
  const [ready,setReady]=useState(false);
@@ -213,6 +214,24 @@ export default function AdminCars() {
       <div className="kz-dashboard-section-heading"><span>04 / EXTRA DETAILS</span><h2>Condition & Notes</h2></div>
       <label style={labelStyle}>Additional verified specifications<textarea style={inputStyle} rows={3} value={car.specs} onChange={e=>setCar({...car,specs:e.target.value})} placeholder="GCC, engine, transmission, features..."/></label>
       <label style={labelStyle}>Description<textarea style={inputStyle} rows={4} value={car.description} onChange={e=>setCar({...car,description:e.target.value})}/></label>
+      <section className="kz-cover-editor" aria-label="Main card photo framing">
+        <h3>Main Card Photo Framing</h3>
+        <p>Har car ka cover ek hi 16:10 frame mein show hota hai. Sirf card preview ke liye zoom aur position adjust karein; original photo aur View Details gallery unchanged rahenge.</p>
+        <div className="kz-cover-editor-layout">
+          <div className="kz-car-card-photo kz-cover-editor-preview">
+            {car.images[0] ? <Image src={car.images[0]} alt="Main card framing preview" width={720} height={450} sizes="(max-width: 650px) 100vw, 360px" quality={75} style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:`${car.cover_x ?? 50}% ${car.cover_y ?? 50}%`,transform:`scale(${(car.cover_zoom ?? 100)/100})`}} /> : <span>Save the front cover photo to preview framing</span>}
+          </div>
+          <div className="kz-cover-editor-controls">
+            {([["cover_zoom","Zoom",80,150,"%"],["cover_x","Left / Right",0,100,"%"],["cover_y","Up / Down",0,100,"%"]] as const).map(([key,label,min,max,unit])=>
+              <label key={key}>{label}: <strong>{car[key] ?? (key==="cover_zoom"?100:50)}{unit}</strong>
+                <input type="range" min={min} max={max} step={1} value={car[key] ?? (key==="cover_zoom"?100:50)} onChange={e=>setCar(current=>({...current,[key]:Number(e.target.value)}))}/>
+              </label>
+            )}
+            <button type="button" onClick={()=>setCar(current=>({...current,cover_zoom:100,cover_x:50,cover_y:50}))}>Reset Framing</button>
+            <small>Photo #1 remains the front cover. This setting only changes its display on the main listing card.</small>
+          </div>
+        </div>
+      </section>
       <div className="kz-dashboard-section-heading"><span>05 / PHOTO GALLERY</span><h2>Upload Clean Car Photos</h2><p>OFFICIAL K&Z SEQUENCE: 1. Straight front (main cover) → 2. Front right angle → 3. Front left angle → 4. Side angles → 5. Rear right → 6. Rear left → 7. Straight rear → 8. Dashboard → 9. Interior / seats → 10. Mileage close-up. Upload only polished, natural-looking photos with the original K&Z master number plate. No flyers or banners. Do not publish a car if photos or number plate need correction.</p></div>
       <div style={{display:"grid",gap:9}}>
        <strong style={{fontSize:14}}>Car photos (JPEG/PNG/WebP, max 3 MB each)</strong>

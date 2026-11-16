@@ -42,9 +42,13 @@ export async function POST(req: Request) {
     if(value!==null&&(!Number.isFinite(value)||value<0||value>100000000)) return errorResponse("Invalid private pricing amount: "+name,400);
     privateFields[name]=value;
   }
+  const coverZoom = data.cover_zoom == null ? 100 : Number(data.cover_zoom);
+  const coverX = data.cover_x == null ? 50 : Number(data.cover_x);
+  const coverY = data.cover_y == null ? 50 : Number(data.cover_y);
+  if (![coverZoom,coverX,coverY].every(Number.isInteger) || coverZoom < 80 || coverZoom > 150 || coverX < 0 || coverX > 100 || coverY < 0 || coverY > 100) return errorResponse("Invalid main cover framing",400);
   const record = {
     ...privateFields,
-    title, year, price, status, images,
+    title, year, price, status, images, cover_zoom:coverZoom,cover_x:coverX,cover_y:coverY,
     finance_available: data.finance_available === true,
     mileage: String(data.mileage || "").slice(0, 100),
     specs: String(data.specs || "").slice(0, 1500),

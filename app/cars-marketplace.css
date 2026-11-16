@@ -120,3 +120,19 @@
 .kz-inventory-card .kz-card-view-link { display:flex; align-items:center; justify-content:center; gap:8px; min-height:44px; width:100%; margin-top:8px; border-radius:9px; text-align:center; background:linear-gradient(120deg,#dbb365,#e8c783); color:#0a1b2b; font-weight:800; text-decoration:none; }
 .kz-inventory-card .kz-card-view-link:hover { filter:brightness(1.06); }
 @media(max-width:580px) { .kz-inventory-content {padding:17px;} .kz-car-card-fact {grid-template-columns:37% minmax(0,1fr);} }
+
+/* Fixed K&Z front-photo framing — same frame across all cards, per-car crop controls. */
+.kz-car-card-photo{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:#132a40;display:grid;place-items:center}
+.kz-car-card-photo img{display:block;width:100%;height:100%;object-fit:cover;max-width:none;transform-origin:center center}
+.kz-cover-editor{border:1px solid #45617e;background:#102940;border-radius:13px;padding:17px}
+.kz-cover-editor h3{margin:0 0 8px;color:#f2d38d;font-size:17px}
+.kz-cover-editor p{font-size:13px;color:#c2cfdf;line-height:1.6}
+.kz-cover-editor-layout{display:grid;grid-template-columns:minmax(220px,1.1fr) minmax(180px,1fr);gap:20px;align-items:center}
+.kz-cover-editor-preview{border:1px solid #68809d;border-radius:9px}
+.kz-cover-editor-preview span{font-size:12px;color:#bed0e1;text-align:center;padding:12px}
+.kz-cover-editor-controls{display:grid;gap:13px}
+.kz-cover-editor-controls label{display:grid;gap:6px;color:#dbe5f0;font-size:13px}
+.kz-cover-editor-controls input{width:100%;accent-color:#d6aa52}
+.kz-cover-editor-controls button{border:1px solid #b59b60;background:#203d56;color:#f2d38d;padding:10px;border-radius:8px;cursor:pointer}
+.kz-cover-editor-controls small{color:#b2c6d8;font-size:11px;line-height:1.55}
+@media(max-width:650px){.kz-cover-editor-layout{grid-template-columns:1fr}}
