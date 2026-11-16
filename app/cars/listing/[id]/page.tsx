@@ -29,7 +29,7 @@ export default async function Listing({params}:{params:Promise<{id:string}>}){
   <section style={{marginTop:25,lineHeight:1.8}}>
    <h2>Vehicle Specifications</h2>
    <div className="kz-car-detail-specs">{([["Brand",car.make],["Model",car.model],["Variant",car.variant],["Year",car.year],["Engine",car.engine],["Transmission",car.transmission],["GCC / Imported",car.origin_specs],["Body Type",car.body_type],["Exterior Colour",car.exterior_color],["Mileage",car.mileage],["Location",car.location],["Registration",car.registration_validity]] as [string,string|number|undefined][]).filter(([,value])=>String(value||"").trim()).map(([label,value])=><div key={label}><span>{label}</span><strong>{value}</strong></div>)}</div>
-   {car.features&&<><h2>Features</h2><ul className="kz-car-feature-list">{car.features.split(/\\n|•/).map(s=>s.trim()).filter(Boolean).map((s,i)=><li key={i}>{s}</li>)}</ul></>}
+   {car.features&&<><h2>Features</h2><ul className="kz-car-feature-list">{car.features.split(/\r?\n|•/).map(s=>s.trim()).filter(Boolean).map((s,i)=><li key={i}>{s}</li>)}</ul></>}
    {car.specs&&<><h2>Additional Specifications</h2><p style={{whiteSpace:"pre-line"}}>{car.specs}</p></>}
    {car.description&&<><h2>Vehicle Description</h2><p style={{whiteSpace:"pre-line"}}>{car.description}</p></>}
    <a href={"https://api.whatsapp.com/send?phone=96878967229&text="+message} target="_blank" rel="noopener noreferrer" style={{display:"inline-block",background:"#d6aa52",color:"#07111f",borderRadius:9,padding:"13px 22px",fontWeight:700}}>Enquire on WhatsApp</a>
