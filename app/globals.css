@@ -1759,3 +1759,66 @@ html,body{max-width:100%;overflow-x:hidden}
  .kz-home-v3 .kz-auto-disclaimer{flex-basis:100%;max-width:none}
 }
 @media(prefers-reduced-motion:reduce){.kz-home-v3 .kz-auto-step,.kz-home-v3 .kz-auto-actions a{transition:none}}
+
+/* K&Z premium automotive concierge section - scoped to this homepage section only. */
+.kz-home-v3 #our-services.kz-auto-premium{
+ position:relative;isolation:isolate;overflow:hidden;
+ padding:54px 0 56px;
+ background:radial-gradient(ellipse 65% 65% at 85% 30%,rgba(37,88,137,.18),transparent 83%),linear-gradient(135deg,#071527 0%,#0a2039 56%,#081629 100%);
+ border-top:1px solid rgba(231,189,117,.20);
+ border-bottom:1px solid rgba(231,189,117,.16);
+}
+.kz-home-v3 #our-services.kz-auto-premium:before{
+ content:"";position:absolute;right:-120px;top:-210px;width:460px;height:460px;border:1px solid rgba(236,191,103,.14);border-radius:50%;pointer-events:none;
+}
+.kz-auto-container{position:relative;z-index:1}
+.kz-auto-intro{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(290px,.78fr);gap:clamp(24px,5vw,72px);align-items:center}
+.kz-auto-eyebrow{display:flex;align-items:center;gap:12px;color:#e5bf76;letter-spacing:.16em;font-size:12px;font-weight:800;margin-bottom:21px}
+.kz-auto-eyebrow-line{width:35px;height:1px;background:linear-gradient(90deg,#e7be74,transparent)}
+.kz-auto-copy h2{font-size:clamp(31px,3.7vw,55px);line-height:1.15;max-width:850px;margin:0 0 20px;letter-spacing:-.038em;color:#f6f8fc;font-weight:850}
+.kz-auto-copy h2 em{font-style:normal;color:#f0ca80}
+.kz-auto-lead{font-size:clamp(16px,1.38vw,19px);line-height:1.65;color:#e1e9f5;max-width:690px;margin:0 0 18px}
+.kz-auto-services-text{font-size:14px;line-height:1.8;color:#b9cce0;max-width:720px;margin:0}
+.kz-auto-visual{min-height:265px;position:relative;border-radius:25px;overflow:hidden;background:#122d4a;border:1px solid rgba(226,186,111,.45);box-shadow:0 18px 45px #02091488,inset 0 1px 0 #ffffff38}
+.kz-auto-photo{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,17,30,.05),rgba(5,17,30,.06) 50%,#05182fd9),url('/showcase/car-05.webp') center 52%/cover no-repeat;transform:scale(1.02)}
+.kz-auto-visual-bottom{position:absolute;bottom:17px;left:21px;right:21px;display:flex;align-items:center;gap:10px;letter-spacing:.13em;font-size:11px;font-weight:800;color:#ffe5a5;text-shadow:0 1px 8px #000b}
+.kz-auto-live-dot{width:7px;height:7px;border-radius:50%;background:#efca86;box-shadow:0 0 12px #f5bf6d}
+.kz-auto-steps{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px;margin-top:36px}
+.kz-auto-steps:before{content:"";position:absolute;left:13%;right:13%;top:37px;height:1px;background:linear-gradient(90deg,transparent,#e8bb6e60,#e8bb6e60,transparent);pointer-events:none}
+.kz-auto-step{position:relative;min-height:185px;padding:22px 24px 23px;border:1px solid rgba(128,181,221,.47);border-radius:19px;background:linear-gradient(145deg,rgba(34,79,125,.69),rgba(8,29,53,.88));box-shadow:inset 0 1px 1px #d9efff36,0 12px 33px #030b1990;backdrop-filter:blur(7px);transition:border-color .2s,transform .2s}
+.kz-auto-step:hover{transform:translateY(-4px);border-color:#f0c477}
+.kz-auto-step-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.kz-auto-step-index{font-size:15px;font-weight:900;letter-spacing:.12em;color:#e9c57f}
+.kz-auto-step-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid #e9c37d80;background:#09243c;color:#f0cc87;font-size:18px}
+.kz-auto-step h3{font-size:clamp(18px,1.7vw,23px);font-weight:800;color:#f8fbff;margin:0 0 8px}
+.kz-auto-step p{font-size:14px;line-height:1.6;color:#d5e4f3;margin:0;max-width:310px}
+.kz-auto-footer{display:flex;align-items:center;justify-content:space-between;gap:18px 30px;margin-top:28px;flex-wrap:wrap}
+.kz-auto-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+.kz-auto-primary,.kz-auto-secondary{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:46px;padding:12px 20px;border-radius:13px;font-size:12px;font-weight:850;letter-spacing:.025em;text-decoration:none!important;transition:filter .2s,transform .2s}
+.kz-auto-primary{color:#102035!important;background:linear-gradient(130deg,#fff0b8,#e6b85d 68%,#bb8238);border:1px solid #f9d68e;box-shadow:0 4px 24px #edb95650}
+.kz-auto-secondary{color:#f1f7ff!important;background:linear-gradient(145deg,#456c9860,#0d294b8c);border:1px solid rgba(185,218,245,.57);box-shadow:inset 0 1px #fff3,0 5px 20px #0004}
+.kz-auto-primary:hover,.kz-auto-secondary:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.kz-auto-primary span,.kz-auto-secondary span{font-size:16px}
+.kz-auto-disclaimer{font-size:12px;line-height:1.5;color:#a5b8cc;margin:0;max-width:470px}
+@media(max-width:950px){
+ .kz-auto-intro{grid-template-columns:1fr 300px;gap:24px}
+ .kz-auto-visual{min-height:235px}
+}
+@media(max-width:800px){
+ .kz-home-v3 #our-services.kz-auto-premium{padding:37px 0 42px}
+ .kz-auto-intro{grid-template-columns:1fr}
+ .kz-auto-copy h2{font-size:clamp(30px,6vw,42px)}
+ .kz-auto-visual{min-height:220px;max-width:590px;width:100%}
+ .kz-auto-steps{grid-template-columns:1fr;gap:12px;margin-top:24px}
+ .kz-auto-steps:before{display:none}
+ .kz-auto-step{min-height:0;padding:18px 20px}
+ .kz-auto-footer{margin-top:21px}
+}
+@media(max-width:450px){
+ .kz-auto-visual{min-height:187px}
+ .kz-auto-actions{display:grid;width:100%;grid-template-columns:1fr}
+ .kz-auto-primary,.kz-auto-secondary{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+ .kz-auto-primary,.kz-auto-secondary,.kz-auto-step{transition:none}
+}
