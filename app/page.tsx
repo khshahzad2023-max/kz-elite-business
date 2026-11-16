@@ -32,19 +32,29 @@ export default function Home(){
    </div>
   </section>
 
-  <section id="our-services" className="section alt">
-   <div className="container">
-    <div className="eyebrow">K&amp;Z AUTOMOTIVE SERVICES</div>
-    <h2 style={{fontSize:"clamp(30px,4vw,50px)",maxWidth:850}}>We Pick Up Your Car, Get the Work Done &amp; Deliver It Back!</h2>
-    <p className="lead">No need to visit different garages or service centers. Just contact K&amp;Z! We pick up your car, arrange the required work, and deliver it back to you.</p>
-    <p className="lead">Car washing, cleaning, tyres, batteries, mechanical repairs, polishing, tinting, decoration and more — all made easy for you.</p>
-    <div className="grid" style={{marginTop:28}}>
-     <div className="card"><h3>01 — Pickup</h3><p>Contact us to arrange collection of your vehicle.</p></div>
-     <div className="card"><h3>02 — Service</h3><p>We arrange the requested work and keep you informed.</p></div>
-     <div className="card"><h3>03 — Delivery</h3><p>We arrange to return your vehicle after the work is completed.</p></div>
+  <section id="our-services" className="section alt kz-auto-premium">
+   <div className="container kz-auto-container">
+    <div className="kz-auto-intro">
+     <div className="kz-auto-copy">
+      <div className="kz-auto-eyebrow"><span className="kz-auto-eyebrow-line"/>K&amp;Z AUTOMOTIVE SERVICES</div>
+      <h2>We Pick Up Your Car.<br/><em>We Take Care of the Rest.</em></h2>
+      <p className="kz-auto-lead">You tell us what your car needs. We arrange the pickup, get the work done and deliver your car back to you.</p>
+      <p className="kz-auto-services-text">Washing • Interior Cleaning • Tyres • Batteries • Mechanical Work • Polishing • Tinting • Decoration &amp; More</p>
+     </div>
+     <div className="kz-auto-visual" aria-hidden="true">
+      <div className="kz-auto-photo"/>
+      <div className="kz-auto-visual-bottom"><span className="kz-auto-live-dot"/> YOUR CAR. OUR CARE.</div>
+     </div>
     </div>
-    <div className="actions"><a className="btn btn-primary" href="https://api.whatsapp.com/send?phone=96878967229&text=Hello%20K%26Z%2C%20I%20would%20like%20to%20book%20car%20pickup%20and%20automotive%20service.">BOOK A SERVICE ↗</a><Link className="btn btn-secondary" href="/automotive">VIEW AUTOMOTIVE SERVICES ↗</Link></div>
-    <p style={{color:"var(--muted)",fontSize:13,marginTop:18}}>Pickup, delivery and service charges apply. Prices and arrangements are confirmed before work begins.</p>
+    <div className="kz-auto-steps" aria-label="How our pickup and delivery service works">
+     <div className="kz-auto-step"><div className="kz-auto-step-top"><span className="kz-auto-step-index">01</span><span className="kz-auto-step-mark" aria-hidden="true">↗</span></div><h3>We Pick Up</h3><p>Contact K&amp;Z and arrange vehicle collection.</p></div>
+     <div className="kz-auto-step"><div className="kz-auto-step-top"><span className="kz-auto-step-index">02</span><span className="kz-auto-step-mark" aria-hidden="true">✦</span></div><h3>We Arrange the Work</h3><p>We coordinate the requested services and keep you updated.</p></div>
+     <div className="kz-auto-step"><div className="kz-auto-step-top"><span className="kz-auto-step-index">03</span><span className="kz-auto-step-mark" aria-hidden="true">✓</span></div><h3>We Deliver Back</h3><p>Your vehicle is returned after the work is completed.</p></div>
+    </div>
+    <div className="kz-auto-footer">
+     <div className="kz-auto-actions"><a className="kz-auto-primary" href="https://api.whatsapp.com/send?phone=96878967229&text=Hello%20K%26Z%2C%20I%20would%20like%20to%20book%20car%20pickup%20and%20automotive%20service.">BOOK A SERVICE <span>↗</span></a><Link className="kz-auto-secondary" href="/automotive">VIEW AUTOMOTIVE SERVICES <span>↗</span></Link></div>
+     <p className="kz-auto-disclaimer">Pickup, delivery and service charges apply. Prices and arrangements are confirmed before work begins.</p>
+    </div>
    </div>
   </section>
 
