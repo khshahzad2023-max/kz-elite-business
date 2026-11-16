@@ -2037,3 +2037,19 @@ html,body{max-width:100%;overflow-x:hidden}
   font-size:clamp(8px,1.9vw,11px)!important;padding:6px 1px!important;
  }
 }
+
+/* CONNECT crystal contact labels: intentional two-line layout, no awkward word-breaks. */
+@media(min-width:901px){
+ .contact-dock-section .crystal-email.is-open .email-choice-panel a,
+ .contact-dock-section .crystal-instagram.is-open .instagram-choice-panel a,
+ .contact-dock-section .crystal-tiktok.is-open .tiktok-choice-panel a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1px;min-height:46px;padding:7px 3px;
+  font-size:clamp(9px,.79vw,12px)!important;line-height:1.2!important;
+  letter-spacing:-.13px;overflow-wrap:normal!important;word-break:normal!important;
+  white-space:normal!important;text-align:center;
+ }
+ .contact-dock-section .email-choice-panel a span,
+ .contact-dock-section .instagram-choice-panel a span,
+ .contact-dock-section .tiktok-choice-panel a span{display:block;white-space:nowrap;max-width:100%}
+}
