@@ -48,7 +48,7 @@ export default function ContactDock() {
           <div className="contact-location"><MapPin size={17} /> Muscat, Sultanate of Oman</div>
         </div>
         <div className="crystal-connect" aria-label="K&Z contact options">
-          <button className={`crystal-contact crystal-call ${callOpen ? "is-open" : ""}`} type="button" onClick={() => setCallOpen((open) => !open)} aria-expanded={callOpen}>
+          <button className={`crystal-contact crystal-call ${callOpen ? "is-open" : ""}`} type="button" onMouseEnter={() => setCallOpen(true)} onMouseLeave={() => setCallOpen(false)} onClick={() => setCallOpen((open) => !open)} aria-expanded={callOpen}>
             {!callOpen ? <span className="crystal-letter">C</span> : (
               <span className="call-choice-panel">
                 <span className="call-choice-title call-choice-title-icon"><span className="call-crystal-logo"><Phone size={28} strokeWidth={2.4} /></span><span>CHOOSE A NUMBER</span></span>
@@ -57,7 +57,7 @@ export default function ContactDock() {
               </span>
             )}
           </button>
-          <button className={`crystal-contact crystal-whatsapp ${whatsappOpen ? "is-open" : ""}`} type="button" onClick={() => setWhatsappOpen((open) => !open)} aria-expanded={whatsappOpen}>
+          <button className={`crystal-contact crystal-whatsapp ${whatsappOpen ? "is-open" : ""}`} type="button" onMouseEnter={() => setWhatsappOpen(true)} onMouseLeave={() => setWhatsappOpen(false)} onClick={() => setWhatsappOpen((open) => !open)} aria-expanded={whatsappOpen}>
             {!whatsappOpen ? <span className="crystal-letter">O</span> : (
               <span className="call-choice-panel whatsapp-choice-panel">
                 <span className="call-choice-title whatsapp-choice-title"><span className="whatsapp-crystal-logo" aria-label="WhatsApp">
@@ -70,25 +70,25 @@ export default function ContactDock() {
               </span>
             )}
           </button>
-          <button className={`crystal-contact crystal-email ${emailOpen ? "is-open" : ""}`} type="button" onClick={() => setEmailOpen((open) => !open)} aria-expanded={emailOpen}>
+          <button className={`crystal-contact crystal-email ${emailOpen ? "is-open" : ""}`} type="button" onMouseEnter={() => setEmailOpen(true)} onMouseLeave={() => setEmailOpen(false)} onClick={() => setEmailOpen((open) => !open)} aria-expanded={emailOpen}>
             {!emailOpen ? <span className="crystal-letter">N</span> : (
               <span className="email-choice-panel">
                 <span className="email-crystal-logo"><Mail size={29} strokeWidth={2.2} /></span>
                 <span className="email-choice-title">EMAIL</span>
-                <a href="mailto:info@kzelitebusiness.com" onClick={(e) => e.stopPropagation()}>info@kzelitebusiness.com</a>
+                <a href="mailto:info@kzelitebusiness.com" onClick={(e) => e.stopPropagation()}><span>info@</span><span>kzelitebusiness.com</span></a>
               </span>
             )}
           </button>
-          <button className={`crystal-contact crystal-instagram ${instagramOpen ? "is-open" : ""}`} type="button" onClick={() => setInstagramOpen((open) => !open)} aria-expanded={instagramOpen}>
+          <button className={`crystal-contact crystal-instagram ${instagramOpen ? "is-open" : ""}`} type="button" onMouseEnter={() => setInstagramOpen(true)} onMouseLeave={() => setInstagramOpen(false)} onClick={() => setInstagramOpen((open) => !open)} aria-expanded={instagramOpen}>
             {!instagramOpen ? <span className="crystal-letter">N</span> : (
               <span className="instagram-choice-panel">
                 <span className="instagram-crystal-logo"><InstagramIcon size={30} /></span>
                 <span className="instagram-choice-title">INSTAGRAM</span>
-                <a href="https://www.instagram.com/kz_elite_business/" target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>@kz_elite_business</a>
+                <a href="https://www.instagram.com/kz_elite_business/" target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}><span>@kz_elite_</span><span>business</span></a>
               </span>
             )}
           </button>
-          <button className={`crystal-contact crystal-facebook ${facebookOpen ? "is-open" : ""}`} type="button" onClick={() => setFacebookOpen((open) => !open)} aria-expanded={facebookOpen}>
+          <button className={`crystal-contact crystal-facebook ${facebookOpen ? "is-open" : ""}`} type="button" onMouseEnter={() => setFacebookOpen(true)} onMouseLeave={() => setFacebookOpen(false)} onClick={() => setFacebookOpen((open) => !open)} aria-expanded={facebookOpen}>
             {!facebookOpen ? <span className="crystal-letter">E</span> : (
               <span className="facebook-choice-panel">
                 <span className="facebook-crystal-logo" aria-label="Facebook">
@@ -99,7 +99,7 @@ export default function ContactDock() {
               </span>
             )}
           </button>
-          <button className={`crystal-contact crystal-website ${websiteOpen ? "is-open" : ""}`} type="button" onClick={() => setWebsiteOpen((open) => !open)} aria-expanded={websiteOpen}>
+          <button className={`crystal-contact crystal-website ${websiteOpen ? "is-open" : ""}`} type="button" onMouseEnter={() => setWebsiteOpen(true)} onMouseLeave={() => setWebsiteOpen(false)} onClick={() => setWebsiteOpen((open) => !open)} aria-expanded={websiteOpen}>
             {!websiteOpen ? <span className="crystal-letter">C</span> : (
               <span className="website-choice-panel">
                 <span className="website-crystal-logo"><Globe2 size={30} strokeWidth={2.1} /></span>
@@ -108,20 +108,20 @@ export default function ContactDock() {
               </span>
             )}
           </button>
-          <button className={`crystal-contact crystal-tiktok ${tiktokOpen ? "is-open" : ""}`} type="button" onClick={() => setTiktokOpen((open) => !open)} aria-expanded={tiktokOpen}>
+          <button className={`crystal-contact crystal-tiktok ${tiktokOpen ? "is-open" : ""}`} type="button" onMouseEnter={() => setTiktokOpen(true)} onMouseLeave={() => setTiktokOpen(false)} onClick={() => setTiktokOpen((open) => !open)} aria-expanded={tiktokOpen}>
             {!tiktokOpen ? <span className="crystal-letter">T</span> : (
               <span className="tiktok-choice-panel">
                 <span className="tiktok-crystal-logo" aria-label="TikTok">
                   <svg aria-hidden="true" viewBox="0 0 24 24" width="30" height="30"><path fill="currentColor" d="M15.7 3c.4 2.2 1.7 3.6 3.8 3.8v3.1c-1.4 0-2.7-.4-3.8-1.2v5.7a6.1 6.1 0 1 1-5.2-6V11a3 3 0 1 0 2 2.8V3h3.2Z"/></svg>
                 </span>
                 <span className="tiktok-choice-title">TIKTOK</span>
-                <a href="https://www.tiktok.com/@kz_elite_business" target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>@kz_elite_business</a>
+                <a href="https://www.tiktok.com/@kz_elite_business" target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}><span>@kz_elite_</span><span>business</span></a>
               </span>
             )}
           </button>
 
 </div>
-        <div className="crystal-hint">{callOpen||whatsappOpen||emailOpen||instagramOpen||facebookOpen||tiktokOpen||websiteOpen ? "Choose a contact option above to connect with K&Z" : "Tap a crystal letter to reveal contact options"}</div>
+        <div className="crystal-hint">{callOpen||whatsappOpen||emailOpen||instagramOpen||facebookOpen||tiktokOpen||websiteOpen ? "Choose a contact option above to connect with K&Z" : "Hover over a crystal letter or tap to reveal contact options"}</div>
       </div>
     </section>
   );
