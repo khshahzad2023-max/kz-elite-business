@@ -1474,7 +1474,7 @@ html,body{max-width:100%;overflow-x:hidden}
 .kz-showcase-heading{text-align:center;position:relative;z-index:3}
 .kz-showcase-eyebrow{display:flex;justify-content:center;align-items:center;gap:18px;color:#edf2fa;font-size:14px;font-weight:800;letter-spacing:.12em}
 .kz-showcase-eyebrow span{color:#e5bb67}.kz-showcase-eyebrow i{height:1px;width:100px;background:linear-gradient(90deg,transparent,#b99c64,transparent)}
-.kz-showcase-heading h2{font-size:clamp(35px,5.2vw,72px);line-height:1.13;margin:18px 0 10px;color:#fff;font-weight:850;letter-spacing:-.045em;text-shadow:0 4px 22px #0008}
+.kz-showcase-heading h2{font-size:clamp(33px,4.9vw,66px);line-height:1.13;margin:18px 0 10px;color:#fff;font-weight:850;letter-spacing:-.045em;text-shadow:0 4px 22px #0008}
 .kz-showcase-heading h2 em{font-style:normal;color:#f0c66e;text-shadow:0 2px 20px #c7933d40}
 .kz-showcase-heading>p{font-size:clamp(15px,1.65vw,23px);color:#cbd6e4;margin:0}
 .kz-showcase-stage{position:relative;min-height:490px;margin-top:24px;display:flex;align-items:flex-start;justify-content:center}
