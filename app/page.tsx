@@ -58,12 +58,31 @@ export default function Home(){
    </div>
   </section>
 
-  <section className="section">
-   <div className="container">
-    <div className="eyebrow">CAR FINANCE ASSISTANCE</div>
-    <h2>Need help with car finance?</h2>
-    <p className="lead">We can help you enquire about vehicle finance through independent third-party providers. K&amp;Z does not directly provide loans; approval and terms are decided by the finance provider.</p>
-    <Link href="/finance-assistance" className="btn btn-secondary">LEARN MORE ↗</Link>
+  <section id="finance-assistance" className="section kz-finance-premium">
+   <div className="container kz-finance-container">
+    <div className="kz-finance-top">
+     <div className="kz-finance-copy">
+      <div className="kz-finance-eyebrow"><span/>CAR FINANCE ASSISTANCE</div>
+      <h2>Your Next Car.<br/><em>Finance Made Easier.</em></h2>
+      <p className="kz-finance-lead">Looking for car finance? K&amp;Z helps you enquire with independent finance providers and guides you through the next steps.</p>
+      <p className="kz-finance-subtext">A simpler way to explore your options — with clear communication and support along the way.</p>
+     </div>
+     <div className="kz-finance-visual" aria-hidden="true">
+      <div className="kz-finance-visual-label">K&amp;Z FINANCE ASSISTANCE</div>
+      <div className="kz-finance-visual-symbol">K<span>&amp;</span>Z</div>
+      <div className="kz-finance-visual-lines"><i/><i/><i/></div>
+      <div className="kz-finance-visual-footer">YOUR CAR. YOUR CHOICE.</div>
+     </div>
+    </div>
+    <div className="kz-finance-steps" aria-label="How K&Z finance assistance works">
+     <div className="kz-finance-step"><span>01</span><h3>Tell Us Your Needs</h3><p>Share the vehicle details and your finance enquiry.</p></div>
+     <div className="kz-finance-step"><span>02</span><h3>We Assist You</h3><p>We help you connect with independent finance providers.</p></div>
+     <div className="kz-finance-step"><span>03</span><h3>Provider Decision</h3><p>The finance provider confirms eligibility, approval and terms.</p></div>
+    </div>
+    <div className="kz-finance-bottom">
+     <div className="kz-finance-actions"><Link href="/finance-assistance" className="kz-finance-primary">EXPLORE FINANCE ASSISTANCE <span>↗</span></Link><a className="kz-finance-secondary" href="https://api.whatsapp.com/send?phone=96878967229&amp;text=Hello%20K%26Z%2C%20I%20would%20like%20help%20with%20car%20finance.">ASK K&amp;Z <span>↗</span></a></div>
+     <div className="kz-finance-disclosure" role="note"><span className="kz-finance-info" aria-hidden="true">ⓘ</span><div><strong>FINANCE ASSISTANCE CHARGES APPLY</strong><p>K&amp;Z charges a service fee for finance assistance. We confirm our fee with you before proceeding. Loans, approval, rates and terms are determined solely by independent finance providers; K&amp;Z is not a lender.</p></div></div>
+    </div>
    </div>
   </section>
 
