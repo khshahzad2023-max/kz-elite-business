@@ -19,7 +19,7 @@ export default function Home(){
 
   <section id="automotive-entry" className="kz-showcase">
    <div className="container kz-showcase-inner">
-    <div className="kz-showcase-heading"><div className="kz-showcase-eyebrow"><span>01</span><i/> EXPLORE OUR CARS <i/></div><h2>Your Drive. <em>Your Choice.</em></h2><p>Buy, Sell or Rent — All in One Place at K&amp;Z.</p></div>
+    <div className="kz-showcase-heading"><div className="kz-showcase-eyebrow"><i/> EXPLORE OUR CARS <i/></div><h2>Your Drive. <em>Your Choice.</em></h2><p>Buy, Sell or Rent — All in One Place at K&amp;Z.</p></div>
     <div className="kz-showcase-stage kz-showcase-stage-crown">
      <div className="kz-showcase-photo-backdrop" aria-label="K&Z cars rotating in the background"><CarShowcaseSlider/></div>
      <div className="kz-showcase-options">
