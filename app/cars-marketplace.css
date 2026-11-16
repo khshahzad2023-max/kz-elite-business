@@ -136,3 +136,13 @@
 .kz-cover-editor-controls button{border:1px solid #b59b60;background:#203d56;color:#f2d38d;padding:10px;border-radius:8px;cursor:pointer}
 .kz-cover-editor-controls small{color:#b2c6d8;font-size:11px;line-height:1.55}
 @media(max-width:650px){.kz-cover-editor-layout{grid-template-columns:1fr}}
+
+/* Browse inventory by vehicle body type; controls stay compact and swipeable on phones. */
+.kz-category-filters{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:24px 0 8px}
+.kz-category-filter{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:10px 16px;border:1px solid #516783;border-radius:999px;background:#122940;color:#e0e8f1;font:inherit;font-size:13px;font-weight:750;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s}
+.kz-category-filter:hover{border-color:#d6aa52;background:#23405b}
+.kz-category-filter:focus-visible{outline:2px solid #f3cb75;outline-offset:3px}
+.kz-category-filter.is-active{background:#dfb566;border-color:#f2cc7d;color:#0b1928}
+.kz-category-count{font-size:11px;line-height:1.4;padding:1px 7px;border-radius:999px;background:rgba(204,219,237,.17)}
+.kz-category-filter.is-active .kz-category-count{background:rgba(8,26,43,.14)}
+@media(max-width:650px){.kz-category-filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding:3px 2px 10px;scroll-snap-type:x proximity}.kz-category-filter{flex:0 0 auto;scroll-snap-align:start}}
