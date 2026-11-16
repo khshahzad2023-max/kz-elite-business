@@ -40,7 +40,7 @@ export default function DashboardCars() {
     const maxPrice = price ? Number(price) : Infinity;
     const minYear = year ? Number(year) : 0;
     const selection = available.filter(car =>
-      (!q || [car.title, car.specs, car.location, car.mileage].some(field => String(field || "").toLocaleLowerCase().includes(q))) &&
+      (!q || [car.title, car.specs, car.location, car.mileage, car.origin_specs, car.engine, car.transmission].some(field => String(field || "").toLocaleLowerCase().includes(q))) &&
       (car.year >= minYear) &&
       (!price || (car.price !== null && Number(car.price) <= maxPrice))
     );
@@ -87,13 +87,32 @@ export default function DashboardCars() {
         {filtered.map(car=><article className="kz-inventory-card" key={car.id}>
           {car.images?.[0] ? <img src={car.images[0]} alt={car.title} loading="lazy" /> : <div className="kz-inventory-message">Photo coming soon</div>}
           <div className="kz-inventory-content">
-            <h3>{car.title}</h3>
-            <p className="kz-inventory-summary">{[car.year,car.engine,car.transmission].filter(Boolean).join(" • ")}</p>
-            {car.origin_specs&&<p className="kz-inventory-origin">{car.origin_specs}</p>}
-            <p>{[car.mileage,car.location].filter(Boolean).join(" • ")}</p>
-            {car.finance_available && <div className="kz-car-finance-badge">Finance Option Available</div>}
-            <strong className="kz-inventory-price">{car.price === null ? "Price on request" : Number(car.price).toLocaleString("en-OM") + " OMR"}</strong>
-            <div><Link href={"/cars/listing/"+car.id}>View Details ↗</Link></div>
+            <h3 className="kz-card-model-title">{car.make?.trim() && car.model?.trim() ? car.make.trim() + " " + car.model.trim() : car.title}</h3>
+            <dl className="kz-car-card-facts">
+              {([
+                ["Model Year", car.year ? String(car.year) : ""],
+                ["Mileage", car.mileage?.trim() || ""],
+                ["Specs", car.origin_specs?.trim() || ""],
+                ["Location", car.location?.trim() || ""],
+                ["Engine", car.engine?.trim() || ""],
+                ["Transmission", car.transmission?.trim() || ""],
+              ] as const).map(([label, value]) =>
+                <div className="kz-car-card-fact" key={label}>
+                  <dt>{label}</dt>
+                  <dd>{value || "\u00a0"}</dd>
+                </div>
+              )}
+            </dl>
+            <div className="kz-car-card-footer">
+              <div className="kz-car-card-price">
+                <span>Asking Price</span>
+                <strong className="kz-inventory-price">{car.price === null ? "\u00a0" : Number(car.price).toLocaleString("en-OM") + " OMR"}</strong>
+              </div>
+              <div className="kz-card-finance-space">
+                {car.finance_available ? <span className="kz-car-finance-badge">Finance Option Available</span> : <span aria-hidden="true">{"\u00a0"}</span>}
+              </div>
+              <Link className="kz-card-view-link" href={"/cars/listing/"+car.id}>View Details <span aria-hidden="true">↗</span></Link>
+            </div>
           </div>
         </article>)}
       </div>}
