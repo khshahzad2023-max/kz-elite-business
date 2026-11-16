@@ -1611,13 +1611,13 @@ html,body{max-width:100%;overflow-x:hidden}
  position:absolute;z-index:0;left:19%;right:19%;bottom:-12px;height:284px;
  overflow:hidden;border-radius:45% 45% 16% 16%;
  pointer-events:none;
- -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 17%,#000 83%,transparent 100%);
- mask-image:linear-gradient(to bottom,transparent 0%,#000 17%,#000 83%,transparent 100%);
+ /* Softly blend every rotating photo into the surrounding navy, without a hard rectangle. */
+ -webkit-mask-image:radial-gradient(ellipse 53% 56% at 50% 50%,#000 48%,rgba(0,0,0,.88) 61%,transparent 99%);
+ mask-image:radial-gradient(ellipse 53% 56% at 50% 50%,#000 48%,rgba(0,0,0,.88) 61%,transparent 99%);
 }
 .kz-home-v3 .kz-showcase-stage-crown .kz-showcase-photo-backdrop:after{
- content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
- background:linear-gradient(90deg,#081a30c9 0%,#081a3044 20%,#081a3022 77%,#081a30d9 100%),
- linear-gradient(180deg,#07182c7d 0%,transparent 45%,#06142666 100%);
+ /* Remove the old full-photo navy shadow overlay; keep all effects local to the car image. */
+ content:none;display:none;
 }
 .kz-home-v3 .kz-showcase-stage-crown .kz-car-slides{
  position:absolute;inset:0;width:100%;height:100%;margin:0;
