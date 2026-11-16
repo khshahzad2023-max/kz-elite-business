@@ -1,8 +1,10 @@
 import Link from "next/link";
+import FinanceEstimate from "../FinanceEstimate";
 
 export const metadata = {
  title: "Car Finance Assistance | K&Z ELITE BUSINESS",
- description: "Car finance enquiry assistance in Muscat for new and used cars through independent finance providers. Check typical documents and K&Z service fees.",
+ description: "Car finance enquiry assistance in Muscat for new and used cars through independent providers, with an illustrative EMI calculator and document checklist.",
+ alternates: { canonical: "/finance-assistance" },
 };
 
 const whatsapp = "https://api.whatsapp.com/send?phone=96878967229&text=Hello%20K%26Z%2C%20I%20need%20car%20finance%20assistance.%0ACar%20make%20and%20model%3A%0AModel%20year%3A%0APrice%20in%20OMR%3A%0AMy%20question%3A";
@@ -43,6 +45,8 @@ export default function FinanceAssistance(){
     <div className="kz-fin-guide-tip">Have a particular car in mind? Share its make, model, year and price with K&amp;Z so we can guide your enquiry.</div>
    </div>
   </section>
+
+  <section className="kz-fin-guide-section kz-fin-guide-alt"><div className="container"><FinanceEstimate /></div></section>
 
   <section className="kz-fin-guide-section kz-fin-guide-alt">
    <div className="container">

@@ -16,6 +16,7 @@ export default function SoldCarCard({ car, showGallery = false }: { car: SoldCar
         <Image
           className="sold-image"
           src={car.images[0]}
+          unoptimized={car.images[0].startsWith("http")}
           alt={car.imageAlt}
           width={720}
           height={960}
