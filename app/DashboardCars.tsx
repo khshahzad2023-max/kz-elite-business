@@ -7,14 +7,31 @@ import { getCarCoverImageStyle } from "./car-cover-framing";
 
 type Car = {
   id: string; title: string; year: number; price: number | null; status: string; finance_available?: boolean;
-  images: string[]; specs: string; location: string; mileage: string; cover_zoom?:number;cover_x?:number;cover_y?:number; engine?:string;transmission?:string;origin_specs?:string;make?:string;model?:string;
+  images: string[]; specs: string; location: string; mileage: string; cover_zoom?:number;cover_x?:number;cover_y?:number; engine?:string;transmission?:string;origin_specs?:string;make?:string;model?:string;body_type?:string;
 };
+
+type BodyCategory = "all" | "suv" | "sedan" | "hatchback" | "other";
+const categories: { value: BodyCategory; label: string }[] = [
+  { value: "all", label: "All Cars" },
+  { value: "suv", label: "SUV" },
+  { value: "sedan", label: "Sedan / Saloon" },
+  { value: "hatchback", label: "Hatchback" },
+  { value: "other", label: "Other" },
+];
+function bodyCategory(value: string | undefined): Exclude<BodyCategory, "all"> {
+  const name = (value || "").trim().toLowerCase();
+  if (["suv", "crossover", "4x4", "sport utility vehicle"].includes(name) || name.includes("suv")) return "suv";
+  if (["sedan", "saloon"].includes(name)) return "sedan";
+  if (["hatchback", "hatch", "hatch back"].includes(name)) return "hatchback";
+  return "other";
+}
 
 export default function DashboardCars() {
   const [cars, setCars] = useState<Car[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [query, setQuery] = useState("");
+  const [category, setCategory] = useState<BodyCategory>("all");
   const [year, setYear] = useState("");
   const [price, setPrice] = useState("");
   const [sort, setSort] = useState("recent");
@@ -42,6 +59,7 @@ export default function DashboardCars() {
     const maxPrice = price ? Number(price) : Infinity;
     const minYear = year ? Number(year) : 0;
     const selection = available.filter(car =>
+      (category === "all" || bodyCategory(car.body_type) === category) &&
       (!q || [car.title, car.specs, car.location, car.mileage, car.origin_specs, car.engine, car.transmission].some(field => String(field || "").toLocaleLowerCase().includes(q))) &&
       (car.year >= minYear) &&
       (!price || (car.price !== null && Number(car.price) <= maxPrice))
@@ -50,8 +68,8 @@ export default function DashboardCars() {
     if (sort === "price-high") selection.sort((a, b) => Number(b.price) - Number(a.price));
     if (sort === "year-new") selection.sort((a, b) => b.year - a.year);
     return selection;
-  }, [available, query, year, price, sort]);
-  const reset = () => { setQuery(""); setYear(""); setPrice(""); setSort("recent"); };
+  }, [available, category, query, year, price, sort]);
+  const reset = () => { setCategory("all"); setQuery(""); setYear(""); setPrice(""); setSort("recent"); };
 
   return <section className="section"><div className="container">
     <div className="eyebrow">K&Z CAR INVENTORY</div>
@@ -63,6 +81,14 @@ export default function DashboardCars() {
       <p>Fresh K&Z vehicle listings and verified photos are being added.</p>
       <a className="btn btn-primary" href="https://api.whatsapp.com/send?phone=96878967229">Enquire on WhatsApp</a>
     </div> : <>
+      <div className="kz-category-filters" role="group" aria-label="Filter cars by body type">
+        {categories.map(item => {
+          const count = item.value === "all" ? available.length : available.filter(car => bodyCategory(car.body_type) === item.value).length;
+          return <button key={item.value} type="button" className={"kz-category-filter" + (category === item.value ? " is-active" : "")} aria-pressed={category === item.value} onClick={() => setCategory(item.value)}>
+            <span>{item.label}</span><span className="kz-category-count">{count}</span>
+          </button>;
+        })}
+      </div>
       <div className="kz-inventory-toolbar">
         <label>Search cars<input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Make, model, specs or area" type="search" /></label>
         <label>Minimum year<select value={year} onChange={e=>setYear(e.target.value)}>
@@ -82,9 +108,9 @@ export default function DashboardCars() {
       </div>
       <p className="kz-inventory-result" role="status">
         Showing {filtered.length} of {available.length} available cars
-        {(query || year || price || sort !== "recent") && <button className="kz-inventory-clear" onClick={reset}>Clear filters</button>}
+        {(category !== "all" || query || year || price || sort !== "recent") && <button className="kz-inventory-clear" onClick={reset}>Clear filters</button>}
       </p>
-      {filtered.length===0 ? <div className="kz-inventory-message"><h3>No matching cars found</h3><p>Try a wider search or different filters.</p></div> :
+      {filtered.length===0 ? <div className="kz-inventory-message"><h3>No matching cars found</h3><p>Try another category or adjust the search filters.</p></div> :
       <div className="kz-inventory-grid">
         {filtered.map(car=><article className="kz-inventory-card" key={car.id}>
           <div className="kz-car-card-photo">
