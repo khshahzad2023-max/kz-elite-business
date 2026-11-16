@@ -1822,3 +1822,31 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(prefers-reduced-motion:reduce){
  .kz-auto-primary,.kz-auto-secondary,.kz-auto-step{transition:none}
 }
+
+/* Final Automotive Services refinement: equal card typography and crystal CTA finish. */
+.kz-home-v3 #our-services .kz-auto-step{
+ display:flex;flex-direction:column;align-items:stretch;
+}
+.kz-home-v3 #our-services .kz-auto-step-top{flex:0 0 auto;margin-bottom:16px}
+.kz-home-v3 #our-services .kz-auto-step h3{
+ display:flex;align-items:flex-start;min-height:2.6em;line-height:1.3;margin:0 0 10px;
+}
+.kz-home-v3 #our-services .kz-auto-step p{line-height:1.58;max-width:none;margin:0}
+.kz-home-v3 #our-services .kz-auto-primary,
+.kz-home-v3 #our-services .kz-auto-secondary{
+ position:relative;overflow:hidden;isolation:isolate;
+ box-shadow:inset 0 1px 0 #ffffffa1,inset 0 -1px 0 #101c3433,0 5px 22px #07132390;
+}
+.kz-home-v3 #our-services .kz-auto-primary:before,
+.kz-home-v3 #our-services .kz-auto-secondary:before{
+ content:"";position:absolute;inset:0 0 52%;pointer-events:none;z-index:-1;
+ background:linear-gradient(180deg,#ffffff66,transparent);
+ border-radius:inherit;
+}
+.kz-home-v3 #our-services .kz-auto-secondary{
+ border-color:#bedcf5a8;
+ box-shadow:inset 0 1px 0 #ffffff77,inset 0 -1px 0 #0a142455,0 0 14px #76bded27,0 5px 22px #07132390;
+}
+@media(max-width:800px){
+ .kz-home-v3 #our-services .kz-auto-step h3{min-height:0}
+}
