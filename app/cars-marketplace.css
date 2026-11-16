@@ -1,0 +1,41 @@
+/* K&Z car marketplace improvements — scoped components */
+.kz-enquiry-container { max-width: 1020px; }
+.kz-enquiry-container > p { color: #c2cedb; line-height: 1.7; max-width: 760px; }
+.kz-car-enquiry { margin-top: 24px; border: 1px solid rgba(222,187,110,.30); border-radius: 18px; padding: clamp(18px,3vw,32px); background: linear-gradient(145deg,#122844,#091726); box-shadow: 0 16px 45px rgba(0,0,0,.17); }
+.kz-enquiry-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+.kz-enquiry-fields label { display: flex; flex-direction: column; gap: 9px; font-size: 13px; color: #e9edf4; font-weight: 700; }
+.kz-enquiry-fields input, .kz-enquiry-fields textarea { width: 100%; min-width: 0; padding: 13px 14px; background: #0a1729; border: 1px solid #53657b; border-radius: 9px; color: #fff; font: inherit; font-size: 15px; outline: none; }
+.kz-enquiry-fields input:focus-visible, .kz-enquiry-fields textarea:focus-visible { border-color: #e7bb63; box-shadow: 0 0 0 3px rgba(229,188,101,.2); }
+.kz-enquiry-fields input::placeholder,.kz-enquiry-fields textarea::placeholder { color: #8999aa; font-weight: 400; }
+.kz-enquiry-fields .kz-enquiry-wide { grid-column: 1 / -1; }
+.kz-enquiry-help { color: #b9c8d8; font-size: 12px; line-height: 1.65; }
+.kz-enquiry-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.kz-enquiry-actions button { cursor: pointer; min-height: 48px; background: #ddaf58; border: 1px solid #e6bf77; color: #071628; border-radius: 9px; padding: 12px 20px; font: inherit; font-weight: 800; }
+.kz-enquiry-actions button:last-child { background: transparent; color: #f1d99a; }
+.kz-enquiry-actions button:hover { filter: brightness(1.1); }
+.kz-inventory-toolbar { display: grid; grid-template-columns: minmax(200px,1.7fr) repeat(3,minmax(135px,1fr)); gap: 14px; margin: 26px 0 14px; }
+.kz-inventory-toolbar label { display: flex; flex-direction: column; gap: 7px; font-size: 12px; font-weight: 700; color: #d9e2ee; }
+.kz-inventory-toolbar input,.kz-inventory-toolbar select { border: 1px solid #566a7e; border-radius: 9px; padding: 12px; background: #122942; color: #fff; font: inherit; font-size: 15px; width: 100%; min-width: 0; }
+.kz-inventory-toolbar input:focus-visible,.kz-inventory-toolbar select:focus-visible { outline: 2px solid #d6aa52; outline-offset: 2px; }
+.kz-inventory-result { color: #c3d0dd; margin: 12px 0 20px; font-size: 13px; }
+.kz-inventory-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,265px),1fr)); gap: 20px; }
+.kz-inventory-card { border: 1px solid #34465f; background: #10233c; border-radius: 15px; overflow: hidden; }
+.kz-inventory-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+.kz-inventory-content { padding: 18px; }
+.kz-inventory-content h3 { font-size: clamp(19px,2vw,23px); margin: 0 0 8px; color: #fff; }
+.kz-inventory-content p { color: #b9c7d7; line-height: 1.5; font-size: 13px; }
+.kz-inventory-price { color: #ecc879; font-weight: 800; font-size: 19px; }
+.kz-inventory-card a { display: inline-block; margin-top: 12px; background: #d6aa52; color: #081629; border-radius: 8px; padding: 10px 16px; font-weight: 800; text-decoration: none; }
+.kz-inventory-message { border: 1px solid #384e67; border-radius: 14px; background: #12263d; padding: 28px; margin-top: 20px; }
+.kz-inventory-clear { margin-left: 12px; background: transparent; border: 1px solid #d6aa52; color: #f3d68c; border-radius: 8px; padding: 8px 12px; cursor: pointer; }
+.kz-sold-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,285px),1fr)); gap: 22px; padding-top: 18px; }
+.kz-sold-group-title { margin-bottom: 5px; }
+.kz-fin-estimator { padding: 25px; background: #10263f; border: 1px solid rgba(214,170,82,.35); border-radius: 18px; margin: 25px 0; }
+.kz-fin-estimator h3 { margin: 0 0 14px; }
+.kz-fin-estimator-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.kz-fin-estimator label { display:flex; flex-direction:column; gap:7px; font-size:13px; font-weight:700; color:#e9eef4; }
+.kz-fin-estimator input,.kz-fin-estimator select { padding: 12px; width: 100%; border:1px solid #5d7187; border-radius:8px; color:white; background:#071827; font-size:16px; }
+.kz-fin-estimator-result { margin: 22px 0 6px; font-size: clamp(26px,4vw,40px); font-weight: 900; color: #f6d482; }
+.kz-fin-estimator p { font-size: 12px; line-height:1.6; color: #c6d2dc; }
+@media(max-width:800px) { .kz-inventory-toolbar { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media(max-width:580px) { .kz-enquiry-fields,.kz-fin-estimator-grid { grid-template-columns: 1fr; } .kz-inventory-toolbar { grid-template-columns: 1fr; } .kz-enquiry-actions button { width: 100%; } }

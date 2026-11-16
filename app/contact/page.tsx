@@ -1,25 +1,27 @@
+import CarEnquiryForm from "../CarEnquiryForm";
 
+export const metadata = {
+  title: "Contact K&Z ELITE BUSINESS | Cars in Muscat",
+  description: "Contact K&Z ELITE BUSINESS in Muscat for car buying, selling, sourcing and car finance enquiries.",
+  alternates: { canonical: "/contact" },
+};
 
-export default function Page(){
-return <>
-<section className="page-hero"><div className="container">
-<div className="eyebrow">Contact K&Z</div><h1>Contact Us</h1><p className="lead">For cars, automotive services, rentals, maintenance, properties or advertising, contact K&Z ELITE BUSINESS.</p>
-<div className="actions"><a className="btn btn-primary" href="https://api.whatsapp.com/send?phone=96878967229&text=Hello%20K%26Z%20ELITE%20BUSINESS%2C%20I%20am%20interested%20in%20your%20K%26Z%20ELITE%20BUSINESS%20services.%20Please%20send%20me%20more%20details.">WhatsApp +968 78967229</a><a className="btn btn-secondary" href="https://api.whatsapp.com/send?phone=96899248431&text=Hello%20K%26Z%20ELITE%20BUSINESS%2C%20I%20am%20interested%20in%20your%20K%26Z%20ELITE%20BUSINESS%20services.%20Please%20send%20me%20more%20details.">WhatsApp +968 99248431</a><a className="btn btn-secondary" href="tel:+96878967229">Call +968 78967229</a><a className="btn btn-secondary" href="tel:+96899248431">Call +968 99248431</a><a className="btn btn-secondary" href="mailto:info@kzelitebusiness.com">Email Us</a></div>
-</div></section>
-<section className="section"><div className="container">
-
-
-<div className="feature-box">
-  <form className="form">
-    <input placeholder="Full Name" />
-    <input placeholder="Phone / WhatsApp" />
-    <input placeholder="Email (optional)" />
-    <input placeholder="Location" />
-    <textarea placeholder="Tell us what you need..."></textarea>
-    <a className="btn btn-primary full" href="https://api.whatsapp.com/send?phone=96878967229&text=Hello%20K%26Z%20ELITE%20BUSINESS%2C%20I%20am%20interested%20in%20your%20K%26Z%20ELITE%20BUSINESS%20services.%20Please%20send%20me%20more%20details.">WhatsApp +968 78967229</a>
-    <a className="btn btn-secondary full" href="https://api.whatsapp.com/send?phone=96899248431&text=Hello%20K%26Z%20ELITE%20BUSINESS%2C%20I%20am%20interested%20in%20your%20K%26Z%20ELITE%20BUSINESS%20services.%20Please%20send%20me%20more%20details.">WhatsApp +968 99248431</a>
-  </form>
-</div>
-</div></section>
-</>
+export default function Contact() {
+  return <main>
+    <section className="page-hero"><div className="container">
+      <div className="eyebrow">CONTACT K&Z</div>
+      <h1>Contact Us</h1>
+      <p className="lead">For car buying, selling, sourcing or finance assistance, contact K&Z ELITE BUSINESS.</p>
+      <div className="actions">
+        <a className="btn btn-primary" href="tel:+96878967229">Call +968 78967229</a>
+        <a className="btn btn-secondary" href="tel:+96899248431">Call +968 99248431</a>
+        <a className="btn btn-secondary" href="mailto:info@kzelitebusiness.com">Email Us</a>
+      </div>
+    </div></section>
+    <section className="section"><div className="container kz-enquiry-container">
+      <h2>Send a Car Enquiry</h2>
+      <p>Fill in your details and review the prepared message in WhatsApp before sending.</p>
+      <CarEnquiryForm type="contact" />
+    </div></section>
+  </main>;
 }

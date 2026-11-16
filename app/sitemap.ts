@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { configured, supabase } from "../lib/kz-db";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
  const base="https://www.kzelitebusiness.com";
- const paths=["/","/cars","/rent-a-car","/automotive","/building-maintenance","/properties","/advertising","/contact","/find-a-car","/sell-your-car"];
+ const paths=["/","/cars","/sell-your-car","/sold-cars","/find-a-car","/finance-assistance","/contact"];
  let listings: string[]=[];
  if(configured()){
   try{

@@ -1,5 +1,6 @@
 
 import "./globals.css";
+import "./cars-marketplace.css";
 import Link from "next/link";
 import Script from "next/script";
 import ContactDock from "./ContactDock";
@@ -8,18 +9,17 @@ import SiteIntro from "./SiteIntro";
 
 export const metadata = {
   metadataBase: new URL("https://www.kzelitebusiness.com"),
-  title: "K&Z ELITE BUSINESS | Cars & Services in Muscat, Oman",
-  description: "K&Z ELITE BUSINESS in Muscat, Oman: used cars for sale, car rental enquiries, automotive services, building maintenance, property and business advertising.",
-  alternates: { canonical: "/" },
+  title: "K&Z ELITE BUSINESS | Buy & Sell Cars in Muscat, Oman",
+  description: "Explore cars for sale in Muscat, Oman with K&Z ELITE BUSINESS. Buy, sell, find a car and enquire about car finance assistance.",
   robots: { index: true, follow: true },
 };
 
 const nav = [
   ["Buy Cars","/cars"],
   ["Sell Your Car","/sell-your-car"],
-  ["Rent a Car","/rent-a-car"],
-  ["Automotive Services","/automotive"],
-  ["Finance Assistance","/finance-assistance"],
+  ["Sold Cars","/sold-cars"],
+  ["Find a Car","/find-a-car"],
+  ["Car Finance","/finance-assistance"],
 ];
 
 export default function RootLayout({children}:{children:React.ReactNode}) {
@@ -57,7 +57,7 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
           <div style={{ maxWidth: 720, margin: "0 auto" }}>
             <p style={{ color: "#d6aa52", fontSize: 12, letterSpacing: "0.18em", fontWeight: 700, marginBottom: 10 }}>CUSTOMER FEEDBACK</p>
             <h2 style={{ fontSize: "clamp(24px, 4vw, 36px)", marginBottom: 10 }}>Your Experience Matters</h2>
-            <p style={{ lineHeight: 1.65, color: "#c8d3df", marginBottom: 22 }}>Bought, sold or rented a car with K&amp;Z? Used our automotive services or finance assistance? Share your genuine experience on Google.</p>
+            <p style={{ lineHeight: 1.65, color: "#c8d3df", marginBottom: 22 }}>Bought or sold a car with K&amp;Z, or received help finding or financing one? Share your genuine experience on Google.</p>
             <a href="https://g.page/r/CX2yk5KX5Yu2EBM/review" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", border: "1px solid #d6aa52", borderRadius: 9, padding: "13px 24px", color: "#07182b", background: "#d6aa52", fontWeight: 700, textDecoration: "none" }}>★ Write a Google Review ↗</a>
           </div>
         </section>
@@ -72,14 +72,14 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
                     <span>ONE NAME • MANY SOLUTIONS</span>
                   </div>
                 </div>
-                <p>K&amp;Z ELITE BUSINESS helps customers buy, sell and rent cars, arrange automotive services and enquire about car finance through independent providers — all from Muscat, Sultanate of Oman.</p>
+                <p>K&amp;Z ELITE BUSINESS helps customers buy, sell and find cars, with car finance enquiry assistance through independent providers — all from Muscat, Sultanate of Oman.</p>
               </div>
               <div>
-                <h4>Our Services</h4>
+                <h4>Car Marketplace</h4>
                 <p><Link href="/cars">Buy Cars</Link><br/>
                 <Link href="/sell-your-car">Sell Your Car</Link><br/>
-                <Link href="/rent-a-car">Rent a Car</Link><br/>
-                <Link href="/automotive">Automotive Services</Link><br/>
+                <Link href="/sold-cars">Sold Cars</Link><br/>
+                <Link href="/find-a-car">Find a Car</Link><br/>
                 <Link href="/finance-assistance">Finance Assistance</Link></p>
               </div>
               <div>
