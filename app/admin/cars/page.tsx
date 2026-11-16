@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { getCarCoverImageStyle } from "../../car-cover-framing";
 
 type Car = {
  id?: string; title: string; year: number; price: number | null; owner_demand?:number|null; kz_target?:number|null; final_sold_price?:number|null; owner_final_payment?:number|null; deal_expenses?:number|null; mileage: string;
@@ -216,10 +217,10 @@ export default function AdminCars() {
       <label style={labelStyle}>Description<textarea style={inputStyle} rows={4} value={car.description} onChange={e=>setCar({...car,description:e.target.value})}/></label>
       <section className="kz-cover-editor" aria-label="Main card photo framing">
         <h3>Main Card Photo Framing</h3>
-        <p>Har car ka cover ek hi 16:10 frame mein show hota hai. Sirf card preview ke liye zoom aur position adjust karein; original photo aur View Details gallery unchanged rahenge.</p>
+        <p>Har car ka cover ek hi 16:10 frame mein show hota hai. Automatic upward alignment (+7%) har car par applied hai — including new listings. Neeche ke sliders se extra fine-tuning kar sakte hain. Original photo aur View Details gallery unchanged rahenge.</p>
         <div className="kz-cover-editor-layout">
           <div className="kz-car-card-photo kz-cover-editor-preview">
-            {car.images[0] ? <Image src={car.images[0]} alt="Main card framing preview" width={720} height={450} sizes="(max-width: 650px) 100vw, 360px" quality={75} style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:`${car.cover_x ?? 50}% ${car.cover_y ?? 50}%`,transform:`scale(${(car.cover_zoom ?? 100)/100})`}} /> : <span>Save the front cover photo to preview framing</span>}
+            {car.images[0] ? <Image src={car.images[0]} alt="Main card framing preview" width={720} height={450} sizes="(max-width: 650px) 100vw, 360px" quality={75} style={getCarCoverImageStyle(car)} /> : <span>Save the front cover photo to preview framing</span>}
           </div>
           <div className="kz-cover-editor-controls">
             {([["cover_zoom","Zoom",80,150,"%"],["cover_x","Left / Right",0,100,"%"],["cover_y","Up / Down",0,100,"%"]] as const).map(([key,label,min,max,unit])=>

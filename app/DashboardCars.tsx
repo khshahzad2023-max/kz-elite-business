@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { getCarCoverImageStyle } from "./car-cover-framing";
 
 type Car = {
   id: string; title: string; year: number; price: number | null; status: string; finance_available?: boolean;
@@ -87,7 +88,7 @@ export default function DashboardCars() {
       <div className="kz-inventory-grid">
         {filtered.map(car=><article className="kz-inventory-card" key={car.id}>
           <div className="kz-car-card-photo">
-            {car.images?.[0] ? <Image src={car.images[0]} alt={car.title} width={720} height={450} sizes="(max-width: 640px) 100vw, (max-width: 1020px) 50vw, 33vw" quality={75} loading="lazy" decoding="async" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:`${car.cover_x ?? 50}% ${car.cover_y ?? 50}%`,transform:`scale(${(car.cover_zoom ?? 100)/100})`}} /> : <div className="kz-inventory-message">Photo coming soon</div>}
+            {car.images?.[0] ? <Image src={car.images[0]} alt={car.title} width={720} height={450} sizes="(max-width: 640px) 100vw, (max-width: 1020px) 50vw, 33vw" quality={75} loading="lazy" decoding="async" style={getCarCoverImageStyle(car)} /> : <div className="kz-inventory-message">Photo coming soon</div>}
           </div>
           <div className="kz-inventory-content">
             <h3 className="kz-card-model-title">{car.make?.trim() && car.model?.trim() ? car.make.trim() + " " + car.model.trim() : car.title}</h3>
