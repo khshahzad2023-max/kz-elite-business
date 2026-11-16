@@ -5,9 +5,9 @@ import Link from "next/link";
 
 type Car = {
  id?: string; title: string; year: number; price: number | null; owner_demand?:number|null; kz_target?:number|null; final_sold_price?:number|null; owner_final_payment?:number|null; deal_expenses?:number|null; mileage: string;
- specs: string; location: string; description: string; status: "draft"|"available"|"sold"; images: string[];
+ specs: string; location: string; description: string; status: "draft"|"available"|"sold"; finance_available: boolean; images: string[];
 };
-const blank: Car = { title: "", year: new Date().getFullYear(), price: null, owner_demand:null,kz_target:null,final_sold_price:null,owner_final_payment:null,deal_expenses:null, mileage: "", specs: "", location: "Muscat, Oman", description: "", status: "draft", images: [] };
+const blank: Car = { title: "", year: new Date().getFullYear(), price: null, owner_demand:null,kz_target:null,final_sold_price:null,owner_final_payment:null,deal_expenses:null, mileage: "", specs: "", location: "Muscat, Oman", description: "", status: "draft", finance_available: false, images: [] };
 
 export default function AdminCars() {
  const [ready,setReady]=useState(false);
@@ -138,7 +138,8 @@ export default function AdminCars() {
        <label style={labelStyle}>Price (OMR, optional)<input style={inputStyle} type="number" min={0} step="0.001" value={car.price??""} onChange={e=>setCar({...car,price:e.target.value===""?null:Number(e.target.value)})}/></label>
        <label style={labelStyle}>Mileage<input style={inputStyle} value={car.mileage} onChange={e=>setCar({...car,mileage:e.target.value})} placeholder="81,000 KM"/></label>
        <label style={labelStyle}>Location<input style={inputStyle} value={car.location} onChange={e=>setCar({...car,location:e.target.value})}/></label>
-       <label style={labelStyle}>Status<select style={inputStyle} value={car.status} onChange={e=>setCar({...car,status:e.target.value as Car["status"]})}><option value="draft">Draft (private)</option><option value="available">Publish — For Sale</option><option value="sold">Sold</option></select></label>
+       <label style={{...labelStyle,gridColumn:"1 / -1",display:"flex",flexDirection:"row",alignItems:"center",gap:12,padding:"12px 14px",background:"#13243a",border:"1px solid #46566b",borderRadius:9}}><input type="checkbox" checked={Boolean(car.finance_available)} onChange={e=>setCar({...car,finance_available:e.target.checked})} style={{width:20,height:20,accentColor:"#d6aa52"}}/><span>Finance Option Available on This Car <small style={{display:"block",color:"#aebbd0",fontWeight:400}}>Show a finance badge on the public car card and details page only when confirmed.</small></span></label>
+        <label style={labelStyle}>Status<select style={inputStyle} value={car.status} onChange={e=>setCar({...car,status:e.target.value as Car["status"]})}><option value="draft">Draft (private)</option><option value="available">Publish — For Sale</option><option value="sold">Sold</option></select></label>
       </div>
       <section style={{border:"1px solid #806b46",background:"#12253a",padding:16,borderRadius:12,display:"grid",gap:12}}>
        <h3 style={{margin:0,color:"#f0c87c"}}>PRIVATE K&Z PRICING — Admin Only</h3>
