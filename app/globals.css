@@ -1467,7 +1467,7 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(max-width:900px){.header .navbar > .brand img{width:54px;height:54px;flex:0 0 54px}}
 
 /* K&Z cinematic navy automotive showroom: homepage Explore Our Cars only */
-.kz-home-v3 .kz-showcase{position:relative;overflow:hidden;padding:50px 0 22px;background:radial-gradient(ellipse at 50% 45%,#173c63 0%,#091e36 52%,#061426 100%);color:#fff;isolation:isolate}
+.kz-home-v3 .kz-showcase{position:relative;overflow:hidden;padding:50px 0 22px;background:radial-gradient(ellipse 38% 24% at 50% 72%,#1a456d8a 0%,transparent 100%),linear-gradient(180deg,#081a30,#091e36 58%,#061426 100%);color:#fff;isolation:isolate}
 .kz-showcase:before,.kz-showcase:after{content:"";position:absolute;top:-140px;width:33vw;height:340px;border:2px solid rgba(229,181,90,.34);border-radius:50%;filter:drop-shadow(0 0 16px rgba(222,172,76,.23));pointer-events:none}
 .kz-showcase:before{left:-20vw;transform:rotate(-30deg)}.kz-showcase:after{right:-20vw;transform:rotate(30deg)}
 .kz-showcase-inner{position:relative;z-index:1}
@@ -1611,9 +1611,9 @@ html,body{max-width:100%;overflow-x:hidden}
  position:absolute;z-index:0;left:19%;right:19%;bottom:-12px;height:284px;
  overflow:hidden;border-radius:45% 45% 16% 16%;
  pointer-events:none;
- /* Softly blend every rotating photo into the surrounding navy, without a hard rectangle. */
- -webkit-mask-image:radial-gradient(ellipse 53% 56% at 50% 50%,#000 48%,rgba(0,0,0,.88) 61%,transparent 99%);
- mask-image:radial-gradient(ellipse 53% 56% at 50% 50%,#000 48%,rgba(0,0,0,.88) 61%,transparent 99%);
+ /* Fade the photo's left and right boundaries; all rotating photos inherit it. */
+ -webkit-mask-image:linear-gradient(to right,transparent 0%,transparent 11%,rgba(0,0,0,.35) 19%,#000 35%,#000 65%,rgba(0,0,0,.35) 81%,transparent 89%,transparent 100%);
+ mask-image:linear-gradient(to right,transparent 0%,transparent 11%,rgba(0,0,0,.35) 19%,#000 35%,#000 65%,rgba(0,0,0,.35) 81%,transparent 89%,transparent 100%);
 }
 .kz-home-v3 .kz-showcase-stage-crown .kz-showcase-photo-backdrop:after{
  /* Remove the old full-photo navy shadow overlay; keep all effects local to the car image. */
@@ -1626,7 +1626,9 @@ html,body{max-width:100%;overflow-x:hidden}
 .kz-home-v3 .kz-showcase-stage-crown .kz-car-slide{
  width:100%;height:100%;object-fit:contain;object-position:center 55%;
  filter:contrast(1.06) saturate(1.02) brightness(.86);
- -webkit-mask-image:none;mask-image:none;
+ /* Layer with the container's horizontal fade to soften the bottom edge. */
+ -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 61%,rgba(0,0,0,.72) 75%,rgba(0,0,0,.16) 92%,transparent 100%);
+ mask-image:linear-gradient(to bottom,#000 0%,#000 61%,rgba(0,0,0,.72) 75%,rgba(0,0,0,.16) 92%,transparent 100%);
  transition:opacity .85s ease,transform 1.1s ease;
 }
 .kz-home-v3 .kz-showcase-stage-crown:after{
