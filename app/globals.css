@@ -2053,3 +2053,36 @@ html,body{max-width:100%;overflow-x:hidden}
  .contact-dock-section .instagram-choice-panel a span,
  .contact-dock-section .tiktok-choice-panel a span{display:block;white-space:nowrap;max-width:100%}
 }
+
+/* CONNECT mobile discovery: clear instruction, a one-time tap cue and gentle glass pulse. */
+.kz-crystal-mobile-hint,.kz-crystal-first-tip{display:none}
+@media(max-width:900px) and (hover:none){
+ .contact-dock-section .crystal-hint{
+  margin-top:15px!important;color:#f4f8ff!important;font-size:clamp(11px,2.6vw,14px)!important;
+  font-weight:850!important;letter-spacing:.055em!important;line-height:1.5!important;
+ }
+ .kz-crystal-desktop-hint{display:none}
+ .kz-crystal-mobile-hint{display:block;text-align:center}
+ .contact-dock-section .crystal-contact:first-child:not(.is-open){overflow:visible}
+ .contact-dock-section .kz-crystal-first-tip{
+  display:block;position:absolute;z-index:5;bottom:-12px;left:50%;transform:translateX(-50%);
+  background:#efc87c;color:#172b44;border:1px solid #ffe4a4;
+  border-radius:999px;padding:5px 8px;white-space:nowrap;
+  font-size:clamp(8px,1.8vw,10px);line-height:1.2;letter-spacing:.01em;font-weight:900;
+  box-shadow:0 4px 13px #0009;pointer-events:none;
+ }
+ .contact-dock-section .crystal-contact:not(.is-open){animation:kzCrystalInvite 6s ease-in-out infinite}
+ .contact-dock-section .crystal-contact:nth-child(2){animation-delay:1s}
+ .contact-dock-section .crystal-contact:nth-child(3){animation-delay:2s}
+ .contact-dock-section .crystal-contact:nth-child(4){animation-delay:3s}
+ .contact-dock-section .crystal-contact:nth-child(5){animation-delay:4s}
+ .contact-dock-section .crystal-contact:nth-child(6){animation-delay:5s}
+ .contact-dock-section .crystal-contact:nth-child(7){animation-delay:6s}
+}
+@keyframes kzCrystalInvite{
+ 0%,9%,100%{filter:brightness(1);border-color:rgba(255,255,255,.28)}
+ 4%{filter:brightness(1.28);border-color:#f1d296;box-shadow:inset 0 1px #ffffff55,0 0 16px #e9c47770}
+}
+@media(prefers-reduced-motion:reduce){
+ .contact-dock-section .crystal-contact:not(.is-open){animation:none!important}
+}
