@@ -42,7 +42,7 @@ export default function DashboardCars() {
     const selection = available.filter(car =>
       (!q || [car.title, car.specs, car.location, car.mileage].some(field => String(field || "").toLocaleLowerCase().includes(q))) &&
       (car.year >= minYear) &&
-      (car.price !== null && Number(car.price) <= maxPrice)
+      (!price || (car.price !== null && Number(car.price) <= maxPrice))
     );
     if (sort === "price-low") selection.sort((a, b) => Number(a.price) - Number(b.price));
     if (sort === "price-high") selection.sort((a, b) => Number(b.price) - Number(a.price));
