@@ -91,7 +91,7 @@ export default function Home(){
     <div className="kz-who-title"><small>WHO WE ARE</small><h2>Built from one<br/>shared vision.</h2></div>
     <div className="kz-who-story">
      <p>K&amp;Z ELITE BUSINESS was founded on the shared vision of two partners, united by a passion for automobiles, quality service, and lasting customer relationships.</p>
-     <p>Based in Muscat, Sultanate of Oman, we help customers buy, sell and rent cars, and arrange automotive services through one trusted point of contact.</p>
+     <p>Based in Muscat, Sultanate of Oman, we help customers buy, sell and rent cars, arrange automotive services, and enquire about car finance through independent providers — all with one trusted point of contact.</p>
      <p>We also make car care easier by arranging vehicle pickup, the requested work, and return delivery.</p>
      <span>ONE NAME • MANY SOLUTIONS</span>
     </div>
