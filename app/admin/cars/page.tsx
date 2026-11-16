@@ -195,8 +195,18 @@ export default function AdminCars() {
       </div>
       <div className="kz-dashboard-section-heading"><span>02 / VERIFIED CAR SPECIFICATIONS</span><h2>Vehicle Details</h2><p>These details appear in the same sequence on car cards and on the full car details page.</p></div>
       <div className="kz-dashboard-fields-grid">
-       {([["make","Brand / Make","Toyota"],["model","Model","iM"],["variant","Trim / Variant","Optional"],["engine","Engine","1.8L Petrol"],["transmission","Transmission","Automatic"],["origin_specs","GCC / Imported Specs","US Specs"],["body_type","Body Type","Hatchback"],["exterior_color","Exterior Colour","Black"],["registration_validity","Registration Validity","Optional"]] as const).map(([key,label,placeholder])=><label key={key} style={labelStyle}>{label}<input style={inputStyle} placeholder={placeholder} value={car[key]||""} onChange={e=>setCar(prev=>({...prev,[key]:e.target.value}))}/></label>)}
+       {([["make","Brand / Make","Toyota"],["model","Model","iM"],["variant","Trim / Variant","Optional"],["engine","Engine","1.8L Petrol"],["transmission","Transmission","Automatic"],["origin_specs","GCC / Imported Specs","US Specs"],["exterior_color","Exterior Colour","Black"],["registration_validity","Registration Validity","Optional"]] as const).map(([key,label,placeholder])=><label key={key} style={labelStyle}>{label}<input style={inputStyle} placeholder={placeholder} value={car[key]||""} onChange={e=>setCar(prev=>({...prev,[key]:e.target.value}))}/></label>)}
       </div>
+      <label style={{...labelStyle,maxWidth:360}}>Vehicle Category / Body Type
+        <select style={inputStyle} value={car.body_type||""} onChange={e=>setCar(prev=>({...prev,body_type:e.target.value}))}>
+          <option value="">Select Category</option>
+          <option value="SUV">SUV / Crossover</option>
+          <option value="Sedan">Sedan / Saloon</option>
+          <option value="Hatchback">Hatchback</option>
+          <option value="Other">Other (Coupe / Pickup / Van / etc.)</option>
+        </select>
+        <small style={{color:"#aebbd0"}}>Choose once here. This automatically controls the public Buy Cars category filter. No second upload required.</small>
+      </label>
       <label style={labelStyle}>Features (one per line)<textarea style={inputStyle} rows={4} placeholder={"Alloy Wheels\nBluetooth\nCruise Control"} value={car.features||""} onChange={e=>setCar({...car,features:e.target.value})}/></label>
       <section style={{border:"1px solid #806b46",background:"#12253a",padding:16,borderRadius:12,display:"grid",gap:12}}>
        <h3 style={{margin:0,color:"#f0c87c"}}>03 / PRIVATE K&Z DEAL FINANCES — Admin Only</h3>
