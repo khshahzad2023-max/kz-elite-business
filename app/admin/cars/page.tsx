@@ -212,7 +212,7 @@ export default function AdminCars() {
       <div className="kz-dashboard-section-heading"><span>04 / EXTRA DETAILS</span><h2>Condition & Notes</h2></div>
       <label style={labelStyle}>Additional verified specifications<textarea style={inputStyle} rows={3} value={car.specs} onChange={e=>setCar({...car,specs:e.target.value})} placeholder="GCC, engine, transmission, features..."/></label>
       <label style={labelStyle}>Description<textarea style={inputStyle} rows={4} value={car.description} onChange={e=>setCar({...car,description:e.target.value})}/></label>
-      <div className="kz-dashboard-section-heading"><span>05 / PHOTO GALLERY</span><h2>Upload Clean Car Photos</h2><p>Cover first: best front 3/4 angle. Then front, side angles, rear and interior. No flyers, graphics or sale banners.</p></div>
+      <div className="kz-dashboard-section-heading"><span>05 / PHOTO GALLERY</span><h2>Upload Clean Car Photos</h2><p>OFFICIAL K&Z SEQUENCE: 1. Straight front (main cover) → 2. Front right angle → 3. Front left angle → 4. Side angles → 5. Rear right → 6. Rear left → 7. Straight rear → 8. Dashboard → 9. Interior / seats → 10. Mileage close-up. Upload only polished, natural-looking photos with the original K&Z master number plate. No flyers or banners. Do not publish a car if photos or number plate need correction.</p></div>
       <div style={{display:"grid",gap:9}}>
        <strong style={{fontSize:14}}>Car photos (JPEG/PNG/WebP, max 3 MB each)</strong>
        <div
