@@ -1,7 +1,7 @@
 "use client";
 import {useEffect,useState} from "react";
 
-const cars=Array.from({length:10},(_,i)=>"/showcase/car-"+String(i+1).padStart(2,"0")+".webp");
+const cars=Array.from({length:10},(_,i)=>"/showcase/car-"+String(i+1).padStart(2,"0")+".webp?v=polished-20261116");
 
 export default function CarShowcaseSlider(){
  const [active,setActive]=useState(0);
