@@ -31,6 +31,7 @@ export async function POST(req: Request) {
   const record = {
     ...privateFields,
     title, year, price, status, images,
+    finance_available: data.finance_available === true,
     mileage: String(data.mileage || "").slice(0, 100),
     specs: String(data.specs || "").slice(0, 1500),
     location: String(data.location || "Muscat, Oman").slice(0, 120),
