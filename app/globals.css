@@ -990,7 +990,7 @@ html,body{max-width:100%;overflow-x:hidden}
 
 /* Who We Are — desktop two-column editorial composition */
 @media(min-width:761px){
- .kz-who-section{padding:92px 0 86px}
+ .kz-who-section{padding:68px 0 86px}
  .kz-who-layout{
    display:grid;
    grid-template-columns:minmax(280px,.72fr) minmax(520px,1.28fr);
