@@ -57,7 +57,7 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
           <div style={{ maxWidth: 720, margin: "0 auto" }}>
             <p style={{ color: "#d6aa52", fontSize: 12, letterSpacing: "0.18em", fontWeight: 700, marginBottom: 10 }}>CUSTOMER FEEDBACK</p>
             <h2 style={{ fontSize: "clamp(24px, 4vw, 36px)", marginBottom: 10 }}>Your Experience Matters</h2>
-            <p style={{ lineHeight: 1.65, color: "#c8d3df", marginBottom: 22 }}>Purchased or sold a car with K&amp;Z? Share your genuine experience on Google.</p>
+            <p style={{ lineHeight: 1.65, color: "#c8d3df", marginBottom: 22 }}>Bought, sold or rented a car with K&amp;Z? Used our automotive services or finance assistance? Share your genuine experience on Google.</p>
             <a href="https://g.page/r/CX2yk5KX5Yu2EBM/review" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", border: "1px solid #d6aa52", borderRadius: 9, padding: "13px 24px", color: "#07182b", background: "#d6aa52", fontWeight: 700, textDecoration: "none" }}>★ Write a Google Review ↗</a>
           </div>
         </section>
@@ -72,16 +72,15 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
                     <span>ONE NAME • MANY SOLUTIONS</span>
                   </div>
                 </div>
-                <p>A multi-service business bringing specialized solutions together under one trusted name in Muscat, Sultanate of Oman.</p>
+                <p>K&amp;Z ELITE BUSINESS helps customers buy, sell and rent cars, arrange automotive services and enquire about car finance through independent providers — all from Muscat, Sultanate of Oman.</p>
               </div>
               <div>
                 <h4>Our Services</h4>
-                <p><Link href="/cars">Buying &amp; Selling Cars</Link><br/>
-                <Link href="/rent-a-car">Car Rental</Link><br/>
+                <p><Link href="/cars">Buy Cars</Link><br/>
+                <Link href="/sell-your-car">Sell Your Car</Link><br/>
+                <Link href="/rent-a-car">Rent a Car</Link><br/>
                 <Link href="/automotive">Automotive Services</Link><br/>
-                <Link href="/building-maintenance">Building Maintenance</Link><br/>
-                <Link href="/properties">Property Services</Link><br/>
-                <Link href="/advertising">Business Advertising</Link></p>
+                <Link href="/finance-assistance">Finance Assistance</Link></p>
               </div>
               <div>
                 <h4>Contact</h4>
@@ -92,7 +91,21 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
                 <a href="https://www.kzelitebusiness.com">kzelitebusiness.com</a></p>
               </div>
             </div>
-            <div className="kz-footer-social"><a href="https://www.instagram.com/kz_elite_business/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/share/1H4otouqhj/" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href="https://www.tiktok.com/@kz_elite_business" target="_blank" rel="noopener noreferrer">TikTok ↗</a><a href="https://api.whatsapp.com/send?phone=96878967229" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div>
+            <div className="kz-footer-links-group">
+              <h4>Follow &amp; Contact K&amp;Z</h4>
+              <div className="kz-footer-social"><a href="https://www.instagram.com/kz_elite_business/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/share/1H4otouqhj/" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href="https://www.tiktok.com/@kz_elite_business" target="_blank" rel="noopener noreferrer">TikTok ↗</a><a href="https://api.whatsapp.com/send?phone=96878967229" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div>
+            </div>
+            <div className="kz-footer-links-group kz-footer-marketplaces">
+              <h4>Car Listing Platforms</h4>
+              <div className="kz-footer-marketplace-links">
+                <a href="https://sooq-cars.com/om/en/ready/cars" target="_blank" rel="noopener noreferrer">Sooq Cars ↗</a>
+                <a href="https://www.dubizzle.com.om/en/" target="_blank" rel="noopener noreferrer">Dubizzle Oman (OLX) ↗</a>
+                <a href="https://om.opensooq.com/en" target="_blank" rel="noopener noreferrer">OpenSooq ↗</a>
+                <a href="https://oman.yallamotor.com/" target="_blank" rel="noopener noreferrer">YallaMotor ↗</a>
+                <a href="https://www.omanicar.com/" target="_blank" rel="noopener noreferrer">OmaniCar ↗</a>
+                <a href="https://om.digitalmall.app/" target="_blank" rel="noopener noreferrer">Digital Mall ↗</a>
+              </div>
+            </div>
             <div className="footer-bottom">
               <span>© 2026 K&Z ELITE BUSINESS. All rights reserved.</span>
               <span>KHURRAM & ZAINAB ELITE BUSINESS LLC</span>
