@@ -6,6 +6,20 @@ export async function GET() {
   const res = await supabase("/rest/v1/kz_cars?select=*&order=created_at.desc", {}, true);
   return NextResponse.json(await res.json(), { status: res.status });
 }
+// K&Z-controlled approved gallery host for previous ChatGPT photo uploads.
+function isApprovedCarPhoto(value: unknown): boolean {
+  if (typeof value !== "string") return false;
+  const storageRoot = process.env.SUPABASE_URL + "/storage/v1/object/public/kz-car-photos/";
+  if (value.startsWith(storageRoot) && value.startsWith("https://")) return true;
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" &&
+      url.hostname === "d2ol7oe51mr4n9.cloudfront.net" &&
+      /^\/user_3Kizw610eeYgEkKSmK3k5QDEn9N\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.(png|jpe?g|webp)$/i.test(url.pathname) &&
+      !url.search && !url.hash;
+  } catch { return false; }
+}
+
 export async function POST(req: Request) {
   if (!(await requireAdmin())) return errorResponse("Unauthorized", 401);
   const data = await req.json().catch(() => ({}));
@@ -17,7 +31,7 @@ export async function POST(req: Request) {
   if (!title || title.length > 150 || !Number.isInteger(year) || year < 1950 || year > 2100 ||
       (price !== null && (!Number.isFinite(price) || price < 0)) ||
       !["draft","available","sold"].includes(status) ||
-      !Array.isArray(images) || images.length > 20 || images.some((v: unknown) => typeof v !== "string" || !(v as string).startsWith(process.env.SUPABASE_URL! + "/storage/v1/object/public/kz-car-photos/")))
+      !Array.isArray(images) || images.length > 20 || images.some((v: unknown) => !isApprovedCarPhoto(v)))
     return errorResponse("Check title, year, price, status and photos");
   if (status === "available" && (price === null || images.length === 0)) return errorResponse("To publish a car, add its asking price and at least one approved photo. Save as Draft until ready.",400);
   const privateNames = ["owner_demand","kz_target","final_sold_price","owner_final_payment","deal_expenses"];
