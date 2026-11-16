@@ -90,3 +90,14 @@
 .kz-car-detail-specs strong{display:block;margin-top:4px;color:#f2f6fa;font-size:15px}
 .kz-car-feature-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px 20px;color:#d7e3ee;padding-left:22px}
 @media(max-width:650px){.kz-owner-dashboard-tab{top:auto;bottom:90px;padding:11px 12px;font-size:9px}.kz-owner-dashboard-tab-text{display:none}.kz-dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.kz-dashboard-inventory-controls{grid-template-columns:1fr}.kz-dashboard-topbar{align-items:stretch}.kz-dashboard-tabs{width:100%}.kz-dashboard-tabs button{flex:1;padding:8px}.kz-dashboard-signout{margin-left:auto}}
+
+.kz-recovery-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:13px 0}
+.kz-recovery-actions button{padding:11px 15px;min-height:44px;border:1px solid #d6aa52;background:transparent;color:#f4ce79;border-radius:9px;font-weight:750;cursor:pointer}
+.kz-recovery-actions p{color:#afc2d4;font-size:12px;line-height:1.5;margin:0;max-width:620px}
+.kz-recovery-panel{border:1px solid #45617e;background:#102941;padding:18px;border-radius:12px}
+.kz-recovery-panel p{font-size:13px;color:#bfd0dc;line-height:1.6}
+.kz-recovery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:10px;margin-top:15px}
+.kz-recovery-grid button{padding:7px;background:#192f47;border:1px solid #566b83;border-radius:9px;color:#e9cc84;cursor:pointer}
+.kz-recovery-grid button:disabled{opacity:.55;cursor:default}
+.kz-recovery-grid img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:5px;margin-bottom:7px}
+.kz-recovery-grid span{font-size:11px;font-weight:750}

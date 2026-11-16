@@ -23,6 +23,9 @@ export default function AdminCars() {
  const [photos,setPhotos]=useState<File[]>([]);
  const [dragging,setDragging]=useState(false);
  const [photoError,setPhotoError]=useState("");
+ const [recoveryOpen,setRecoveryOpen]=useState(false);
+ const [recoveryPhotos,setRecoveryPhotos]=useState<string[]>([]);
+ const [recoveryLoading,setRecoveryLoading]=useState(false);
  const [busy,setBusy]=useState(false);
  const [message,setMessage]=useState("");
 
@@ -89,29 +92,68 @@ export default function AdminCars() {
   }catch(error){setMessage(error instanceof Error?error.message:"Delete failed");}
   finally{setBusy(false);}
  }
- async function save(e: React.FormEvent) {
-  e.preventDefault();setBusy(true);setMessage("");
+ async function loadRecentPhotos() {
+  setRecoveryOpen(true);setRecoveryLoading(true);setPhotoError("");
   try {
-   const session=await fetch("/api/admin/session",{cache:"no-store"}).then(r=>r.json());
-   if(!session.authenticated)throw Error("Session expired. Sign in again; your unsaved details remain on this page.");
+   const response=await fetch("/api/admin/recent-photos",{cache:"no-store"});
+   const result=await response.json().catch(()=>({}));
+   if(!response.ok)throw Error(result.error||"Could not retrieve recent uploads.");
+   setRecoveryPhotos(Array.isArray(result.images)?result.images:[]);
+  }catch(e){setPhotoError(e instanceof Error?e.message:"Recovery request failed.");}
+  finally{setRecoveryLoading(false);}
+ }
+ async function save(e: React.FormEvent) {
+  e.preventDefault();if(busy)return;
+  setBusy(true);setMessage("");
+  try {
+   const sessionResponse=await fetch("/api/admin/session",{cache:"no-store"});
+   if(!sessionResponse.ok)throw Error("Session check failed. Your details are still in this form.");
+   const session=await sessionResponse.json();
+   if(!session.authenticated)throw Error("Session expired. Please sign in again; unsaved form details remain on this page.");
    let images=[...car.images];
-   if(photos.length){
-    if(photos.length>15 || images.length+photos.length>20)throw Error("Maximum 15 new photos or 20 total per car.");
-    for(const [index,photo] of photos.entries()){
-     setMessage("Uploading photo "+(index+1)+" of "+photos.length+"...");
-     if(photo.size > 3*1024*1024)throw Error(photo.name+": please reduce file size below 3 MB.");
+   const queue=[...photos];
+   if(queue.length){
+    if(queue.length>15||images.length+queue.length>20)throw Error("Maximum 15 new photos or 20 total per car.");
+    for(let i=0;i<queue.length;i++){
+     const photo=queue[i];
+     if(photo.size>3*1024*1024)throw Error(photo.name+": please reduce file size below 3 MB.");
+     setMessage("Uploading photo "+(i+1)+" of "+queue.length+"... Completed photos will be kept if the connection drops.");
      const data=new FormData();data.append("photos",photo);
-     const response=await fetch("/api/admin/upload",{method:"POST",body:data});
-     const payload=await response.json();if(!response.ok)throw Error(payload.error||"Upload failed");
-     images.push(...payload.images);
+     let uploaded:string[]|null=null;
+     let problem="Connection interrupted during photo upload.";
+     for(let attempt=1;attempt<=3;attempt++){
+      try{
+       const controller=new AbortController();
+       const timeout=window.setTimeout(()=>controller.abort(),45000);
+       let response:Response;
+       try{response=await fetch("/api/admin/upload",{method:"POST",body:data,signal:controller.signal});}
+       finally{window.clearTimeout(timeout);}
+       const result=await response.json().catch(()=>({}));
+       if(!response.ok) {
+        problem=result.error||"Upload failed (HTTP "+response.status+")";
+        if(response.status===401||response.status===400||response.status===413)break;
+       }else if(Array.isArray(result.images)&&result.images.length){
+        uploaded=result.images;break;
+       }else{problem="Server did not return a photo URL.";}
+      }catch{problem="Connection interrupted during photo upload.";}
+      if(attempt<3)await new Promise(resolve=>window.setTimeout(resolve,attempt*900));
+     }
+     if(!uploaded)throw Error(problem+" Earlier successful photos are retained in this form. Use Recover Recent Uploads if needed.");
+     images=[...images,...uploaded];
+     setCar(current=>({...current,images:[...images]}));
+     setPhotos(current=>current.filter(file=>file!==photo));
     }
    }
+   setMessage("Saving listing details...");
    const response=await fetch("/api/admin/cars",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...car,images})});
-   const payload=await response.json().catch(()=>({}));if(!response.ok)throw Error("Save failed (HTTP "+response.status+"): "+(payload.message||payload.error||payload.code||"Database request failed"));
-   setCar({...blank});setPhotos([]);setMessage("Saved successfully. Status: "+car.status);setActiveView("inventory");
+   const payload=await response.json().catch(()=>({}));
+   if(!response.ok)throw Error("Save failed (HTTP "+response.status+"): "+(payload.message||payload.error||payload.code||"Database request failed"));
+   setCar({...blank});setPhotos([]);setMessage("Saved successfully. Status: "+car.status);
+   setRecoveryOpen(false);setActiveView("inventory");
    await load();
-  }catch(error){setMessage(error instanceof Error?error.message:"Something went wrong")}
-  finally{setBusy(false)}
+  }catch(error){
+   setMessage((error instanceof Error?error.message:"Connection failed.")+" Do not refresh; your form remains open. Retry Save Car once connected.");
+  }finally{setBusy(false);}
  }
  const inputStyle:React.CSSProperties={width:"100%",background:"#13243a",border:"1px solid #46566b",color:"white",borderRadius:9,padding:"12px",fontSize:15};
  const labelStyle:React.CSSProperties={display:"grid",gap:5,fontSize:13,color:"#d6e0ed"};
@@ -186,6 +228,13 @@ export default function AdminCars() {
          <p style={{margin:"0 0 16px",color:"#c4d2e4",fontSize:13}}>Or copy an image from WhatsApp Web, click this box and press Ctrl + V</p>
          <input aria-label="Choose car photos from your device" type="file" accept="image/jpeg,image/png,image/webp" multiple onChange={e=>{addPhotos(Array.from(e.target.files||[]));e.target.value="";}} style={{maxWidth:"100%"}}/>
        </div>
+       <div className="kz-recovery-actions">
+        <button type="button" onClick={()=>void loadRecentPhotos()} disabled={busy||recoveryLoading}>{recoveryLoading?"Looking for uploaded photos...":"Recover Recent Uploads"}</button>
+        <p>Upload failed earlier? Your successfully uploaded photos may already be stored. Select the clean car photos below instead of uploading them twice.</p>
+       </div>
+       {recoveryOpen&&<div className="kz-recovery-panel"><strong>Recent uploaded images</strong><p>Select only photos of this car. Do not select flyers or promotional images. Saved photos appear under the gallery below; photo #1 becomes the cover.</p>
+        {recoveryLoading?<p>Loading photos...</p>:recoveryPhotos.length===0?<p>No recent images found.</p>:<div className="kz-recovery-grid">{recoveryPhotos.map(src=><button key={src} type="button" disabled={busy||car.images.includes(src)||car.images.length+photos.length>=20} onClick={()=>setCar(current=>({...current,images:current.images.includes(src)?current.images:[...current.images,src]}))}><img src={src} alt="Previously uploaded car photo"/><span>{car.images.includes(src)?"Added ✓":"Attach Photo +"}</span></button>)}</div>}
+       </div>}
        {photoError&&<p role="alert" style={{color:"#ffb9a9",margin:0}}>{photoError}</p>}
        {photos.length>0&&<div style={{display:"grid",gap:6}}>
         <p style={{margin:0}}>{photos.length} new photo(s) ready. Use ← → to change order before Save Car.</p>
