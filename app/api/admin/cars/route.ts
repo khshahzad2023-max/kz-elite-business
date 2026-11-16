@@ -36,6 +36,7 @@ export async function POST(req: Request) {
     specs: String(data.specs || "").slice(0, 1500),
     location: String(data.location || "Muscat, Oman").slice(0, 120),
     description: String(data.description || "").slice(0, 5000),
+    ...Object.fromEntries(["make","model","variant","engine","transmission","origin_specs","body_type","exterior_color","features","registration_validity"].map(key=>[key,String(data[key]||"").trim().slice(0,key==="features"?2000:150)])),
     updated_at: new Date().toISOString(),
   };
   const id = typeof data.id === "string" && /^[0-9a-f-]{36}$/i.test(data.id) ? data.id : null;

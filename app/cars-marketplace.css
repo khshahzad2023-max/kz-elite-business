@@ -42,3 +42,51 @@
 
 /* Finance availability is explicitly controlled by each car listing. */
 .kz-car-finance-badge{display:inline-flex;align-items:center;max-width:100%;margin:10px 0 12px;padding:7px 12px;border-radius:7px;color:#f6d991;background:rgba(214,170,82,.13);border:1px solid rgba(214,170,82,.5);font-size:12px;font-weight:800;letter-spacing:.02em;line-height:1.4}
+
+/* Dashboard owner shortcut: intentionally outside public primary navigation. */
+.kz-home-v3{position:relative}
+.kz-owner-dashboard-tab{position:fixed;right:0;top:clamp(120px,26vh,230px);z-index:55;display:flex;align-items:center;gap:9px;padding:13px 15px;background:linear-gradient(145deg,#163755,#061426);color:#f2d087;text-decoration:none;border:1px solid rgba(235,193,102,.6);border-right:0;border-radius:12px 0 0 12px;box-shadow:0 10px 32px rgba(0,0,0,.4);font-size:10px;font-weight:800;letter-spacing:.11em;transition:padding .2s,background .2s}
+.kz-owner-dashboard-tab:hover,.kz-owner-dashboard-tab:focus-visible{background:#235072;padding-right:21px;outline-color:#f6d58f}
+.kz-owner-dashboard-tab-symbol{font-size:20px;line-height:1}
+.kz-dashboard-shell{max-width:1100px;margin:auto}
+.kz-dashboard-heading{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.kz-dashboard-heading h1{margin:8px 0}
+.kz-dashboard-subtitle{color:#b4c4d6;font-size:13px;line-height:1.6}
+.kz-dashboard-public-link{color:#f1cd7b;text-decoration:none;border:1px solid #8d784e;padding:11px 15px;border-radius:10px;font-size:13px}
+.kz-dashboard-topbar{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-top:26px;padding:10px;background:#0c1c30;border:1px solid #2c4461;border-radius:14px}
+.kz-dashboard-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.kz-dashboard-tabs button{color:#c6d3e3;background:transparent;border:1px solid transparent;border-radius:9px;min-height:44px;padding:10px 17px;cursor:pointer;font-weight:750}
+.kz-dashboard-tabs button.active{color:#091727;background:#e0b862}
+.kz-dashboard-tabs button:hover:not(.active){background:#233b55}
+.kz-dashboard-signout{background:#1b2c41;color:#dce7f4;border:1px solid #4b637d;border-radius:8px;padding:9px 13px;min-height:44px;cursor:pointer}
+.kz-dashboard-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:20px 0 28px}
+.kz-dashboard-stats>div{border:1px solid #314762;background:linear-gradient(150deg,#132a44,#0a1929);border-radius:14px;padding:18px}
+.kz-dashboard-stats span{display:block;color:#b0c2d3;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.kz-dashboard-stats strong{display:block;font-size:clamp(23px,4vw,35px);line-height:1.5;color:#f0ce84}
+.kz-dashboard-welcome{background:radial-gradient(circle at 88% 15%,rgba(53,113,159,.3),transparent 45%),#0d2339;border:1px solid #455a70;border-radius:20px;padding:clamp(22px,4vw,43px)}
+.kz-dashboard-kicker,.kz-dashboard-section-heading span{color:#edc675;font-size:11px;font-weight:900;letter-spacing:.12em}
+.kz-dashboard-welcome h2{font-size:clamp(27px,4vw,39px);margin:13px 0}
+.kz-dashboard-welcome p{color:#c4d2e0;max-width:710px;line-height:1.7}
+.kz-dashboard-quick-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.kz-dashboard-quick-actions button{border:1px solid #d4ad5c;background:#d6aa52;color:#08182b;padding:13px 21px;border-radius:9px;font-weight:850;min-height:46px;cursor:pointer}
+.kz-dashboard-quick-actions button+button{background:transparent;color:#f5d995}
+.kz-dashboard-alert{color:#f8d48b!important;font-size:13px;border-left:3px solid #d6aa52;padding-left:12px;margin-top:24px}
+.kz-dashboard-editor{border:1px solid #314761}
+.kz-dashboard-section-heading{margin:10px 0 4px}
+.kz-dashboard-section-heading h2{margin:9px 0;font-size:24px}
+.kz-dashboard-section-heading p{color:#b8c9d8;font-size:13px;line-height:1.55}
+.kz-dashboard-fields-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+.kz-dashboard-inventory{margin-top:24px}
+.kz-dashboard-inventory-controls{display:grid;grid-template-columns:minmax(200px,1fr) 190px;gap:12px}
+.kz-dashboard-inventory-controls input,.kz-dashboard-inventory-controls select{background:#13263c;color:#fff;border:1px solid #5b7088;border-radius:9px;padding:13px;font-size:15px;min-width:0}
+.kz-dashboard-inventory-item{display:flex;align-items:center;gap:12px;min-width:0}
+.kz-dashboard-inventory-preview{width:88px;height:68px;flex-shrink:0;border-radius:9px;background:#192d43;overflow:hidden;display:grid;place-items:center;color:#97b4cf;font-size:10px;font-weight:800}
+.kz-dashboard-inventory-preview img{width:100%;height:100%;object-fit:cover}
+.kz-inventory-summary{color:#dfebf6!important;font-size:14px!important;font-weight:650}
+.kz-inventory-origin{color:#f0cf7f!important;font-size:12px!important}
+.kz-car-detail-specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.kz-car-detail-specs>div{background:#10243a;border:1px solid #334a62;padding:14px;border-radius:10px}
+.kz-car-detail-specs span{display:block;color:#99b1c6;font-size:12px}
+.kz-car-detail-specs strong{display:block;margin-top:4px;color:#f2f6fa;font-size:15px}
+.kz-car-feature-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px 20px;color:#d7e3ee;padding-left:22px}
+@media(max-width:650px){.kz-owner-dashboard-tab{top:auto;bottom:90px;padding:11px 12px;font-size:9px}.kz-owner-dashboard-tab-text{display:none}.kz-dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.kz-dashboard-inventory-controls{grid-template-columns:1fr}.kz-dashboard-topbar{align-items:stretch}.kz-dashboard-tabs{width:100%}.kz-dashboard-tabs button{flex:1;padding:8px}.kz-dashboard-signout{margin-left:auto}}

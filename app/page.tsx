@@ -3,6 +3,7 @@ import Link from "next/link";
 
 export default function Home(){
  return <main className="kz-home-v3">
+  <Link href="/admin/cars" className="kz-owner-dashboard-tab" aria-label="Open K&Z owner car dashboard"><span className="kz-owner-dashboard-tab-symbol">▦</span><span className="kz-owner-dashboard-tab-text">OWNER DASHBOARD</span></Link>
   <section className="kz-brand-opening kz-intro-v4">
    <div className="kz-muscat-bg" aria-hidden="true"/>
 

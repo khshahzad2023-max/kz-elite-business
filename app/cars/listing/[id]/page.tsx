@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { configured, supabase } from "../../../../lib/kz-db";
 import { notFound } from "next/navigation";
 
-type Car = {id:string;title:string;year:number;price:number|null;status:string;images:string[];mileage:string;specs:string;location:string;description:string;finance_available?:boolean};
+type Car = {id:string;title:string;year:number;price:number|null;status:string;images:string[];mileage:string;specs:string;location:string;description:string;finance_available?:boolean;make?:string;model?:string;variant?:string;engine?:string;transmission?:string;origin_specs?:string;body_type?:string;exterior_color?:string;registration_validity?:string;features?:string};
 async function getCar(id:string):Promise<Car|null>{
  if(!configured() || !/^[0-9a-f-]{36}$/i.test(id))return null;
  const r=await supabase("/rest/v1/kz_cars?select=*&id=eq."+id+"&status=in.(available,sold)&limit=1",{},true);
@@ -27,8 +27,11 @@ export default async function Listing({params}:{params:Promise<{id:string}>}){
     {car.images.map((src,i)=><img key={src} src={src} alt={car.title+" image "+(i+1)} style={{width:"100%",height:255,objectFit:"cover",borderRadius:12}}/>)}
   </div>
   <section style={{marginTop:25,lineHeight:1.8}}>
-   <p><strong>Mileage:</strong> {car.mileage||"Ask for details"}</p><p><strong>Location:</strong> {car.location}</p>
-   <p style={{whiteSpace:"pre-line"}}>{car.specs}</p><p style={{whiteSpace:"pre-line"}}>{car.description}</p>
+   <h2>Vehicle Specifications</h2>
+   <div className="kz-car-detail-specs">{([["Brand",car.make],["Model",car.model],["Variant",car.variant],["Year",car.year],["Engine",car.engine],["Transmission",car.transmission],["GCC / Imported",car.origin_specs],["Body Type",car.body_type],["Exterior Colour",car.exterior_color],["Mileage",car.mileage],["Location",car.location],["Registration",car.registration_validity]] as [string,string|number|undefined][]).filter(([,value])=>String(value||"").trim()).map(([label,value])=><div key={label}><span>{label}</span><strong>{value}</strong></div>)}</div>
+   {car.features&&<><h2>Features</h2><ul className="kz-car-feature-list">{car.features.split(/\\n|•/).map(s=>s.trim()).filter(Boolean).map((s,i)=><li key={i}>{s}</li>)}</ul></>}
+   {car.specs&&<><h2>Additional Specifications</h2><p style={{whiteSpace:"pre-line"}}>{car.specs}</p></>}
+   {car.description&&<><h2>Vehicle Description</h2><p style={{whiteSpace:"pre-line"}}>{car.description}</p></>}
    <a href={"https://api.whatsapp.com/send?phone=96878967229&text="+message} target="_blank" rel="noopener noreferrer" style={{display:"inline-block",background:"#d6aa52",color:"#07111f",borderRadius:9,padding:"13px 22px",fontWeight:700}}>Enquire on WhatsApp</a>
   </section>
  </div></main>;

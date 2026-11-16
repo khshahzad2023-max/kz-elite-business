@@ -5,7 +5,7 @@ import Link from "next/link";
 
 type Car = {
   id: string; title: string; year: number; price: number | null; status: string; finance_available?: boolean;
-  images: string[]; specs: string; location: string; mileage: string;
+  images: string[]; specs: string; location: string; mileage: string; engine?:string;transmission?:string;origin_specs?:string;make?:string;model?:string;
 };
 
 export default function DashboardCars() {
@@ -88,7 +88,8 @@ export default function DashboardCars() {
           {car.images?.[0] ? <img src={car.images[0]} alt={car.title} loading="lazy" /> : <div className="kz-inventory-message">Photo coming soon</div>}
           <div className="kz-inventory-content">
             <h3>{car.title}</h3>
-            {car.specs && <p>{car.specs.length > 135 ? car.specs.slice(0,135)+"…" : car.specs}</p>}
+            <p className="kz-inventory-summary">{[car.year,car.engine,car.transmission].filter(Boolean).join(" • ")}</p>
+            {car.origin_specs&&<p className="kz-inventory-origin">{car.origin_specs}</p>}
             <p>{[car.mileage,car.location].filter(Boolean).join(" • ")}</p>
             {car.finance_available && <div className="kz-car-finance-badge">Finance Option Available</div>}
             <strong className="kz-inventory-price">{car.price === null ? "Price on request" : Number(car.price).toLocaleString("en-OM") + " OMR"}</strong>

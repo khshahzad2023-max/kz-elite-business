@@ -6,8 +6,9 @@ import Link from "next/link";
 type Car = {
  id?: string; title: string; year: number; price: number | null; owner_demand?:number|null; kz_target?:number|null; final_sold_price?:number|null; owner_final_payment?:number|null; deal_expenses?:number|null; mileage: string;
  specs: string; location: string; description: string; status: "draft"|"available"|"sold"; finance_available: boolean; images: string[];
+ make:string;model:string;variant:string;engine:string;transmission:string;origin_specs:string;body_type:string;exterior_color:string;features:string;registration_validity:string;
 };
-const blank: Car = { title: "", year: new Date().getFullYear(), price: null, owner_demand:null,kz_target:null,final_sold_price:null,owner_final_payment:null,deal_expenses:null, mileage: "", specs: "", location: "Muscat, Oman", description: "", status: "draft", finance_available: false, images: [] };
+const blank: Car = { title: "", year: new Date().getFullYear(), price: null, owner_demand:null,kz_target:null,final_sold_price:null,owner_final_payment:null,deal_expenses:null, mileage: "", specs: "", location: "Muscat, Oman", description: "", status: "draft", finance_available: false, images: [], make:"",model:"",variant:"",engine:"",transmission:"",origin_specs:"",body_type:"",exterior_color:"",features:"",registration_validity:"" };
 
 export default function AdminCars() {
  const [ready,setReady]=useState(false);
@@ -15,6 +16,9 @@ export default function AdminCars() {
  const [email,setEmail]=useState("");
  const [password,setPassword]=useState("");
  const [cars,setCars]=useState<Car[]>([]);
+ const [inventoryQuery,setInventoryQuery]=useState("");
+ const [inventoryStatus,setInventoryStatus]=useState("all");
+ const [activeView,setActiveView]=useState<"overview"|"editor"|"inventory">("overview");
  const [car,setCar]=useState<Car>({...blank});
  const [photos,setPhotos]=useState<File[]>([]);
  const [dragging,setDragging]=useState(false);
@@ -104,7 +108,7 @@ export default function AdminCars() {
    }
    const response=await fetch("/api/admin/cars",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...car,images})});
    const payload=await response.json().catch(()=>({}));if(!response.ok)throw Error("Save failed (HTTP "+response.status+"): "+(payload.message||payload.error||payload.code||"Database request failed"));
-   setCar({...blank});setPhotos([]);setMessage("Saved successfully. Status: "+car.status);
+   setCar({...blank});setPhotos([]);setMessage("Saved successfully. Status: "+car.status);setActiveView("inventory");
    await load();
   }catch(error){setMessage(error instanceof Error?error.message:"Something went wrong")}
   finally{setBusy(false)}
@@ -112,10 +116,10 @@ export default function AdminCars() {
  const inputStyle:React.CSSProperties={width:"100%",background:"#13243a",border:"1px solid #46566b",color:"white",borderRadius:9,padding:"12px",fontSize:15};
  const labelStyle:React.CSSProperties={display:"grid",gap:5,fontSize:13,color:"#d6e0ed"};
  return <main style={{minHeight:"100vh",background:"#07111f",color:"#f9fbff",padding:"35px 16px 80px"}}>
-  <div style={{maxWidth:970,margin:"auto"}}>
+  <div className="kz-dashboard-shell">
    <p style={{color:"#d6aa52",letterSpacing:2,fontSize:12}}>K&Z ELITE BUSINESS</p>
-   <h1 style={{fontSize:"clamp(26px,5vw,40px)"}}>Car Upload Dashboard</h1>
-   <p style={{color:"#aab8cb"}}>Private inventory management • <Link href="/cars" style={{textDecoration:"underline"}}>View live cars</Link></p>
+   <div className="kz-dashboard-heading"><div><h1 style={{fontSize:"clamp(26px,5vw,40px)"}}>Car Management Dashboard</h1><p className="kz-dashboard-subtitle">Add cars • Organize photos • Manage listings • Track deals privately</p></div><Link className="kz-dashboard-public-link" href="/cars">↗ View Live Cars</Link></div>
+
    {!configured ? <section style={{padding:20,border:"1px solid #c6a166",borderRadius:12}}>
      <h2>Backend connection required</h2>
      <p>Dashboard interface is ready. Connect Supabase and add the four secure environment settings in Vercel before login and uploads can work.</p>
@@ -129,20 +133,28 @@ export default function AdminCars() {
      {message&&<p role="alert" style={{margin:0,padding:12,background:"#45212d",color:"#ffe1a4",border:"1px solid #b66e76",borderRadius:8}}>{message}</p>}
     </form> :
     <>
-     <button style={{border:"1px solid #687991",background:"transparent",color:"white",borderRadius:8,padding:10,cursor:"pointer"}} onClick={async()=>{await fetch("/api/admin/logout",{method:"POST"});setReady(false)}}>Sign out</button>
-     <form onSubmit={save} style={{display:"grid",gap:15,background:"#0d1c31",padding:22,borderRadius:16,marginTop:24}}>
-      <h2>{car.id?"Edit Car":"Add New Car"}</h2>
+     <div className="kz-dashboard-topbar"><div className="kz-dashboard-tabs" role="group" aria-label="Dashboard sections"><button className={activeView==="overview"?"active":""} type="button" onClick={()=>setActiveView("overview")}>Overview</button><button className={activeView==="editor"?"active":""} type="button" onClick={()=>{setActiveView("editor");setCar({...blank});setPhotos([])}}>+ Add Car</button><button className={activeView==="inventory"?"active":""} type="button" onClick={()=>setActiveView("inventory")}>All Cars</button></div><button className="kz-dashboard-signout" type="button" onClick={async()=>{await fetch("/api/admin/logout",{method:"POST"});setReady(false)}}>Sign out</button></div>
+     <div className="kz-dashboard-stats"><div><span>Total Cars</span><strong>{cars.length}</strong></div><div><span>For Sale</span><strong>{cars.filter(x=>x.status==="available").length}</strong></div><div><span>Sold</span><strong>{cars.filter(x=>x.status==="sold").length}</strong></div><div><span>Drafts</span><strong>{cars.filter(x=>x.status==="draft").length}</strong></div></div>
+     {activeView==="overview"&&<section className="kz-dashboard-welcome"><div className="kz-dashboard-kicker">K&Z INVENTORY CONTROL</div><h2>Everything in one place.</h2><p>Manage every vehicle using the same photo order, model information, mileage, price, finance availability and private deal figures. Flyers are for social media only — use clean car photos on the website.</p><div className="kz-dashboard-quick-actions"><button type="button" onClick={()=>{setCar({...blank});setPhotos([]);setActiveView("editor")}}>+ Add New Car</button><button type="button" onClick={()=>setActiveView("inventory")}>Manage Existing Cars ↗</button></div>{cars.filter(x=>x.status==="draft").length>0&&<p className="kz-dashboard-alert">You have {cars.filter(x=>x.status==="draft").length} draft listing(s) to finish before publishing.</p>}</section>}
+     {activeView==="editor"&&<>
+     <form className="kz-dashboard-editor" onSubmit={save} style={{display:"grid",gap:15,background:"#0d1c31",padding:22,borderRadius:16,marginTop:24}}>
+      <div className="kz-dashboard-section-heading"><span>01 / VEHICLE LISTING</span><h2>{car.id?"Edit Vehicle":"Add New Vehicle"}</h2><p>Keep every listing consistent. Only verified information should be published.</p></div>
       <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))",gap:14}}>
-       <label style={labelStyle}>Make / model<input style={inputStyle} value={car.title} onChange={e=>setCar({...car,title:e.target.value})} required placeholder="Toyota Camry 2020"/></label>
+       <label style={labelStyle}>Public listing title<input style={inputStyle} value={car.title} onChange={e=>setCar({...car,title:e.target.value})} required placeholder="Toyota Camry 2020"/></label>
        <label style={labelStyle}>Year<input style={inputStyle} type="number" min={1950} max={2100} value={car.year} onChange={e=>setCar({...car,year:Number(e.target.value)})} required/></label>
-       <label style={labelStyle}>Price (OMR, optional)<input style={inputStyle} type="number" min={0} step="0.001" value={car.price??""} onChange={e=>setCar({...car,price:e.target.value===""?null:Number(e.target.value)})}/></label>
+       <label style={labelStyle}>Asking price (OMR)<input style={inputStyle} type="number" min={0} step="0.001" value={car.price??""} onChange={e=>setCar({...car,price:e.target.value===""?null:Number(e.target.value)})}/></label>
        <label style={labelStyle}>Mileage<input style={inputStyle} value={car.mileage} onChange={e=>setCar({...car,mileage:e.target.value})} placeholder="81,000 KM"/></label>
        <label style={labelStyle}>Location<input style={inputStyle} value={car.location} onChange={e=>setCar({...car,location:e.target.value})}/></label>
        <label style={{...labelStyle,gridColumn:"1 / -1",display:"flex",flexDirection:"row",alignItems:"center",gap:12,padding:"12px 14px",background:"#13243a",border:"1px solid #46566b",borderRadius:9}}><input type="checkbox" checked={Boolean(car.finance_available)} onChange={e=>setCar({...car,finance_available:e.target.checked})} style={{width:20,height:20,accentColor:"#d6aa52"}}/><span>Finance Option Available on This Car <small style={{display:"block",color:"#aebbd0",fontWeight:400}}>Show a finance badge on the public car card and details page only when confirmed.</small></span></label>
         <label style={labelStyle}>Status<select style={inputStyle} value={car.status} onChange={e=>setCar({...car,status:e.target.value as Car["status"]})}><option value="draft">Draft (private)</option><option value="available">Publish — For Sale</option><option value="sold">Sold</option></select></label>
       </div>
+      <div className="kz-dashboard-section-heading"><span>02 / VERIFIED CAR SPECIFICATIONS</span><h2>Vehicle Details</h2><p>These details appear in the same sequence on car cards and on the full car details page.</p></div>
+      <div className="kz-dashboard-fields-grid">
+       {([["make","Brand / Make","Toyota"],["model","Model","iM"],["variant","Trim / Variant","Optional"],["engine","Engine","1.8L Petrol"],["transmission","Transmission","Automatic"],["origin_specs","GCC / Imported Specs","US Specs"],["body_type","Body Type","Hatchback"],["exterior_color","Exterior Colour","Black"],["registration_validity","Registration Validity","Optional"]] as const).map(([key,label,placeholder])=><label key={key} style={labelStyle}>{label}<input style={inputStyle} placeholder={placeholder} value={car[key]||""} onChange={e=>setCar(prev=>({...prev,[key]:e.target.value}))}/></label>)}
+      </div>
+      <label style={labelStyle}>Features (one per line)<textarea style={inputStyle} rows={4} placeholder={"Alloy Wheels\nBluetooth\nCruise Control"} value={car.features||""} onChange={e=>setCar({...car,features:e.target.value})}/></label>
       <section style={{border:"1px solid #806b46",background:"#12253a",padding:16,borderRadius:12,display:"grid",gap:12}}>
-       <h3 style={{margin:0,color:"#f0c87c"}}>PRIVATE K&Z PRICING — Admin Only</h3>
+       <h3 style={{margin:0,color:"#f0c87c"}}>03 / PRIVATE K&Z DEAL FINANCES — Admin Only</h3>
        <p style={{margin:0,fontSize:13,color:"#bed0df"}}>Only Price (OMR) above is shown to customers. These amounts never appear in public listings.</p>
        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(185px,1fr))",gap:12}}>
         {([
@@ -155,8 +167,10 @@ export default function AdminCars() {
         <strong>Actual net margin: {car.final_sold_price!=null&&car.owner_final_payment!=null?(car.final_sold_price-car.owner_final_payment-(car.deal_expenses??0)).toFixed(3)+" OMR":"—"}</strong>
        </div>
       </section>
-      <label style={labelStyle}>Verified specifications<textarea style={inputStyle} rows={3} value={car.specs} onChange={e=>setCar({...car,specs:e.target.value})} placeholder="GCC, engine, transmission, features..."/></label>
+      <div className="kz-dashboard-section-heading"><span>04 / EXTRA DETAILS</span><h2>Condition & Notes</h2></div>
+      <label style={labelStyle}>Additional verified specifications<textarea style={inputStyle} rows={3} value={car.specs} onChange={e=>setCar({...car,specs:e.target.value})} placeholder="GCC, engine, transmission, features..."/></label>
       <label style={labelStyle}>Description<textarea style={inputStyle} rows={4} value={car.description} onChange={e=>setCar({...car,description:e.target.value})}/></label>
+      <div className="kz-dashboard-section-heading"><span>05 / PHOTO GALLERY</span><h2>Upload Clean Car Photos</h2><p>Cover first: best front 3/4 angle. Then front, side angles, rear and interior. No flyers, graphics or sale banners.</p></div>
       <div style={{display:"grid",gap:9}}>
        <strong style={{fontSize:14}}>Car photos (JPEG/PNG/WebP, max 3 MB each)</strong>
        <div
@@ -186,12 +200,14 @@ export default function AdminCars() {
        <button disabled={busy} type="submit" style={{background:"#d6aa52",color:"#091321",padding:"13px 22px",border:0,borderRadius:10,fontWeight:700}}>{busy?"Saving...":"Save Car"}</button>
        <button type="button" onClick={()=>{setCar({...blank});setPhotos([])}} style={{background:"#22344b",color:"#fff",padding:"13px 22px",border:0,borderRadius:10}}>Clear Form</button>
       </div>
-     </form>
-     <h2 style={{marginTop:35}}>Inventory ({cars.length})</h2>
-     <div style={{display:"grid",gap:11}}>{cars.map(item=><div key={item.id} style={{display:"flex",justifyContent:"space-between",gap:12,alignItems:"center",border:"1px solid #33465e",borderRadius:12,padding:12,flexWrap:"wrap"}}>
-       <div><strong>{item.title}</strong><p style={{color:"#aebbd0",margin:"5px 0"}}>{item.price===null?"Price on request":item.price+" OMR"} • {item.status} • {item.images.length} photos</p></div>
-       <div style={{display:"flex",gap:8,flexWrap:"wrap"}}><button type="button" disabled={busy} onClick={()=>{setCar(item);setPhotos([]);window.scrollTo({top:0,behavior:"smooth"})}} style={{padding:"10px 18px",background:"#193650",color:"white",border:"1px solid #6b7f95",borderRadius:8}}>Edit</button><button type="button" disabled={busy} onClick={()=>void deleteCar(item)} style={{padding:"10px 18px",background:"#662b37",color:"white",border:"1px solid #ba6672",borderRadius:8,cursor:"pointer"}}>Delete</button></div>
-      </div>)}</div>
+     </form></>}
+     {activeView==="inventory"&&<section className="kz-dashboard-inventory"><div className="kz-dashboard-section-heading"><span>INVENTORY MANAGEMENT</span><h2>Manage All Cars ({cars.length})</h2><p>Find vehicles, update photos, edit prices, switch finance ON/OFF or mark them Sold.</p></div>
+     <div className="kz-dashboard-inventory-controls"><input aria-label="Search inventory" type="search" placeholder="Search car title, year or location" value={inventoryQuery} onChange={e=>setInventoryQuery(e.target.value)}/><select aria-label="Filter by listing status" value={inventoryStatus} onChange={e=>setInventoryStatus(e.target.value)}><option value="all">All statuses</option><option value="available">For Sale</option><option value="sold">Sold</option><option value="draft">Drafts</option></select></div>
+     <h3 style={{marginTop:24}}>Listings</h3>
+     <div style={{display:"grid",gap:11}}>{cars.filter(item=>(inventoryStatus==="all"||item.status===inventoryStatus)&&(!inventoryQuery.trim()||[item.title,item.year,item.location].join(" ").toLowerCase().includes(inventoryQuery.toLowerCase().trim()))).map(item=><div key={item.id} style={{display:"flex",justifyContent:"space-between",gap:12,alignItems:"center",border:"1px solid #33465e",borderRadius:12,padding:12,flexWrap:"wrap"}}>
+       <div className="kz-dashboard-inventory-item"><div className="kz-dashboard-inventory-preview">{item.images?.[0]?<img src={item.images[0]} alt={item.title}/>:<span>NO PHOTO</span>}</div><div><strong>{item.title}</strong><p style={{color:"#aebbd0",margin:"5px 0"}}>{item.price===null?"Price on request":Number(item.price).toLocaleString("en-OM")+" OMR"} • {item.status} • {item.images.length} photos {item.finance_available?"• Finance Available":""}</p></div></div>
+       <div style={{display:"flex",gap:8,flexWrap:"wrap"}}><button type="button" disabled={busy} onClick={()=>{setCar({...blank,...item});setPhotos([]);setActiveView("editor");window.scrollTo({top:0,behavior:"smooth"})}} style={{padding:"10px 18px",background:"#193650",color:"white",border:"1px solid #6b7f95",borderRadius:8}}>Edit</button><button type="button" disabled={busy} onClick={()=>void deleteCar(item)} style={{padding:"10px 18px",background:"#662b37",color:"white",border:"1px solid #ba6672",borderRadius:8,cursor:"pointer"}}>Delete</button></div>
+      </div>)}</div></section>}
     </>}
    {ready&&message&&<p role="status" style={{padding:12,color:"#ffe1a4"}}>{message}</p>}
   </div>
