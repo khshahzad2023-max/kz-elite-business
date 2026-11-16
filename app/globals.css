@@ -1850,3 +1850,28 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(max-width:800px){
  .kz-home-v3 #our-services .kz-auto-step h3{min-height:0}
 }
+
+/* Automotive Services: prominent but premium, accessible pricing notice. */
+.kz-home-v3 #our-services .kz-auto-disclaimer{
+ display:flex;align-items:flex-start;gap:13px;
+ flex:1 1 370px;max-width:510px;
+ padding:14px 16px;margin:0;
+ border:1px solid rgba(245,204,123,.78);border-left:4px solid #efc779;
+ border-radius:14px;background:linear-gradient(110deg,rgba(226,173,74,.18),rgba(12,37,63,.93));
+ box-shadow:inset 0 1px 0 rgba(255,248,226,.17),0 5px 22px rgba(2,11,24,.28);
+ color:#eaf0f8;
+}
+.kz-home-v3 #our-services .kz-auto-notice-icon{
+ flex:0 0 29px;display:grid;place-items:center;
+ width:29px;height:29px;border-radius:50%;
+ background:#f0ca7d;color:#122941;font-size:21px;font-weight:900;line-height:1;
+}
+.kz-home-v3 #our-services .kz-auto-disclaimer strong{
+ display:block;font-size:13px;line-height:1.35;letter-spacing:.065em;color:#ffdf9e;font-weight:900;margin-bottom:5px;
+}
+.kz-home-v3 #our-services .kz-auto-disclaimer p{
+ margin:0;color:#f1f5fb;font-size:13px;font-weight:500;line-height:1.55;
+}
+@media(max-width:800px){
+ .kz-home-v3 #our-services .kz-auto-disclaimer{max-width:none;flex-basis:100%;padding:14px}
+}
