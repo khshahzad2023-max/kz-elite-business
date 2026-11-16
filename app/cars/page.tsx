@@ -11,7 +11,7 @@ export default function CarsPage() {
     <section className="page-hero"><div className="container">
       <div className="eyebrow">K&Z ELITE BUSINESS • MUSCAT</div>
       <h1>Cars for Sale</h1>
-      <p className="lead">Browse our available vehicles. Filter by model, year or price to find your next car.</p>
+      <p className="lead">Browse our available vehicles. Choose a vehicle category, then filter by model, year or price to find your next car.</p>
     </div></section>
     <DashboardCars />
   </main>;
