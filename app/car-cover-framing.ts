@@ -30,6 +30,6 @@ export function getCarCoverImageStyle(car: CarCoverFraming): CSSProperties {
     // 80% means the minimum cover crop, never a shrunken image with blank edges.
     // Additional zoom creates room for horizontal and vertical panning.
     transform: `scale(${1 + (zoom - 80) / 100})`,
-    transformOrigin: `${100 - x}% ${100 - y}%`,
+    transformOrigin: `${x}% ${y}%`,
   };
 }
