@@ -26,7 +26,7 @@ export function getCarCoverImageStyle(car: CarCoverFraming): CSSProperties {
     width: "100%",
     height: "100%",
     objectFit: "cover",
-    objectPosition: `${x}% ${y}%`,
-    transform: `scale(${zoom / 100})`,
+    objectPosition: "center center",
+    transform: `translate(${(50 - x) * 0.35}%, ${(50 - y) * 0.35}%) scale(${zoom / 100})`,
   };
 }
