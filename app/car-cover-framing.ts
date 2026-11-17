@@ -26,7 +26,10 @@ export function getCarCoverImageStyle(car: CarCoverFraming): CSSProperties {
     width: "100%",
     height: "100%",
     objectFit: "cover",
-    objectPosition: "center center",
-    transform: `translate(${(50 - x) * 0.35}%, ${(50 - y) * 0.35}%) scale(${zoom / 100})`,
+    objectPosition: `${x}% ${y}%`,
+    // 80% means the minimum cover crop, never a shrunken image with blank edges.
+    // Additional zoom creates room for horizontal and vertical panning.
+    transform: `scale(${1 + (zoom - 80) / 100})`,
+    transformOrigin: `${x}% ${y}%`,
   };
 }
