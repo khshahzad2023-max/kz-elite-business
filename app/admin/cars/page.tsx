@@ -48,22 +48,52 @@ export default function AdminCars() {
   if(kind==="new")setPhotos(current=>{if(next<0||next>=current.length)return current;const items=[...current];[items[index],items[next]]=[items[next],items[index]];return items;});
   else setCar(current=>{if(next<0||next>=current.images.length)return current;const images=[...current.images];[images[index],images[next]]=[images[next],images[index]];return {...current,images};});
  }
- function addPhotos(incoming: File[]) {
-  if (!incoming.length) return;
-  const allowed = ["image/jpeg","image/png","image/webp"];
-  const invalid = incoming.find(file=>!allowed.includes(file.type) || file.size>3*1024*1024);
-  if (invalid) {setPhotoError(invalid.name+": use JPEG, PNG or WebP below 3 MB.");return;}
-  if (photos.length+incoming.length>15 || car.images.length+photos.length+incoming.length>20) {
+ const MAX_UPLOAD_BYTES=3*1024*1024;
+ async function preparePhoto(file:File):Promise<File> {
+  if(!["image/jpeg","image/png","image/webp"].includes(file.type))throw Error(file.name+": unsupported image type. Use JPEG, PNG or WebP.");
+  if(file.size<MAX_UPLOAD_BYTES)return file;
+  const bitmap=await createImageBitmap(file);
+  try {
+   let scale=Math.min(1,2400/Math.max(bitmap.width,bitmap.height));
+   for(let attempt=0;attempt<9;attempt++){
+    const canvas=document.createElement("canvas");
+    canvas.width=Math.max(1,Math.round(bitmap.width*scale));
+    canvas.height=Math.max(1,Math.round(bitmap.height*scale));
+    const context=canvas.getContext("2d");
+    if(!context)throw Error("Image compression is unavailable on this device.");
+    context.fillStyle="#ffffff";context.fillRect(0,0,canvas.width,canvas.height);
+    context.drawImage(bitmap,0,0,canvas.width,canvas.height);
+    for(const quality of [0.9,0.82,0.72,0.62]){
+     const blob=await new Promise<Blob|null>(resolve=>canvas.toBlob(resolve,"image/jpeg",quality));
+     if(blob&&blob.size<MAX_UPLOAD_BYTES){
+      const base=file.name.replace(/\.[^.]+$/,"");
+      return new File([blob],base+"-optimized.jpg",{type:"image/jpeg",lastModified:file.lastModified});
+     }
+    }
+    scale*=0.8;
+   }
+   throw Error(file.name+": could not compress below 3 MB.");
+  }finally{bitmap.close();}
+ }
+ async function addPhotos(incoming: File[]) {
+  if(!incoming.length)return;
+  if(photos.length+incoming.length>15 || car.images.length+photos.length+incoming.length>20){
    setPhotoError("Limit: 15 new photos and 20 total per car.");return;
   }
-  setPhotos(previous=>[...previous,...incoming]);setPhotoError("");
+  setPhotoError("Preparing photos for upload...");
+  try{
+   const prepared:File[]=[];
+   for(const file of incoming)prepared.push(await preparePhoto(file));
+   setPhotos(previous=>[...previous,...prepared]);
+   setPhotoError("");
+  }catch(error){setPhotoError(error instanceof Error?error.message:"Photo preparation failed.");}
  }
  useEffect(()=>{
   if(!ready) return;
   const paste=(event: ClipboardEvent)=>{
    if(event.target instanceof HTMLElement && (event.target.closest("input,textarea,[contenteditable=true]"))) return;
    const files=Array.from(event.clipboardData?.items||[]).filter(item=>item.kind==="file"&&item.type.startsWith("image/")).map(item=>item.getAsFile()).filter((file):file is File=>Boolean(file));
-   if(files.length) {event.preventDefault();addPhotos(files.map((file,i)=>new File([file],file.name||"pasted-"+Date.now()+"-"+i+".png",{type:file.type||"image/png"})));}
+   if(files.length) {event.preventDefault();void addPhotos(files.map((file,i)=>new File([file],file.name||"pasted-"+Date.now()+"-"+i+".png",{type:file.type||"image/png"})));}
   };
   window.addEventListener("paste",paste);
   return ()=>window.removeEventListener("paste",paste);
@@ -119,7 +149,7 @@ export default function AdminCars() {
     if(queue.length>15||images.length+queue.length>20)throw Error("Maximum 15 new photos or 20 total per car.");
     for(let i=0;i<queue.length;i++){
      const photo=queue[i];
-     if(photo.size>3*1024*1024)throw Error(photo.name+": please reduce file size below 3 MB.");
+     if(photo.size>=3*1024*1024)throw Error(photo.name+": photo optimization did not complete. Remove and select the photo again.");
      setMessage("Uploading photo "+(i+1)+" of "+queue.length+"... Completed photos will be kept if the connection drops.");
      const data=new FormData();data.append("photos",photo);
      let uploaded:string[]|null=null;
@@ -245,19 +275,19 @@ export default function AdminCars() {
       </section>
       <div className="kz-dashboard-section-heading"><span>05 / PHOTO GALLERY</span><h2>Upload Clean Car Photos</h2><p>OFFICIAL K&Z SEQUENCE: 1. Straight-on FRONT angle (MAIN COVER on inventory/dashboard) → 2. Front three-quarter angle → 3. Opposite front angle → 4. Side angles → 5. Rear right → 6. Rear left → 7. Straight rear → 8. Dashboard → 9. Interior / seats → 10. Mileage close-up. Always verify the front-angle cover before publishing. Upload only polished, natural-looking photos with the original K&Z master number plate. No flyers or banners. Do not publish a car if photos or number plate need correction.</p></div>
       <div style={{display:"grid",gap:9}}>
-       <strong style={{fontSize:14}}>Car photos (JPEG/PNG/WebP, max 3 MB each)</strong>
+       <strong style={{fontSize:14}}>Car photos (JPEG/PNG/WebP — large photos automatically optimized below 3 MB)</strong>
        <div
         onDragOver={e=>{e.preventDefault();setDragging(true)}}
         onDragLeave={e=>{e.preventDefault();setDragging(false)}}
-        onDrop={e=>{e.preventDefault();setDragging(false);addPhotos(Array.from(e.dataTransfer.files));}}
-        onPaste={e=>{if(e.clipboardData?.files?.length){e.preventDefault();e.stopPropagation();addPhotos(Array.from(e.clipboardData.files));}}}
+        onDrop={e=>{e.preventDefault();setDragging(false);void addPhotos(Array.from(e.dataTransfer.files));}}
+        onPaste={e=>{if(e.clipboardData?.files?.length){e.preventDefault();e.stopPropagation();void addPhotos(Array.from(e.clipboardData.files));}}}
         tabIndex={0}
         role="group"
         aria-label="Drop images here or focus this area and paste a copied image"
         style={{border:dragging?"2px dashed #f0c66d":"2px dashed #6c819f",borderRadius:12,padding:"24px 16px",background:dragging?"#24435d":"#13243a",textAlign:"center",outlineOffset:3}}>
          <p style={{margin:"0 0 8px",fontWeight:700}}>Drag & Drop photos here</p>
          <p style={{margin:"0 0 16px",color:"#c4d2e4",fontSize:13}}>Or copy an image from WhatsApp Web, click this box and press Ctrl + V</p>
-         <input aria-label="Choose car photos from your device" type="file" accept="image/jpeg,image/png,image/webp" multiple onChange={e=>{addPhotos(Array.from(e.target.files||[]));e.target.value="";}} style={{maxWidth:"100%"}}/>
+         <input aria-label="Choose car photos from your device" type="file" accept="image/jpeg,image/png,image/webp" multiple onChange={e=>{void addPhotos(Array.from(e.target.files||[]));e.target.value="";}} style={{maxWidth:"100%"}}/>
        </div>
        <div className="kz-recovery-actions">
         <button type="button" onClick={()=>void loadRecentPhotos()} disabled={busy||recoveryLoading}>{recoveryLoading?"Looking for uploaded photos...":"Recover Recent Uploads"}</button>
