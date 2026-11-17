@@ -270,12 +270,12 @@ export default function AdminCars() {
             )}
             <div style={{display:"grid",gap:8,justifyItems:"center"}}>
               <strong style={{fontSize:13}}>Move photo — live preview</strong>
-              <button type="button" onClick={()=>setCar(v=>({...v,cover_y:Math.max(0,v.cover_y-10)}))}>↑ Move Up</button>
+              <button type="button" onClick={()=>setCar(v=>({...v,cover_y:Math.min(100,v.cover_y+10)}))}>↑ Move Up</button>
               <div style={{display:"flex",gap:10}}>
-                <button type="button" onClick={()=>setCar(v=>({...v,cover_x:Math.max(0,v.cover_x-10)}))}>← Move Left</button>
-                <button type="button" onClick={()=>setCar(v=>({...v,cover_x:Math.min(100,v.cover_x+10)}))}>Move Right →</button>
+                <button type="button" onClick={()=>setCar(v=>({...v,cover_x:Math.min(100,v.cover_x+10)}))}>← Move Left</button>
+                <button type="button" onClick={()=>setCar(v=>({...v,cover_x:Math.max(0,v.cover_x-10)}))}>Move Right →</button>
               </div>
-              <button type="button" onClick={()=>setCar(v=>({...v,cover_y:Math.min(100,v.cover_y+10)}))}>↓ Move Down</button>
+              <button type="button" onClick={()=>setCar(v=>({...v,cover_y:Math.max(0,v.cover_y-10)}))}>↓ Move Down</button>
             </div>
             <button type="button" onClick={()=>setCar(current=>({...current,cover_zoom:100,cover_x:50,cover_y:50}))}>Reset Framing</button>
             <small>Photo #1 remains the front cover. This setting only changes its display on the main listing card.</small>
