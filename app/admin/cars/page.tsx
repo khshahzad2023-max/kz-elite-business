@@ -257,17 +257,26 @@ export default function AdminCars() {
       <label style={labelStyle}>Description<textarea style={inputStyle} rows={4} value={car.description} onChange={e=>setCar({...car,description:e.target.value})}/></label>
       <section className="kz-cover-editor" aria-label="Main card photo framing">
         <h3>Main Card Photo Framing</h3>
-        <p>Har car ka cover ek hi 16:10 frame mein show hota hai. Automatic upward alignment (+7%) har car par applied hai — including new listings. Neeche ke sliders se extra fine-tuning kar sakte hain. Original photo aur View Details gallery unchanged rahenge.</p>
+        <p>Har car ka cover ek hi 16:10 frame mein show hota hai. Neeche ke controls se photo ko live preview mein left, right, up, down aur zoom adjust karein. 50% center hai; 0% aur 100% opposite ends hain. Original photo aur View Details gallery unchanged rahenge.</p>
         <div className="kz-cover-editor-layout">
-          <div className="kz-car-card-photo kz-cover-editor-preview">
+          <div className="kz-car-card-photo kz-cover-editor-preview" style={{overflow:"hidden",touchAction:"none"}}>
             {car.images[0] ? <Image src={car.images[0]} alt="Main card framing preview" width={720} height={450} sizes="(max-width: 650px) 100vw, 360px" quality={75} style={getCarCoverImageStyle(car)} /> : <span>Save the front cover photo to preview framing</span>}
           </div>
           <div className="kz-cover-editor-controls">
-            {([["cover_zoom","Zoom",80,150,"%"],["cover_x","Left / Right",0,100,"%"],["cover_y","Up / Down",0,100,"%"]] as const).map(([key,label,min,max,unit])=>
+            {([["cover_zoom","Zoom",80,150,"%"],["cover_x","Horizontal Position",0,100,"%"],["cover_y","Vertical Position",0,100,"%"]] as const).map(([key,label,min,max,unit])=>
               <label key={key}>{label}: <strong>{car[key] ?? (key==="cover_zoom"?100:50)}{unit}</strong>
                 <input type="range" min={min} max={max} step={1} value={car[key] ?? (key==="cover_zoom"?100:50)} onChange={e=>setCar(current=>({...current,[key]:Number(e.target.value)}))}/>
               </label>
             )}
+            <div style={{display:"grid",gap:8,justifyItems:"center"}}>
+              <strong style={{fontSize:13}}>Move photo — live preview</strong>
+              <button type="button" onClick={()=>setCar(v=>({...v,cover_y:Math.max(0,v.cover_y-10)}))}>↑ Move Up</button>
+              <div style={{display:"flex",gap:10}}>
+                <button type="button" onClick={()=>setCar(v=>({...v,cover_x:Math.max(0,v.cover_x-10)}))}>← Move Left</button>
+                <button type="button" onClick={()=>setCar(v=>({...v,cover_x:Math.min(100,v.cover_x+10)}))}>Move Right →</button>
+              </div>
+              <button type="button" onClick={()=>setCar(v=>({...v,cover_y:Math.min(100,v.cover_y+10)}))}>↓ Move Down</button>
+            </div>
             <button type="button" onClick={()=>setCar(current=>({...current,cover_zoom:100,cover_x:50,cover_y:50}))}>Reset Framing</button>
             <small>Photo #1 remains the front cover. This setting only changes its display on the main listing card.</small>
           </div>
